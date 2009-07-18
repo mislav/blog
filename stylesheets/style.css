@@ -23,8 +23,12 @@ h1 a:visited, h2 a:visited { color: #95a549; font-weight: normal; }
 h2 { margin-top: 1.2em; margin-bottom: 0.7em; font-size: 1.5em; }
 .delicious-posts h2 { margin-left: 0; border-left: 0; padding-left: 0; }
 
-#category_description p:first-child { font-size: 1.3em; margin: 1.2em 2em 2em; text-align: center; color: #333; }
-#category_description p:first-child a { font-weight: normal; }
+#description p:first-child { font-size: 1.3em; margin: 1.2em 2em 2em; text-align: center; color: #333; }
+#description p:first-child a { font-weight: normal; }
+
+#links_me { margin: -2em 0 2em 0; color: #666; }
+#links_me a, #links_me a:visited { color: inherit; font-weight: normal; }
+#links_me a:hover { color: black; }
 
 p.post-info, dl.posts .post-info { margin-top: -1.2em; color: #666; font-style: italic; font-size: 90%; }
 p.post-info .date, dl.posts .post-info .date { color: #6d7d21; font-weight: bold; }

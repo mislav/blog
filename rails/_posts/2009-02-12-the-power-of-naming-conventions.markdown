@@ -14,7 +14,7 @@ Take a look at this single line of code from one of our main Haml templates:
 
 This renders a generic “thumbnails box” view partial populated with avatars and names of several of our top contributors. What isn’t obvious here is just how much this single line knows:
 
-1. the text of the `H2` **heading** for the box is set to “Top contributors”;
+1. the text of the **heading** for the box is set to “Top contributors”;
 2. the **ID of the DIV** that represents this box is set to “top_contributors”;
 3. “top_contributors” suffix is **used in caching** to differentiate between other fragment caches on this page;
 4. the box title is also **a link** to `top_contributors_path` named route (triggered by `:link => true`);
