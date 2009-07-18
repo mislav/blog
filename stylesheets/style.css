@@ -1,0 +1,107 @@
+body, p, ul, ol, li, dt, dd, dl, h1, h2, h3, h4, h5, h6, pre, code, table, td, th { margin: 0; padding: 0; font-size: 100%; }
+
+body { font: 90%/1.6em Helvetica, Verdana, Arial, sans-serif; margin: 3em 3em 3em 40px; max-width: 60em; position: relative; }
+
+a:link { color: #b60d27; text-decoration: underline; font-weight: bold; }
+a:visited { color: #e83f59; font-weight: bold; }
+a:hover { text-decoration: none; }
+a.home { text-decoration: none; font-weight: normal; }
+a.home:first-child { position: relative; top: -1em; }
+a.home:visited { color: #b60d27; }
+a.home:hover { text-decoration: underline; }
+a img { border: none; }
+
+h1 { margin-bottom: 0.6em; }
+h1 + p.subtext { letter-spacing: .1em; position: relative; top: -1.5em; color: #666; }
+h1 + p.subtext + h2 { margin-top: 0; }
+
+h1, h2, h1 a:link, h2 a:link { color: #6d7d21; font-weight: normal; }
+
+h1, h2 { font: 3em Myriad Web Pro , Georgia, Times New Roman, serif; border-left: 30px solid #ff8598; padding-left: 10px; margin-left: -40px; }
+h1 a:visited, h2 a:visited { color: #95a549; font-weight: normal; }
+
+h2 { margin-top: 1.2em; margin-bottom: 0.7em; font-size: 1.5em; }
+.delicious-posts h2 { margin-left: 0; border-left: 0; padding-left: 0; }
+
+#category_description p:first-child { font-size: 1.3em; margin: 1.2em 2em 2em; text-align: center; color: #333; }
+#category_description p:first-child a { font-weight: normal; }
+
+p.post-info, dl.posts .post-info { margin-top: -1.2em; color: #666; font-style: italic; font-size: 90%; }
+p.post-info .date, dl.posts .post-info .date { color: #6d7d21; font-weight: bold; }
+
+dl.posts dd, dl.feeds dd { margin: 0 0 .4em 1em; }
+
+ol.posts { list-style: none; }
+ol.posts li { color: #aaa; }
+ol.posts li .date { font-family: Monaco, "Courier New", monospace; color: gray; font-size: 80%; }
+ol.posts li .categories { color: #666; }
+ol.posts li .categories:before { content: "in "; }
+
+dl.feeds dt { padding-left: 20px; background: transparent url(/images/feed-icon-small.png) no-repeat left 50%; }
+
+div.breadcrumbs { padding-bottom: .1em; padding-left: 40px; margin-left: -40px; font-size: 90%; color: #444; background: #ddd; margin-top: -1em; }
+
+h3 { font-size: 1.1em; margin-top: 1.5em; }
+
+p, ul, ol { margin: 0.8em 0; }
+
+li + li { margin-top: .4em; }
+
+ins { text-decoration: none; border-bottom: 1px dotted #c0c0c0; border-color: #adb585; }
+
+#foo { border-top: 1px solid gray; padding: 0.5em 0; margin-top: 1em; }
+
+pre { color: black; font-size: 1.1em; line-height: 1.5em; background: #dfe7b7; border-left: 30px solid #6d7d21; margin-left: -40px; }
+pre code { display: block; padding: 1em 1.2em 1em 10px; }
+pre code.before { background: #ddd; }
+pre code.before .comment { color: #6d7d21; }
+
+code .keyword { font-weight: bold; }
+code .string { color: #b60d27; }
+code .comment { color: #666; }
+code .bracket, code .symbol { color: #455500; font-weight: bold; }
+code.error { background-color: #FFC5B8; }
+code.left, code.right { width: 45%; }
+code.left { float: left; margin-right: 10px; }
+code.separator { border-bottom: 1px solid #6d7d21; }
+
+p code, h1 code, h2 code, h3 code { font-size: 1.1em; }
+
+p code { background: #dfe7b7; padding: .3em .3em .2em .3em; }
+
+.delicious-posts { line-height: 140%; padding-bottom: 2em; }
+.delicious-posts li { padding-bottom: 0.5em; }
+
+.columns { margin-top: 1.5em; }
+.columns .main h2:first-child, .columns .sidebar h2:first-child { margin-top: 0; }
+.columns .main { float: left; width: 65%; }
+.columns .sidebar { float: right; width: 28%; padding: 1em 2%; background: #eee; }
+.columns .sidebar h2 { font-size: 1.2em; margin-left: 0; padding-left: 0; border: none; }
+.columns .sidebar ol, .columns .sidebar ul { list-style: none; }
+.columns .sidebar ol li, .columns .sidebar ul li { margin: 0; border-bottom: 1px solid silver; }
+.columns .sidebar ol li.current, .columns .sidebar ol li a, .columns .sidebar ul li.current, .columns .sidebar ul li a { padding: .2em .5em; }
+.columns .sidebar ol li.current, .columns .sidebar ul li.current { background: #dfe7b7; }
+.columns .sidebar ol li a, .columns .sidebar ul li a { display: block; }
+.columns .sidebar ol li a:hover, .columns .sidebar ul li a:hover { background: lemonchiffon; }
+.columns .sidebar ol li:first-child, .columns .sidebar ul li:first-child { border-top: 1px solid silver; }
+.columns .sidebar .delicious-posts { padding-top: 1em; padding-bottom: 0; }
+.columns .sidebar .delicious-posts ol li { border: none; font-size: 90%; }
+.columns .sidebar .delicious-posts ol li div { font-size: 90%; margin-top: .3em; }
+.columns .sidebar .delicious-posts a { display: inline; padding: 0; }
+.columns .sidebar .delicious-posts a.delicious-link, .columns .sidebar .delicious-posts .delicious-network-username, .columns .sidebar .delicious-posts .delicious-network-add { font-size: 90%; }
+.columns:after { content: "."; display: block; height: 0; clear: both; visibility: hidden; }
+
+.delicious-network-badge { border: 1px solid #999; margin-bottom: 1em; padding: .5em 1em; background: white; }
+.delicious-network-badge span { display: block; }
+.delicious-network-badge br { display: none; }
+.delicious-network-badge .delicious-network-fans { font-size: 1.6em; text-align: center; margin: 0.4em 0; color: #555; }
+
+.dopplr-badge li { border: none !important; }
+.dopplr-badge li a { display: inline !important; padding: 0 !important; }
+.dopplr-badge .d-status { line-height: 1.4em; }
+
+#twitter_div p { color: #666; margin-top: -1em; font-style: italic; }
+
+#twitter_update_list { list-style: disc; }
+#twitter_update_list .when { font-size: 85%; color: #666; }
+#twitter_update_list .when a { font-weight: normal; }

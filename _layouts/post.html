@@ -1,0 +1,30 @@
+---
+layout: page
+---
+
+<p class="subtext">
+  By <a href="/about/">Mislav</a>
+  on <b>{{ page.date | date_to_string }}</b>
+  in <a href="/{{ page.category }}/">{{ page.category }}</a>
+</p>
+
+<div id="post">
+  {{ content }}
+</div>
+
+<div id="related">
+  <h2>Also on this site</h2>
+  
+  <ol class="posts">
+    {% for post in site.related_posts limit:3 %}
+      <li>
+        <span class="date">{{ post.date | date_to_string }}</span>
+        ▸ <a href="{{ post.url }}">{{ post.title }}</a>
+        <span class="categories">{{ post.categories | array_to_sentence_string }}</span>
+      </li>
+    {% endfor %}
+  </ol>
+  
+  <a class="home" href="/">← home</a>
+</div>
+
