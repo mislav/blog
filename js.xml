@@ -1,0 +1,9 @@
+---
+layout: atom
+title: No Strings Attached — JavaScript
+subtitle: On JavaScript by Mislav Marohnić
+permalink: /feeds/js.xml
+path: /js/
+category: js
+---
+<category term="javascript" label="JavaScript" />

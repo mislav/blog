@@ -1,0 +1,9 @@
+---
+layout: atom
+title: No Strings Attached
+subtitle: Web development by Mislav Marohnić
+permalink: /feeds/dev.xml
+path: /
+---
+<category term="rails" label="Ruby on Rails" />
+<category term="javascript" label="JavaScript" />

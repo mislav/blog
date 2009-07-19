@@ -1,0 +1,9 @@
+---
+layout: atom
+title: No Strings Attached — Ruby on Rails
+subtitle: On Rails by Mislav Marohnić
+permalink: /feeds/rails.xml
+path: /rails/
+category: rails
+---
+<category term="rails" label="Ruby on Rails" />
