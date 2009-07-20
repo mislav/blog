@@ -2,6 +2,7 @@
 title: "Upgrade to Prototype 1.6: real world examples"
 layout: post
 category: js
+description: Noting down my progress as I upgrade Radiant CMS to Prototype 1.6.
 ---
 
 Recently I have undertaken upgrading [Radiant CMS][1] JavaScripts to Prototype 1.6. Radiant depends on a fair amount of scripting in its administrative interface which was previously done with Prototype 1.5.0 (now almost a year old). Simply replacing the old <i>prototype.js</i> with the new one doesn’t immediately work – some APIs changed (most notably `Hash`) and I also wanted to slim down old code using some fresh features. I will now show you some examples of what I’ve done, how I did it and why; you might find this writeup useful when doing the same in _your_ application.

@@ -2,6 +2,7 @@
 title: Branching the database along with your code
 layout: post
 category: rails
+description: A sample Rails configuration to enable moving your database along with your real branches.
 ---
 
 If you’re doing all your development on the “master” branch, you’re not using git. It’s fine to stick to master if you’re only learning git, but soon you’ll have to dive into non-linear development. Branches have many uses, depending on the engineering methodology your team practices, but the most common are:

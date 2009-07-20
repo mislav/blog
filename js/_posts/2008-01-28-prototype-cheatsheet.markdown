@@ -2,6 +2,7 @@
 title: Prototype 1.6 cheatsheet
 layout: post
 category: js
+description: A cheatsheet covering the latest and greatest in Prototype 1.6.
 ---
 
 It was a good week for Prototype lovers! Right along the [Prototype 1.6 security and performance release][1], <a href="http://thinkweb2.com/projects/prototype/" rel="contact">Kangax</a> (a very active community member) released an awesome, full-page, beautiful [Prototype cheatsheet][2] covering the very same release.

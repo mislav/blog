@@ -2,6 +2,7 @@
 title: How to install SQLite3
 layout: post
 category: rails
+description: A couple of easy steps to install SQLite on Windows or Linux
 ---
 
 The new default database in Rails 2.0.2 is [SQLite3][1], which I personally think is a great default. Although there is [a discussion on Rails-core about reverting back to MySQL on Windows platforms if SQLite3 can’t be detected][2], I think the best choice for any Ruby developer (using Windows or any other OS) would be to simply have SQLite installed on every of her development environments. It only takes a minute.

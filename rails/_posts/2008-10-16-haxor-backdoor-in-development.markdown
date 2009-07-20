@@ -2,6 +2,7 @@
 title: Haxor backdoor in development
 layout: post
 category: rails
+description: Handy tip on installing a backdoor to skip authentication in development
 ---
 
 I’m tired of logging in to my application in development mode. It’s on my local machine, so it doesn’t have to be secure, anyway. Wouldn’t it be great if the app would automatically authenticate me in when I click on “Sign in”?

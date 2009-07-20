@@ -2,6 +2,7 @@
 title: will_paginate and view testing
 layout: post
 category: rails
+description: How to properly test your views without hitting the database while using will_paginate.
 ---
 
 While maintaining the [<i>will_paginate</i>][3] Rails plugin, I often saw people ask in various forums or mailing lists about testing their paginated views. (Most of the users are probably still unaware that [we have a support Google group now][4].) Since <i>Will Paginate</i> is probably the most popular plugin for pagination in Rails, I feel obligated to speak about testing so that even the under-experienced can start off using good practices.

@@ -2,6 +2,7 @@
 title: "Rails 2.0: taking the plunge"
 layout: post
 category: rails
+description: Be prepared to take the plunge as this guide will get you started on upgrading your application quick and easy.
 ---
 
 With the [Rails 2.0 “preview release”][1] out and all the buzz, you might be thinking of checking out what is it all about. If you were planning to upgrade to Rails 2.0, these notes will help you with switching your existing application to use the latest version of this fantastic framework.

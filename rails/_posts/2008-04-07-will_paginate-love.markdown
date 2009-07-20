@@ -2,6 +2,12 @@
 title: will_paginate love
 layout: post
 category: rails
+description: Getting emotional with the new, 2.2.0 release of the will_paginate library
+styles: |
+    div.tweet { margin: 1.5em 0 1em 0; }
+    div.tweet a { display: block; width: 700px; border: 1px solid #ddd; margin: 0 auto; }
+    div.tweet a:hover, div.tweet a:focus { border-color: #E83F59 }
+    div.tweet img { display: block; }
 ---
 
 Everyone loves [will_paginate][1], the super-simple, yet powerful library for pagination in Ruby on Rails. But, with the current [2.2.0 release][2], there are many reasons to love it even more.
@@ -62,7 +68,7 @@ What’s even better, there are news of even nicer [gem dependencies][7] for you
   </a>
 </div>
 
-Chris Saylor, if you loved “scope out” you would have _adored_[has_finder][8]. Then you would also dance with delight when it got [merged to Rails 2.1][9] as [`named_scope`][10]. But then you would become sad when you realize you have older apps and how they use Rails 1.2 or 2.0 where this is not available. :(
+Chris Saylor, if you loved “scope out” you would have _adored_ [has_finder][8]. Then you would also dance with delight when it got [merged to Rails 2.1][9] as [`named_scope`][10]. But then you would become sad when you realize you have older apps and how they use Rails 1.2 or 2.0 where this is not available. :(
 
 I’m here to cheer you up. I’ve actually done a sneaky thing: stolen `named_scope` from edge Rails and made it available if you install plugin or gem version 2.2.0 even on older versions of Rails. I’ve once told <abbr title="Josh Susser">Josh</abbr> that William Paginate and has_finder will have a love child some day—now it has happened.
 

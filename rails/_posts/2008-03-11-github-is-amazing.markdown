@@ -12,14 +12,6 @@ Within **one hour** of pushing it to GitHub, one person already started watching
 
 I was amazed at this turnaround time. I thought it would take weeks until people spot my little project and maybe consider using it. GitHub exposes my projects so much better.
 
-My other stuff hosted there are:
-
-* [Contacts: implementing the Google Contacts Data API in Ruby][8];
-* [BlueCloth][9]: I forked the popular Markdown implementation in hope to fix some bugs (currently it only features a new & improved test suite);
-* and of course, [will_paginate][10]—most awesome pagination solution for Rails.
-
-Watch them, use them, love them. And, of course—expect more from me soon ;)
-
 
 [1]: http://git.or.cz/  "Fast version control system"
 [2]: http://github.com/mislav
@@ -28,6 +20,3 @@ Watch them, use them, love them. And, of course—expect more from me soon ;)
 [5]: http://caboose.org/articles/2007/4/3/caboose-sample-rails-application
 [6]: http://originblog.wordpress.com/
 [7]: http://originblog.wordpress.com/2008/02/18/standing-on-others-toes/
-[8]: http://github.com/mislav/contacts/tree
-[9]: http://github.com/mislav/bluecloth/tree
-[10]: http://github.com/mislav/will_paginate/tree

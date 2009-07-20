@@ -2,6 +2,7 @@
 title: C is for cookie
 layout: post
 category: js
+description: A tiny cookie library and a great video to go along.
 ---
 
 Getting and setting cookies in JavaScript through the standard API (`document.cookie`) can be a pain to do manually, so I’m sharing a tiny, framework-independent script that provides both read and write methods with the simplest interface there can be.
@@ -51,9 +52,13 @@ Here’s the full code:
 
 And a great video to go along:
 
-<object height="349" width="425"><param name="movie" value="http://www.youtube.com/v/BovQyphS8kA&amp;hl=en&amp;fs=1&amp;rel=0&amp;border=1" /></param><param name="allowFullScreen" value="true" /></param><embed allowfullscreen="true" type="application/x-shockwave-flash" src="http://www.youtube.com/v/BovQyphS8kA&amp;hl=en&amp;fs=1&amp;rel=0&amp;border=1" height="349" width="425"></embed></object>
+<object height="349" width="425">
+  <param name="movie" value="http://www.youtube.com/v/BovQyphS8kA&amp;hl=en&amp;fs=1&amp;rel=0&amp;border=1"></param>
+  <param name="allowFullScreen" value="true"></param>
+  <embed allowfullscreen="true" type="application/x-shockwave-flash" src="http://www.youtube.com/v/BovQyphS8kA&amp;hl=en&amp;fs=1&amp;rel=0&amp;border=1" height="349" width="425"></embed>
+</object>
 
-<h2 id="related-reading">Related reading</h2>
+## Related reading
 
 1. [JavaScript cookies on Quirksmode][1] – everything you wanted to know about browser cookies, by Peter-Paul Koch
 

@@ -2,6 +2,7 @@
 title: Use HTML 4 in your application
 layout: post
 category: rails
+description: Cargo-culting XHTML is bad. Use HTML 4 in your Rails apps.
 ---
 
 When you set up an application, Rails outputs XHTML by default.

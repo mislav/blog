@@ -1,6 +1,7 @@
 ---
 title: Specify your dependencies with Capistrano
 category: rails
+description: Explaining the "deploy:check" built-in task in Capistrano and how it can help preparing your deployment.
 ---
 
 There is this one cool trick with [Capistrano][1]: the `deploy:check` task. I’ve known about it for a while; it does a great job at sanity-checking your deployment environment: existence of directories, write permissions etc. What I learned only recently is that you can specify your own, _custom dependencies_.

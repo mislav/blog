@@ -2,6 +2,7 @@
 title: A Prototype trick — “When available, do.”
 layout: post
 category: js
+description: A tiny helper that fits nicely in your code while doing unobtrusive scripting
 ---
 
 Unobtrusive page initialization is great. You can set up a handler that gets executed on page load, check for various elements and then do operations ranging from simple things like hiding (and then be shown later) to complex setup or iteration over a collection of nodes.

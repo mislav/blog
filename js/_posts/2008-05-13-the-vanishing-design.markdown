@@ -18,7 +18,7 @@ After the script is done, this site’s design should be bare, black on white. S
 
 The full script ([download][3]):
 
-    function decompose(start) {
+{% capture decompose_code %}    function decompose(start) {
       // reverse forEach for array-like collections
       function $(a,f) {
         for (var i=a.length-1; i>=0; i--) f(a.item(i))
@@ -55,6 +55,9 @@ The full script ([download][3]):
         }
       }, 60000/n)
     }
+{% endcapture %}
+
+{{ decompose_code }}
 
 <h2 id="bookmarklet">Bookmarklet</h2>
 
@@ -62,9 +65,11 @@ After the script was working, I wrote a bookmarklet: [Fall apart!][4] Pull this 
 
 When you run the bookmarklet and think nothing is happening, pay attention to the progress meter in the upper right corner. If it’s not there, the script never started—you could try to find an error in your browser’s JavaScript console. If it’s a security exception, the document is probably XHTML Strict.
 
+<script type="text/javascript" charset="utf-8">{{ decompose_code }}</script>
+
 
 [1]: http://matthewbuchanan.name/
 [2]: http://matthewbuchanan.name/post/33504871
 [3]: /js/the-vanishing-design/decompose.js
-[4]: javascript:void(function(){var%20s=document.createElement("script");s.src="http://mislav.caboo.se/js/the-vanishing-design/decompose-bookmarklet.js";document.body.appendChild(s)}())
+[4]: javascript:void(function(){var%20s=document.createElement('script');s.src='http://mislav.uniqpath.com/js/the-vanishing-design/decompose-bookmarklet.js';document.body.appendChild(s)}())
 [5]: http://cssglobe.com/

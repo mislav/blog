@@ -2,6 +2,7 @@
 title: Text resize detection with Prototype
 layout: post
 category: js
+description: Easy text resize detection in JavaScript with Prototype library
 ---
 
 Here [I have a neat script][1] ported from [A List Apart article by Lawrence Carvalho and Christian Heilmann][2] that allows you to do this:

@@ -26,7 +26,7 @@ h2 { margin-top: 1.2em; margin-bottom: 0.7em; font-size: 1.5em; }
 #description p:first-child { font-size: 1.3em; margin: 1.2em 2em 2em; text-align: center; color: #333; }
 #description p:first-child a { font-weight: normal; }
 
-#links_me { margin: -2em 0 2em 0; color: #666; }
+#links_me { margin: -2em 0 2em 0; color: #6d7d21; }
 #links_me a, #links_me a:visited { color: inherit; font-weight: normal; }
 #links_me a:hover { color: black; }
 
