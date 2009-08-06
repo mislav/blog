@@ -1,5 +1,6 @@
 ---
 title: Specify your dependencies with Capistrano
+layout: post
 category: rails
 description: Explaining the "deploy:check" built-in task in Capistrano and how it can help preparing your deployment.
 ---
