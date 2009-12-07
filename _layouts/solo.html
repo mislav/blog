@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+  <head>
+    <title>{{ page.title | strip_html }}</title>
+    {% if page.description %}
+    <meta name="description" content="{{ page.description | xml_escape }}">
+    {% endif %}
+    <meta name="author" content="Mislav Marohnić &lt;mislav.marohnic@gmail.com&gt;">
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <link rel="icon" href="/favicon.ico">
+    
+    {% if page.styles %}
+    <style type="text/css" media="screen">{{ page.styles }}</style>
+    {% endif %}
+  </head>
+  
+  <body>
+    {{ content }}
+    
+    <script type="text/javascript">
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+    <script type="text/javascript">
+    try {
+    var pageTracker = _gat._getTracker("UA-87067-3");
+    pageTracker._trackPageview();
+    } catch(err) {}</script>
+  </body>
+</html>
