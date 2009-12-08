@@ -34,7 +34,9 @@ styles: |
       color: gray;
       margin: 0 -.2em;
     }
-    h2 {
+    h2 { margin: .8em 0 .3em 0; display: none }
+    .main h2 {
+      display: block;
       font-weight: normal; font-size: 1.5em;
       margin-bottom: 1px; padding: .5em 1em; background: #dadada;
       border-top: 1px solid white;
@@ -66,6 +68,20 @@ styles: |
     
     a:link, a:active, a:visited { color: darkblue; }
     a:hover { color: crimson; }
+    
+    @media handheld {
+      body { width: auto; padding: 0 }
+    }
+    @media only screen and (max-device-width: 480px) {
+      body { width: auto; padding: 7px }
+      .main, .detailed { width: auto; float: none !important }
+      h1 { font-size: 3em; padding-top: 0; margin: .2em 0 .5em 0; line-height: 1.1 }
+      h2 { display: block; }
+      .main h2 { font-size: 1em; padding: .2em .4em; }
+      #iphone-main { text-align: left; }
+      ul > li { padding: .3em 0; }
+      .main li { font-size: 1em; min-height: 0; }
+    }
 ---
 <h1><small>Things I learned from</small> iPhone <span class="amp">&amp;</span> Droid ads</h1>
 
@@ -98,6 +114,7 @@ styles: |
   (all quotes are real, with original emphasis preserved)
 </p>
 
+<h2>iPhone</h2>
 <ul id="iphone-detailed" class="iphone detailed">
 <li>There's copy &amp; paste. You can paste whole articles from the web with formatting to an email.</li>
 <li>You can shoot, trim and share video.</li>
@@ -149,6 +166,7 @@ styles: |
 </li>
 </ul>
 
+<h2>Droid</h2>
 <ul id="droid-detailed" class="droid detailed">
 <li>Droid is to be used with robotic hands in a low-lit hi-tech laboratory or warehouse.</li>
 <li>Droid can take voice commands and give directions by voice, <q>making it the best all knowing awesome homing device, <strong>ever</strong>.</q> By conclusion, no other device before Droid could show a 3D perspective map, take voice commands or give directions by voice.</li>
