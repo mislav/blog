@@ -1,4 +1,4 @@
-auto:        false
+auto:        true
 lsi:         false
 server_port: 4000
 pygments:    false
