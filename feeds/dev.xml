@@ -1,8 +1,7 @@
 ---
 layout: atom
 title: No Strings Attached
-subtitle: Web development by Mislav Marohnić
-permalink: /feeds/dev.xml
+subtitle: Hacking the Web by Mislav Marohnić
 path: /
 ---
 <category term="rails" label="Ruby on Rails" />
