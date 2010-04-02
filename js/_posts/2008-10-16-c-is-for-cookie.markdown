@@ -1,4 +1,5 @@
 ---
+permalink: /js/c-is-for-cookie/
 title: C is for cookie
 layout: post
 category: js

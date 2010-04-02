@@ -1,4 +1,5 @@
 ---
+permalink: /rails/rails-url-regex/
 title: URL regex pattern in Rails
 layout: post
 category: rails

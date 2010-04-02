@@ -1,4 +1,5 @@
 ---
+permalink: /js/text-resize-detection/
 title: Text resize detection with Prototype
 layout: post
 category: js

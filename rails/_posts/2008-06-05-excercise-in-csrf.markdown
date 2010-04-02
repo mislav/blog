@@ -1,4 +1,5 @@
 ---
+permalink: /rails/excercise-in-csrf/
 title: An excercise in cross-site request forgery
 layout: post
 category: rails

@@ -1,4 +1,5 @@
 ---
+permalink: /js/upgrading-to-prototype-1-6-real-world-examples/
 title: "Upgrade to Prototype 1.6: real world examples"
 layout: post
 category: js

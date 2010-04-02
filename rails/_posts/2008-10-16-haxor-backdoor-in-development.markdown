@@ -1,4 +1,5 @@
 ---
+permalink: /rails/haxor-backdoor-in-development/
 title: Haxor backdoor in development
 layout: post
 category: rails

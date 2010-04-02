@@ -1,4 +1,5 @@
 ---
+permalink: /rails/validations-in-any-class/
 title: Validations in any class
 layout: post
 category: rails

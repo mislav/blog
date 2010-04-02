@@ -1,4 +1,5 @@
 ---
+permalink: /rails/github-is-amazing/
 title: GitHub is amazing
 layout: post
 category: rails

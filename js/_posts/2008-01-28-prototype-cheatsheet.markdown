@@ -1,4 +1,5 @@
 ---
+permalink: /js/prototype-cheatsheet/
 title: Prototype 1.6 cheatsheet
 layout: post
 category: js

@@ -1,4 +1,5 @@
 ---
+permalink: /js/handling-events-on-elements/
 title: Handling JavaScript events on multiple elements
 layout: post
 category: js

@@ -1,4 +1,5 @@
 ---
+permalink: /rails/will_paginate-love/
 title: will_paginate love
 layout: post
 category: rails

@@ -1,4 +1,5 @@
 ---
+permalink: /js/hack-your-hashes-in-prototype-1-6/
 title: Hack your Hashes in Prototype 1.6
 category: js
 description: Showing off a trick how to simulate old Hash behavior in Prototype 1.6

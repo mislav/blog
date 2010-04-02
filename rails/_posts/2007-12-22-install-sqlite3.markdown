@@ -1,4 +1,5 @@
 ---
+permalink: /rails/install-sqlite3/
 title: How to install SQLite3
 layout: post
 category: rails

@@ -1,4 +1,5 @@
 ---
+permalink: /rails/the-power-of-naming-conventions/
 title: The power of naming conventions
 layout: post
 category: rails

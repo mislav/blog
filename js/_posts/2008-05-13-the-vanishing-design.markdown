@@ -1,4 +1,5 @@
 ---
+permalink: /js/the-vanishing-design/
 title: The vanishing design
 layout: post
 category: js

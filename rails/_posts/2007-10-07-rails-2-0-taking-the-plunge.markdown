@@ -1,4 +1,5 @@
 ---
+permalink: /rails/rails-2-0-taking-the-plunge/
 title: "Rails 2.0: taking the plunge"
 layout: post
 category: rails

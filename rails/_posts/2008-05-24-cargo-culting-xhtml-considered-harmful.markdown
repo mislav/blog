@@ -1,4 +1,5 @@
 ---
+permalink: /rails/cargo-culting-xhtml-considered-harmful/
 title: Use HTML 4 in your application
 layout: post
 category: rails

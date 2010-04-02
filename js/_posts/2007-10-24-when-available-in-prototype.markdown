@@ -1,4 +1,5 @@
 ---
+permalink: /js/when-available-in-prototype/
 title: A Prototype trick — “When available, do.”
 layout: post
 category: js

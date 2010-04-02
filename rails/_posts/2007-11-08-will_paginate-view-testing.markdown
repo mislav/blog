@@ -1,4 +1,5 @@
 ---
+permalink: /rails/will_paginate-view-testing/
 title: will_paginate and view testing
 layout: post
 category: rails

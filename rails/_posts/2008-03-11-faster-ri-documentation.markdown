@@ -1,4 +1,5 @@
 ---
+permalink: /rails/faster-ri-documentation/
 title: FastRI for the win
 layout: post
 category: rails

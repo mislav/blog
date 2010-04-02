@@ -1,4 +1,5 @@
 ---
+permalink: /rails/branching-the-database-along-with-your-code/
 title: Branching the database along with your code
 layout: post
 category: rails
