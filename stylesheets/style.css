@@ -31,7 +31,7 @@ h1 + p.subtext + h2 { margin-top: 0; }
 h1, h2, h1 a:link, h2 a:link { color: #1c4973; font-weight: normal; }
 
 h1, h2 {
-  font: 300 2.4em "Museo", Georgia, "Times New Roman", serif;
+  font: 300 2.4em "Museo", "Cochin", Georgia, "Times New Roman", serif;
   border-left: 30px solid #b3c1cd;
   padding-left: 10px; margin-left: -40px;
   text-shadow: rgba(28, 73, 115, .7) 0 0 4px;
@@ -52,11 +52,38 @@ p.post-info .date, dl.posts .post-info .date { color: #6d7d21; font-weight: bold
 
 dl.posts dd, dl.feeds dd { margin: 0 0 .4em 1em; }
 
-ol.posts { list-style: none; }
-ol.posts li { color: #aaa; }
+ol.posts { list-style: none; line-height: 1.6; }
+ol.posts.home { font-size: 1.1em; }
+ol.posts li { color: #aaa; padding-bottom: .4em; }
 ol.posts li a:visited { color: #444; }
-ol.posts li .date { font-family: Monaco, Courier, monospace; color: gray; font-size: 80%; }
-ol.posts li .categories { color: #666; }
+ol.posts li .date {
+  font-family: "American Typewriter", Monaco, Courier, monospace;
+  color: #777;
+  font-size: 90%;
+  display: inline-block;
+  min-width: 6.7em;
+}
+ol.posts li .date + a { margin-left: .5em; }
+ol.posts li .categories { color: #777; }
+
+@media only screen and (device-width: 768px) and (orientation: landscape) {
+  body { max-width: none; }
+  ol.posts.home {
+    font-size: .9em;
+    -webkit-column-count: 2; -webkit-column-gap: 2em;
+  }
+  ol.posts li .date + a { margin-left: 0; }
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+  body { font-size: 75%; margin: .4em .6em; }
+  a.home:first-child { position: static; top: 0; }
+  ol.posts.home { font-size: 1em; }
+  h1, h2 { border-left: none; margin-left: 0; padding-left: 0; }
+  ol.posts li .date { min-width: 0; display: block; }
+  ol.posts li .date + a { margin-left: 0; }
+  #post div.thumbnail { float: left; width: 100%; }
+  #post li { margin-left: 1.5em; }
+}
 
 dl.feeds dt { padding-left: 20px; background: transparent url(/images/feed-icon-small.png) no-repeat left 50%; }
 
@@ -65,8 +92,6 @@ div.breadcrumbs { padding-bottom: .1em; padding-left: 40px; margin-left: -40px; 
 h3 { font-size: 1.1em; margin-top: 1.5em; }
 
 p, ul, ol { margin: 0.8em 0; }
-
-li + li { margin-top: .4em; }
 
 ins { text-decoration: none; border-bottom: 1px dotted #c0c0c0; border-color: #adb585; }
 
