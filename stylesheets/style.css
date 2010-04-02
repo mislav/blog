@@ -1,24 +1,42 @@
 body, p, ul, ol, li, dt, dd, dl, h1, h2, h3, h4, h5, h6, pre, code, table, td, th { margin: 0; padding: 0; font-size: 100%; }
 
-body { font: 90%/1.6em Helvetica, Verdana, Arial, sans-serif; margin: 3em 3em 3em 40px; max-width: 60em; position: relative; }
+body {
+  font: 300 100%/1.6em "Minion Pro", "Palatino", "Hoefler Text", "Times New Roman", serif;
+  margin: 3em 3em 3em 40px;
+  max-width: 55em;
+  position: relative;
+  color: #222;
+  background: #ededed url(noise.png);
+}
+#post p, #post li { font-size: 1.2em; line-height: 1.6; }
+table { font: 300 100%/1.6em "Gill Sans", "Lucida Grande", Helvetica, Arial, sans-serif; }
 
-a:link { color: #b60d27; text-decoration: underline; font-weight: bold; }
-a:visited { color: #e83f59; font-weight: bold; }
-a:hover { text-decoration: none; }
-a.home { text-decoration: none; font-weight: normal; }
+a:link, a:visited { color: #cc5d21; text-decoration: underline; font-weight: 500; }
+#post p a:visited, li a:visited { color: inherit; }
+a:hover { color: #e96f1e; }
+a.home { text-decoration: none; font-weight: normal; text-transform: uppercase; }
 a.home:first-child { position: relative; top: -1em; }
-a.home:visited { color: #b60d27; }
 a.home:hover { text-decoration: underline; }
 a img { border: none; }
 
 h1 { margin-bottom: 0.6em; }
-h1 + p.subtext { letter-spacing: .1em; position: relative; top: -1.5em; color: #666; }
+h1 + p.subtext {
+  margin-top: -1.2em; margin-bottom: 2em;
+  color: #666;
+  font-style: italic;
+  font-variant: small-caps;
+}
 h1 + p.subtext + h2 { margin-top: 0; }
 
-h1, h2, h1 a:link, h2 a:link { color: #6d7d21; font-weight: normal; }
+h1, h2, h1 a:link, h2 a:link { color: #1c4973; font-weight: normal; }
 
-h1, h2 { font: 3em Myriad Web Pro , Georgia, Times New Roman, serif; border-left: 30px solid #ff8598; padding-left: 10px; margin-left: -40px; }
-h1 a:visited, h2 a:visited { color: #95a549; font-weight: normal; }
+h1, h2 {
+  font: 300 2.4em "Museo", Georgia, "Times New Roman", serif;
+  border-left: 30px solid #b3c1cd;
+  padding-left: 10px; margin-left: -40px;
+  text-shadow: rgba(28, 73, 115, .7) 0 0 4px;
+  clear: both;
+}
 
 h2 { margin-top: 1.2em; margin-bottom: 0.7em; font-size: 1.5em; }
 .delicious-posts h2 { margin-left: 0; border-left: 0; padding-left: 0; }
@@ -27,7 +45,6 @@ h2 { margin-top: 1.2em; margin-bottom: 0.7em; font-size: 1.5em; }
 #description p:first-child a { font-weight: normal; }
 
 #links_me { margin: -2em 0 2em 0; color: #6d7d21; }
-#links_me a, #links_me a:visited { color: inherit; font-weight: normal; }
 #links_me a:hover { color: black; }
 
 p.post-info, dl.posts .post-info { margin-top: -1.2em; color: #666; font-style: italic; font-size: 90%; }
@@ -37,9 +54,9 @@ dl.posts dd, dl.feeds dd { margin: 0 0 .4em 1em; }
 
 ol.posts { list-style: none; }
 ol.posts li { color: #aaa; }
-ol.posts li .date { font-family: Monaco, "Courier New", monospace; color: gray; font-size: 80%; }
+ol.posts li a:visited { color: #444; }
+ol.posts li .date { font-family: Monaco, Courier, monospace; color: gray; font-size: 80%; }
 ol.posts li .categories { color: #666; }
-ol.posts li .categories:before { content: "in "; }
 
 dl.feeds dt { padding-left: 20px; background: transparent url(/images/feed-icon-small.png) no-repeat left 50%; }
 
@@ -55,7 +72,14 @@ ins { text-decoration: none; border-bottom: 1px dotted #c0c0c0; border-color: #a
 
 #foo { border-top: 1px solid gray; padding: 0.5em 0; margin-top: 1em; }
 
-pre { color: black; font-size: 1.1em; line-height: 1.5em; background: #dfe7b7; border-left: 30px solid #6d7d21; margin-left: -40px; }
+pre {
+  color: black;
+  font-size: 1em;
+  line-height: 1.5em;
+  background: #dfe7b7;
+  border-left: 30px solid #8f9b58;
+  margin-left: -40px;
+}
 pre code { display: block; padding: 1em 1.2em 1em 10px; }
 pre code.before { background: #ddd; }
 pre code.before .comment { color: #6d7d21; }
@@ -72,6 +96,7 @@ code.separator { border-bottom: 1px solid #6d7d21; }
 p code, h1 code, h2 code, h3 code { font-size: 1.1em; }
 
 p code { background: #dfe7b7; padding: .3em .3em .2em .3em; }
+p a:link code, p a:visited code { text-decoration: underline; }
 
 .delicious-posts { line-height: 140%; padding-bottom: 2em; }
 .delicious-posts li { padding-bottom: 0.5em; }
