@@ -3,6 +3,7 @@ permalink: /js/hack-your-hashes-in-prototype-1-6/
 title: Hack your Hashes in Prototype 1.6
 category: js
 description: Showing off a trick how to simulate old Hash behavior in Prototype 1.6
+layout: post
 ---
 
 [Prototype 1.6.0 has been released][1] and changes to the Hash class have disappointed some people who wanted to continue using Hashes with normal JavaScript property lookup. I will show you how you can hack the Hash class to get the old behavior.
