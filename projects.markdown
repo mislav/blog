@@ -36,9 +36,13 @@ I never liked how [some sites ask you for your GMail password][14]. Contacts lib
 
 <img src="http://www.rubyonrails.org/images/rails.png" height="50px" alt="" style="float:left; margin:0 1em .5em 0" /> The worlds most popular framework, written on top of Ruby language, was created by one person, orchestrated by several core team members, but maintained and expanded by hundreds of contributors. [I’m one of those people][8].
 
-### [Haml -- markup haiku][9]
+### [Haml &ndash; markup haiku][9]
 
 <img src="http://haml-lang.com/images/haml.gif" height="70px" alt="" style="float:left; margin:0 1em .5em 0" /> Haml is the most beautiful template language I’ve worked with. It also serves great for quick creation of small static websites or prototypes. Because I use it so much, over the time I contributed a number of patches that solved bugs, improved unit-tests or added minor features.
+
+### [Radiant CMS][radiant]
+
+<img src="http://img.skitch.com/20100402-8n24q2ae34qahbqrc7yuhuii3g.png" height="50px" alt="" style="float:left; margin:0 1em .5em 0" /> Radiant is by far the best CMS I've ever used. It is an open source content management system designed for small teams. It gives you full control over you content and layouts and asks nothing in return.
 
 ### [Thor][11]
 
@@ -61,3 +65,4 @@ I’ve contributed to option parsing in Thor. I keep [my Thor tasks][12], includ
 [12]: http://github.com/mislav/thor-tasks/tree/master
 [13]: http://github.com/mislav/contacts/tree/master
 [14]: http://adactio.com/journal/1357
+[radiant]: http://radiantcms.org/
