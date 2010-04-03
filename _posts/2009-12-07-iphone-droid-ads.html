@@ -73,15 +73,28 @@ styles: |
     @media handheld {
       body { width: auto; padding: 0 }
     }
-    @media only screen and (max-device-width: 480px) {
-      body { width: auto; padding: 7px }
-      .main, .detailed { width: auto; float: none !important }
-      h1 { font-size: 3em; padding-top: 0; margin: .2em 0 .5em 0; line-height: 1.1 }
+    @media only screen and (max-width: 979px) {
+      body { width: auto; }
+      .detailed { width: auto; float: none; }
       h2 { display: block; }
+    }
+    @media only screen and (max-width: 480px) {
+      body { padding: 7px }
+      .main { width: auto; float: none; }
+      h1 { font-size: 3em; padding-top: 0; margin: .2em 0 .5em 0; line-height: 1.1; }
       .main h2 { font-size: 1em; padding: .2em .4em; }
       #iphone-main { text-align: left; }
       ul > li { padding: .3em 0; }
       .main li { font-size: 1em; min-height: 0; }
+    }
+    @media only screen and (min-width: 481px) and (max-width: 979px) {
+      body { padding: 1em 4%; }
+      .main li { font-size: 1em; min-height: 0; }
+      .main { width: 47% }
+      .main h2 { font-size: 1.1em; padding: .3em .6em; }
+    }
+    @media only screen and (device-width: 768px) {
+      .main, .detailed { font-size: medium; }
     }
 ---
 <h1><small>Things I learned from</small> iPhone <span class="amp">&amp;</span> Droid ads</h1>
