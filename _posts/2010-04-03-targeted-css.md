@@ -1,6 +1,6 @@
 ---
 title: Detecting device size & orientation in CSS
-description: CSS3 media queries allow us to target certain rules based on device screen size an orientation.
+description: Adjusting layout for iPad orientation changes in CSS using CSS3 media queries.
 layout: post
 categories: [ css, iphone ]
 ---
@@ -25,7 +25,7 @@ While at first this looks like proprietary markup, these are in fact [CSS3 media
 
 > As the user resizes the window, Firefox will switch style sheets as appropriate based on media queries using the `width` and `height` media features.
 
-You can see this in effect on my ["iPhone vs. Droid ads"][ads] page which was originally designed as a gorgeous, whitespace-rich two-column layout comparing two companies' types of marketing. Obviously I couldn't preserve the multicolumn layout on narrower displays, so using media queries I made 3 different layouts:
+You can see this in effect on my ["iPhone vs. Droid ads"][ads] page which was originally designed as a gorgeous, whitespace-rich two-column layout comparing two companies' types of marketing. Obviously, I couldn't preserve the multicolumn layout on narrower displays, so using media queries I had made 3 different layouts:
 
 1. widths up to 480px (iPhone, Android): tight spacing, single-column;
 2. up to 980px (iPad in portrait): fluid columns only on top section, single-column elsewhere;
@@ -33,13 +33,13 @@ You can see this in effect on my ["iPhone vs. Droid ads"][ads] page which was or
 
 Try resizing your browser to see how the layout of that page changes at narrower sizes.
 
-As an additional detail, I've bumped up font sizes for the iPad to improve readability on its high pixel density display. I've yet to test this on a real device to see if I did any good.
+As an additional detail, I've bumped up font sizes for the iPad to improve readability on its high pixel density display.
 
 Once you've made sure your layout fits on smaller displays, you need this tag to satisfy mobile WebKits:
 
     <meta name="viewport" content="initial-scale=1.0">
 
-See [full documentation for "viewport"][meta] directive. What Mobile Safari does by default (i.e. without this directive) is display a zoomed-out, wide version of the page even if the layout itself is narrower. As content authors, with this directive we're saying "trust me, zoom to natural scale and I'll make sure it fits". From the documentation:
+See [full documentation for "viewport"][meta] directive. What Mobile Safari does by default (i.e. without this directive) is display a zoomed-out, 980px-wide version of the page even if the layout itself is narrower. As content authors, with this directive we're saying "trust me, zoom to natural scale and I'll make sure it fits". From the documentation:
 
 > [...] if you set the scale to 1.0, Safari assumes the width is `device-width` in portrait and `device-height` in landscape orientation.
 
