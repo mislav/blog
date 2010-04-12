@@ -47,6 +47,8 @@ Finally, some tips from Apple's technical note about [preparing for the iPad][no
 
 > Since touching and holding in Safari on iPhone OS will invoke the Cut/Copy/Paste dialog, you may also choose to disable selection on user interface elements such as menus and buttons using `-webkit-user-select: none`. It is important to only disable selection as needed on a per-element basis. Selection in webpages should never be globally disabled.
 
+In the end, you should be aware that `orientation` media query, although supported on the iPad, **doesn't work on the iPhone** (tested with v3.1.3). Fortunately, size queries like `width` and `device-width` work, so layout-switching is possible *without* JavaScript with some combination of those.
+
 [css3]: http://www.w3.org/TR/css3-mediaqueries/ "CSS3 Media Queries"
 [mdc]: http://developer.mozilla.org/En/CSS/Media_queries "Media Queries on Mozilla Developer Center"
 [meta]: http://developer.apple.com/safari/library/documentation/AppleApplications/Reference/SafariHTMLRef/Articles/MetaTags.html "Apple-specific meta tags"
