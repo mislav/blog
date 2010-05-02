@@ -97,6 +97,7 @@ ins { text-decoration: none; border-bottom: 1px dotted #c0c0c0; border-color: #a
 
 #foo { border-top: 1px solid gray; padding: 0.5em 0; margin-top: 1em; }
 
+pre, code { font-family: Monaco, Courier, monospace; }
 pre {
   color: black;
   font-size: 1em;
@@ -118,7 +119,7 @@ code.left, code.right { width: 45%; }
 code.left { float: left; margin-right: 10px; }
 code.separator { border-bottom: 1px solid #6d7d21; }
 
-p code, h1 code, h2 code, h3 code { font-size: 1.1em; }
+p code, h1 code, h2 code, h3 code { font-size: .8em; }
 
 p code { background: #dfe7b7; padding: .3em .3em .2em .3em; white-space: nowrap; }
 p a:link code, p a:visited code { text-decoration: underline; }
