@@ -8,6 +8,7 @@ body {
   color: #222;
   background: #ededed url(noise.png);
 }
+strong, b { font-weight: bold; }
 #post p, #post li { font-size: 1.2em; line-height: 1.6; }
 table { font: 300 100%/1.6em "Gill Sans", "Lucida Grande", Helvetica, Arial, sans-serif; }
 
