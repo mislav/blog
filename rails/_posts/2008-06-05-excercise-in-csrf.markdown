@@ -5,7 +5,7 @@ layout: post
 category: rails
 ---
 
-If you are reading this on my blog and are logged in the [Working With Rails][1] community site, you just recommended [me as a Rails developer][2]—without even knowing it. <ins><b>Update:</b> Of course, by now they have fixed it and the hack does no longer work. Or does it? Hop to the bottom of this article for more info.</ins>
+If you are reading this on my blog and are logged in the [Working With Rails][1] community site, you just recommended [me as a Rails developer][2]—without even knowing it. <ins><b>Update:</b> By now they have fixed it and the hack does no longer work. Or does it? Hop to the bottom of this article for more info.</ins>
 
 Yes, this is a hack, and yes—it is pretty sneaky. This vulnerability in web applications is exploited by something called **cross-site request forgery** (_CSRF_ in short). In simple terms, one site (the attacker; me in this case) forges an HTTP request to another site to do a certain action in visitor’s behalf.
 

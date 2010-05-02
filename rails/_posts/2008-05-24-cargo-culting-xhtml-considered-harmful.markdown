@@ -26,7 +26,7 @@ That’s why [Haml 2.0][5] supports HTML 4 output. Here is how you can enable it
     
     ActionView::Base.send :include, StandardistaHelper
 
-Now, instead of sticking this in your environment.rb, you can install the [Standardista plugin][6] I just released. You only need Haml 2 included in your app (I prefer using the gem). [View the source][7] to see what Standardista does (it’s simple and smart).
+Now, instead of sticking this in your environment.rb, you can install the [Standardista plugin][6] I just released. You only need Haml 2 included in your app (I prefer using the gem). [View the source][7] to see what Standardista does (it’s simple).
 
 Test it with a Haml layout like this one:
 
@@ -45,8 +45,6 @@ The result should:
 * not render self-closing tags for META, LINK, IMG, BR (and such) elements.
 
 In production, your HTML and CSS will also be smaller (have less whitespace) and therefore load quicker.
-
-The other benefit is that I will love you more. <span style="font-size:1.5em; color: firebrick">♥</span>
 
 
 [1]: http://www.b-list.org/weblog/2008/jun/18/html/  "Why HTML"
