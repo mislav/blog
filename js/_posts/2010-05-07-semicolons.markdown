@@ -86,6 +86,8 @@ Also, I don't think you people are listening to Crockford all that much. He says
 
 Guess what? Communities around different projects are *different*. And that's just how it should be.
 
+As for *coding styles*, they exist so code is more readable and easier to understand for a group of people in charge of working on it. Think deeply about if you really believe that semicolons actually improve the readability of your code.
+
 
 ## <q>Semicolon insertion bites back in return statements</q>
 
