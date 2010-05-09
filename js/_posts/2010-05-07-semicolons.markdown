@@ -16,9 +16,9 @@ Safe from *what?* I've been searching for reasons programmers have to force semi
 
 ## <q>Spec is cryptic and JavaScript implementations differ</q>
 
-[Rules for automatic semicolon insertion][insertion] are right here and, while somewhat difficult to comprehend by a casual reader, are solidly laid out. As for common JavaScript implementations that differ on their interpretation of these rules, I haven't found any by searching the web, but would love to hear about them.
+[Rules for automatic semicolon insertion][insertion] are right here and are, while somewhat difficult to comprehend by a casual reader, quite explicitly laid out. As for JavaScript implementations where interpretation of these rules *differs*, well, I've yet to find one. When I ask developers about this, or find archived discussions, typically they are <q>yeah, there's this browser where this is utterly broken, I simply forgot which</q>. Of course, they never remember.
 
-I write semicolon-less code and, in my experience, I've yet to find a JavaScript interpreter that can't handle this.
+I write semicolon-less code and, in my experience, there isn't a JavaScript interpreter that can't handle it.
 
 
 ## <q>You can't minify JavaScript code without semicolons</q>
@@ -27,11 +27,11 @@ There are 3 levels of reducing size of JavaScript source files: *compression* (e
 
 Compression like gzip is the easiest; it only requires one-time server configuration, doesn't need extra effort by developers and *doesn't change* your code. There was a time when IE6 couldn't handle it, but if I remember correctly it was patched years ago and pushed as a Windows update, and today nobody really cares anymore.
 
-Minification and obfuscation *change your code*. They are tools which you run on your source code saying "here are some JavaScript files, try to make them smaller, but **don't change functionality**". I'm reluctant to use these tools, because many developers report that if I don't use specific coding styles, like writing semicolons, they will break my code.
+Minification and obfuscation *change your code*. They are tools which you run on your source code saying "here are some JavaScript files, try to make them smaller, but **don't change functionality**". I'm reluctant to use these tools because many developers report that if I don't use specific coding styles, like writing semicolons, they will break my code. I'm OK with people (community) forcing certain coding styles on me, but not tools.
 
-Suppose I have code that works in every JavaScript implementation that I target (major browsers and some server-side implementations). If I run it through your minification tool and that tools *breaks* my code, then I'm sad to report that your tool is *broken*. If the tool needs to edit JavaScript code, it'd better understand it as a real interpreter would.
+Suppose I have code that works in every JavaScript implementation that I target (major browsers and some server-side implementations). If I run it through your minification tool and that tools *breaks* my code, then I'm sad to report that your tool is *broken*. If this tool edits JavaScript code, it'd better understand it as a real interpreter would.
 
-Also, here's a fun minification exercise:
+While on the topic of minification, let's do a reality check. Consider this code:
 
     var a=1
     var b=2
@@ -41,7 +41,7 @@ That's 24 bytes right there. Stamp semicolons everywhere and run it through a mi
 
     var a=1;var b=2;var c=3;
 
-Still 24 bytes. So, adding semicolons and removing newlines saved us a whopping 0 bytes right there. Radical. Most size reduction after minification isn't gained by removing newline characters; it's thanks to removing code comments and leading indentation.
+Still 24 bytes. So, adding semicolons and removing newlines saved us a whopping zero bytes right there. Radical. Most size reduction after minification isn't gained by removing newline characters — it's thanks to removing code comments and leading indentation.
 
 Also, some people recommend forcing yourself do use curly braces for blocks, even if they're only one line:
 
@@ -60,33 +60,31 @@ Enforced curly braces add at least a byte to our expression, even after minifica
 
 Here are some other whitespace-sensitive languages that you might have heard about:
 
-* Ruby — removing or adding extra spaces from certain expressions can change their meaning
+* Ruby — messing with spaces in expressions with operators and method calls can break the code
 * Python — duh.
 * HTML — see notes about [Kangax's HTML minifier][html]
 * [Haml templates][haml]
 
-Whitespace can, and often is, part of the (markup) language. It's not necessarily a bad thing.
+Of course, there's no need for minification on the server-side. I made this list for the sake of the following argument: Whitespace can, and often is, part of the (markup) language. It's not necessarily a bad thing.
 
 
 ## <q>It's good coding style</q>
 
-This reason is found it these variants, too:
+Also heard as:
 
 * <q>It's good to have them for the sake of consistency</q>
 * <q>[JSLint][] will complain</q>
-* [Douglas Crockford says so.][crockford]
+* <q>[Douglas Crockford says so.][crockford]</q>
 
-This is another way of expression the "everybody else is doing it" notion and is used by people during online discussion in the (rather common) case of a lack of arguments.
+This is another way of expressing the "everybody else is doing it" notion and is used by people during online discussion in the (rather common) case of a lack of arguments.
 
-Also, I don't think you people are listening to Crockford all that much. He says "four spaces", and yet:
+My advice on JSLint: don't use it. Why would you use it? If you believed that it helps you have less bugs in your code, here's a newsflash; only people can detect and solve software bugs, not tools. So instead of tools, get more people to look at your code.
 
-* jQuery: tabs
-* Prototype.js: 2 spaces
-* Mootools: tabs
+Douglas Crockford also says "four spaces", and yet most popular JavaScript libraries are set in either tabs or two spaces. Communities around different projects are *different*, and that's just how it should be. As I've said before: let *people* and yourself shape your coding style, not some single person or tool.
 
-Guess what? Communities around different projects are *different*. And that's just how it should be.
+You might notice that in this article I'm not telling you *should* be semicolon-free. I'm just laying out concrete evidence that you *can* be. The choice should always be yours.
 
-As for *coding styles*, they exist so code is more readable and easier to understand for a group of people in charge of working on it. Think deeply about if you really believe that semicolons actually improve the readability of your code.
+As for *coding styles*, they exist so code is more readable and easier to understand for a group of people in charge of working on it. Think deeply if semicolons actually improve the readability of your code. What improves it the most is whitespace—indentation, empty lines to separate blocks, spaces to pad out expressions—and good variable and function naming. Look at some [obfuscated code][ugly]; there are semicolons in there. Does it help readability? No, but what would really help is a lot of whitespace and original variable names.
 
 
 ## <q>Semicolon insertion bites back in return statements</q>
@@ -99,16 +97,16 @@ When I searched for "JavaScript semicolon insertion", here is the problem most b
         a + b
     }
 
-When you're done trying to wrap your brain around why would anyone *ever* want to write a return statement on a new line, we can continue and see how this statement is interpreted:
+When you're done trying to wrap your brain around why would anyone in their right mind want to write a return statement on a new line, we can continue and see how this statement is interpreted:
 
     return;
       a + b;
 
-Alas, it didn't return the sum of `a` and `b`! But you know what? This problem isn't solved by adding a semicolon to the end of our wanted `return` expression (that is after `a + b`). It's solved by removing the newline after `return`:
+Alas, the function didn't return the sum we wanted! But you know what? This problem *isn't* solved by adding a semicolon to the end of our wanted `return` expression (that is, after `a + b`). It's solved by *removing* the newline after `return`:
 
     return a + b
 
-Again, extra semicolons didn't help. We just needed to understand how the language is parsed.
+Still, in an incredible display of ignorance these people actually *advise* their readers to avoid such issues by adding semicolons everywhere. Uh, alright, only it doesn't help this particular case at all. We just needed to understand better how the language is parsed.
 
 
 ## The only real pitfall when coding without semicolons
@@ -129,7 +127,7 @@ Easy solution: when a line starts with parenthesis, prepend a semicolon to it.
 
     ;(d + e).print()
 
-Definitely not beautiful, but does the job. This case doesn't come very often.
+Definitely not beautiful, but does the job. This case doesn't come very often, too.
 
 The above article about JavaScript 2.0 is an interesting read and also lists some reasons how the 2.0 version of the language might change what's considered legal syntax for expressions. The thing is, I couldn't care less about JavaScript 2.0; *especially* if it breaks existing scripts. If the 2.0 version really is incompatible, web browsers won't switch what they ship anytime soon; and as for server-side JavaScript, developers control what's running there anyway.
 
@@ -142,3 +140,4 @@ The above article about JavaScript 2.0 is an interesting read and also lists som
 [haml]: http://haml-lang.com/
 [jslint]: http://www.jslint.com/ "The JavaScript Code Quality Tool"
 [module]: http://www.yuiblog.com/blog/2007/06/12/module-pattern/
+[ugly]: http://img.skitch.com/20100509-qf8t69ad7cpmudwdksbw5hu6te.png
