@@ -1,85 +1,54 @@
 ---
 permalink: /rails/branching-the-database-along-with-your-code/
-title: Branching the database along with your code
+title: Branching the database along with the code
 layout: post
 category: rails
-description: A sample Rails configuration to enable moving your database along with your real branches.
+description: Simple Rails configuration to enable switching your database as you change branches.
 ---
 
-If you’re doing all your development on the “master” branch, you’re not using git. It’s fine to stick to master if you’re only learning git, but soon you’ll have to dive into non-linear development. Branches have many uses, depending on the engineering methodology your team practices, but the most common are:
+<i><strong>Note:</strong> this article and supporting code have been heavily simplified since their initial publication.</i>
 
-1. Personal branches to develop a single feature or fix a bug before the changes are ready to be merged to master and pushed upstream;
-2. Shared feature branches for experimental features so everybody can try them out and contribute;
-3. Version branches for stable versions of the software, which later receive bug fixes picked from the mainline branch (master).
+If you’re doing all your development on the “master” branch, you’re not using git. It’s fine to stick to master if you’re only learning git, but soon you’ll have to dive into non-linear development. However, although git makes it very easy to quickly switch between branches while hacking on your Rails app, your app still connects to the same database in development *no matter what branch you're on*.
 
-But, when your application uses a database, sometimes you’ll run into the problem of your code rapidly changing when you switch between branches while your database schema stays the same, thus breaking your application in development. Not fun at all.
+**Why is this a problem?** Well, suppose you're developing a feature that required you to change the database schema. You're doing this in a separate branch which we'll call "feature". Of course, on this branch you've written a migration and changed the model code to compensate for the schema change. So far so good. But, if you for whatever reason quickly switch to master to check out something, your app will be broken; although the changes in code have been reverted—they're safely stashed in the "feature" branch—the database still contains the incompatible schema change.
 
-Today I got tired of this and hacked up a way to remedy it.
+I solve this problem **by "branching" my database along with the code**. Whenever I make a branch in git in which I plan to change the database schema, I make *a copy of the development database* and configure Rails to connect to this new database *only* while I'm working on the branch in question.
 
-<h2 id="problem">&#8220;Branch like a tree&#8221;</h2>
+It's fairly simple to set this up in "database.yml". Here is how it might have looked like before the changes:
 
-Here’s a simple demonstration of the problem. Imagine that your job today is to replace the old, plain-text way of storing passwords in the database with a new one that stores salted, encrypted passwords.
+    ## database.yml (before)
+    development:
+      # ... adapter/auth config ...
+      database: myapp
 
-1. Start off a new branch: `git checkout -b authentication`.
-2. Make a migration that replaces the old “password” field with “salt” and “crypted_password” and migrates existing passwords.
-3. Adjust the User model code: make a callback that generates a random salt for new users, handle hashing of passwords on every password update.
-4. Migrate the database.
-5. Write tests for this new functionality.
-6. After you’ve commited everything, get back to the mainstream branch (`git checkout master`) to pull and check on something your coworkers have been doing in the meantime.
-7. **BOOM!** Discover that login is broken locally because of the changes to database schema you’ve just done.
+I make this configuration a little more dynamic with some inline ruby:
 
-It’s easy to forget that, when you switched back to master, the mainstream code still expects to query the database by the “password” field. Now you have to undo your migration in order to work on master for a while. When you get back to “authentication” branch, you have to migrate up again … and this quickly ruins your day.
+    ## database.yml (after)
+    <%
+      # http://mislav.uniqpath.com/rails/branching-the-database-along-with-your-code/
+      branch = `git symbolic-ref HEAD 2>/dev/null`.chomp.sub('refs/heads/', '')
+      suffix = `git config --bool branch.#{branch}.database`.chomp == 'true' ? "_#{branch}" : ""
+    %>
+    development:
+      # ... adapter/auth config ...
+      database: myapp<%= suffix %>
 
-<h2 id="solution">Take the database schema along for the ride</h2>
+The supporting code for this is a little messy, but all this does is looks up the name of the current branch and checks the `"branch.<name>.database"` configuration (a key which I made up) to see if we wanted to connect to a different database for this branch.
 
-So what if we can “branch” the database together with our code?
+This code enables you to opt-in if you want to have a database for a specific branch. To configure the "feature" branch to have its own database, use git config:
 
-    # start a new feature:
-    $ git checkout -b authentication
-    
-    # mark that the branch should have its own database:
-    $ git config branch.authentication.database true
-    
-    # branch the database (I'm using a Thor task for MySQL)
-    $ thor git:db:clone
-    
-    # Now my app is switched to a new database called
-    # "myapp_development_authentication". I can make changes
-    # to its schema, because when I check out master I'm
-    # magically back on "myapp_development" again.
+    $ git config --bool branch.feature.database true
 
-I found all this trivial to implement by subclassing Rails::Configuration and adding a bit of logic to the method that retrieves database configuration from “config/database.yml”. Simply make this tweak to your “environment.rb”:
+And while on the "feature" branch, our app will connect to the "myapp_feature" database instead of "myapp". If you go back to master branch (or any other, for that matter) and your app will connect to "myapp", like before.
 
-    # Bootstrap the Rails environment, frameworks, and default configuration
-    require File.join(File.dirname(__FILE__), 'boot')
-    require 'git_conf'
-    
-    Rails::Initializer.run(:process, GitConf.new) do |config|
-      # ...
-    end
+We still need to make a copy the development database. Rails makes it easy to create the new database:
 
-_Note: this solution is not tested with Rails versions prior to **2.1.1** and therefore might not work._
+    $ git checkout feature
+    $ rake db:create
+    # (created myapp_feature db)
 
-You can find [full code for **GitConf** (and the Thor task for MySQL) on this gist][1]. Main functionality requires Grit (“mojombo-grit” gem from GitHub) to inspect the repository and Thor (“wycats-thor”) for the clone task.
+To initialize its schema, you either have to run `rake db:schema:load`, or copy everything (including data) from the current development database (example for MySQL):
 
-<h2 id="rebasing">Rebasing and merging</h2>
+    mysqldump -u root myapp | mysql -u root myapp_feature
 
-The code above also allows for two concepts tightly related to branching: rebasing and merging. Turns out rebasing your branch is fairly easy:
-
-    $ git checkout master
-    $ git pull
-    $ git checkout authentication
-    $ git rebase master
-    
-    # clone "myapp_development" into "myapp_development_authentication" again:
-    $ thor git:db:clone --force
-    $ rake db:migrate
-
-This destroys the data you may have entered while working on the “authentication” branch, but we’re in development anyway.
-
-Now, when you’re ready to merge changes from “authentication” to “master” of course there is no way to merge “myapp_development_authentication” database into “myapp_development”, but you only need the schema changes, right?
-
-Rails 2.1 features _timestamped migrations_ which are very convenient for non-linear development. Simply `git merge authentication` while on the master branch and run `rake db:migrate`. Rails will figure out what migrations have come from the merged branch and run them to bring you to the latest state of your database schema.
-
-
-[1]: http://gist.github.com/11264
+Finally, remember to restart the app server when switching branches to give Rails a chance to reconnect to a different database.
