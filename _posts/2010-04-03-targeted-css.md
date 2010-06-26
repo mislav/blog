@@ -47,7 +47,11 @@ Finally, some tips from Apple's technical note about [preparing for the iPad][no
 
 > Since touching and holding in Safari on iPhone OS will invoke the Cut/Copy/Paste dialog, you may also choose to disable selection on user interface elements such as menus and buttons using `-webkit-user-select: none`. It is important to only disable selection as needed on a per-element basis. Selection in webpages should never be globally disabled.
 
-In the end, you should be aware that `orientation` media query, although supported on the iPad, **doesn't work on the iPhone** (tested with v3.1.3). Fortunately, size queries like `width` and `device-width` work, so layout-switching is possible *without* JavaScript with some combination of those.
+You should be aware that `orientation` media query, although supported on the iPad, **doesn't work on the iPhone** (tested with v3.1.3). Fortunately, size queries like `width` and `device-width` work, so layout-switching is possible *without* JavaScript with some combination of those.
+
+**Update:** with the advent of iPhone 4, you might want to target its Retina display specifically to serve high-resolution graphics. There is an article over on the WebKit blog covering how to do this called [High DPI Web Sites](http://webkit.org/blog/55/high-dpi-web-sites/), and the answer is the `device-pixel-ratio` media feature:
+
+    <link rel="stylesheet" media="screen and min-device-pixel-ratio: 2" href="highres.css">
 
 [css3]: http://www.w3.org/TR/css3-mediaqueries/ "CSS3 Media Queries"
 [mdc]: http://developer.mozilla.org/En/CSS/Media_queries "Media Queries on Mozilla Developer Center"
