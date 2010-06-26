@@ -23,7 +23,7 @@ I write semicolon-less code and, in my experience, there isn't a JavaScript inte
 
 ## <q>You can't minify JavaScript code without semicolons</q>
 
-There are 3 levels of reducing size of JavaScript source files: *compression* (e.g. gzip), *minification* (i.e. removing unnecessary whitespace and comments) and *obfuscation* (shortening variable and function names).
+There are 3 levels of reducing size of JavaScript source files: *compression* (e.g. gzip), *minification* (i.e. removing unnecessary whitespace and comments) and *obfuscation* (changing code, shortening variable and function names).
 
 Compression like gzip is the easiest; it only requires one-time server configuration, doesn't need extra effort by developers and *doesn't change* your code. There was a time when IE6 couldn't handle it, but if I remember correctly it was patched years ago and pushed as a Windows update, and today nobody really cares anymore.
 
@@ -31,7 +31,9 @@ Minification and obfuscation *change your code*. They are tools which you run on
 
 Suppose I have code that works in every JavaScript implementation that I target (major browsers and some server-side implementations). If I run it through your minification tool and that tools *breaks* my code, then I'm sad to report that your tool is *broken*. If this tool edits JavaScript code, it'd better understand it as a real interpreter would.
 
-While on the topic of minification, let's do a reality check. Consider this code:
+While on the topic of minification, let's do a reality check. I took the jQuery source and [removed all semicolons][removed], then ran it through [Google Closure Compiler][compiler]. Resulting size: 76,673 bytes. The size of original "jquery.min.js" was 76,674 (1 byte more). So you see, there was almost no change.
+
+How is that possible? Well, consider this code:
 
     var a=1
     var b=2
@@ -42,6 +44,9 @@ That's 24 bytes right there. Stamp semicolons everywhere and run it through a mi
     var a=1;var b=2;var c=3;
 
 Still 24 bytes. So, adding semicolons and removing newlines saved us a whopping zero bytes right there. Radical. Most size reduction after minification isn't gained by removing newline characters — it's thanks to removing code comments and leading indentation.
+
+<i>**Update:** a lot of people have pointed out that their minifiers *rewrite* this expression as `var a=1,b=2,c=3`. I know that some tools do this, but the point of this article is just to explore how semicolons relate to whitespace. If a minifier is capable of rewriting expressions (e.g. Closure Compiler) it means that it can also insert semicolons automatically.
+</i>
 
 Also, some people recommend forcing yourself do use curly braces for blocks, even if they're only one line:
 
@@ -141,3 +146,5 @@ The above article about JavaScript 2.0 is an interesting read and also lists som
 [jslint]: http://www.jslint.com/ "The JavaScript Code Quality Tool"
 [module]: http://www.yuiblog.com/blog/2007/06/12/module-pattern/
 [ugly]: http://img.skitch.com/20100509-qf8t69ad7cpmudwdksbw5hu6te.png
+[compiler]: http://code.google.com/closure/compiler/
+[removed]: http://github.com/mislav/jquery/commit/4a2faf8987fc3fcb8aefc99def5b5ed2b4de190c "jQuery without semicolons"
