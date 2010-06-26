@@ -31,7 +31,7 @@ Minification and obfuscation *change your code*. They are tools which you run on
 
 Suppose I have code that works in every JavaScript implementation that I target (major browsers and some server-side implementations). If I run it through your minification tool and that tools *breaks* my code, then I'm sad to report that your tool is *broken*. If this tool edits JavaScript code, it'd better understand it as a real interpreter would.
 
-While on the topic of minification, let's do a reality check. I took the jQuery source and [removed all semicolons][removed], then ran it through [Google Closure Compiler][compiler]. Resulting size: 76,673 bytes. The size of original "jquery.min.js" was 76,674 (1 byte more). So you see, there was almost no change.
+While on the topic of minification, let's do a reality check. I took the jQuery source and [removed all semicolons][removed], then ran it through [Google Closure Compiler][compiler]. Resulting size was 76,673 bytes. The size of original "jquery.min.js" was 76,674 (1 byte more). So you see, there was almost no change; and of course, its test suite passed as before.
 
 How is that possible? Well, consider this code:
 
