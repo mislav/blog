@@ -1,0 +1,31 @@
+---
+title: Mislav's Instapaper starred items
+layout: page
+permalink: /instapaper/
+styles: |
+  ol { margin-top: 3em }
+  ol li { margin-top: 1em }
+  li h2 { text-shadow: none; font-size: 1.2em; border: none; font-weight: normal; margin: 0; padding: 0 }
+  li p { margin: .4em 0 0 }
+  li time:before { content: "▪ "; line-height: 1 }
+---
+
+<p>Use <a href="http://www.instapaper.com/">Instapaper</a> to subscribe to <a class="email" href="mailto:mislav.marohnic@gmail.com">mislav.marohnic@gmail.com</a>.</p>
+
+<ol id="instapaper"></ol>
+
+<script type="text/javascript" src="/javascripts/all.js"></script>
+<script type="text/javascript">
+  var instapaperTemplate = new Template('<li><h2><a href="#{link}">#{title}</a></h2><p>#{description} <time>#{pubDate}</time></p></li>')
+
+  function displayInstapaper(data) {
+    var container = $('instapaper').update()
+  
+    data.value.items.each(function(item) {
+      item.pubDate = item.pubDate.replace(/ \d{2}:.+/, '')
+      container.insert(instapaperTemplate.evaluate(item))
+    })
+  }
+
+  cachedPipe('f533cde31f71a803b9a1061e3bb63af2', 'displayInstapaper', 24)
+</script>

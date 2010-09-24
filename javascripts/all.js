@@ -4513,3 +4513,34 @@ function twitterCallback3(twitters) {
     if (++displayed == 5) throw $break;
   })
 }
+
+var cachedPipe = (function() {
+  var performCaching = window.localStorage && window.JSON && JSON.parse
+  
+  var jsonp = function(id, callback) {
+    document.body.appendChild(new Element('script', {
+      src: 'http://pipes.yahoo.com/pipes/pipe.run?_id=' + id + '&_render=json&_callback=' + callback
+    }))
+  }
+
+  var jsonpCached = function(id, callback, hours) {
+    var key = 'cachedPipe-' + id + '-' + callback,
+        delta = hours * 60 * 60 * 1000,
+        now = new Date,
+        found = localStorage[key] && JSON.parse(localStorage[key])
+
+    if (found && (now - new Date(found.usec)) < delta) {
+      window[callback](found.payload)
+    } else {
+      var cachedCallback = callback + 'Cached'
+      
+      window[cachedCallback] = function(payload) {
+        window[callback](payload)
+        localStorage[key] = Object.toJSON({ usec: now.getTime(), payload: payload })
+      }
+      jsonp(id, cachedCallback)
+    }
+  }
+
+  return performCaching ? jsonpCached : jsonp
+})()

@@ -57,7 +57,7 @@ ol.posts { list-style: none; line-height: 1.6; }
 ol.posts.home { font-size: 1.1em; }
 ol.posts li { color: #aaa; padding-bottom: .4em; }
 ol.posts li a:visited { color: #444; }
-ol.posts li .date {
+ol.posts li .date, #instapaper time {
   font-family: "American Typewriter", Monaco, Courier, monospace;
   color: #777;
   font-size: 90%;
