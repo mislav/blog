@@ -10,6 +10,7 @@ body {
 }
 strong, b { font-weight: bold; }
 #post p, #post li { font-size: 1.2em; line-height: 1.6; }
+#post li p { font-size: 1em; }
 table { font: 300 100%/1.6em "Gill Sans", "Lucida Grande", Helvetica, Arial, sans-serif; }
 
 a:link, a:visited { color: #cc5d21; text-decoration: underline; font-weight: 500; }
