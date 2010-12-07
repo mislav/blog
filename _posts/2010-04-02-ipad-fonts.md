@@ -2,7 +2,7 @@
 title: iPad brings new fonts to iPhone OS
 description: Analysis of fonts available on iPad (and iPhone OS 3.2)
 layout: post
-category: iphone
+category: iOS
 ---
 
 <div class="thumbnail">
