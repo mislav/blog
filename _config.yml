@@ -1,5 +1,6 @@
 auto:        true
 lsi:         false
+server:      true
 server_port: 4000
 pygments:    true
 markdown:    rdiscount
