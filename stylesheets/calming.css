@@ -1,0 +1,10 @@
+h1, h2, h1 a:link, h2 a:link { color: #074D34; }
+h1, h2 { border-left-color: #D8B177; }
+
+a:link, a:visited { color: #B17620; }
+  li a:visited, #post a:visited { color: #73480B; }
+a:hover { color: #D8A254; }
+
+pre { background: #253E56; color: #e2e2e2; }
+pre code .comment { color: #67bb9d !important; }
+p code { background: #ddd; }
