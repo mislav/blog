@@ -6,7 +6,7 @@ body {
   max-width: 55em;
   position: relative;
   color: #222;
-  background: #ededed url(noise.png);
+  background: #ededed;
 }
 strong, b { font-weight: bold; }
 #post p, #post li { font-size: 1.2em; line-height: 1.6; }
@@ -105,8 +105,6 @@ pre {
   font-size: 1em;
   line-height: 1.5em;
   background: #dfe7b7;
-  border-left: 30px solid #8f9b58;
-  margin-left: -40px;
 }
 pre code { display: block; padding: 1em 1.2em 1em 10px; }
 pre code.before { background: #ddd; }
