@@ -22,4 +22,14 @@ description: "A hacker's blog by Mislav Marohnić"
       {% if post.categories != empty %}<span class="categories">in {{ post.categories | array_to_sentence_string }}</span>{% endif %}
     </li>
   {% endfor %}
+
+  <!-- {% for category in site.categories %}
+    {% assign ctgry = category[0] %}
+    <h3>{{ ctgry }}</h3>
+        
+    {% for article in site.categories[ctgry] %}
+      <p>{{ article.date | date_to_string }}, {{ article.title }}</p>
+    {% endfor %}
+  {% endfor %} -->
+  
 </ol>
