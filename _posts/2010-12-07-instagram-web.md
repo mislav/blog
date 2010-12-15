@@ -2,7 +2,7 @@
 title: Creating the missing Instagram web interface
 description: How to monitor iPhone web traffic with Charles proxy, write libraries that consume APIs, and more.
 layout: post
-category: ruby, iOS
+categories: [ruby, iOS]
 ---
 
 To create [Twin][], a Ruby library that wraps your app in a Twitter API, I had to monitor my iPhone's HTTP traffic to figure out which resources does the Twitter app consume. While doing this, it occurred to me that I can figure out the unpublished Instagram API in the same go.
