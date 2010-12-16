@@ -131,43 +131,6 @@ blockquote {
   font-style: italic;
 }
 
-.delicious-posts { line-height: 140%; padding-bottom: 2em; }
-.delicious-posts li { padding-bottom: 0.5em; }
-
-.columns { margin-top: 1.5em; }
-.columns .main h2:first-child, .columns .sidebar h2:first-child { margin-top: 0; }
-.columns .main { float: left; width: 65%; }
-.columns .sidebar { float: right; width: 28%; padding: 1em 2%; background: #eee; }
-.columns .sidebar h2 { font-size: 1.2em; margin-left: 0; padding-left: 0; border: none; }
-.columns .sidebar ol, .columns .sidebar ul { list-style: none; }
-.columns .sidebar ol li, .columns .sidebar ul li { margin: 0; border-bottom: 1px solid silver; }
-.columns .sidebar ol li.current, .columns .sidebar ol li a, .columns .sidebar ul li.current, .columns .sidebar ul li a { padding: .2em .5em; }
-.columns .sidebar ol li.current, .columns .sidebar ul li.current { background: #dfe7b7; }
-.columns .sidebar ol li a, .columns .sidebar ul li a { display: block; }
-.columns .sidebar ol li a:hover, .columns .sidebar ul li a:hover { background: lemonchiffon; }
-.columns .sidebar ol li:first-child, .columns .sidebar ul li:first-child { border-top: 1px solid silver; }
-.columns .sidebar .delicious-posts { padding-top: 1em; padding-bottom: 0; }
-.columns .sidebar .delicious-posts ol li { border: none; font-size: 90%; }
-.columns .sidebar .delicious-posts ol li div { font-size: 90%; margin-top: .3em; }
-.columns .sidebar .delicious-posts a { display: inline; padding: 0; }
-.columns .sidebar .delicious-posts a.delicious-link, .columns .sidebar .delicious-posts .delicious-network-username, .columns .sidebar .delicious-posts .delicious-network-add { font-size: 90%; }
-.columns:after { content: "."; display: block; height: 0; clear: both; visibility: hidden; }
-
-.delicious-network-badge { border: 1px solid #999; margin-bottom: 1em; padding: .5em 1em; background: white; }
-.delicious-network-badge span { display: block; }
-.delicious-network-badge br { display: none; }
-.delicious-network-badge .delicious-network-fans { font-size: 1.6em; text-align: center; margin: 0.4em 0; color: #555; }
-
-.dopplr-badge li { border: none !important; }
-.dopplr-badge li a { display: inline !important; padding: 0 !important; }
-.dopplr-badge .d-status { line-height: 1.4em; }
-
-#twitter_div p { color: #666; margin-top: -1em; font-style: italic; }
-
-#twitter_update_list { list-style: disc; }
-#twitter_update_list .when { font-size: 85%; color: #666; }
-#twitter_update_list .when a { font-weight: normal; }
-
 /* pygments style: friendly */
 .highlight {
   color: black;
