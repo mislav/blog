@@ -3,7 +3,7 @@ layout: page
 ---
 
 <p class="subtext">
-  By <a href="/about/">Mislav</a>
+  By <a href="/">Mislav</a>
   on <b>{{ page.date | date_to_string }}</b>
   {% if page.category == 'js' or page.category == 'rails' %}in <a href="/{{ page.category }}/">{{ page.category }}</a>
   {% elsif page.categories != empty %}in {{ page.categories | array_to_sentence_string }}
@@ -29,6 +29,6 @@ layout: page
   
   <p>Got your attention? Find out about <a href="/projects/">my projects</a>, <a href="/feeds/">subscribe to the blog</a> or <a href="http://twitter.com/mislav" rel="me">follow me on Twitter</a>.</p>
   
-  <a class="home" href="/">← home</a>
+  <a class="home" href="/archive">← archive</a>
 </div>
 
