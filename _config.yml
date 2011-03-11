@@ -1,6 +1,6 @@
 auto:        true
 lsi:         false
 server_port: 4000
-pygments:    false
+pygments:    true
 markdown:    rdiscount
 permalink:   /:year/:month/:title/
