@@ -146,7 +146,7 @@ This is how the report is going to look in Google Analytics:
 * [Event Delegation versus Event Handling][7].
 
 
-<script type="text/javascript" src="/javascripts/all.js"></script>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/prototype/1.7.0.0/prototype.js"></script>
 <script type="text/javascript">
 {{ event_code }}
 </script>

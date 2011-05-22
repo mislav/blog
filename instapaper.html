@@ -14,8 +14,39 @@ styles: |
 
 <ol id="instapaper"></ol>
 
-<script type="text/javascript" src="/javascripts/all.js"></script>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/prototype/1.7.0.0/prototype.js"></script>
 <script type="text/javascript">
+  var cachedPipe = (function() {
+    var performCaching = window.localStorage && window.JSON && JSON.parse
+    
+    var jsonp = function(id, callback) {
+      document.body.appendChild(new Element('script', {
+        src: 'http://pipes.yahoo.com/pipes/pipe.run?_id=' + id + '&_render=json&_callback=' + callback
+      }))
+    }
+  
+    var jsonpCached = function(id, callback, hours) {
+      var key = 'cachedPipe-' + id + '-' + callback,
+          delta = hours * 60 * 60 * 1000,
+          now = new Date,
+          found = localStorage[key] && JSON.parse(localStorage[key])
+  
+      if (found && (now - new Date(found.usec)) < delta) {
+        window[callback](found.payload)
+      } else {
+        var cachedCallback = callback + 'Cached'
+        
+        window[cachedCallback] = function(payload) {
+          window[callback](payload)
+          localStorage[key] = Object.toJSON({ usec: now.getTime(), payload: payload })
+        }
+        jsonp(id, cachedCallback)
+      }
+    }
+  
+    return performCaching ? jsonpCached : jsonp
+  })()
+
   var instapaperTemplate = new Template('<li><h2><a href="#{link}">#{title}</a></h2><p>#{description} <time>#{pubDate}</time></p></li>')
 
   function displayInstapaper(data) {
