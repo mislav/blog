@@ -1,0 +1,410 @@
+$body_color: #444
+$body_type: "Minion Pro", "Palatino", "Hoefler Text", "Times New Roman", serif
+$table_type: "Gill Sans", "Lucida Grande", Helvetica, Arial, sans-serif
+$heading_type: "Museo Sans", Arial, Helvetica, sans-serif
+//$heading_color: #a21e3f
+$heading_color: #069
+$heading_border: #D8D177
+$date_type: "American Typewriter", "Courier New", monospace
+$code_type: Monaco, "DejaVu Sans Mono", Courier, monospace
+$code_block_background: #F0F3F3
+$inline_code_background: $code_block_background - 15
+$link_color: #857f33
+$hover_color: $link_color - 40
+
+body, p, ul, ol, li, dt, dd, dl, h1, h2, h3, h4, h5, h6, pre, code, table, td, th
+  margin: 0
+  padding: 0
+  font-size: 100%
+
+body
+  font: 300 100% / 1.6em $body_type
+  margin: 3em 3em 3em 60px
+  max-width: 55em
+  position: relative
+  color: $body_color
+  background: #fefefe
+
+strong, b
+  font-weight: bold
+
+#post
+  p
+    font-size: 1.2em
+    line-height: 1.6
+  li
+    font-size: 1.2em
+    line-height: 1.6
+    p
+      font-size: 1em
+
+table
+  font: 300 100% / 1.6em $table_type
+
+a
+  &:link, &:visited
+    color: $link_color
+    text-decoration: underline
+    font-weight: 500
+
+  .posts &:visited
+    text-decoration: none
+
+  &:hover
+    color: $hover_color
+  &.home
+    text-decoration: none
+    font-weight: normal
+    text-transform: uppercase
+    font-size: 90%
+    &:first-child
+      position: relative
+      top: -1em
+    &:hover
+      text-decoration: underline
+  img
+    border: none
+
+h1
+  margin-bottom: 0.6em
+  + p.subtext
+    margin-top: -1.2em
+    margin-bottom: 2em
+    color: #666
+    font-style: italic
+    + h2
+      margin-top: 0
+  color: #a21e3f
+  font-weight: normal
+
+h1, h2, h1 a:link, h2 a:link
+  color: $heading_color
+  font-weight: normal
+
+h1, h2
+  font: 300 2.4em $heading_type
+  border-left: 30px solid $heading_border
+  margin-left: -60px
+  padding-left: 30px
+  //text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3)
+  clear: both
+  text-rendering: optimizeLegibility
+
+h2
+  margin-top: 1.2em
+  margin-bottom: 0.7em
+  font-size: 1.6em
+
+h3
+  font-size: 1.1em
+  margin-top: 1.5em
+
+p, ul, ol
+  margin: 0.8em 0
+
+ins
+  text-decoration: none
+  border-bottom: 1px dotted #c0c0c0
+  border-color: #adb585
+
+#description.vcard
+  img
+    float: right
+    margin: -20px -2em 0 3em
+    border: 3px double #999
+
+#description p:first-child
+  font-size: 1.3em
+  margin: 1em 2em 1.4em 0
+  // text-align: center
+  color: #333
+  a
+    font-weight: normal
+
+#links_me
+  margin: -2em 0 2em 0
+  color: #6d7d21
+
+p.post-info, dl.posts .post-info
+  margin-top: -1.2em
+  color: #666
+  font-style: italic
+  font-size: 90%
+
+p.post-info .date
+  color: #6d7d21
+  font-weight: bold
+
+dl
+  &.posts
+    .post-info .date
+      color: #6d7d21
+      font-weight: bold
+    dd
+      margin: 0 0 .4em 1em
+  &.feeds dd
+    margin: 0 0 .4em 1em
+
+ol.posts
+  list-style: none
+  line-height: 1.6
+  &.home
+    font-size: 1.1em
+  li
+    color: #aaa
+    padding-bottom: .4em
+    .date + a
+      margin-left: .5em
+    .categories
+      color: #777
+
+ol.posts li .date, #instapaper time
+  font-family: $date_type
+  color: #777
+  font-size: 90%
+  display: inline-block
+  min-width: 6.7em
+
+@media only screen and (device-width: 768px) and (orientation: landscape)
+  body
+    max-width: none
+  ol.posts
+    &.home
+      font-size: .9em
+      -webkit-column-count: 2
+      -webkit-column-gap: 2em
+    li .date + a
+      margin-left: 0
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px)
+  body
+    font-size: 75%
+    margin: .4em .6em
+  a.home:first-child
+    position: static
+    top: 0
+  ol.posts.home
+    font-size: 1em
+  h1, h2
+    border-left: none
+    margin-left: 0
+    padding-left: 0
+  ol.posts li .date
+    min-width: 0
+    display: block
+    + a
+      margin-left: 0
+  #post
+    div.thumbnail
+      float: left
+      width: 100%
+    li
+      margin-left: 1.5em
+  #description.vcard
+    img
+      float: none
+      display: block
+      border-width: 1px
+      border-style: solid
+      margin: 0 0 1em 0
+
+@media only screen and (min-device-pixel-ratio: 2)
+  #description.vcard
+    img
+      float: left
+      max-width: 120px
+      margin: .5em 1em .5em 0
+
+dl.feeds dt
+  padding-left: 20px
+  background: transparent url(/images/feed-icon-small.png) no-repeat left 50%
+
+div.breadcrumbs
+  padding-bottom: .1em
+  padding-left: 40px
+  margin-left: -40px
+  font-size: 90%
+  color: #444
+  background: #ddd
+  margin-top: -1em
+
+#foo
+  border-top: 1px solid gray
+  padding: 0.5em 0
+  margin-top: 1em
+
+pre, code
+  font-family: $code_type
+
+pre
+  background: $code_block_background
+  // color: #e2e2e2
+  font-size: .9em
+  line-height: 1.5em
+  code
+    display: block
+    white-space: pre-wrap
+    padding: 1em 1.2em 1em 10px
+
+p code, h1 code, h2 code, h3 code, li > code
+  font-size: .8em
+
+p code, li > code
+  background: $inline_code_background
+  color: #333
+  padding: .2em .2em .15em .2em
+  white-space: nowrap
+
+p a
+  &:link code, &:visited code
+    text-decoration: underline
+
+blockquote
+  border-left: 3px solid #aaa
+  margin-left: 0
+  padding-left: 1em
+  font-weight: 300
+  font-style: italic
+
+.highlight
+  -webkit-border-radius: 4px
+  -moz-border-radius: 4px
+  border-radius: 4px
+  border: 1px solid #ddd
+  pre
+    background: transparent
+    color: inherit
+    margin-left: 0
+    border-left: 0
+    font-size: 14px
+    code
+      padding: .8em 1em
+
+/* pygments style: friendly
+.highlight
+  // color: black
+  background-color: $code_block_background
+  .hll
+    background-color: #ffffcc
+  .c
+    color: #60a0b0
+    font-style: italic
+  .err
+    border: 1px solid #FF0000
+  .k
+    color: #007020
+    font-weight: bold
+  .o
+    color: #666666
+  .cm
+    color: #60a0b0
+    font-style: italic
+  .cp
+    color: #007020
+  .c1
+    color: #60a0b0
+    font-style: italic
+  .cs
+    color: #60a0b0
+    background-color: #fff0f0
+  .gd
+    color: #A00000
+  .ge
+    font-style: italic
+  .gr
+    color: #FF0000
+  .gh
+    color: #000080
+    font-weight: bold
+  .gi
+    color: #00A000
+  .go
+    color: #808080
+  .gp
+    color: #c65d09
+    font-weight: bold
+  .gs
+    font-weight: bold
+  .gu
+    color: #800080
+    font-weight: bold
+  .gt
+    color: #0040D0
+  .kc, .kd, .kn
+    color: #007020
+    font-weight: bold
+  .kp
+    color: #007020
+  .kr
+    color: #007020
+    font-weight: bold
+  .kt
+    color: #902000
+  .m
+    color: #40a070
+  .s, .na
+    color: #4070a0
+  .nb
+    color: #007020
+  .nc
+    color: #0e84b5
+    font-weight: bold
+  .no
+    color: #60add5
+  .nd
+    color: #555555
+    font-weight: bold
+  .ni
+    color: #d55537
+    font-weight: bold
+  .ne
+    color: #007020
+  .nf
+    color: #06287e
+  .nl
+    color: #002070
+    font-weight: bold
+  .nn
+    color: #0e84b5
+    font-weight: bold
+  .nt
+    color: #062873
+    font-weight: bold
+  .nv
+    color: #bb60d5
+  .ow
+    color: #007020
+    font-weight: bold
+  .w
+    color: #bbbbbb
+  .mf, .mh, .mi, .mo
+    color: #40a070
+  .sb, .sc
+    color: #4070a0
+  .sd
+    color: #4070a0
+    font-style: italic
+  .s2
+    color: #4070a0
+  .se
+    color: #4070a0
+    font-weight: bold
+  .sh
+    color: #4070a0
+  .si
+    color: #70a0d0
+    font-style: italic
+  .sx
+    color: #c65d09
+  .sr
+    color: #235388
+  .s1
+    color: #4070a0
+  .ss
+    color: #517918
+  .bp
+    color: #007020
+  .vc, .vg, .vi
+    color: #bb60d5
+  .il
+    color: #40a070

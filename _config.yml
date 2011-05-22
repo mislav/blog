@@ -1,4 +1,4 @@
-auto:        true
+auto:        false
 lsi:         false
 server:      true
 server_port: 4000
