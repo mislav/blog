@@ -51,8 +51,11 @@ extra_tracking_code: |
 
         if (trackData) {
           _gaq.push(trackData)
-          setTimeout(function(){ document.location = link.href }, 100)
-          e.preventDefault()
+          if (e.which == 1 && !(e.ctrlKey || e.metaKey || e.shiftKey)) {
+            // on regular left click, force a small delay before following the link
+            setTimeout(function(){ document.location = link.href }, 100)
+            e.preventDefault()
+          }
         }
       }
     })
