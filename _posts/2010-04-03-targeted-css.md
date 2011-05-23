@@ -9,17 +9,19 @@ Gone are the days when we could safely assume that most our site visitors would 
 
 Time to revisit that old stylesheet of yours and give it a face-lift. Let's jump straight into examples:
 
-    @media only screen and (max-width: 999px) {
-      /* rules that only apply for canvases narrower than 1000px */
-    }
-    
-    @media only screen and (device-width: 768px) and (orientation: landscape) {
-      /* rules for iPad in landscape orientation */
-    }
-    
-    @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
-      /* iPhone, Android rules here */
-    }
+{% highlight css %}
+@media only screen and (max-width: 999px) {
+  /* rules that only apply for canvases narrower than 1000px */
+}
+
+@media only screen and (device-width: 768px) and (orientation: landscape) {
+  /* rules for iPad in landscape orientation */
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+  /* iPhone, Android rules here */
+}
+{% endhighlight %}
 
 While at first this looks like proprietary markup, these are in fact [CSS3 media queries][css3] implemented in Firefox, Safari (including Mobile) and Google Chrome. (I didn't test other browsers or mobile WebKits.) Mozilla has some nice [reference documentation][mdc] with this very important detail:
 
@@ -37,7 +39,9 @@ As an additional detail, I've bumped up font sizes for the iPad to improve reada
 
 Once you've made sure your layout fits on smaller displays, you need this tag to satisfy mobile WebKits:
 
-    <meta name="viewport" content="initial-scale=1.0">
+{% highlight html %}
+<meta name="viewport" content="initial-scale=1.0">
+{% endhighlight %}
 
 See [full documentation for "viewport"][meta] directive. What Mobile Safari does by default (i.e. without this directive) is display a zoomed-out, 980px-wide version of the page even if the layout itself is narrower. As content authors, with this directive we're saying "trust me, zoom to natural scale and I'll make sure it fits". From the documentation:
 
@@ -51,7 +55,10 @@ You should be aware that `orientation` media query, although supported on the iP
 
 **Update:** with the advent of iPhone 4, you might want to target its Retina display specifically to serve high-resolution graphics. There is an article over on the WebKit blog covering how to do this called [High DPI Web Sites](http://webkit.org/blog/55/high-dpi-web-sites/), and the answer is the `device-pixel-ratio` media feature:
 
-    <link rel="stylesheet" media="screen and min-device-pixel-ratio: 2" href="highres.css">
+{% highlight html %}
+<link rel="stylesheet" media="screen and min-device-pixel-ratio: 2" href="highres.css">
+{% endhighlight %}
+
 
 [css3]: http://www.w3.org/TR/css3-mediaqueries/ "CSS3 Media Queries"
 [mdc]: http://developer.mozilla.org/En/CSS/Media_queries "Media Queries on Mozilla Developer Center"

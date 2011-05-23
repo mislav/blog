@@ -35,13 +35,17 @@ While on the topic of minification, let's do a reality check. I took the jQuery 
 
 How is that possible? Well, consider this code:
 
-    var a=1
-    var b=2
-    var c=3
+{% highlight js %}
+var a=1
+var b=2
+var c=3
+{% endhighlight %}
 
 That's 24 bytes right there. Stamp semicolons everywhere and run it through a minifier:
 
-    var a=1;var b=2;var c=3;
+{% highlight js %}
+var a=1;var b=2;var c=3;
+{% endhighlight %}
 
 Still 24 bytes. So, adding semicolons and removing newlines saved us a whopping zero bytes right there. Radical. Most size reduction after minification isn't gained by removing newline characters — it's thanks to removing code comments and leading indentation.
 
@@ -50,16 +54,18 @@ Still 24 bytes. So, adding semicolons and removing newlines saved us a whopping 
 
 Also, some people recommend forcing yourself do use curly braces for blocks, even if they're only one line:
 
-    // before
-    if(condition) stuff()
-    
-    // after
-    if(condition){
-      stuff()
-    }
-    
-    // after minification
-    if(condition){stuff()}
+{% highlight js %}
+// before
+if(condition) stuff()
+
+// after
+if(condition){
+  stuff()
+}
+
+// after minification
+if(condition){stuff()}
+{% endhighlight %}
 
 Enforced curly braces add at least a byte to our expression, even after minification. I'm not sure what the benefit is here—it's not size and it's not readability, either.
 
@@ -96,20 +102,26 @@ As for *coding styles*, they exist so code is more readable and easier to unders
 
 When I searched for "JavaScript semicolon insertion", here is the problem most blog posts described:
 
-    function add() {
-      var a = 1, b = 2
-      return
-        a + b
-    }
+{% highlight js %}
+function add() {
+  var a = 1, b = 2
+  return
+    a + b
+}
+{% endhighlight %}
 
 When you're done trying to wrap your brain around why would anyone in their right mind want to write a return statement on a new line, we can continue and see how this statement is interpreted:
 
-    return;
-      a + b;
+{% highlight js %}
+return;
+  a + b;
+{% endhighlight %}
 
 Alas, the function didn't return the sum we wanted! But you know what? This problem *isn't* solved by adding a semicolon to the end of our wanted `return` expression (that is, after `a + b`). It's solved by *removing* the newline after `return`:
 
-    return a + b
+{% highlight js %}
+return a + b
+{% endhighlight %}
 
 Still, in an incredible display of ignorance these people actually *advise* their readers to avoid such issues by adding semicolons everywhere. Uh, alright, only it doesn't help this particular case at all. We just needed to understand better how the language is parsed.
 
@@ -118,19 +130,25 @@ Still, in an incredible display of ignorance these people actually *advise* thei
 
 Here is the only thing you have to be aware if you choose to code semicolon-less:
 
-    // careful: will break
-    a = b + c
-    (d + e).print()
+{% highlight js %}
+// careful: will break
+a = b + c
+(d + e).print()
+{% endhighlight %}
 
 This is actually evaluated as:
 
-    a = b + c(d + e).print();
+{% highlight js %}
+a = b + c(d + e).print();
+{% endhighlight %}
 
 This example is taken from an [article about JavaScript 2.0 future compatibility][mozilla], but I've ran across this in my own programs several times while using [the module pattern][module].
 
 Easy solution: when a line starts with parenthesis, prepend a semicolon to it.
 
-    ;(d + e).print()
+{% highlight js %}
+;(d + e).print()
+{% endhighlight %}
 
 Definitely not beautiful, but does the job. This case doesn't come very often, too.
 

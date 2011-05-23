@@ -52,17 +52,21 @@ After I've collected all information about how Instagram iPhone app uses their A
 
 I used <i>[gorgeous][]</i>, one of my favorite tools, to prettify JSON data before pasting it in the docs:
 
-    pbpaste | gorgeous | pbcopy
+{% highlight sh %}
+pbpaste | gorgeous | pbcopy
+{% endhighlight %}
 
 Now that I had a pretty good knowledge of how the API works, it was time to create a basic Ruby client. I skipped authentication and methods that need it, and concentrated only on the public resources for now. I've used [Nibbler][], my favorite piece of code I've ever written, to parse JSON structures into model objects, and [URI templates][uri] to describe API endpoints.
 
-    # Nibbler used to describe the user model
-    class User < Base
-      element :username
-      element :full_name
-      element 'profile_pic_url' => :avatar
-      # ...
-    end
+{% highlight ruby %}
+# Nibbler used to describe the user model
+class User < Base
+  element :username
+  element :full_name
+  element 'profile_pic_url' => :avatar
+  # ...
+end
+{% endhighlight %}
 
 The web interface was obviously going to be written in [Sinatra][]; I wanted to create something quick & dirty and push it to [Heroku][] right away without burdening myself with a full-fledged framework, persistence or anything. It's built for Ruby 1.9 and it won't run on previous versions, although the client library is portable.
 
@@ -70,11 +74,13 @@ To be a good API citizen, I had to ensure I wasn't going to choke Instagram serv
 
 Second, I've put up HTTP expiry headers to take advantage of [Varnish HTTP accelerator on Heroku][heroku-cache]. Some pages are cached for even up to 15 minutes, easing the load on Instagram servers even more.
 
-    # Sinatra response for Atom feed
-    content_type 'application/atom+xml', charset: 'utf-8'
-    expires 15.minutes, :public
-    last_modified @photos.first.taken_at if @photos.any?
-    builder :feed, layout: false
+{% highlight ruby %}
+# Sinatra response for Atom feed
+content_type 'application/atom+xml', charset: 'utf-8'
+expires 15.minutes, :public
+last_modified @photos.first.taken_at if @photos.any?
+builder :feed, layout: false
+{% endhighlight %}
 
 Finally, to ensure the web app stays up even if Instagram goes down, I wrote a special type of filesystem cache called the [FailsafeStore][store] that reuses *stale* cache in case rebuilding failed with exceptions such as HTTP failures or JSON parsing errors.
 

@@ -21,20 +21,22 @@ Acceptance tests should be readable by non-developers involved in the project. T
 
 Of course, this is a custom step. In order to reduce clutter while implementing custom steps under the hood (i.e. on the Ruby side), I've devised this scheme for mapping step sentence endings to CSS selectors:
 
-    # within_steps.rb
-    {
-      'in the title' => 'h1, h2, h3',
-      'as a movie title in the results' => 'ol.movies h1',
-      'in a button' => 'button, input[type=submit]',
-      'in the navigation' => 'nav'
-    }.
-    each do |within, selector|
-      Then /^(.+) #{within}$/ do |step|
-        with_scope(selector) do
-          Then step
-        end
-      end
+{% highlight ruby %}
+# within_steps.rb
+{
+  'in the title' => 'h1, h2, h3',
+  'as a movie title in the results' => 'ol.movies h1',
+  'in a button' => 'button, input[type=submit]',
+  'in the navigation' => 'nav'
+}.
+each do |within, selector|
+  Then /^(.+) #{within}$/ do |step|
+    with_scope(selector) do
+      Then step
     end
+  end
+end
+{% endhighlight %}
 
 This short snippet constructs a few regular expressions that allow you to write any of the existing steps and end them with "in the title", "in a button" or scope them to a certain selector.
 
@@ -44,19 +46,21 @@ When a web page lists multiple items on the same page—e.g. movies, books, sear
 
 Here is the HTML structure of movies returned by a search:
 
-    <ol class="movies">
-      <li class="movie">
-        <a href="...">
-          <img src="...">
-          <h1>The Terminator</h1>
-          <span class="year">(<time>1984</time>)</span>
-        </a>
-        <aside>...</aside>
-      </li>
-      
-      <li class="movie">...</li>
-      ...
-    </ol>
+{% highlight html %}
+<ol class="movies">
+  <li class="movie">
+    <a href="...">
+      <img src="...">
+      <h1>The Terminator</h1>
+      <span class="year">(<time>1984</time>)</span>
+    </a>
+    <aside>...</aside>
+  </li>
+  
+  <li class="movie">...</li>
+  ...
+</ol>
+{% endhighlight %}
 
 I scope to a specific movie by referencing its title:
 
@@ -87,29 +91,31 @@ To skip the login process almost completely, I created a 'backdoor' route that l
 
     Given I am logged in as @mislav
 
-    # implementation
-    Given /^I am logged in as @(\w+)$/ do |username|
-      visit "/login/#{username}"
-      @current_user = User.find_by_login(username)
+{% highlight ruby %}
+  # implementation
+  Given /^I am logged in as @(\w+)$/ do |username|
+    visit "/login/#{username}"
+    @current_user = User.find_by_login(username)
+  end
+
+  # config/routes.rb
+  if Rails.env.cucumber?
+    map.login_backdoor '/login/:username',
+      :controller => 'sessions', :action => 'backdoor'
+  end
+
+  # in the controller
+  class SessionsController < ApplicationController
+
+    # for cucumber testing only
+    def backdoor
+      logout_killing_session!
+      self.current_user = User.find_by_login!(params[:username])
+      head :ok
     end
 
-    # config/routes.rb
-    if Rails.env.cucumber?
-      map.login_backdoor '/login/:username',
-        :controller => 'sessions', :action => 'backdoor'
-    end
-
-    # in the controller
-    class SessionsController < ApplicationController
-  
-      # for cucumber testing only
-      def backdoor
-        logout_killing_session!
-        self.current_user = User.find_by_login!(params[:username])
-        head :ok
-      end
-  
-    end
+  end
+{% endhighlight %}
 
 ## Have your steps support multiple users doing the described action
 
@@ -140,36 +146,40 @@ If you find yourself repeating the same action for multiple users, or a single u
 
 To support lists like "@balint, @pablo and @james", I implement the steps this way:
 
-    Given(/^a project with users? (.+)$/) do |users|
-      @current_project = Factory(:project)
+{% highlight ruby %}
+Given(/^a project with users? (.+)$/) do |users|
+  @current_project = Factory(:project)
 
-      each_user(users, true) do |user|
-        # make the user a member of the @current_project
-      end
-    end
+  each_user(users, true) do |user|
+    # make the user a member of the @current_project
+  end
+end
+{% endhighlight %}
 
 The `each_user` helper parses out any string in search of usernames, finds those users and yields the block for each one:
 
-    # features/support/usernames.rb
-    module ManyUsernames
-      def each_user(usernames, factory = false)
-        usernames.scan(/(?:^|\W)@(\w+)/).flatten.each do |name|
-          user = User.find_by_login(name)
-      
-          unless user
-            if factory
-              Factory.create(:user, :login => name)
-            else
-              raise "can't find user with login '#{name}'" unless user
-            end
-          end
-      
-          yield user
+{% highlight ruby %}
+# features/support/usernames.rb
+module ManyUsernames
+  def each_user(usernames, factory = false)
+    usernames.scan(/(?:^|\W)@(\w+)/).flatten.each do |name|
+      user = User.find_by_login(name)
+  
+      unless user
+        if factory
+          Factory.create(:user, :login => name)
+        else
+          raise "can't find user with login '#{name}'" unless user
         end
       end
+  
+      yield user
     end
+  end
+end
 
-    World(ManyUsernames)
+World(ManyUsernames)
+{% endhighlight %}
 
 If you take care while making the regular expression, you can easily have it also support the singular form. The project factory step supports the single member form:
 

@@ -10,10 +10,12 @@ John Gruber writes about a [liberal regex for matching URLs][daring] and Alan St
 
 I'd like to share an URL auto-link regex I wrote and which now resides in Rails core:
 
-    %r{
-      ( https?:// | www\. )  # URLs start with "http://" or "www."
-      [^\s<]+                # allow all non-whitespace chars until an opening HTML tag
-    }x
+{% highlight ruby %}
+%r{
+  ( https?:// | www\. )  # URLs start with "http://" or "www."
+  [^\s<]+                # allow all non-whitespace chars until an opening HTML tag
+}x
+{% endhighlight %}
 
 Yes, the regex itself is simple. Too simple, because experienced programmers will notice that it doesn't handle punctuation in the end, Wikipedia-style bracket pairs and so on.
 
