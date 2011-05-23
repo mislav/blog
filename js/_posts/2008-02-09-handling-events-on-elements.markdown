@@ -3,7 +3,7 @@ permalink: /js/handling-events-on-elements/
 title: Handling JavaScript events on multiple elements
 layout: post
 category: js
-description: Do you have a loop in your code that attaches an event handler to each of the elements? This article shows how to make that simpler with event delegation -- in other words, by leveraging event bubbling.
+description: "Do you have a loop in your code that attaches an event handler to each of the elements? This article shows how to make that simpler with event delegation — in other words, by leveraging event bubbling."
 styles: |
     table { border: 2px solid #6D7D21; border-collapse: collapse; }
     table td, table th { border: 1px solid gray; padding: .4em .8em; }
@@ -15,11 +15,11 @@ styles: |
     form .actions { margin-top: .5em }
 ---
 
-Implementing proper event handling on your site or application is a _design_ issue, meaning there are many ways of solving a problem and choosing the right way is a matter of skill and experience. Today I want to talk about handling events on multiple elements because a great deal of JavaScript developers are constantly struggling to get some overcomplicated code working—usually looping over a set of elements and attaching a handler to each one. When they need to identify which of the targets actually triggered the event, or when they inject new elements as a result of an Ajax request and find out they need to re-apply all the handlers again, they start pulling their hairs out. Let’s look at an approach where we don’t need loops; we’ll simply play with _bubbles_. Sometimes this is called _event delegation_.
+Are you looping over a set of elements to apply the same event handler to each one? In this article I am are going to discuss _event delegation_, i.e. how a single event handler in the right place can be more effective than many.
 
 ## A common need
 
-Here is a simple table with nonsense data. Try to select some orders (rows) for processing. Tip: click on whole rows, not just the checkboxes.
+Here is a simple table with nonsense data. Try to select some rows for processing. Thing to note here: you can click on whole rows, not just the checkboxes.
 
 <div><form action=".">
   <table id="mytable" summary="nonsense data for JavaScript example">
@@ -40,122 +40,84 @@ Here is a simple table with nonsense data. Try to select some orders (rows) for 
   </div>
 </form></div>
 
-So you’ve played with it and saw it’s pretty much basic. But how did we implement it? Many people will say <q>oh, if each row has to be clickable I&#8217;ll just go right ahead and attach a click handler to each of the rows</q>. That is a complex solution and generally should be avoided. Others will try to be smarter than that and use something like [Behaviour][1], but that’s just doing the same thing in a nicer way.
+So you’ve played with it and saw it’s pretty much basic. But how to implement this? Many people will think <q>oh, I'll just go ahead and attach a click handler to each row</q>. That is a complex solution and generally should be avoided. The main flaw of this solution is that new, dynamically added rows (such as after Ajax requests) won't have the same handlers.
 
-The key is simply intercepting all the click events on the table or `TBODY` elements themselves. Most of the events in JavaScript _bubble_, which means they propagate up the document tree from the node they originate from. You can handle such events on any element that contains the target of the event; you can also stop its default action, like following a link, or stop it from bubbling. These event methods are called `preventDefault()` and `stopPropagation()`, respectively. (With the Prototype library you also have the `stop()` method that is the combination of both.)
+{% capture event_code %}// observe all clicks to table rows
+$(document).delegate('#mytable tbody tr', 'click', function(e) {
+  var row = $(this)
+  // find the first input element in the row; that's our checkbox
+  var checkbox = row.find('input:first')
+  // toggle the checkbox unless the click event originated on it
+  if (!$(e.target).is(':input')) checkbox.prop('checked', !checkbox.is(':checked'))
+  // toggle the classname of the row
+  row.toggleClass('selected')
+})
 
-{% capture event_code %}document.observe('dom:loaded', function() {
-  when('#mytable tbody', function(table) {
-    // we only set one event handler, and that is on the table body
-    table.observe('click', function(e) {
-      // when an event is handled, descend to from where it's triggered to table row
-      var checkbox, row = e.findElement('tr')
-      if (row) {
-        // find the first input element in the row; that's our checkbox
-        var checkbox = row.down('input')
-        // toggle the checkbox unless the click event originated on it
-        if (e.target != checkbox) checkbox.checked = !checkbox.checked
-        // toggle the classname of the row
-        row.toggleClassName('selected')
-      }
-    }).select('input').each(function(input) {
-      // add the "selected" class if some inputs are already slected
-      if (input.getValue()) input.up(1).addClassName('selected')
-    })
+// catch the submit on the form
+$(document).delegate('form:has(table)', 'submit', function(e) {
+  var values = [], data = $(this).serializeArray()
+  $.each(data, function(){ values.push(this.value) })
 
-    // catch the submit on the form
-    table.up('form').observe('submit', function(e) {
-      var data = this.serialize(true), // serialize to object
-          selected = data['order[]']
+  if (values.length) alert('Rows to submit: ' + values.join(', '))
+  else alert('Nothing selected. Please select some rows')
 
-      if (selected) {
-        var list = Object.isArray(selected) ? selected.join(', ') : selected
-        alert('Orders to process: ' + list)
-      } else {
-        alert('No orders to process. Please select some')
-      }
+  // prevent the real submit action taking place in the browser
+  e.preventDefault()
+})
 
-      // prevent the real submit action taking place in the browser
-      e.stop()
-    })
+$(function() {
+  // add the "selected" class if some inputs are already selected
+  $('#mytable tbody tr input').each(function() {
+    var input = $(this)
+    if (input.val()) input.parent('tr').addClass('selected')
   })
 })
 {% endcapture %}
 
-Here is the complete code for the above example:
+Here is the complete jQuery code for the above example:
 
-<div>
-<pre id="code"><code class="javascript">{{ event_code }}</code></pre>
-</div>
+{% highlight js %}{{ event_code }}{% endhighlight %}
 
-Pay special attention to `e.findElement('tr')`. We don’t really care where exactly the event originated—it is most probably on some table cell or even the element inside a cell—we just want to know what row was it on. Prototype [`findElement()`][2] method is very helpful here because it traverses elements upwards from event origin and returns the first one that matches the CSS selector (`tr`, in this case).
+In the above script, the [`delegate`][2] method was used to capture 'click' and 'submit' events originating from specific groups of elements. This is possible because most events _bubble_ up the DOM tree, eventually reaching the `document` object. Attaching handlers to the document object also has the benefit that it's available at any time, even before the page DOM is ready.
 
-When we get a reference to the row, rest is straightforward. We toggle the checkbox programmatically while adding/removing a CSS class on the row for visual feedback.
+Let's observe another real-world usage and reuse the same principle of unobtrusive click handling.
 
 ## Analytics example
 
-If you are using Google Analytics on your site, at one point you probably wondered how to track PDF or archive file downloads, or even outgoing (off-site) clicks. There is a solution: Analytics help suggests that you use the `urchinTracker()` function with an absolute path as argument. (Note: the name of the method is `_trackPageview` if you’re using [the new tracking code][3] from December 2007.)
+If you are using Google Analytics on your site, you might have wondered how to track PDF or other file downloads, or even outbound (off-site) clicks. Analytics help suggests that you use the `onclick` attribute to invoke custom tracking functions:
 
-They suggest putting the code in an <i>onclick</i> attribute:
+{% highlight html %}
+<!-- file downloads: -->
+<a href="report.pdf" onclick="trackFile(...); return false">awesome report, has pie charts</a>
+<!-- outgoing clicks: -->
+<a href="http://another-site.com" onclick="trackOutboundLink(...); return false">visit my sponsor!</a>
+{% endhighlight %}
 
-    <!-- file downloads: -->
-    <a href="report.pdf" onclick="urchinTracker('/downloads/report.pdf')">awesome report, has pie charts</a>
-    <!-- outgoing clicks: -->
-    <a href="http://another-site.com" onclick="urchinTracker('/outgoing/another-site.com')">visit my sponsor!</a>
+This works but is pretty tedious and brittle (what happens if the custom functions are not defined?).
 
-Hooray, it’s possible—but also pretty gross :( First of all, when you switch to the new Analytics tracking code you’ll have to manually replace each call to the old function. Seconds, if you decide to stop using Analytics and remove the Urchin script, all of these links will generate a JavaScript error on click. But, the worst drawback definitely is: you have to _manually add_ this to _each_ link you want tracked.
+We're smarter than that. With event delegation we can make an unobtrusive, one-time solution that doesn't even require a JavaScript library like Prototype.js or jQuery:
 
-Don’t listen to Analytics help. We are smarter than that. The following script is an unobtrusive, one-time, drop-in solution when you’re using Prototype (but can also be ported to any other library, easily). Features include:
+{% highlight js %}
+// outbound links and file downloads Analytics tracking
+{{ site.extra_tracking_code }}
+{% endhighlight %}
 
-1. fail silently if tracker code isn’t available (like when Urchin script hasn’t yet loaded);
-2. tracking all outgoing URLs;
-3. tracking all local files with extensions other than ‘html’;
-4. tracking middle-mouse clicks (that open links in a new tab in some browsers);
-5. other, custom, rules can easily be added by hand.
+We observe mouse clicks on document level and then test if they originated from link elements; then we apply some simple rules to determine whether we are going to track the click or not. Outbound links are recognized by leading to another domain, while file downloads are detected by the file extension.
 
-Again, pay attention to the usage of `findElement()`:
-
-    var root = 'http://' + window.location.host + '/'
-    
-    if (window.Prototype) document.observe('mouseup', function(e) {
-      if (!urchinTracker) return
-      var link = e.findElement('a[href]')
-      if (link) {
-        var url = null, leftOrMiddle = (e.isLeftClick() || e.isMiddleClick())
-        // track outgoing clicks:
-        if (!link.href.startsWith(root) && leftOrMiddle)
-          url = '/outgoing/' + link.href.replace(/^http:\/\//, '')
-        // track clicks to files with extensions other than ".html"
-        else if (/.(\w{2,5})$/.test(link.href) && RegExp.$1.toLowerCase() != 'html' && leftOrMiddle)
-          url = '/' + link.href.replace(root, '')
-    
-        if (url) urchinTracker(url)
-      }
-    })
-
-We observe mouse clicks on document level and then test if they originated from link elements; then we apply some simple rules to determine whether we are going to track the click or not. Lastly, we call the tracker function. After executing all the code, default action for the click takes place: the browser follows the link.
-
-This is how the report is going to look in Google Analytics:
-
-<img src="/page_attachments/0000/0007/outgoing.png" alt="Outgoing links report" style="display: block; margin: 0 auto .5em auto">
 
 ## Related reading
 
-* [Event capture explained][4]—a good primer on bubbling and event capture on [Opera Developer Community][5];
-* [Event Delegation Made Easy In jQuery][6] by <a href="http://www.danwebb.net/" rel="acquaintance">Dan Webb</a>;
+* [Event capture explained][4]—a primer on bubbling and event capture on [Opera Dev Community][5];
 * [Event Delegation versus Event Handling][7].
 
 
-<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/prototype/1.7.0.0/prototype.js"></script>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
 <script type="text/javascript">
 {{ event_code }}
 </script>
 
 
-[1]: http://www.bennolan.com/behaviour/
-[2]: http://prototypejs.org/api/event/findElement
-[3]: http://www.google.com/analytics/GATCmigrationguide.pdf
+[2]: http://api.jquery.com/delegate/
 [4]: http://dev.opera.com/articles/view/event-capture-explained/
 [5]: http://dev.opera.com/
-[6]: http://www.danwebb.net/2008/2/8/event-delegation-made-easy-in-jquery
 [7]: http://icant.co.uk/sandbox/eventdelegation/
