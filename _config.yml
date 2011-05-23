@@ -4,4 +4,6 @@ server:      true
 server_port: 4000
 pygments:    true
 markdown:    rdiscount
+rdiscount:
+  extensions: [smart]
 permalink:   /:year/:month/:title/
