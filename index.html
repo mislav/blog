@@ -1,12 +1,29 @@
 ---
-title: About Mislav
+title: Mislav Marohnić
+description: "Don't worry, I can't pronounce my last name either"
 layout: page
 ---
 
 <div id="description" class="vcard">
   <p>
-    <img src="/images/mislav.png" alt="" style="float: right; margin: -20px -2em 0 3em; border: 1px solid #999;">
-    My name is <em class="fn">Mislav&nbsp;Marohnić</em> and—for the time being—I live in <span class="adr">Barcelona,&nbsp;<span class="country-name">Spain</span></span>, where I hack the Interwebs and use my time off to participate in <a href="/projects/">open-source&nbsp;projects</a> and write about <a href="/rails/">Ruby&nbsp;on&nbsp;Rails</a>, <a href="/js/">JavaScript</a> and other things on <a rel="me" class="url" href="/archive">my blog</a>.</p>
-  <p>You can write to me at <a class="email" href="mailto:mislav.marohnic@gmail.com">mislav.marohnic@gmail.com</a>.</p>
-  <p>I&#8217;m mostly writing about programming for the web. <a href="/feeds/">Grab some feeds</a> and stay tuned.</p>
+    <img src="/images/mislav.jpg" alt="Mislav Marohnić" class="fn">
+    I make the Internet. Originally from <span class="adr">Zagreb,&nbsp;<span class="country-name">Croatia</span></span>, I'm lately migrating from place to place. I do <a href="/projects/">open-source&nbsp;projects</a> and write about <a href="/rails/">Ruby&nbsp;on&nbsp;Rails</a>, <a href="/js/">JavaScript</a> and other things on <a rel="me" class="url" href="/blog/">my blog</a>.</p>
+  <p>I'm mostly writing about programming for the web. <a href="/feeds/">Grab some feeds</a> and stay tuned.</p>
+  <p>Write to me at <a class="email" href="mailto:mislav.marohnic@gmail.com">mislav.marohnic@gmail.com</a> and follow me on Twitter: @<a rel="me" href="http://twitter.com/mislav">mislav</a></p>
+  <p>Or check out the photos that I take: <a rel="me" href="http://www.flickr.com/photos/mislav-marohnic/">Flickr</a> – <a rel="me" href="http://instagram.heroku.com/users/mislav">Instagram</a></p>
 </div>
+
+<hr>
+
+{% assign post = site.posts[0] %}
+
+<h2>Latest blog post:</h2>
+
+<ol class="posts">
+  <li>
+    <span class="date">{{ post.date | date_to_string }}</span>
+    ▸ <a href="{{ post.url }}">{{ post.title }}</a>
+    {% if post.categories != empty %}<span class="categories">in {{ post.categories | array_to_sentence_string }}</span>{% endif %}
+    {% if post.description %}<p>{{ post.description }}</p>{% endif %}
+  </li>
+</ol>

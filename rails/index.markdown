@@ -2,7 +2,7 @@
 layout: section
 title: Ruby on Rails
 category: rails
-description: Ruby on Rails section on "No Strings Attached", personal blog of Mislav Marohnić. Topics include Ruby tricks, Rails tips and news about projects I'm involved with.
+description: Posts about Ruby on Rails on Mislav's blog
 ---
 
 As one of the [active contributors to Ruby on Rails][2], I gained thorough knowledge of the framework's capabilities. My experience covers the full stack and I'm comfortable working anywhere between low-level server-side optimization and working with the latest and greatest of client-side technologies.
