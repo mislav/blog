@@ -1,15 +1,33 @@
+---
+title: Page not found
+---
 <!doctype html>
 <html>
   <head>
-    <title>404 Not Found | No Strings Attached</title>
+    <title>{{ page.title }}</title>
     <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
     <link rel="icon" href="/favicon.ico">
-    <link rel="stylesheet" type="text/css" href="/stylesheets/style.css">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/default.css">
   </head>
   
   <body>
-    <h1>I can't find it (404)</h1>
-    <p>Sorry. <a href="/about/">Write to me</a> if this is a broken link</p>
-    <p><a class="home" href="/">← home</a></p>
+    <h1><i>{{ page.title }}</i></h1>
+    <p>404, buddy. That page is not here. You should <a href="mailto:mislav.marohnic@gmail.com">tell me</a> if this is something I can fix.</p>
+
+    <div id="related">
+      <h2>Last posts on this site</h2>
+
+      <ol class="posts">
+        {% for post in site.posts limit:3 %}
+          <li>
+            <span class="date">{{ post.date | date_to_string }}</span>
+            ▸ <a href="{{ post.url }}">{{ post.title }}</a>
+            {% if post.categories != empty %}<span class="categories">in {{ post.categories | array_to_sentence_string }}</span>{% endif %}
+          </li>
+        {% endfor %}
+      </ol>
+    </div>
+    
+    <p><a class="home" href="/blog/">← all posts</a></p>
   </body>
 </html>
