@@ -84,7 +84,7 @@ builder :feed, layout: false
 
 Finally, to ensure the web app stays up even if Instagram goes down, I wrote a special type of filesystem cache called the [FailsafeStore][store] that reuses *stale* cache in case rebuilding failed with exceptions such as HTTP failures or JSON parsing errors.
 
-The whole web app (view templates, stylesheets and all) is under 500 lines of code, the client library is even smaller and [published as "instagram" gem][gem] under the MIT license. As always with my code, I encourage you to [dive in][client].
+The whole web app (view templates, stylesheets and all) is under 500 lines of code, [the client library][client] is even smaller and published under the MIT license. As always with my code, I encourage you to dive in.
 
 
 [instagram]: http://instagr.am/

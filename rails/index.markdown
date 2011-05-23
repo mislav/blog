@@ -12,11 +12,8 @@ Two interviews with me have been published in 2007:
 1. [on Working With Rails][6] as one of the [June 2007 Hackfest winners][7];
 2. [on RubyLearning][8] as part of a serial interview with programmers from around the world.
 
-If you appreciate what I do, [recommend me on Working With Rails][9] if you're a member there.
-
 
 [2]: http://contributors.rubyonrails.org/contributors/mislav-marohnic/commits
 [6]: http://weblog.workingwithrails.com/2007/7/19/hackfest-winner-interview-mislav-marohnic
 [7]: http://www.workingwithrails.com/hackfest/12-monthly-june-2-7
 [8]: http://rubylearning.com/blog/2007/09/27/advice-for-ruby-beginners-1/
-[9]: http://workingwithrails.com/recommendation/new/person/2764-mislav-marohni
