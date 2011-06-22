@@ -147,7 +147,8 @@ end
 This avoids the warning, but it forces us to make this check from every
 method that uses this variable. If our RoleSystem was really complex and
 had 20 methods, this would need at minimum 20 identical checks scattered
-throughout the code. All because we dared to use a feature of Ruby.
+throughout the code. This makes the code look bloated very quickly, so
+developers will usually choose to not bother with this.
 
 ### Method redefined warning
 
@@ -183,7 +184,8 @@ undef :name if instance_methods.include? :name
 {% endhighlight %}
 
 However, the above code will only work in ruby 1.9 where the method list is
-an array of symbols. To make it work in all ruby versions:
+an array of symbols. In 1.8, methods are returned as strings.
+We should make this work in all ruby versions:
 
 {% highlight ruby %}
 undef :name if instance_methods.map {|m| m.to_sym }.include? :name
@@ -216,7 +218,7 @@ The only solution is to use RSpec's equality methods instead of operators:
 obj.should eq(other)
 {% endhighlight %}
 
-But it doesn't seem exactly right.
+But this doesn't feel the same.
 
 ### "`*` interpreted as argument prefix"
 
