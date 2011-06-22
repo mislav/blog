@@ -1,23 +1,6 @@
 require 'guard/guard'
 require 'fileutils'
 
-::Guard.module_eval do
-  def self.get_guard_class(name)
-    tried_gem = false
-    begin
-      self.const_get(self.constants.find {|c| c.to_s.downcase == name.downcase })
-    rescue TypeError
-      if !tried_gem
-        try_to_load_gem name
-        tried_gem = true
-        retry
-      else
-        UI.error "Could not find Guard::#{name.capitalize} - make sure 'guard-#{name}' is installed"
-      end
-    end
-  end
-end
-
 class ::Guard::Sass < ::Guard::Guard
   def initialize(watchers = [], options = {})
     super
