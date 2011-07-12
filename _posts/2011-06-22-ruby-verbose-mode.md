@@ -4,7 +4,7 @@ description: "The verbose mode in Ruby is both useful and distracting. It
   activates a mode where the interpreter is warning you about potentially
   dangerous syntax."
 layout: post
-category: rb
+category: ruby
 ---
 
 The "verbose" mode of the ruby interpreter is activated by one of the
