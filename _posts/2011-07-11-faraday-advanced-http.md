@@ -1,5 +1,5 @@
 ---
-title: Advanced HTTP requests with Faraday
+title: "Faraday: advanced HTTP requests made easy"
 description: "If you use Ruby to perform any sort of HTTP requests, you
   might want to take a closer look at Faraday."
 layout: post
@@ -151,6 +151,9 @@ class MyMiddleware
     @app.call(env)
   end
 end
+
+# how to use it in a stack:
+builder.use MyMiddleware, some_option: "value"
 {% endhighlight %}
 
 It's important to remember that, altough the middleware paradigm is
@@ -163,7 +166,7 @@ all our present needs. For instance, to revisit our initial GitHub API use-case:
 
 {% highlight ruby %}
 require 'logger'
-require 'faraday_stack' # some 3rd-party middleware
+require 'faraday_stack' # 3rd-party extension with extra middleware
 
 conn = Faraday.new 'https://api.github.com/', ssl: {verify: false} do |builder|
   builder.use FaradayStack::ResponseJSON,     content_type: 'application/json'
