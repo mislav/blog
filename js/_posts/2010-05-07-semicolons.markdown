@@ -150,10 +150,11 @@ Easy solution: when a line starts with parenthesis, prepend a semicolon to it.
 ;(d + e).print()
 {% endhighlight %}
 
-Definitely not beautiful, but does the job. This case doesn't come very often, too.
+This might not be elegant, but does the job. [Michaeljohn Clement elaborates on this][inimino] even further:
 
-The above article about JavaScript 2.0 is an interesting read and also lists some reasons how the 2.0 version of the language might change what's considered legal syntax for expressions. The thing is, I couldn't care less about JavaScript 2.0; *especially* if it breaks existing scripts. If the 2.0 version really is incompatible, web browsers won't switch what they ship anytime soon; and as for server-side JavaScript, developers control what's running there anyway.
+> If you choose to omit semicolons where possible, my advice is to insert them immediately before the opening parenthesis or square bracket in any statement that begins with one of those tokens, or any which begins with one of the arithmetic operator tokens `/`, `+`, or `-` if you should happen to write such a statement.
 
+Adopt this advice as a rule and you'll be fine.
 
 [crockford]: http://javascript.crockford.com/code.html "Code Conventions for the JavaScript Programming Language"
 [so]: http://stackoverflow.com/questions/444080/do-you-recommend-using-semicolons-after-every-statement-in-javascript "Do you recommend using semicolons after every statement in JavaScript? on StackOverflow"
@@ -166,3 +167,4 @@ The above article about JavaScript 2.0 is an interesting read and also lists som
 [ugly]: http://img.skitch.com/20100509-qf8t69ad7cpmudwdksbw5hu6te.png
 [compiler]: http://code.google.com/closure/compiler/
 [removed]: http://github.com/mislav/jquery/commit/4a2faf8987fc3fcb8aefc99def5b5ed2b4de190c "jQuery without semicolons"
+[inimino]: http://inimino.org/~inimino/blog/javascript_semicolons "JavaScript semicolon insertion: everything you need to know"

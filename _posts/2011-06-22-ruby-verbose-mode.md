@@ -23,8 +23,8 @@ From within ruby code, verbosity can be tested with the value of the
 3. `true` for level "2" (verbose); this is verbose mode.
 
 Both `$VERBOSE` and `$DEBUG` variables have their shorter equivalents:
-
-    $ ruby -d -e 'p $-v, $-w, $VERBOSE, $-d, $DEBUG'
+`$-v` and `$-w` for verbose mode and `$-d` for debug. You'll notice that
+they are named to resemble command-line flags.
 
 These values are meant to be used by developers to conditionally provide
 extra output from their methods to STDOUT and STDERR. One built-in
@@ -47,6 +47,7 @@ We can make similar decisions in our programs to output extra
 information about non-critical errors in case the user chooses to see them:
 
 {% highlight ruby %}
+# in this script, `index` is an integer that shouldn't be negative
 if index < 0 and $VERBOSE
   $stderr.puts "warning: index is a negative number"
   if $DEBUG
@@ -97,8 +98,8 @@ from a module:
 
 {% highlight ruby %}
 module RoleSystem
-  def set_role(role)
-    @role = role.to_s
+  def role=(new_role)
+    @role = new_role.to_s
   end
 
   def is_role?(role)
@@ -113,30 +114,15 @@ Person.new('Mislav').is_role?('admin') #=> false
 {% endhighlight %}
 
 What happened? We used `is_role?`, which reads from the ivar, before we
-initialized that variable with `set_role`. This is a valid use-case,
-because we only want to use `set_role` if there's a role to be set.
+initialized that variable with the `role=` method. This is a valid use-case,
+because we only want to use `role=` if there's a role to be set.
 
 Ruby wants us to initialize the variable first, but how do we do it?
 Since this is a variable only used by the module, we shouldn't
 set it in `Person#initialize`; the Person class shouldn't know anyhing
-of RoleSystem. We also can't augment the `initialize` method from
-RoleSystem:
+of RoleSystem.
 
-{% highlight ruby %}
-module RoleSystem
-  # won't work:
-  def initialize(*args)
-    super
-    @role = nil
-  end
-end
-{% endhighlight %}
-
-This might seem like a valid way to augment an existing method of a
-class that mixes in RoleSystem, but it won't work. Due to the nature of
-mixins in ruby, this won't affect the `initialize` method of Person at all.
-
-Another option is to check whether the ivar is defined before using it:
+One option is to check whether the ivar is defined before using it:
 
 {% highlight ruby %}
 def is_role?(role)
@@ -145,10 +131,20 @@ end
 {% endhighlight %}
 
 This avoids the warning, but it forces us to make this check from every
-method that uses this variable. If our RoleSystem was really complex and
-had 20 methods, this would need at minimum 20 identical checks scattered
-throughout the code. This makes the code look bloated very quickly, so
-developers will usually choose to not bother with this.
+method that accesses this variable. A better solution is to restrict ourselves
+to define and use an accessor method `role` instead of accessing the
+`@role` ivar directly:
+
+{% highlight ruby %}
+module RoleSystem
+  def role
+    return @role if defined? @role
+  end
+end
+{% endhighlight %}
+
+Turns out, this is exactly what `attr_reader :role` gives us, too, so
+you can use that unless your accessor method requires more complexity.
 
 ### Method redefined warning
 
@@ -180,18 +176,8 @@ in the first place. You should guard yourself against this by checking
 for the method before undefining it:
 
 {% highlight ruby %}
-undef :name if instance_methods.include? :name
+undef :name if method_defined? :name
 {% endhighlight %}
-
-However, the above code will only work in ruby 1.9 where the method list is
-an array of symbols. In 1.8, methods are returned as strings.
-We should make this work in all ruby versions:
-
-{% highlight ruby %}
-undef :name if instance_methods.map {|m| m.to_sym }.include? :name
-{% endhighlight %}
-
-And you have to do this before every method that you're redefining.
 
 ### "Useless use of `==` in void context"
 
@@ -217,8 +203,6 @@ The only solution is to use RSpec's equality methods instead of operators:
 {% highlight ruby %}
 obj.should eq(other)
 {% endhighlight %}
-
-But this doesn't feel the same.
 
 ### "`*` interpreted as argument prefix"
 
@@ -275,5 +259,61 @@ conditionally output extra information and deprecation warnings so the
 users can choose when to see such warnings. Ideally, we all should be
 developing with the `-w` flag permanently on, but because this also
 turns on code linting, most developers choose to avoid this.
+
+## Your open source code shouldn't generate warnings
+
+If you're a developer of open source code, however, you should regularly
+check that your code doesn't generate ruby warnings. If you accomplish
+this, you allow users of your code to use it in their projects with the
+verbose mode on and not get warned by potential threats in your
+codebase.
+
+An easy way to setup your test suite to run in verbose mode is to
+configure your test script to always run the test runner with the `-w`
+ruby flag. One way to do that is with the RUBYOPT environment variable:
+
+    RUBYOPT="-w $RUBYOPT"
+
+Often there is a more elegant way, for instance an RSpec rake task:
+
+{% highlight ruby %}
+desc 'Run specs'
+RSpec::Core::RakeTask.new(:spec) do |t|
+  t.ruby_opts = '-w'
+end
+{% endhighlight %}
+
+Now that you've set up your test suite to run in verbose mode, you can
+start fixing warnings in your code. However, 3rd-party libraries that your
+project depends on can still generate warnings, which you probably
+aren't interested in. You'll want to run a block of ruby code with
+warnings silenced for the duration of the block. Rails already provides
+this method called `silence_warnings` and here's how to implement it if
+you don't use Active Support:
+
+{% highlight ruby %}
+# these methods are already present in Active Support
+module Kernel
+  def silence_warnings
+    with_warnings(nil) { yield }
+  end
+
+  def with_warnings(flag)
+    old_verbose, $VERBOSE = $VERBOSE, flag
+    yield
+  ensure
+    $VERBOSE = old_verbose
+  end
+end unless Kernel.respond_to? :silence_warnings
+{% endhighlight %}
+
+Now you can require other libraries without seeing their warnings:
+
+{% highlight ruby %}
+silence_warnings do
+  require '...'
+end
+{% endhighlight %}
+
 
 [lint]: http://en.wikipedia.org/wiki/Lint_(software)

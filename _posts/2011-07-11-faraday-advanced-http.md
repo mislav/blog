@@ -54,8 +54,8 @@ else
 end
 {% endhighlight %}
 
-This is closer to what I would consider to be minimal boilerplate code for
-properly making requests.
+This is closer to what I would consider to be a minimal boilerplate code for
+proper requests.
 
 But this still isn't enough. Sooner or later, you might also need to
 to implement some of these more advanced concepts:
@@ -166,7 +166,8 @@ all our present needs. For instance, to revisit our initial GitHub API use-case:
 
 {% highlight ruby %}
 require 'logger'
-require 'faraday_stack' # 3rd-party extension with extra middleware
+# we need a 3rd-party extension for some extra middleware:
+require 'faraday_stack'
 
 conn = Faraday.new 'https://api.github.com/', ssl: {verify: false} do |builder|
   builder.use FaradayStack::ResponseJSON,     content_type: 'application/json'
@@ -204,14 +205,23 @@ provide classes to parse JSON, XML, sign OAuth requests, cache responses
 and more.
 
 For the end, as an example of real-world Faraday use check out this simple
-[Instagram client][instagram] I wrote to implement a couple of endpoints
-that I needed from the Instagram official API.
+[Instagram client][instagram] I wrote to implement just a couple of endpoints
+that I needed from the Instagram official API. Instagram already
+provides an [official ruby library][instagram-ruby] that's also implemented
+with Farady, but I created my own to see how minimal I can go so it can serve
+as a good example of Faraday usage.
+
+Consider Faraday next time when you find yourself consuming an API resource.
+Even if you immediately won't have huge benefits in your particular
+case, in the long run it will allow you to plug into that request/response
+cycle later on and free you from significant code changes.
 
 
 [faraday]: https://github.com/technoweenie/faraday
 [twitter]: https://github.com/jnunemaker/twitter "Ruby library for Twitter API"
 [repoinfo]: http://developer.github.com/v3/repos/ "GitHub API repository docs"
 [instagram]: https://github.com/mislav/instagram/blob/fa63fb9/instagram.rb
+[instagram-ruby]: https://github.com/instagram/instagram-ruby-gem "Instagram Ruby API library"
 [rack]: http://rack.rubyforge.org/ "Rack: a Ruby Webserver Interface"
 [faraday-stack]: https://github.com/mislav/faraday-stack "A collection of Faraday middleware by Mislav"
 [faraday_middleware]: https://github.com/pengwynn/faraday_middleware
