@@ -8,6 +8,10 @@ styles: |
   li h2 { text-shadow: none; font-size: 1.2em; border: none; font-weight: normal; margin: 0; padding: 0 }
   li p { margin: .4em 0 0 }
   li time:before { content: "▪ "; line-height: 1 }
+  .instapaper_iframe {
+    display: inline-block; margin-left: .8em;
+    position: relative; top: .3em;
+  }
 ---
 
 <p>
@@ -57,11 +61,34 @@ styles: |
 
   function displayInstapaper(data) {
     var container = $('instapaper').update()
-  
+
     data.value.items.each(function(item) {
       item.pubDate = item.pubDate.replace(/ \d{2}:.+/, '')
       container.insert(instapaperTemplate.evaluate(item))
+
+      var iframe = makeInstapaperIFrame(item.title, item.link, item.description)
+      container.select('li > h2').last().insert(iframe)
     })
+  }
+
+  function makeInstapaperIFrame(title, url, description) {
+    var iframe = document.createElement('iframe');
+
+    iframe.setAttribute('src',
+      'http://www.instapaper.com/e2?url=' + encodeURIComponent(url) +
+      '&title=' + encodeURIComponent(title) +
+      '&description=' + encodeURIComponent((description || '').replace(/(<([^>]+)>)/ig, ''))
+      );
+    iframe.setAttribute('border', '0');
+    iframe.setAttribute('scrolling', 'no');
+    iframe.setAttribute('width', '78');
+    iframe.setAttribute('height', '17');
+    iframe.setAttribute('allowTransparency', 'true');
+    iframe.setAttribute('frameborder', '0');
+    iframe.setAttribute('class', 'instapaper_iframe');
+    iframe.setAttribute('style', 'margin-bottom: 3px; z-index: 1338; border: 0; background-color: transparent; overflow: hidden;');
+
+    return iframe;
   }
 
   cachedPipe('f533cde31f71a803b9a1061e3bb63af2', 'displayInstapaper', 24)
