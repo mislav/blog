@@ -22,7 +22,7 @@ styles: |
       letter-spacing: -.08em;
       text-align: center;
     }
-    h1 small, h2, #more, #disclaimer {
+    h1 small, h2, #more, #disclaimer, h1 + p {
       font-family: Georgia, "Times New Roman", serif;
       color: #666;
     }
@@ -35,6 +35,13 @@ styles: |
       font-family: 'Goudy Old Style', 'OFL Sorts Mill Goudy', 'Fertigo Pro', Baskerville, 'Goudy Bookletter 1911', Palatino, 'Book Antiqua', serif;
       color: gray;
       margin: 0 -.2em;
+    }
+    h1 + p {
+      position: relative;
+      top: -4em;
+      text-align: center;
+      text-indent: 12.5em;
+      font-style: italic;
     }
     h2 { margin: .8em 0 .3em 0; display: none }
     .main h2 {
@@ -83,6 +90,7 @@ styles: |
       body { padding: 7px }
       .main { width: auto; float: none; }
       h1 { font-size: 3em; padding-top: 0; margin: .2em 0 .5em 0; line-height: 1.1; }
+      h1 + p { top: -1.5em; text-indent: 5em; margin-bottom: -1em }
       .main h2 { font-size: 1em; padding: .2em .4em; }
       #iphone-main { text-align: left; }
       ul > li { padding: .3em 0; }
@@ -99,9 +107,10 @@ styles: |
     }
 ---
 <h1><small>Things I learned from</small> iPhone <span class="amp">&amp;</span> Droid ads</h1>
+<p>written in <b>{{ page.date | date: "%B %Y" }}</b></p>
 
 <div id="iphone-main" class="iphone main">
-  <h2>What I learned by watching <a href="http://www.apple.com/iphone/gallery/ads/">iPhone ads</a></h2>
+  <h2>What I learned by watching <a href="http://www.apple.com/iphone/gallery/ads.html">iPhone ads</a></h2>
 
   <ul>
   <li>While on a call you can look up stuff.</li>
@@ -113,7 +122,7 @@ styles: |
 </div>
 
 <div id="droid-main" class="droid main">
-  <h2>What I learned by watching <a href="http://www.youtube.com/user/VerizonWireless">Droid ads</a></h2>
+  <h2>What I learned by watching <a href="http://www.youtube.com/playlist?list=PL538E725F3C757057">Droid ads</a></h2>
 
   <ul>
   <li>It is fast and it despises aesthetics.</li>
