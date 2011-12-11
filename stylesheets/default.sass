@@ -243,7 +243,7 @@ div.breadcrumbs
   padding: 0.5em 0
   margin-top: 1em
 
-pre, code
+pre, code, kbd
   font-family: $code_type
 
 pre
@@ -256,7 +256,10 @@ pre
     white-space: pre-wrap
     padding: 1em 1.2em 1em 10px
 
-p code, h1 code, h2 code, h3 code, li > code
+p, h1, h2, h3
+  code, kbd
+    font-size: .8em
+li > code, li > kbd
   font-size: .8em
 
 p code, li > code
@@ -264,6 +267,15 @@ p code, li > code
   color: #333
   padding: .2em .2em .15em .2em
   white-space: nowrap
+
+kbd
+  padding: 2px 4px
+  white-space: nowrap
+  color: black
+  background: #EEE
+  border-width: 1px 3px 3px 1px
+  border-style: solid
+  border-color: #CCC #AAA #888 #BBB
 
 p a
   &:link code, &:visited code
