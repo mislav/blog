@@ -112,7 +112,7 @@ But it is *how* you enter insert mode that can gain you some advantage:
     <td>insert before the first non-blank character in the current line
   <tr>
     <th><kbd>A</kbd>
-    <td>insert at and of the line
+    <td>insert at end of the line
   <tr>
     <th><kbd>o</kbd>
     <td>starts insert mode in a new line below current one
