@@ -339,7 +339,7 @@ Vim uses its *registers* as its internal clipboard. You can even save
 yanked text into a named register of your choosing to ensure it is never
 overwritten and paste it later from that register if you need to paste
 it multiple times in different spots. Commands for selecting registers
-start with <kbd>"</kbd>:
+start with `"`:
 
 <table>
   <tr>
@@ -360,10 +360,10 @@ start with <kbd>"</kbd>:
 </table>
 
 The examples above show how you can explicitly opt-in to use the system
-clipboard via <kbd>"*</kbd>, showing that Vim does have access to the
+clipboard via `"*`, showing that Vim does have access to the
 system clipboard, but doesn't use it by default. The last example uses
-the `"_` ("black hole") register, which is a way to discard text without
-copying it and overriding the default register.
+the `"_` (the "black hole") register, which is a way to discard text
+without copying it and overriding the default register.
 
 **Pro tip**: after you paste code, it might not be indented correctly in
 the new context. You can select just pasted lines and autoindent them
