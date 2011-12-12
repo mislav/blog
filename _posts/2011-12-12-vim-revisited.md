@@ -285,6 +285,71 @@ the previous jump with <kbd>``</kbd>.
 And if you did multiple jumps, you can backtrack with
 <kbd>&lt;C-o&gt;</kbd>.
 
+### Yanking: copy & paste
+
+Once you know basic motions and navigating around jumps, you can be
+efficient with copy ("yank" in Vim terms) and paste.
+
+<table>
+  <tr>
+    <th><kbd>Y</kbd>
+    <td>yank current line; prepend with number to yank that many lines
+  <tr>
+    <th><kbd>y}</kbd>
+    <td>yank until end of paragraph
+  <tr>
+    <th><kbd>dd</kbd>
+    <td>delete current line but copy it too (think "cut")
+  <tr>
+    <th><kbd>d3d</kbd>
+    <td>delete 3 lines starting from current one
+  <tr>
+    <th><kbd>p</kbd>
+    <td>paste yanked text at cursor; prepend number to paste that many times
+  <tr>
+    <th><kbd>P</kbd>
+    <td>paste before cursor
+</table>
+
+What isn't obvious at first, but you're gonna notice soon, is that Vim
+doesn't use your OS clipboard by default for these operations; i.e. you
+can't paste text copied from Vim in other apps and <kbd>p</kbd> won't
+paste into Vim what you just copied from another program on your
+computer.
+
+Vim uses its *registers* as its internal clipboard. You can even save
+yanked text into a named register of your choosing to ensure it is never
+overwritten and paste it later from that register if you need to paste
+it multiple times in different spots. Commands for selecting registers
+start with <kbd>"</kbd>:
+
+<table>
+  <tr>
+    <th><kbd>"aY</kbd>
+    <td>yank current line into register "a"
+  <tr>
+    <th><kbd>"ap</kbd>
+    <td>paste from register "a"
+  <tr>
+    <th><kbd>"*Y</kbd>
+    <td>yank line into special register "*" which is the system clipboard
+  <tr>
+    <th><kbd>"*p</kbd>
+    <td>paste from register "*": the system clipboard
+  <tr>
+    <th><kbd>"_D</kbd>
+    <td>delete from cursor until the end of line, but don't copy
+</table>
+
+The examples above show how you can explicitly opt-in to use the system
+clipboard via <kbd>"*</kbd>, showing that Vim does have access to the
+system clipboard, but doesn't use it by default. The last example uses
+the `"_` ("black hole") register, which is a way to discard text without
+copying it and overriding the default register.
+
+You can inspect the current state of all registers with
+<kbd>:registers</kbd>. See <kbd>:help registers</kbd>.
+
 ## Quickly navigate files
 
 Real-world projects have more than one file to edit. Efficient switching
