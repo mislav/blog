@@ -4,12 +4,29 @@ description: "How I learned Vim the proper way."
 layout: post
 category: vim
 styles: |
-  img { display:block; max-width: 100% }
+  p code.file { background: none; padding: 0; color: #666 }
+  @media only screen and (min-width: 1000px) {
+    body { max-width: 1300px }
+    #post { width: 70% }
+    h2 { clear: left }
+    aside {
+      width: 35%; float: right; margin-right: -43%;
+      margin-top: -5em;
+      font-size: .9em;
+      color: #666;
+    }
+    #post aside { font-size: .8em }
+    #post aside p { line-height: 1.4 }
+    aside kbd { padding: 1px 3px }
+    aside *:first-child { margin-top: 0 }
+    aside h3 { border: none; padding-bottom: 0; font-variant: small-caps; line-height: 1 }
+  }
+  #post img { display:block; max-width: 100%; -webkit-box-shadow: rgba(0,0,0,.4) 0 2px 8px; }
   td, th { vertical-align:top; text-align:left }
   th { padding:.1em .3em .1em 0 }
   th kbd, td kbd { font-size:.8em; font-weight:normal }
   table { border-collapse: collapse; margin: 1.2em 0 1.2em 1.5em }
-  @media only screen and (max-device-width: 480px) {
+  @media only screen and (max-width: 480px) {
     table { margin: 1em 0 }
   }
   table thead { cursor:default }
@@ -50,7 +67,7 @@ moment.
 This is a good starting point for your <code class="file">.vimrc</code>:
 
 {% highlight vim %}
-set nocompatible
+set nocompatible                " choose no compatibility with legacy vi
 syntax enable
 set encoding=utf-8
 set showcmd                     " display incomplete commands
@@ -58,8 +75,8 @@ filetype plugin indent on       " load file type plugins + indentation
 
 "" Whitespace
 set nowrap                      " don't wrap lines
-set tabstop=2 shiftwidth=2      " a tab is two spaces (change this to your linking)
-set expandtab                   " use spaces, not tabs (remove this if you mostly use tabs)
+set tabstop=2 shiftwidth=2      " a tab is two spaces (or set this to 4)
+set expandtab                   " use spaces, not tabs (optional)
 set backspace=indent,eol,start  " backspace through everything in insert mode
 
 "" Searching
@@ -73,6 +90,10 @@ Everything mentioned in this article is valid in vim running in a
 terminal as well as graphical (GUI) vim such as gvim or MacVim. A
 graphical vim setting offers extra features, but I'm not covering any
 of those here.
+
+<div><aside>
+<p><strong>Don’t use <a href="https://github.com/carlhuda/janus#readme" title="Janus: a Vim distribution">Janus</a></strong>. It’s a community maintained vim configuration project that in theory sounds nice, but once you start using it it’s not all rainbows. The current version of Janus installs harmful plugins such as Syntastic and adds tons of opinionated mappings and piles of hacks on top of one another. The “experimental” version of Janus is a rewrite that’s meant to be more configurable, but in fact it’s just more fragmented and harder to follow what’s going on. You should be in charge of your <code class="file">.vimrc</code> and always know what’s going on, but with Janus you’re not.</p>
+</aside></div>
 
 ### Guidelines for expanding your vim settings later on:
 
@@ -88,16 +109,6 @@ of those here.
    their editor up. A lot of people publish their dotfiles on GitHub.
 
 You can [view my personal vim configuration here][vimfiles].
-
-**Don't use [Janus][]**. It's a community maintained vim configuration
-project that in theory sounds nice, but once you start using it it's
-not all rainbows. The current version of Janus installs harmful plugins
-such as Syntastic and adds tons of opinionated mappings and piles of
-hacks on top of one another. The "experimental" version of Janus is a
-rewrite that's meant to be more configurable, but in fact it's just more
-fragmented and harder to follow what's going on. You should be in charge
-of your <code class="file">.vimrc</code> and always know what's going
-on, but with Janus you're not.
 
 ### Make it pretty
 
@@ -124,7 +135,7 @@ compared to your old editor: you press <kbd>i</kbd>, you're in insert
 mode, now you type text as your normally would. Pressing
 <kbd>&lt;Esc&gt;</kbd> exits back to normal mode.
 
-But it is *how* you enter insert mode that can gain you some advantage:
+But it is *how* you enter insert mode that offers some advantage:
 
 <table>
   <tr>
@@ -183,18 +194,15 @@ motion that means "inner word".
 Since there are too many different motions to remember at once, you'll
 need some sort of a mnemonic to help you while learning.
 
-### The best Vim cheat sheet you'll ever use
+<div><aside>
+  <h3>The best Vim cheat sheet</h3>
 
-Do an [image search for "vim cheat sheet"][search] and you'll
-quickly hate life. But not all of them are ugly – there is a smart
-[wallpaper originally designed by Ted Naleid][ted] and [re-worked with
-smoother colors][cheatsheet]:
+  <p>Do an <a href="http://www.google.com/search?q=vim+cheat+sheet&amp;source=lnms&amp;tbm=isch">image search for &ldquo;vim cheat sheet&rdquo;</a> and you&rsquo;ll quickly hate life. But not all of them are ugly – there is a smart <a href="http://naleid.com/blog/2010/10/04/vim-movement-shortcuts-wallpaper/" title="Vim movement shortcuts wallpaper by Ted Naleid">wallpaper originally designed by Ted Naleid</a> and <a href="https://github.com/LevelbossMike/vim_shortcut_wallpaper#readme" title="A Vim cheat sheet wallpaper">re-worked with smoother colors</a>:</p>
 
-[![vim motion keys](https://a248.e.akamai.net/assets.github.com/img/57cc2998508eb2c6f0b46b265354e6dda3145757/687474703a2f2f696d673835302e696d616765736861636b2e75732f696d673835302f373533372f62696c6473636869726d666f746f323031313034303275672e706e67)][bigimg]
+  <p><a href="https://github.com/LevelbossMike/vim_shortcut_wallpaper/raw/master/vim-shortcuts_1280x800.png" title="1280x800 Vim cheat sheet wallpaper"><img src="https://a248.e.akamai.net/assets.github.com/img/57cc2998508eb2c6f0b46b265354e6dda3145757/687474703a2f2f696d673835302e696d616765736861636b2e75732f696d673835302f373533372f62696c6473636869726d666f746f323031313034303275672e706e67" alt="vim motion keys" /></a></p>
 
-I don't actually use it as a wallpaper; while learning I've kept it open
-in a separate window and switch to it whenever I needed to remind myself
-of what kind of motions are there.
+  <p>I don&rsquo;t actually use it as a wallpaper; while learning I&rsquo;ve kept it open in a separate window and switch to it whenever I needed to remind myself of what kind of motions are there.</p>
+</aside></div>
 
 ### Knowing where you want to go
 
@@ -276,8 +284,9 @@ movement:
 To me, the killer ones on this list are "word", "WORD" and paragraph
 motions.
 
-**Pro tip**: while in insert mode, <kbd>&lt;C-w&gt;</kbd> deletes
-the last word before cursor. This is more efficient than backspacing.
+<div><aside>
+<p><strong>Pro tip</strong>: while in insert mode, <kbd>&lt;C-w&gt;</kbd> deletes the last word before cursor. This is more efficient than backspacing.</p>
+</aside></div>
 
 For in-depth documentation on motions, see <kbd>:help motion.txt</kbd>.
 
@@ -370,12 +379,9 @@ system clipboard, but doesn't use it by default. The last example uses
 the `"_` (the "black hole") register, which is a way to discard text
 without copying it and overriding the default register.
 
-**Pro tip**: after you paste code, it might not be indented correctly in
-the new context. You can select just pasted lines and autoindent them
-with <kbd>V\`]=</kbd>. This should fix the indentation in most cases.
-Breaking it down: uppercase `V` enters line-based visual mode, `` `] ``
-is a motion that selects everything until the end of just pasted text,
-and `=` performs auto-indentation.
+<div><aside>
+<p><strong>Pro tip</strong>: after you paste code, it might not be indented correctly in the new context. You can select just pasted lines and autoindent them with <kbd>V`]=</kbd>. This should fix the indentation in most cases.  Breaking it down: uppercase <code>V</code> enters line-based visual mode, <code>`]</code> is a motion that jumps to the end of just changed text, and <code>=</code> performs auto-indentation.</p>
+</aside></div>
 
 You can inspect the current state of all registers with
 <kbd>:registers</kbd>. See <kbd>:help registers</kbd>.
@@ -423,11 +429,12 @@ after keystrokes before resolving the mapping. (See all of the current
 mappings in effect with <kbd>:map</kbd>.)
 
 In the same session, Vim remembers previously open files. You can list
-them with <kbd>:buffers</kbd>. Without even using any plugins, you can
-jump to a buffer on this list by typing <kbd>:b</kbd> and a part of a
-buffer's name. For example, if you've previously opened
-`lib/api_wrapper.rb`, you can return to it with <kbd>:b api</kbd>. Hit
-<kbd>&lt;Tab&gt;</kbd> to cycle between multiple matches.
+them with <kbd>:buffers</kbd> (shortcut: <kbd>:ls</kbd>). Without even
+using any plugins, you can jump to a buffer on this list by typing
+<kbd>:b</kbd> and a part of a buffer's name. For example, if you've
+previously opened `lib/api_wrapper.rb`, you can return to it with
+<kbd>:b api</kbd>. Hit <kbd>&lt;Tab&gt;</kbd> to cycle between multiple
+matches.
 
 To switch between the currently open buffer and the previous one, use
 <kbd>&lt;C-^&gt;</kbd>. This key combination is a bit hard to reach, so
@@ -498,12 +505,6 @@ for all your work on plugins.
 
   [janus]: https://github.com/carlhuda/janus#readme
     "Janus: a Vim distribution"
-  [cheatsheet]: https://github.com/LevelbossMike/vim_shortcut_wallpaper#readme
-    "A Vim cheat sheet wallpaper"
-  [bigimg]: https://github.com/LevelbossMike/vim_shortcut_wallpaper/raw/master/vim-shortcuts_1280x800.png
-    "1280x800 Vim cheat sheet wallpaper"
-  [ted]: http://naleid.com/blog/2010/10/04/vim-movement-shortcuts-wallpaper/
-    "Vim movement shortcuts wallpaper by Ted Naleid"
   [cominghome]: http://stevelosh.com/blog/2010/09/coming-home-to-vim/
     "Coming home to Vim by Steve Losh"
   [vimcasts]: http://vimcasts.org/ "VimCasts by Drew Neil"
@@ -514,7 +515,6 @@ for all your work on plugins.
   [cmdt]: https://wincent.com/products/command-t "Command-T plugin for Vim"
   [presentation]: http://walking-without-crutches.heroku.com/
     "Vim: Walking Without Crutches presentation by Drew Neil"
-  [search]: http://www.google.com/search?q=vim+cheat+sheet&source=lnms&tbm=isch
   [pathogen]: https://github.com/tpope/vim-pathogen#readme
     "Pathogen makes it easy to install vim plugins in separate directories"
   [alloy]: https://github.com/alloy/macvim/wiki/Screenshots
