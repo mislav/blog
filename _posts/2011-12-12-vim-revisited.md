@@ -271,7 +271,7 @@ movement:
 To me, the killer ones on this list are "word", "WORD" and paragraph
 motions.
 
-One related tip: while in insert mode, <kbd>&lt;C-w&gt;</kbd> deletes
+**Pro tip**: while in insert mode, <kbd>&lt;C-w&gt;</kbd> deletes
 the last word before cursor. This is more efficient than backspacing.
 
 For in-depth documentation on motions, see <kbd>:help motion.txt</kbd>.
@@ -364,6 +364,13 @@ clipboard via <kbd>"*</kbd>, showing that Vim does have access to the
 system clipboard, but doesn't use it by default. The last example uses
 the `"_` ("black hole") register, which is a way to discard text without
 copying it and overriding the default register.
+
+**Pro tip**: after you paste code, it might not be indented correctly in
+the new context. You can select just pasted lines and autoindent them
+with <kbd>V\`]=</kbd>. This should fix the indentation in most cases.
+Breaking it down: uppercase `V` enters line-based visual mode, `` `] ``
+is a motion that selects everything until the end of just pasted text,
+and `=` performs auto-indentation.
 
 You can inspect the current state of all registers with
 <kbd>:registers</kbd>. See <kbd>:help registers</kbd>.
