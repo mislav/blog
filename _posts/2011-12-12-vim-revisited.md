@@ -4,10 +4,14 @@ description: "How I learned Vim the proper way."
 layout: post
 category: vim
 styles: |
+  img { display:block; max-width: 100% }
   td, th { vertical-align:top; text-align:left }
   th { padding:.1em .3em .1em 0 }
   th kbd, td kbd { font-size:.8em; font-weight:normal }
   table { border-collapse: collapse; margin: 1.2em 0 1.2em 1.5em }
+  @media only screen and (max-device-width: 480px) {
+    table { margin: 1em 0 }
+  }
   table thead { cursor:default }
   table.split tbody th { font-weight: normal }
   table.split th, table.split td { padding: .1em .4em }
