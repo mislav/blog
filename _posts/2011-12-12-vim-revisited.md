@@ -76,15 +76,17 @@ set smartcase                   " ... unless they contain at least one capital l
 4. Discover your Vim heroes and periodically check how they have set
    their editor up. A lot of people publish their dotfiles on GitHub.
 
-Don't use [Janus][]. It's a community maintained vim configuration
+You can [view my personal vim configuration here][vimfiles].
+
+**Don't use [Janus][]**. It's a community maintained vim configuration
 project that in theory sounds nice, but once you start using it it's
-anything but that. The current version of Janus installs harmful
-plugins such as Syntastic and adds tons of opinionated mappings and
-piles of hacks on top of one another. The "experimental" version of
-Janus is a rewrite that's meant to be more configurable, but in fact
-it's just more fragmented and harder to follow what's going on. You
-should be in charge of your <code class="file">.vimrc</code> and always
-know what's going on, but with Janus you're not.
+not all rainbows. The current version of Janus installs harmful plugins
+such as Syntastic and adds tons of opinionated mappings and piles of
+hacks on top of one another. The "experimental" version of Janus is a
+rewrite that's meant to be more configurable, but in fact it's just more
+fragmented and harder to follow what's going on. You should be in charge
+of your <code class="file">.vimrc</code> and always know what's going
+on, but with Janus you're not.
 
 ## Find your killer features
 
@@ -390,6 +392,7 @@ For more information, see <kbd>:help windows</kbd>.
 * [Destroy All Software][destroy] – there are some episodes on Vim
 * [VimGolf][] – time-consuming but rewarding game
 * [Walking Without Crutches][presentation] – presentation by Drew Neil
+* [My vim configuration and plugins][vimfiles]
 
 Thanks Gary Bernhardt, Drew Neil for tips and inspiration, and Tim Pope
 for all your work on plugins.
@@ -417,3 +420,5 @@ for all your work on plugins.
     "Pathogen makes it easy to install vim plugins in separate directories"
   [alloy]: https://github.com/alloy/macvim/wiki/Screenshots
     "Screenshots of MacVim fork with native file browser"
+  [vimfiles]: https://github.com/mislav/vimfiles
+    "Mislav's Vim configuration files"
