@@ -29,11 +29,11 @@ Before, I never felt like we understood each other properly. Vim is
 almost useless without plugins and some essential settings in <code
 class="file">.vimrc</code>, but fiddling with all the knobs and
 installing all the plugins that I thought I needed was a process that in
-the end streched out from few hours to weeks, months even; and it the
+the end stretched out from few hours to weeks, months even; and it the
 end it just caused frustration instead of making me a happier coder.
 
 Recently, I decided to give Vim another shot.  This time around it was
-different – someting in my brain switched and now for the first time in
+different – something in my brain switched and now for the first time in
 my life I'm proud of my knowledge of Vim. My philosophy of it has changed
 to "less is more", my approach was more disciplined and my motivation
 stronger. And so you don't spend as much time learning as I did, I am
@@ -386,18 +386,19 @@ between files is just as important as motion commands.
 
 Folks coming from TextMate, IDEs, or gedit will quickly find themselves
 craving for a directory tree side pane, and the community is going to
-unanimously recomend NERD tree. **Don't use the NERD tree plugin.** It
-is clumsy, will *hurt* your workflow with split windows, and it's not
-particulary pretty either. *You never needed* a file browser pane in the
-first place. The only thing it can be useful for is getting to know the
-directory/file structure of a new project, and you can easily cover that
-with the `tree` command-line tool (OS X users: install it with
-Homebrew).
+unanimously recommend NERD tree. **Don't use the NERD tree plugin.** It
+is clumsy, will *hurt* your split windows workflow because of edge-case
+bugs and plugin incompatibilities, and *you never needed* a file browser
+pane in the first place, anyway. The only thing it can be useful for is
+familiarizing yourself with the directory/file structure of a new
+project, and you can easily do that with the `tree` command-line tool
+(easily installed via package manager of choice, such as Homebrew on OS
+X).
 
 What you need is a plugin for fuzzy searching of file names in a
 project. I find the [Command-T][cmdt] plugin very capable and fast, but
 it requires ruby on the system and vim compiled with ruby support. If
-that's a dealbreaker for you, some people swear by [ctrlp.vim][ctrlp].
+that's a deal breaker for you, some people swear by [ctrlp.vim][ctrlp].
 
 Here are my mappings for starting a file search with Command-T. I
 start a project-wide search with <kbd>,f</kbd> and search the directory
