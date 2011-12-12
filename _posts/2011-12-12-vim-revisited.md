@@ -25,12 +25,13 @@ styles: |
 
 I've had an *off/on relationship* with Vim for the past many years.
 
-Before, I never felt like we understood each other properly. Vim is
-almost useless without plugins and some essential settings in <code
-class="file">.vimrc</code>, but fiddling with all the knobs and
-installing all the plugins that I thought I needed was a process that in
-the end stretched out from few hours to weeks, months even; and it the
-end it just caused frustration instead of making me a happier coder.
+Before, I never felt like we understood each other properly. I felt that
+the kind of programming I'm doing is not easily done without plugins and
+some essential settings in <code class="file">.vimrc</code>, but
+fiddling with all the knobs and installing all the plugins that I
+thought I needed was a process that in the end stretched out from few
+hours to weeks, months even; and it the end it just caused frustration
+instead of making me a happier coder.
 
 Recently, I decided to give Vim another shot.  This time around it was
 different – something in my brain switched and now for the first time in
@@ -57,8 +58,8 @@ filetype plugin indent on       " load file type plugins + indentation
 
 "" Whitespace
 set nowrap                      " don't wrap lines
-set tabstop=2 shiftwidth=2      " a tab is two spaces
-set expandtab                   " use spaces, not tabs
+set tabstop=2 shiftwidth=2      " a tab is two spaces (change this to your linking)
+set expandtab                   " use spaces, not tabs (remove this if you mostly use tabs)
 set backspace=indent,eol,start  " backspace through everything in insert mode
 
 "" Searching
