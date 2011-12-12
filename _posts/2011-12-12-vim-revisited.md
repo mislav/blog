@@ -395,7 +395,9 @@ with the `tree` command-line tool (OS X users: install it with
 Homebrew).
 
 What you need is a plugin for fuzzy searching of file names in a
-project. Look no further than [Command-T][cmdt].
+project. I find the [Command-T][cmdt] plugin very capable and fast, but
+it requires ruby on the system and vim compiled with ruby support. If
+that's a dealbreaker for you, some people swear by [ctrlp.vim][ctrlp].
 
 Here are my mappings for starting a file search with Command-T. I
 start a project-wide search with <kbd>,f</kbd> and search the directory
@@ -519,3 +521,5 @@ for all your work on plugins.
     "Mislav's Vim configuration files"
   [inconsolata]: http://www.levien.com/type/myfonts/inconsolata.html
     "Inconsolata programming typeface"
+  [ctrlp]: http://kien.github.com/ctrlp.vim/
+    "Full path fuzzy file, buffer and MRU file finder for Vim"
