@@ -64,6 +64,11 @@ set ignorecase                  " searches are case insensitive...
 set smartcase                   " ... unless they contain at least one capital letter
 {% endhighlight %}
 
+Everything mentioned in this article is valid in vim running in a
+terminal as well as graphical (GUI) vim such as gvim or MacVim. A
+graphical vim setting offers extra features, but I'm not covering any
+of those here.
+
 ### Guidelines for expanding your vim settings later on:
 
 1. Never copy something from other people unless you know *exactly* what
@@ -88,6 +93,19 @@ rewrite that's meant to be more configurable, but in fact it's just more
 fragmented and harder to follow what's going on. You should be in charge
 of your <code class="file">.vimrc</code> and always know what's going
 on, but with Janus you're not.
+
+### Make it pretty
+
+Aesthetics of your text editor are very important given the time you're
+spending in it. You should use a good programming font for your terminal
+emulator: for example DejaVu Sans Mono or [Inconsolata][]. This will
+affect vim running in the terminal. Next is the color scheme: pick one
+by cycling through available colors with <kbd>:color &lt;Tab&gt;</kbd>.
+
+The quality of the color theme will depend severely on your terminal
+emulator. You should consider using a graphical Vim to reach the highest
+quality of typeface and color; a graphical environment can also offers
+extra options such as antialiasing and line spacing settings.
 
 ## Find your killer features
 
@@ -488,3 +506,5 @@ for all your work on plugins.
     "Screenshots of MacVim fork with native file browser"
   [vimfiles]: https://github.com/mislav/vimfiles
     "Mislav's Vim configuration files"
+  [inconsolata]: http://www.levien.com/type/myfonts/inconsolata.html
+    "Inconsolata programming typeface"
