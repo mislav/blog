@@ -120,7 +120,7 @@ by cycling through available colors with <kbd>:color &lt;Tab&gt;</kbd>.
 
 The quality of the color theme will depend severely on your terminal
 emulator. You should consider using a graphical Vim to reach the highest
-quality of typeface and color; a graphical environment can also offers
+quality of typeface and color; a graphical environment can also offer
 extra options such as antialiasing and line spacing settings.
 
 ## Find your killer features
@@ -212,7 +212,7 @@ perform it faster than hitting cursor keys repeatedly or even using the
 mouse. In general:
 
 * If you repeatedly (more than 2-3 times in a row) hit cursor keys to
-  get somewhere, there is a better way.
+  navigate, there is a better way.
 * If you press backspace more than a couple of times to delete text,
   there is a better way.
 * If you find yourself performing the same changes on several lines,
