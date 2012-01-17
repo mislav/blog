@@ -66,7 +66,7 @@ styles: |
   #keyboard p a { text-decoration: none; color: inherit }
   #keyboard p a:hover { text-decoration: underline; }
   #keyboard ul {list-style-type: none; width: 784px; margin: 0 auto;}
-  #keyboard li {float: left;}
+  #keyboard li {float: left; margin: 0 !important }
   #keyboard a { text-decoration: none; }
 
   .key{
@@ -258,12 +258,8 @@ styles: |
   }
   #keyboard-wrap #keyboard { margin-left: -512px }
 
-  /*
-  @media only screen and (max-width: 480px) {
-    #keyboard-wrap { padding-top: 5px; padding-bottom: 5px }
-    #keyboard, .key { -webkit-box-shadow: none }
-  }
-  */
+  @media only screen and (device-width: 768px) { #left, #up { font-size: 9pt } }
+  @media only screen and (device-width: 320px) { #left, #up { font-size: 9pt } }
 ---
 
 With the Option (<kbd>⌥</kbd>) key on the Mac, you have access to a wide
