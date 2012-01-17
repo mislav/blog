@@ -462,7 +462,7 @@ near the Return key:
   <td>acute</td>
   <td><span><kbd>⌥</kbd>+<kbd>e</kbd> <kbd>e</kbd></span></td>
   <td>many European</td>
-  <td>résumé, Krákow</td>
+  <td>résumé, Kraków</td>
 </tr>
 <tr>
   <th>ñ</th>
