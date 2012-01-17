@@ -515,6 +515,21 @@ Croatian diacritics may resemble accents, particularly for "ć", but they
 in fact form separate characters (and sounds). True accents are almost
 never used in Croatian language, except when disambiguating homonyms.
 
+## Combining diacritics
+
+"Combining characters" in Unicode are marks that modify other
+characters. For example, to add an acute to the e's in "resume", you
+could position the cursor after the "e" and type
+<span><kbd>⌥⇧</kbd>+<kbd>e</kbd></span>. For diacritics, you can get
+combining characters on the Mac keyboard by combining Shift with one of
+the already mentioned Alt-based keystrokes.
+
+Although "é" (e-acute) and "é" (e with a combining diacritic) appear to
+be identical, they are not. The former takes 2 bytes in UTF-8 while the
+latter takes 3. However, both should be valid for presenting to the end
+user, and engines that perform transliteration should take both forms
+into account.
+
 ## Special characters in iOS
 
 Most, if not all of the aforementioned characters are available on iOS
