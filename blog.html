@@ -11,26 +11,19 @@ permalink: /blog/
 
 <div id="links_me">
   <a href="/projects/">projects</a>
-  ◾ <a href="http://twitter.com/mislav" rel="me">twitter.com/mislav</a>
-  ◾ <a href="http://github.com/mislav" rel="me">github.com/mislav</a>
+  · <a href="http://twitter.com/mislav" rel="me">twitter.com/mislav</a>
+  · <a href="http://github.com/mislav" rel="me">github.com/mislav</a>
 </div>
 
-<ol class="posts home">
-  {% for post in site.posts %}
-    <li>
-      <span class="date">{{ post.date | date_to_string }}</span>
-      ▸ <a href="{{ post.url }}">{{ post.title }}</a>
-      {% if post.categories != empty %}<span class="categories">in {{ post.categories | array_to_sentence_string }}</span>{% endif %}
-    </li>
-  {% endfor %}
+<section class="posts home">
+{% for post in site.posts %}
+  <article{% if post.link %} class=link{% endif %}>
+    <header>
+      <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
+      <time datetime="{{ post.date | date_to_xmlschema }}" pubdate>{{ post.date | date_to_string }}</time>
+    </header>
 
-  <!-- {% for category in site.categories %}
-    {% assign ctgry = category[0] %}
-    <h3>{{ ctgry }}</h3>
-        
-    {% for article in site.categories[ctgry] %}
-      <p>{{ article.date | date_to_string }}, {{ article.title }}</p>
-    {% endfor %}
-  {% endfor %} -->
-  
-</ol>
+    {% if page.description %}<p>{{ post.description }}</p>{% endif %}
+  </article>
+{% endfor %}
+</section>

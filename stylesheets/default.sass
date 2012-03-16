@@ -72,6 +72,8 @@ h1
     margin-bottom: 2em
     color: #666
     font-style: italic
+    time
+      font-weight: bold
     + h2
       margin-top: 0
   color: #a21e3f
@@ -142,6 +144,30 @@ p.post-info .date
   color: #6d7d21
   font-weight: bold
 
+section.posts
+  article
+    + article
+      margin-top: 2em
+    header + *
+      margin-top: 0
+    h2
+      margin-top: 0
+      margin-bottom: 0
+      font-size: 1em
+      border-left: none
+      margin-left: 0
+      padding-left: 0
+      display: inline-block
+    time:before
+      content: "·"
+      margin: 0 .5em
+    &.link
+      h2
+        display: block
+      time:before
+        content: none
+        margin: 0
+
 dl
   &.posts
     .post-info .date
@@ -166,7 +192,7 @@ ol.posts
       margin: .4em 0
       color: $body_color
 
-ol.posts li .date, #instapaper time
+ol.posts li .date, section.posts time, #instapaper time
   font-family: $date_type
   color: #777
   font-size: 90%
@@ -285,6 +311,8 @@ blockquote
   padding-left: 1em
   font-weight: 300
   font-style: italic
+  i, em
+    font-style: normal
 
 .highlight
   -webkit-border-radius: 4px

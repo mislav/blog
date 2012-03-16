@@ -4,15 +4,18 @@
     <link href="http://feeds.feedburner.com/mislav/dev" rel="alternate" title="All posts" type="application/atom+xml">
     <link href="http://feeds.feedburner.com/mislav/js" rel="alternate" title="JavaScript" type="application/atom+xml">
     <link href="http://feeds.feedburner.com/mislav/rails" rel="alternate" title="Rails" type="application/atom+xml">
-    
+
     <link rel="stylesheet" type="text/css" href="/stylesheets/default.css">
-    
-    <title>{{ page.title | strip_html }}</title>
+    <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <meta charset="UTF-8">
+    <title>{{ page.title | strip_html | escape_once }}</title>
     {% if page.description %}
-    <meta name="description" content="{{ page.description | xml_escape }}">
+    <meta name="description" content="{{ page.description | strip_html | escape_once }}">
     {% endif %}
     <meta name="author" content="Mislav Marohnić &lt;mislav.marohnic@gmail.com&gt;">
-    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
     <meta content='initial-scale=1.0' name='viewport'>
     <link rel="icon" href="/favicon.ico">
 

@@ -1,12 +1,15 @@
 <!doctype html>
 <html>
   <head>
-    <title>{{ page.title | strip_html }}</title>
+    <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <title>{{ page.title | strip_html | escape_once }}</title>
     {% if page.description %}
-    <meta name="description" content="{{ page.description | xml_escape }}">
+    <meta name="description" content="{{ page.description | strip_html | escape_once }}">
     {% endif %}
     <meta name="author" content="Mislav Marohnić &lt;mislav.marohnic@gmail.com&gt;">
-    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <meta charset="UTF-8">
     <link rel="icon" href="/favicon.ico">
     <meta name="viewport" content="initial-scale=1.0">
     
