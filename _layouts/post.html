@@ -3,18 +3,21 @@ layout: page
 ---
 
 <p class="subtext">
+  {% unless page.link %}
   By <a href="/">Mislav</a>
-  on <b>{{ page.date | date_to_string }}</b>
+  {% endunless %}
+  on <time datetime="{{ page.date | date_to_xmlschema }}" pubdate>{{ page.date | date_to_string }}</time>
   {% if page.category == 'js' or page.category == 'rails' %}in <a href="/{{ page.category }}/">{{ page.category }}</a>
   {% elsif page.categories != empty %}in {{ page.categories | array_to_sentence_string }}
   {% endif %}
 </p>
 
-<div id="post">
+<div id="post"{% if page.link %} class=link{% endif %}>
   {{ content }}
 </div>
 
 <div id="related">
+  {% unless page.link %}
   <h2>Also on this site</h2>
   
   <ol class="posts">
@@ -25,6 +28,7 @@ layout: page
       </li>
     {% endfor %}
   </ol>
+  {% endunless %}
   
   <p>
   You should <a href="http://twitter.com/mislav" rel="me">follow me on Twitter: @mislav</a>.
