@@ -1,8 +1,10 @@
 ---
-layout: page
+layout: default
 title: Mislav's projects
 permalink: "/projects/"
 ---
+
+<h1>{{ page.title }}</h1>
 
 ## Projects I started
 

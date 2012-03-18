@@ -1,7 +1,9 @@
 ---
-layout: page
+layout: default
 title: Feeds
 ---
+
+<h1>{{ page.title }}</h1>
 
 Available feeds for this site:
 
