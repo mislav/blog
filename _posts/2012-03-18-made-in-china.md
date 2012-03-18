@@ -26,12 +26,12 @@ contracts, they agree on the length of their shifts and they stay in employment 
 Foxconn are better than most other companies in China. If a thousand people quit one day, there
 would be a thousand other Chinese eagerly lined up to start working literally the next day.
 
-But before we uncover where the real villain lies between a block of aluminium and the finished iPad
+But before we uncover where the real villain lies between a block of aluminum and the finished iPad
 in your hands, we first have to face the facts why those jobs went to China in the first place.
 
 It's not the manufacturing costs. The iPhone, theoretically, could still cost $650 even if it was
 produced in the United States, under U.S. labor laws and standards. What U.S. can't provide is the
-speed and the scale of manufacturing.
+scale of manufacturing.
 
 [Charles Duhigg and Keith Bradsher for The NY Times][nytimes]:
 
