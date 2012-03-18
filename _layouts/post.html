@@ -2,6 +2,9 @@
 layout: default
 ---
 
+<article>
+
+<header>
 {% if page.link %}
 <h1><a href="{{ page.link | escape }}">{{ page.title }}</a>&nbsp;→</h1>
 {% else %}
@@ -17,12 +20,15 @@ layout: default
   {% elsif page.categories != empty %}in {{ page.categories | array_to_sentence_string }}
   {% endif %}
 </p>
+</header>
 
 <div id="post"{% if page.link %} class=link{% endif %}>
   {{ content }}
 </div>
 
-<div id="related">
+</article>
+
+<aside id="related">
   {% unless page.link %}
   <h2>Also on this site</h2>
   
@@ -41,5 +47,5 @@ layout: default
   Additionally, <a href="/feeds/">subscribe to my blog</a>.
   </p>
   
-  <a class="home" href="/blog/">← all posts</a>
-</div>
+  <nav><a class="home" href="/blog/">← all posts</a></nav>
+</aside>
