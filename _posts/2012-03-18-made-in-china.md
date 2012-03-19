@@ -9,14 +9,14 @@ categories: Apple
 
 There is a particular detail that is most interesting to me in the aftermath of [Mr. Daisey and the
 Apple factory][mrdaisey] episode of This American Life and [its subsequent retraction][retraction],
-and that is that even the shameless, fabricated and dramatized Apple bashing was **a high point**
-for both This American Life podcast (most downloaded episode) and Mike Daisey's career, who
-considers this monologue to be his best work ever made.
+and that is that even the shameless, fabricated and dramatized Apple bashing was a _high point_ for
+both This American Life podcast (most downloaded episode) and Mike Daisey's career, who considers
+this monologue to be his best work ever made.
 
 In other words, it doesn't even take good journalism--the original piece was, in fact, a downright
 fabrication--to successfully lead an ever-ready lynch mob on yet another outraged march to 1
-Infinite Loop, Cupertino. The question is, why is the general public so eager--desperate even--to
-find a scapegoat, and for what exactly?
+Infinite Loop, Cupertino. The question is, why is the public so eager--desperate even--to find a
+scapegoat, and for what exactly?
 
 Mike Daisey was determined to stick the bad guy label on Apple. He was particularly keen on
 dramatizing only the parts of Chinese workers' conditions that would have shock value to his
@@ -29,9 +29,9 @@ would be a thousand other Chinese eagerly lined up to start working literally th
 But before we uncover where the real villain lies between a block of aluminum and the finished iPad
 in your hands, we first have to face the facts why those jobs went to China in the first place.
 
-It's not the manufacturing costs. The iPhone, theoretically, could still cost $650 even if it was
-produced in the United States, under U.S. labor laws and standards. What U.S. can't provide is the
-scale of manufacturing.
+It's not the manufacturing costs. The iPhone, theoretically, could still cost around $650 even if it
+was produced in the United States, under U.S. labor laws and standards. What U.S. can't provide is
+the _scale of manufacturing_.
 
 [Charles Duhigg and Keith Bradsher for The NY Times][nytimes]:
 
@@ -49,7 +49,7 @@ Jennifer Rigoni, former Apple’s worldwide supply demand manager:
 
 Apple's staff can design the magical gadgets you have in your hand. They can even program all the
 software, and run the services such as iCloud and Siri in the U.S. But they can't produce the
-hardware fast enough, and supply America and the rest of the world at the rate we demand.
+hardware fast enough and supply America (and the rest of the world) at the rate we demand.
 
 But the average consumer doesn't take "no" as an answer. Upon hearing there won't be new iPhones,
 that they are delayed or not in stock, we slam our fists on to the table and demand satisfaction. We
@@ -66,18 +66,13 @@ Charles Duhigg in [an interview with Ira Glass][interview]:
 
 It doesn't make sense any more to delay uncovering who's the real bad guy. It isn't Apple, or their
 manufacturers. **The bad guy is you.** You, who watched that keynote and immediately wanted iPhone
-or iPad. You, who complained that the live blog from the keynote is down even when you knew that the
-complete video will be uploaded by Apple in a matter of hours. You, who clapped when the Apple CEO
-unveiled product pricing that was even lower than expected.
+or iPad. You, who clapped when the Apple CEO unveiled product pricing that was even lower than
+expected. You, who cheered when the shipping date turned out to be only weeks away.
 
-That is, you're only the bad guy if you _believe_ that there's evil to be accounted for in the first
+That is, you're only the bad guy _if you believe_ that there's evil to be accounted for in the first
 place.
 
-If you're plagued with insufferable case of guilt for people “less fortunate” than you, then there's
-way nobler things you could be doing with the $650. If not, and you accept that your money goes down
-the chain where everyone involved benefits from it, then you can enjoy that magical device you
-have--but you will be wise to not have your pitchfork and torch ready the next time somebody points
-a finger.
+Being guilt-ridden is in this case a personal choice, not a matter of circumstance.
 
 
   [mrdaisey]: http://www.thisamericanlife.org/radio-archives/episode/454/mr-daisey-and-the-apple-factory
