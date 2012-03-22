@@ -25,7 +25,7 @@
   <entry>
     <author><name>Mislav</name></author>
     <published>{{ post.date | date_to_xmlschema }}</published>
-    <title>{{ post.title | strip_html | escape_once }}</title>
+    <title>{{ post.title | replace:'&nbsp;',' ' | xml_escape }}</title>
     {% if post.link %}
     <link rel="alternate" type="text/html" href="{{ post.link | xml_escape }}" />
     {% else %}

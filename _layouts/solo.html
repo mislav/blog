@@ -4,9 +4,9 @@
     <!--[if lt IE 9]>
     <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
-    <title>{{ page.title | strip_html | escape_once }}</title>
+    <title>{{ page.title | replace:'&nbsp;',' ' | escape }}</title>
     {% if page.description %}
-    <meta name="description" content="{{ page.description | strip_html | escape_once }}">
+    <meta name="description" content="{{ page.description | escape }}">
     {% endif %}
     <meta name="author" content="Mislav Marohnić &lt;mislav.marohnic@gmail.com&gt;">
     <meta charset="UTF-8">
