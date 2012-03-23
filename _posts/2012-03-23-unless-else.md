@@ -31,11 +31,11 @@ styles: |-
   }
 ---
 
-There are two features of Ruby that seem to be almost universally frowned upon
-by professionals: the `and` and `or` keywords, and the `unless ... else`
-construct.
+There are two features of Ruby that are often frowned upon by professionals: the
+`and` and `or` keywords, and the `unless ... else` construct.
 
-I want to argue that both are OK and need not be banned from your codebase.
+I want to argue that both are OK and, when used correctly, need not be
+considered a code smell.
 
 
 ## Ruby's `and` and `or` are not voodoo
@@ -133,8 +133,10 @@ if name = params[:full_name] and !name.empty?
 end
 {% endhighlight %}
 
-Know your language well, and expect of others to know it, too. If newbies get
-burned, newbs will get burned.
+Know your language well, and expect of others to know it, too. If beginner
+programmers in your group stumble on this, help them out like you would help
+with any other Ruby concept that isn't obvious (e.g. in `class << obj` syntax,
+the `<<` operator is neither shift nor append). It's not such a big hurdle.
 
 From [Programming Perl][]:
 
