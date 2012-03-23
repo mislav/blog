@@ -1,12 +1,17 @@
 auto:        false
 lsi:         false
-server:      true
+server:      false
 server_port: 4000
 pygments:    true
 markdown:    rdiscount
-rdiscount:
-  extensions: [smart]
+rdiscount:   { extensions: [smart] }
 permalink:   /:year/:month/:title/
+exclude:
+- draft
+- publish
+- CNAME
+- Guardfile
+- stylesheets/default.sass
 
 tracking_code: |
   var _gaq = _gaq || [];

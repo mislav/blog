@@ -1,0 +1,47 @@
+#!/bin/bash
+set -e
+
+name="${1:-draft}"
+permalink="${2}"
+dir=_posts
+
+post="$(find -s $dir -iname "*$name*" | tail -1)"
+
+if [ -z "$post" ]; then
+  echo "Can't find draft" >&2
+  exit 1
+fi
+
+if (git ls-files --error-unmatch -- "$post" >/dev/null 2>&1); then
+  echo "Error: $post is in version control already" >&2
+  exit 1
+fi
+
+yaml_frontmatter() {
+  awk '
+    /^---/ { d++; if (d>1) { d=0; nextfile } }
+    { print }
+  ' "$@"
+}
+
+title="$(yaml_frontmatter "$post" | ruby -e '
+    require "yaml"
+    d = YAML.load(ARGF.read)
+    puts d["title"].to_s.strip
+  '
+)"
+
+if [ -z "$title" ]; then
+  echo Error: title is empty >&2
+  exit 1
+fi
+
+# rename post to new date + permalink
+if [ -z "$permalink" ]; then
+  permalink=$(basename "$post" .md | sed -E 's/[0-9]{4}-[0-9]{2}-[0-9]{2}-?//')
+fi
+newpost="${dir}/`date +%Y-%m-%d`-${permalink}.md"
+
+mv $post $newpost
+git add $newpost
+git commit -m "new post: $title"

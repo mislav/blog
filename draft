@@ -1,0 +1,22 @@
+#!/bin/bash
+
+name="$1"
+dir=_posts
+post="${dir}/`date +%Y-%m-%d`-${name:-draft}.md"
+
+if [ -f "$post" ]; then
+  echo "Warning: $post already exists" >&2
+else
+  echo '---
+title: ""
+description: >
+layout: post
+categories: 
+---
+
+' > $post
+fi
+
+[ ${EDITOR#[mg]} = "vim" ] && args='+'
+
+exec $EDITOR "$post" $args
