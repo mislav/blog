@@ -1,7 +1,8 @@
 ---
 title: "Faraday: advanced HTTP requests made easy"
-description: "If you use Ruby to perform any sort of HTTP requests, you
-  might want to take a closer look at Faraday."
+description: >
+  If you use Ruby to perform any sort of HTTP requests, you
+  might want to take a closer look at Faraday.
 layout: post
 category: ruby
 ---
@@ -112,10 +113,10 @@ For example, this is how to setup a simple Faraday stack for basic use:
 {% highlight ruby %}
 require 'faraday'
 
-conn = Faraday.new(:url => 'http://sushi.com') do |builder|
-  builder.use Faraday::Request::UrlEncoded  # encode request params as "www-form-urlencoded"
-  builder.use Faraday::Response::Logger     # log request & response to STDOUT
-  builder.use Faraday::Adapter::NetHttp     # perform requests with Net::HTTP
+conn = Faraday.new(:url => 'http://sushi.com') do |c|
+  c.use Faraday::Request::UrlEncoded  # encode request params as "www-form-urlencoded"
+  c.use Faraday::Response::Logger     # log request & response to STDOUT
+  c.use Faraday::Adapter::NetHttp     # perform requests with Net::HTTP
 end
 
 response = conn.get '/nigiri/sake.json'     # GET http://sushi.com/nigiri/sake.json
@@ -167,14 +168,14 @@ all our present needs. For instance, to revisit our initial GitHub API use-case:
 {% highlight ruby %}
 require 'logger'
 # we need a 3rd-party extension for some extra middleware:
-require 'faraday_stack'
+require 'faraday_middleware'
 
-conn = Faraday.new 'https://api.github.com/', ssl: {verify: false} do |builder|
-  builder.use FaradayStack::ResponseJSON,     content_type: 'application/json'
-  builder.use Faraday::Response::Logger,      Logger.new('faraday.log')
-  builder.use FaradayStack::FollowRedirects,  limit: 3
-  builder.use Faraday::Response::RaiseError   # raise exceptions on 40x, 50x responses
-  builder.use Faraday::Adapter::NetHttp
+conn = Faraday.new 'https://api.github.com/', ssl: {verify: false} do |c|
+  c.use FaradayMiddleware::ParseJson,       content_type: 'application/json'
+  c.use Faraday::Response::Logger,          Logger.new('faraday.log')
+  c.use FaradayMiddleware::FollowRedirects, limit: 3
+  c.use Faraday::Response::RaiseError       # raise exceptions on 40x, 50x responses
+  c.use Faraday::Adapter::NetHttp
 end
 
 conn.headers[:user_agent] = 'MyLib v1.2'
@@ -199,10 +200,9 @@ middleware in its stack to add features that were not originally
 present. For example, if I'm using a Twitter library I can add caching
 to avoid hitting their API request limits.
 
-A couple of collections of Faraday middleware already exist on GitHub:
-[faraday-stack][] (by yours truly) and [faraday_middleware][]. These
-provide classes to parse JSON, XML, sign OAuth requests, cache responses
-and more.
+A collection of Faraday middleware already exists on GitHub:
+[faraday_middleware][]. It provides classes to parse JSON, XML, sign OAuth
+requests, cache responses and more.
 
 For the end, as an example of real-world Faraday use check out this simple
 [Instagram client][instagram] I wrote to implement just a couple of endpoints
@@ -223,5 +223,4 @@ cycle later on and free you from significant code changes.
 [instagram]: https://github.com/mislav/instagram/blob/fa63fb9/instagram.rb
 [instagram-ruby]: https://github.com/instagram/instagram-ruby-gem "Instagram Ruby API library"
 [rack]: http://rack.rubyforge.org/ "Rack: a Ruby Webserver Interface"
-[faraday-stack]: https://github.com/mislav/faraday-stack "A collection of Faraday middleware by Mislav"
 [faraday_middleware]: https://github.com/pengwynn/faraday_middleware

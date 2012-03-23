@@ -1,7 +1,8 @@
 ---
 title: Semicolons in JavaScript are optional
 layout: post
-description: Stop the FUD and relax. Semicolons in JavaScript are not needed.
+description: >
+  Relax. Your JavaScript doesn't need semicolons.
 ---
 
 JavaScript is a scripting language where semicolons as statement terminators are *optional*, as in:
@@ -49,8 +50,11 @@ var a=1;var b=2;var c=3;
 
 Still 24 bytes. So, adding semicolons and removing newlines saved us a whopping zero bytes right there. Radical. Most size reduction after minification isn't gained by removing newline characters — it's thanks to removing code comments and leading indentation.
 
-<i>**Update:** a lot of people have pointed out that their minifiers *rewrite* this expression as `var a=1,b=2,c=3`. I know that some tools do this, but the point of this article is just to explore how semicolons relate to whitespace. If a minifier is capable of rewriting expressions (e.g. Closure Compiler) it means that it can also insert semicolons automatically.
-</i>
+<ins>**Update:** a lot of people have pointed out that their minifiers *rewrite*
+this expression as `var a=1,b=2,c=3`. I know that some tools do this, but the
+point of this article is just to explore how semicolons relate to whitespace. If
+a minifier is capable of rewriting expressions (e.g. Closure Compiler) it means
+that it can also insert semicolons automatically.</ins>
 
 Also, some people recommend forcing yourself do use curly braces for blocks, even if they're only one line:
 

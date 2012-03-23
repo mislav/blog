@@ -1,17 +1,24 @@
 ---
 title: Creating the missing Instagram web interface
-description: How to monitor iPhone web traffic with Charles proxy, write libraries that consume APIs, and more.
+description: >
+  How I sniffed out the private API of Instagram by monitoring iPhone HTTP
+  traffic, wrote the first ever Instagram API client library and an
+  accompanying web site.
 layout: post
 categories: [ruby, iOS]
 ---
 
-To create [Twin][], a Ruby library that wraps your app in a Twitter API, I had to monitor my iPhone's HTTP traffic to figure out which resources does the Twitter app consume. While doing this, it occurred to me that I can figure out the unpublished Instagram API in the same go.
+To develop [Twin][], a Ruby library that wraps your app in a Twitter API, I had to monitor my iPhone's HTTP traffic to figure out which resources does the Twitter app consume. While doing this, it occurred to me that I can figure out the unpublished Instagram API in the same go.
 
 <img src="http://distillery.s3.amazonaws.com/media/2010/12/01/ec73711d8f7049ac809208de99fdeeb9_6.jpg" width="306" height="306" style="float: right; margin: 0 0 1em 1.5em"> [Instagram][] is a free, neat little photo app that lets you apply vintage filters and share your mobile snaps to people who follow you. But, alas, the service has almost no web presence as it's not possible to link to or browse your or other's photo streams.
 
 So, in a single day I've sniffed out the [Instagram API][docs], fully documented it, created a [Ruby client][client] and put it to good use in a [mini web app][app] [code] that acts as an unofficial [Instagram web interface][web]. In the next couple of days I sneaked in additional features such as pagination, Atom feeds and a [JSONP proxy][jsonp].
 
-After that there's been [a huge response on Twitter][search], and now I'm writing more about the technical aspects of how I did it.
+<ins>**Update:** Instagram has released [their official API for
+developers][official], and I have deprecated my library and documentation
+accordingly.</ins>
+
+After that there's been a huge response on Twitter, and now I'm writing more about the technical aspects of how I did it.
 
 ## Charles HTTP proxy: control your iPhone HTTP traffic like a pro
 
@@ -33,7 +40,7 @@ Now use your device to initiate some traffic. The first time it hits the proxy, 
 
 ![](http://img.skitch.com/20101207-efjgwdh1s336x8nmu9bdh98979.png)
 
-Some apps, like Twitter for iPhone, will communicate securely over HTTPS. Charles does not analyze this traffic by default, but you can enable it in "Proxy → Proxy Settings → SSL" by whitelisting some locations (such as "*.twitter.com"), reading about [Charles SSL certificate][ssl] and [installing it in iOS][ssl-iphone].
+Some apps, like Twitter for iPhone, will communicate securely over HTTPS. Charles does not analyze this traffic by default, but you can enable it in "Proxy → Proxy Settings → SSL" by whitelisting some locations (such as "\*.twitter.com"), reading about [Charles SSL certificate][ssl] and [installing it in iOS][ssl-iphone].
 
 My favorite Charles proxy features:
 
@@ -53,7 +60,7 @@ After I've collected all information about how Instagram iPhone app uses their A
 I used <i>[gorgeous][]</i>, one of my favorite tools, to prettify JSON data before pasting it in the docs:
 
 {% highlight sh %}
-pbpaste | gorgeous | pbcopy
+$ pbpaste | gorgeous | pbcopy
 {% endhighlight %}
 
 Now that I had a pretty good knowledge of how the API works, it was time to create a basic Ruby client. I skipped authentication and methods that need it, and concentrated only on the public resources for now. I've used [Nibbler][], my favorite piece of code I've ever written, to parse JSON structures into model objects, and [URI templates][uri] to describe API endpoints.
@@ -99,12 +106,11 @@ The whole web app (view templates, stylesheets and all) is under 500 lines of co
 [app]: https://github.com/mislav/instagram/blob/master/app.rb
 [docs]: https://github.com/mislav/instagram/wiki
 [jsonp]: https://github.com/mislav/instagram/wiki/timelines
-[search]: http://search.twitter.com/search?q=instagram.heroku+-from%3Amislav
-[gorgeous]: https://github.com/mislav/dotfiles/blob/master/bin/gorgeous
+[gorgeous]: https://github.com/mislav/gorgeous#readme
 [uri]: https://gist.github.com/194816
 [sinatra]: http://www.sinatrarb.com/
 [heroku]: http://heroku.com/
 [heroku-cache]: http://docs.heroku.com/http-caching
 [rails-cache]: http://guides.rubyonrails.org/caching_with_rails.html#cache-stores
 [store]: https://github.com/mislav/instagram/blob/master/lib/instagram/failsafe_store.rb
-[gem]: https://rubygems.org/gems/instagram
+[official]: http://instagram.com/developer/

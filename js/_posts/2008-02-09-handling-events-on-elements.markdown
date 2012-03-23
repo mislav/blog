@@ -3,7 +3,10 @@ permalink: /js/handling-events-on-elements/
 title: Handling JavaScript events on multiple elements
 layout: post
 category: js
-description: "Do you have a loop in your code that attaches an event handler to each of the elements? This article shows how to make that simpler with event delegation — in other words, by leveraging event bubbling."
+description: >
+  Do you have a loop in your code that attaches an event handler to each of the
+  elements? This article shows how to make that simpler with event delegation — in
+  other words, by leveraging event bubbling.
 styles: |
     table { border: 2px solid #6D7D21; border-collapse: collapse; }
     table td, table th { border: 1px solid gray; padding: .4em .8em; }

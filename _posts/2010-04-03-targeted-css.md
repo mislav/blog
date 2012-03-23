@@ -53,10 +53,14 @@ Finally, some tips from Apple's technical note about [preparing for the iPad][no
 
 You should be aware that `orientation` media query, although supported on the iPad, **doesn't work on the iPhone** (tested with v3.1.3). Fortunately, size queries like `width` and `device-width` work, so layout-switching is possible *without* JavaScript with some combination of those.
 
-**Update:** with the advent of iPhone 4, you might want to target its Retina display specifically to serve high-resolution graphics. There is an article over on the WebKit blog covering how to do this called [High DPI Web Sites](http://webkit.org/blog/55/high-dpi-web-sites/), and the answer is the `device-pixel-ratio` media feature:
+<ins>**Update:** with the advent of Retina display devices, you might want to
+target them specifically to serve high-resolution graphics. There is an article
+over on the WebKit blog covering how to do this called [High DPI Web
+Sites](http://webkit.org/blog/55/high-dpi-web-sites/), and the answer is the
+[`-webkit-device-pixel-ratio` media query][pixel-ratio]:</ins>
 
 {% highlight html %}
-<link rel="stylesheet" media="screen and min-device-pixel-ratio: 2" href="highres.css">
+<link rel="stylesheet" media="only screen and -webkit-min-device-pixel-ratio: 2" href="highres.css">
 {% endhighlight %}
 
 
@@ -65,3 +69,4 @@ You should be aware that `orientation` media query, although supported on the iP
 [meta]: http://developer.apple.com/safari/library/documentation/AppleApplications/Reference/SafariHTMLRef/Articles/MetaTags.html "Apple-specific meta tags"
 [note]: http://developer.apple.com/safari/library/technotes/tn2010/tn2262.html "Preparing Your Web Content for iPad"
 [ads]: /iphone-droid-ads/ "Things I learned from iPhone & Droid ads"
+[pixel-ratio]: http://developer.apple.com/library/safari/documentation/appleapplications/reference/SafariCSSRef/Articles/OtherStandardCSS3Features.html#//apple_ref/doc/uid/TP40007601-SW3

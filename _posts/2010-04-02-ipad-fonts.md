@@ -5,6 +5,8 @@ layout: post
 category: iOS
 ---
 
+<ins>**Update:** There's now a [comprehensive list of fonts available on iPhone and iPad][iosfonts].</ins>
+
 <div class="thumbnail">
     <img src="http://img.skitch.com/20100402-c1ht58iesem31u1gskat1ac45f.preview.jpg" alt="Screenshot of a font browser on the iPad" style="float: left; margin: 0 1.5em 1.5em 0">
 </div>
@@ -22,3 +24,4 @@ It's almost certain that the iPhone 3.2 update will bring these fonts to the pho
 [bookdesigner]: http://www.thebookdesigner.com/2010/01/apple-ipad-e-book-reading-kindle-killing-business-saving-product-of-the-century/ "Apple iPad: E-Book Reading, Kindle-Killing, Business-Saving Product of the Century?"
 [df]: http://daringfireball.net/misc/2007/07/iphone-osx-fonts "Fonts From Mac OS X Included With iPhone"
 [app]: http://kosmaczewski.net/projects/iphone-font-browser/ "iPhone Font Browser by Adrian Kosmaczewski"
+[iosfonts]: http://iosfonts.com/

@@ -1,8 +1,9 @@
 ---
 title: Ruby verbose mode and how it's broken
-description: "The verbose mode in Ruby is both useful and distracting. It
+description: >
+  The verbose mode in Ruby is both useful and distracting. It
   activates a mode where the interpreter is warning you about potentially
-  dangerous syntax."
+  dangerous syntax.
 layout: post
 category: ruby
 ---
