@@ -202,6 +202,11 @@ It's true that `elsif` is only valid in `if` constructs, and there is no
 counterpart for `unless`. However, I don't miss it, as I can't imagine how it
 would ever read well in English.
 
+<ins>**Update**: Avdi Grimm responds explaining [his thought process behind
+improving the specific example above][response] by avoiding control flow blocks
+altogether. I agree that careful refactoring can often reduce the amount of
+control flow in favor of describing the logic in the language of the domain.</ins>
+
 
   [37s]: http://37signals.com/svn/posts/2699-making-sense-with-rubys-unless
     "37signals: Making sense with Ruby's 'unless'"
@@ -214,3 +219,5 @@ would ever read well in English.
     "Programming Perl, 3rd edition"
   [origin]: http://www.prestonlee.com/2010/08/04/ruby-on-the-perl-origins-of-and-versus-and-and-or/
     "Preston Lee on the Perl origins of 'and' and 'or' keywords in Ruby"
+  [response]: http://devblog.avdi.org/2012/03/23/unless-readable-else-confused/
+    "Avdi Grimm: Unless readable else confused"
