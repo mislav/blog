@@ -103,7 +103,7 @@ We're smarter than that. With event delegation we can make an unobtrusive, one-t
 
 {% highlight js %}
 // outbound links and file downloads Analytics tracking
-{{ site.extra_tracking_code }}
+{% include extra_tracking_code.js %}
 {% endhighlight %}
 
 We observe mouse clicks on document level and then test if they originated from link elements; then we apply some simple rules to determine whether we are going to track the click or not. Outbound links are recognized by leading to another domain, while file downloads are detected by the file extension.
