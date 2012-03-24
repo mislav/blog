@@ -2,7 +2,8 @@
 title: "Vim: revisited"
 description: "How I learned Vim the proper way."
 layout: post
-category: vim
+categories: vim
+tags: featured
 styles: |
   p code.file { background: none; padding: 0; color: #666 }
   @media only screen and (min-width: 1000px) {

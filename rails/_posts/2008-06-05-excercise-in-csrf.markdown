@@ -2,7 +2,8 @@
 permalink: /rails/excercise-in-csrf/
 title: An excercise in cross-site request forgery
 layout: post
-category: rails
+categories: Rails
+tags: dated
 ---
 
 If you are reading this on my blog and are logged in the [Working With Rails][1] community site, you just recommended [me as a Rails developer][2]—without even knowing it. <ins><b>Update:</b> By now they have fixed it and the hack does no longer work. Or does it? Hop to the bottom of this article for more info.</ins>

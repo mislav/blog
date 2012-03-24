@@ -2,7 +2,8 @@
 permalink: /rails/faster-ri-documentation/
 title: FastRI for the win
 layout: post
-category: rails
+categories: Rails ruby
+tags: dated
 ---
 
 Ruby can be wicked cool from the console. A couple of its well known utilities are **irb** (the interactive Ruby shell) and **ri**, a documentation lookup tool.

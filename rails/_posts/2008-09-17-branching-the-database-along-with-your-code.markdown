@@ -2,7 +2,8 @@
 permalink: /rails/branching-the-database-along-with-your-code/
 title: Branching the database along with the code
 layout: post
-category: rails
+categories: Rails git
+tags: db
 description: Simple Rails configuration to enable switching your database as you change branches.
 ---
 

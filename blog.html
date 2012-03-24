@@ -17,6 +17,7 @@ permalink: /blog/
 
 <section class="posts home">
 {% for post in site.posts %}
+  {% unless post.tags contains "dated" %}
   <article{% if post.link %} class=link{% endif %}>
     <header>
       {% if post.link %}
@@ -34,5 +35,6 @@ permalink: /blog/
       {% if page.description %}<p>{{ post.description }}</p>{% endif %}
     {% endif %}
   </article>
+  {% endunless %}
 {% endfor %}
 </section>

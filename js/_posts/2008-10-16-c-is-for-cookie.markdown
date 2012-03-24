@@ -2,7 +2,7 @@
 permalink: /js/c-is-for-cookie/
 title: C is for cookie
 layout: post
-category: js
+categories: js
 description: A tiny cookie library and a great video to go along.
 ---
 

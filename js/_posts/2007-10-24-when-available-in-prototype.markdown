@@ -2,7 +2,8 @@
 permalink: /js/when-available-in-prototype/
 title: A Prototype trick — “When available, do.”
 layout: post
-category: js
+categories: js Prototype.js
+tags: dated
 description: A tiny helper that fits nicely in your code while doing unobtrusive scripting
 ---
 

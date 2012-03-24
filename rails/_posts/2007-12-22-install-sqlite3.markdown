@@ -2,7 +2,7 @@
 permalink: /rails/install-sqlite3/
 title: How to install SQLite3
 layout: post
-category: rails
+categories: Rails
 description: A couple of easy steps to install SQLite on Windows or Linux
 ---
 

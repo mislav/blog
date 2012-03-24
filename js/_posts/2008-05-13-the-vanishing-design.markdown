@@ -2,7 +2,8 @@
 permalink: /js/the-vanishing-design/
 title: The vanishing design
 layout: post
-category: js
+categories: js
+tags: dated
 ---
 
 One of the ideas I had for the past few months is writing some JavaScript that would access the stylesheets for the page (via the DOM) and toggle style rules one by one. I never got around to doing that, until I saw [Matthew Buchanan][1] beat me to it. With a help of his friend, he wrote [Timelapse CSS][2], a script that strips a document of its styles. He also links to a video he recorded of the reverse process: putting the styles back together (which is definitely more cool).

@@ -2,7 +2,8 @@
 title: "Typing typographically correct characters"
 description: "How to find and easily use typographically correct characters on the Mac."
 layout: post
-# category: ruby
+categories: Apple
+tags: iOS featured
 styles: |
   #post img { max-width: 100% }
   kbd {

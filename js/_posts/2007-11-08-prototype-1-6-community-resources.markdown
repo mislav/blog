@@ -2,7 +2,8 @@
 permalink: /js/prototype-1-6-community-resources/
 title: Prototype 1.6 released, community resources
 layout: post
-category: js
+categories: js Prototype.js
+tags: dated
 description: Covering the final release of Prototype 1.6 and scripteka.com, Prototype Extensions Library
 ---
 

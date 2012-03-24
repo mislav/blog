@@ -29,7 +29,6 @@ layout: default
   <li>
     <span class="date">{{ post.date | date_to_string }}</span>
     ▸ <a href="{{ post.url }}">{{ post.title }}</a>
-    {% if post.categories != empty %}<span class="categories">in {{ post.categories | array_to_sentence_string }}</span>{% endif %}
     {% if post.description %}<p>{{ post.description }}</p>{% endif %}
   </li>
 </ol>

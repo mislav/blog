@@ -2,7 +2,8 @@
 permalink: /rails/rails-url-regex/
 title: URL regex pattern in Rails
 layout: post
-category: rails
+categories: Rails
+tags: dated regexp URL
 description: Dissecting the URL regex pattern found in Rails view helpers
 ---
 

@@ -1,6 +1,8 @@
 ---
 title: Semicolons in JavaScript are optional
 layout: post
+categories: js frontend
+tags: featured
 description: >
   Relax. Your JavaScript doesn't need semicolons.
 ---

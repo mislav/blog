@@ -2,7 +2,8 @@
 permalink: /rails/will_paginate-view-testing/
 title: will_paginate and view testing
 layout: post
-category: rails
+categories: Rails
+tags: dated testing
 description: How to properly test your views without hitting the database while using will_paginate.
 ---
 

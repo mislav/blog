@@ -2,7 +2,8 @@
 permalink: /js/upgrading-to-prototype-1-6-real-world-examples/
 title: "Upgrade to Prototype 1.6: real world examples"
 layout: post
-category: js
+categories: js Prototype.js
+tags: dated
 description: Noting down my progress as I upgrade Radiant CMS to Prototype 1.6.
 ---
 

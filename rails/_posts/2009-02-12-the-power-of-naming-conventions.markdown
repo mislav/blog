@@ -2,8 +2,8 @@
 permalink: /rails/the-power-of-naming-conventions/
 title: The power of naming conventions
 layout: post
-category: rails
-description: How to easily include ActiveRecord Validations module in your non-ActiveRecord model
+categories: Rails
+tags: dated
 ---
 
 Ruby developers are very sensitive to naming things. There are strong conventions regarding class, variable, method and file names, and these are not just organizational or cosmetic – some have their semantics even during code execution. For instance: in Rails a model named “Person” is implicitly tied to the “people” table in the database just by name inspection.

@@ -2,7 +2,8 @@
 permalink: /js/text-resize-detection/
 title: Text resize detection with Prototype
 layout: post
-category: js
+categories: js Prototype.js
+tags: dated
 description: Easy text resize detection in JavaScript with Prototype library
 ---
 

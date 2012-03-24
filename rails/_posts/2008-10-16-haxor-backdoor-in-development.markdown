@@ -2,7 +2,8 @@
 permalink: /rails/haxor-backdoor-in-development/
 title: Haxor backdoor in development
 layout: post
-category: rails
+categories: Rails git
+tags: dated
 description: Handy tip on installing a backdoor to skip authentication in development
 ---
 

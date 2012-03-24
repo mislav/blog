@@ -4,7 +4,7 @@ description: >
   In which I give you permission to use `and` and `or` keywords in Ruby,
   as well as the `unless ... else` construct.
 layout: post
-categories: rails
+categories: ruby
 styles: |-
   table { width: 21em; border-collapse: collapse }
   @media only screen and (min-width: 481px) {

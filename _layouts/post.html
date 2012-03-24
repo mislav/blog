@@ -16,9 +16,6 @@ layout: default
   By <a href="/">Mislav</a>
   {% endunless %}
   on <time datetime="{{ page.date | date_to_xmlschema }}" pubdate>{{ page.date | date_to_string }}</time>
-  {% if page.category == 'js' or page.category == 'rails' %}in <a href="/{{ page.category }}/">{{ page.category }}</a>
-  {% elsif page.categories != empty %}in {{ page.categories | array_to_sentence_string }}
-  {% endif %}
 </p>
 </header>
 

@@ -2,7 +2,8 @@
 title: You're cuking it right
 description: Real-world lessons for writing better Cucumber stories
 layout: post
-category: rails
+categories: ruby Rails
+tags: testing
 ---
 
 <i>This post is inspired by ["You're cuking it wrong"][wrong] by Jonas Nicklas, and [Elisabeth Hendrickson's][testobsessed] talk on writing clear acceptance tests during [GoGaRuCo&nbsp;2010][gogaruco].</i>

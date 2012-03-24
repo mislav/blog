@@ -2,7 +2,8 @@
 title: "Dive into HTML5: In memory of Mark Pilgrim"
 description: "Rescuing and distributing Mark Pilgrim's work after he is gone."
 layout: post
-category: html
+categories: frontend
+tags: HTML ebook
 ---
 
 [Mark Pilgrim is gone][410] and with him all of his sites and work.

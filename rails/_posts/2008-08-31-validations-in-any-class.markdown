@@ -2,7 +2,8 @@
 permalink: /rails/validations-in-any-class/
 title: Validations in any class
 layout: post
-category: rails
+categories: Rails
+tags: dated
 ---
 
 Sometimes you don’t need database persistence for your models. Ryan Bates describes this as [the non-ActiveRecord model][1] in his screencasts.

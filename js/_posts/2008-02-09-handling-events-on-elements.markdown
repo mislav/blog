@@ -2,7 +2,8 @@
 permalink: /js/handling-events-on-elements/
 title: Handling JavaScript events on multiple elements
 layout: post
-category: js
+categories: js
+tags: dated
 description: >
   Do you have a loop in your code that attaches an event handler to each of the
   elements? This article shows how to make that simpler with event delegation — in

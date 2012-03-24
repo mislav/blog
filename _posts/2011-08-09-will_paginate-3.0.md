@@ -2,7 +2,7 @@
 title: "will_paginate v3.0: Rails 3, Sinatra and more"
 description: "The long anticipated will_paginate 3.0 version is finally out."
 layout: post
-category: ruby
+categories: ruby Rails
 ---
 
 After more than a year in making, [will_paginate 3.0][wp] is finally out.

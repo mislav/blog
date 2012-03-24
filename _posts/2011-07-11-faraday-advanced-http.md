@@ -4,7 +4,8 @@ description: >
   If you use Ruby to perform any sort of HTTP requests, you
   might want to take a closer look at Faraday.
 layout: post
-category: ruby
+categories: ruby
+tags: API featured
 ---
 
 [Faraday][] is a library for making HTTP requests and to serve as a

@@ -3,7 +3,7 @@ title: "Objects on Rails: a developer notebook by Avdi&nbsp;Grimm"
 link: http://objectsonrails.com/
 description: "Ideas and techniques for applying classic object-oriented principles to Rails development."
 layout: post
-category: rails
+categories: ruby Rails
 ---
 
 Avdi Grimm--the author of one of my favorite Ruby books, [Exceptional

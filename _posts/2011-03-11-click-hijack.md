@@ -2,7 +2,7 @@
 title: How to do click hijack right
 description: How to avoid hijacking clicks that would open new tabs or windows.
 layout: post
-category: js
+categories: js frontend
 ---
 
 Your task: make certain links perform their action via Ajax instead of letting the browser load another page.

@@ -2,7 +2,8 @@
 permalink: /js/prototype-cheatsheet/
 title: Prototype 1.6 cheatsheet
 layout: post
-category: js
+categories: js Prototype.js
+tags: dated
 description: A cheatsheet covering the latest and greatest in Prototype 1.6.
 ---
 
