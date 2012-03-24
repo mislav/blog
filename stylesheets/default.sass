@@ -12,6 +12,25 @@ $inline_code_background: $code_block_background - 15
 $link_color: #857f33
 $hover_color: $link_color - 40
 
+// https://github.com/jcroft/jeffcroft-css-framework-v2/blob/054fdbd/framework/css/contrib/_media_queries.sass
+=screen($type)
+  @if $type == phone
+    @media only screen and (max-width : 480px)
+      @content
+  @else if $type == tablet
+    @media only screen and (min-width : 481px) and (max-width : 768px)
+      @content
+  @else if $type == ipad-landscape
+    @media only screen and (device-width: 768px) and (orientation: landscape)
+  @else if $type == large
+    @media only screen and (min-width : 769px)
+      @content
+  @else if $type == retina
+    @media only screen and (-webkit-min-device-pixel-ratio: 2)
+      @content
+  @else
+    @warn "unrecognized type: #{$type}"
+
 body, p, ul, ol, li, dt, dd, dl, h1, h2, h3, h4, h5, h6, pre, code, table, td, th
   margin: 0
   padding: 0
@@ -20,7 +39,11 @@ body, p, ul, ol, li, dt, dd, dl, h1, h2, h3, h4, h5, h6, pre, code, table, td, t
 body
   font: 300 100% / 1.6em $body_type
   margin: 3em 3em 3em 60px
-  max-width: 55em
+  +screen(phone)
+    font-size: 75%
+    margin: .4em .6em
+  +screen(large)
+    max-width: 55em
   position: relative
   color: $body_color
   background: #fefefe
@@ -119,6 +142,16 @@ ins
     float: right
     margin: -20px -2em 0 3em
     border: 3px double #999
+    +screen(phone)
+      float: none
+      display: block
+      border-width: 1px
+      border-style: solid
+      margin: 0 0 1em 0
+    +screen(retina)
+      float: left
+      max-width: 120px
+      margin: .5em 1em .5em 0
 
 #description p:first-child
   font-size: 1.3em
@@ -134,6 +167,10 @@ ins
   border-top: 1px solid silver
   margin: 2em
 
+header#blog
+  +screen(phone)
+    margin-top: 1em
+    text-align: center
 #links_me
   margin: -2em 0 2em 0
   color: #6d7d21
@@ -152,6 +189,8 @@ section.posts
   article
     + article
       margin-top: 2em
+      +screen(phone)
+        margin-top: 1em
     header + *
       margin-top: 0
     h2
@@ -171,6 +210,20 @@ section.posts
       time:before
         content: none
         margin: 0
+    &.featured
+      padding: .6em 1.2em
+      +screen(phone)
+        padding: 4px 8px
+        border: 1px solid desaturate(lighten($heading_color, 55%), 50%)
+      background: desaturate(lighten($heading_color, 65%), 50%)
+      -webkit-border-radius: 6px
+      -moz-border-radius: 6px
+      +screen(large)
+        -webkit-box-shadow: desaturate(lighten($heading_color, 55%), 50%) 0 0 10px inset
+      > *:last-child
+        margin-bottom: 0
+      h2 a
+        font-size: 1.2em
 
 dl
   &.posts
@@ -183,8 +236,6 @@ dl
 ol.posts
   list-style: none
   line-height: 1.6
-  &.home
-    font-size: 1.1em
   li
     color: #aaa
     padding-bottom: .4em
@@ -203,26 +254,7 @@ ol.posts li .date, section.posts time, #instapaper time
   display: inline-block
   min-width: 6.7em
 
-@media only screen and (device-width: 768px) and (orientation: landscape)
-  body
-    max-width: none
-  ol.posts
-    &.home
-      font-size: .9em
-      -webkit-column-count: 2
-      -webkit-column-gap: 2em
-    li .date + a
-      margin-left: 0
-
-@media only screen and (min-device-width: 320px) and (max-device-width: 480px)
-  body
-    font-size: 75%
-    margin: .4em .6em
-  a.home:first-child
-    position: static
-    top: 0
-  ol.posts.home
-    font-size: 1em
++screen(phone)
   h1, h2
     border-left: none
     margin-left: 0
@@ -238,20 +270,6 @@ ol.posts li .date, section.posts time, #instapaper time
       width: 100%
     li
       margin-left: 1.5em
-  #description.vcard
-    img
-      float: none
-      display: block
-      border-width: 1px
-      border-style: solid
-      margin: 0 0 1em 0
-
-@media only screen and (min-device-pixel-ratio: 2)
-  #description.vcard
-    img
-      float: left
-      max-width: 120px
-      margin: .5em 1em .5em 0
 
 .feeds .feed
   padding-left: 20px

@@ -7,20 +7,25 @@ description: >
   technology and other topics.
 ---
 
+<header id=blog>
 <h1>{{ page.title }}</h1>
 
-<p class="subtext">by <a href="/"><strong>Mislav Marohnić</strong></a></p>
+<p class="subtext">
+  Writings and linkings by
+  <a href="/"><strong>Mislav Marohnić</strong></a>
+</p>
 
 <div id="links_me">
   <a href="/projects/">projects</a>
-  · <a href="http://twitter.com/mislav" rel="me">twitter.com/mislav</a>
+  · @<a href="http://twitter.com/mislav" rel="me">mislav</a>
   · <a href="http://github.com/mislav" rel="me">github.com/mislav</a>
 </div>
+</header>
 
-<section class="posts home">
+<section class="posts">
 {% for post in site.posts %}
   {% unless post.tags contains "dated" %}
-  <article{% if post.link %} class=link{% endif %}>
+  <article{% if post.link %} class=link{% elsif post.tags contains "featured" %} class=featured{% endif %}>
     <header>
       {% if post.link %}
       <h2><a href="{{ post.link | escape }}">{{ post.title }}</a>&nbsp;→</h2>
