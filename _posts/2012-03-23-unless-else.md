@@ -31,8 +31,8 @@ styles: |-
   }
 ---
 
-There are two features of Ruby that are often frowned upon by professionals: the
-`and` and `or` keywords, and the `unless ... else` construct.
+There are two features of Ruby that are often frowned upon by experienced
+Rubyists: the `and` and `or` keywords, and the `unless ... else` construct.
 
 I want to argue that both are OK and, when used correctly, need not be
 considered a code smell.
@@ -52,14 +52,14 @@ show_help = args.empty? or args[0] == '--help'
 This code seemingly does what it was supposed to, but has a subtle bug: it does
 not respect the `--help` flag.
 
-Now the newbie programmer now got burned, and asks "If `and` and `or` aren't
-synonyms for operators, what _are_ they?" The professionals then, as an answer,
+Now the newbie programmer got burned, and asks "If `and` and `or` aren't
+synonyms for operators, what _are_ they?" Seasoned programmers then, as an answer,
 mumble something about "precedence", and they add "You must _never_ use them
 again." From [GitHub's Ruby style guide][styleguide]:
 
 > The `and` and `or` keywords are banned. It's just not worth it.
 
-All of this is very unprofessional and unsatisfying advice. (And yes, GitHub,
+A hard rule like this is not very satisfying advice. (And yes, GitHub,
 when you open-sourced your style guides, you turned them from internal documents
 to advice for the community.)
 
