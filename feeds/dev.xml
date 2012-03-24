@@ -1,8 +1,15 @@
 ---
 layout: atom
-title: Mislav on web development
-subtitle: Hacking the Web by Mislav Marohnić
-path: /
+title: "Mislav's blog"
+subtitle: >
+  Mislav's writings and linkings about web development,
+  programming and other topics.
+path: /blog/
+id: http://mislav.caboo.se/
 ---
+<category term="ruby" label="Ruby" />
 <category term="rails" label="Ruby on Rails" />
 <category term="javascript" label="JavaScript" />
+<category term="html" label="HTML" />
+<category term="css" label="CSS" />
+<category term="apple" label="Apple" />

@@ -2,16 +2,16 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en-us">
   <author>
     <name>Mislav Marohnić</name>
-    <uri>http://mislav.uniqpath.com/about/</uri>
+    <uri>http://mislav.uniqpath.com/</uri>
     <email>mislav.marohnic@gmail.com</email>
   </author>
 
-  <title type="text">{{ page.title }}</title>
-  <subtitle>{{ page.subtitle }}</subtitle>
-  
+  <title type="text">{{ page.title | xml_escape }}</title>
+  <subtitle>{{ page.subtitle | xml_escape }}</subtitle>
+
   <link rel="self" href="http://mislav.uniqpath.com{{ page.permalink }}" />
   <link rel="alternate" type="text/html" href="http://mislav.uniqpath.com{{ page.path }}" />
-  <id>http://mislav.caboo.se{{ page.path }}</id>
+  <id>{{ page.id }}</id>
   {{ content }}
   
   {% if page.category %}
