@@ -1,0 +1,69 @@
+#!/usr/bin/env ruby -rubygems -I/Users/mislav/.coral/jekyll-mislav/lib
+require 'delegate'
+
+class Complainer < SimpleDelegator
+  def initialize(io, callback = nil)
+    super io
+    @callback = callback || Proc.new
+  end
+
+  def << obj
+    write obj
+    self
+  end
+
+  def write obj
+    super @callback.call(obj.to_s)
+  end
+
+  def puts(*args)
+    for arg in args
+      str = arg.to_s
+      write str
+      write $/ unless str.end_with? $/
+    end
+    nil
+  end
+
+  def print(*args)
+    args = [$_] if args.empty?
+    for arg in args
+      str = arg.to_s
+      write str
+      write $\ unless $\.nil? or str.end_with? $\
+    end
+    nil
+  end
+
+  def printf(format, *args)
+    str = Kernel.sprintf(format, *args)
+    write str
+  end
+end
+
+dump_trace = lambda do |trace|
+  trace.reject { |line|
+    line.include? '/rubygems/custom_require.rb:' or
+      line.start_with? __FILE__
+  }.join($/)
+end
+
+re = /iconv|\b(maruku|rubypython|liquid|pygments\.rb)-/
+$stderr = Complainer.new(STDERR) {|msg| msg unless msg =~ re }
+
+require 'jekyll'
+
+options = Jekyll.configuration('safe' => true)
+site = Jekyll::Site.new(options)
+
+if ARGV.empty?
+  puts "Building site: %s -> %s" % [ options['source'], options['destination'] ]
+  site.process
+else
+  site.read
+  workdir = Dir.pwd
+
+  site.process_files ARGV do |processed|
+    puts processed.sub("#{workdir}/", '')
+  end
+end

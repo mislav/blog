@@ -1,100 +1,74 @@
 require 'guard/guard'
-require 'fileutils'
+gem 'sass' if defined? Gem
 
-class ::Guard::Sass < ::Guard::Guard
-  def initialize(watchers = [], options = {})
-    super
-    require 'sass' unless defined? ::Sass
-  end
-  
-  def run_on_change(paths)
-    paths.reject { |p| File.basename(p).index('_') == 0 }.each do |file|
-      render_file(file)
-    end
-  end
-  
-  def run_all
-    all_files = Dir.glob('**/*.*')
-    paths = ::Guard::Watcher.match_files(self, all_files)
-    run_on_change(paths)
-  end
-  
-  def render_file(file)
-    source = File.read(file)
-    type = file.match(/\w+$/)[0].to_sym
-    outfile = file.sub(/\.\w+$/, '.css')
-    content = ::Sass::Engine.new(source, @options.merge(:syntax => type)).render
-
-    File.open(outfile, 'w') { |f| f << content }
-    puts "Rendered #{outfile}"
-  end
-end
+require 'jekyll'
+require 'pygments'
+# if I don't do this now, rendering posts with vim later fails!
+Pygments.highlight 'set nocompatible', :lexer => 'vim'
 
 class ::Guard::Jekyll < ::Guard::Guard
+  attr_reader :workdir
+
   def initialize(watchers = [], options = {})
     super
-    require 'jekyll' unless defined? ::Jekyll
-    @working_dir = Dir.pwd
+    @site = nil
+    @workdir = Dir.pwd
   end
-  
+
   def init_site
     jekyll_options = ::Jekyll::configuration(@options)
     @site = ::Jekyll::Site.new(jekyll_options)
-    @destination = jekyll_options['destination'].sub("#{@working_dir}/", '').chomp('/') + '/'
+    @destination = jekyll_options['destination']
+    @site.read
   end
   alias_method :start, :init_site
   alias_method :reload, :init_site
-  
+
   def run_all
-    puts "Rebuilding site..."
+    print "Rebuilding Jekyll site... "
     @site.process
+    puts "done."
   end
-  
-  def run_on_change(paths)
-    paths = sanitize_paths(paths)
-    if paths.any?
-      init_site if paths.include? '_config.yml'
-      run_all 
+
+  def run_on_change paths
+    init_site if paths.include? '_config.yml'
+    return if @site.nil?
+    render_files paths
+  end
+
+  def render_files paths
+    changed = []
+    @site.process_files paths do |processed|
+      changed << processed
+      puts "Jekyll: #{processed.sub("#{workdir}/", '')}"
+    end
+
+    notify changed if changed.any?
+  end
+
+  def notify changed_files
+    ::Guard.guards.each do |guard|
+      paths = ::Guard::Watcher.match_files(guard, changed_files)
+      guard.run_on_change(paths) unless paths.empty?
     end
   end
-  
-  def sanitize_paths(paths)
-    paths.reject { |p| ignore_file?(p) }
-  end
-  
-  # matches Gemfile, Rakefile, Guardfile, etc.
-  IGNORE_RE = /^[A-Z][a-z]*file$/
-  
-  def ignore_file?(file)
-    file.index(@destination) == 0 || file =~ IGNORE_RE
-  end
 end
 
-guard 'sass', :style => :compressed do
-  watch(%r{^stylesheets/.+\.s[ca]ss$})
-end
+guard 'sass', :style => :compressed, :input => 'stylesheets', :all_on_start => true
 
 guard 'jekyll' do
-  watch(%r{.+})
-  # watch(%r{.+}) do |match|
-  #   file = match[0]
-  # 
-  #   if file =~ /\.s[ca]ss$/
-  #     nil
-  #   elsif file =~ /\.css$/ && file.index('_site/') != 0
-  #     FileUtils.cp(file, "_site/#{file}", :verbose => true)
-  #     nil
-  #   else
-  #     file
-  #   end
-  # end
+  ignores = %r{^(?:_tmp|_site|public)/|\.s[ca]ss$}
+
+  watch(%r{.+}) do |match|
+    file = match[0]
+    file unless file =~ ignores
+  end
 end
 
 guard 'livereload', :apply_js_live => false, :grace_period => 0 do
   ext = %w[js css png gif html md markdown xml]
 
-  watch(%r{.+\.(#{ext.join('|')})$}) do |match|
-    file = match[0]
-    file unless file =~ /^_(?:site|tmp)\//
+  watch(%r{^public(/.+\.(?:#{ext.join('|')}))$}) do |match|
+    match[1].sub(/\/index\.html$/, '/')
   end
 end

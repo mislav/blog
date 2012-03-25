@@ -6,9 +6,9 @@ pygments:    true
 markdown:    rdiscount
 rdiscount:   { extensions: [smart] }
 permalink:   /:year/:month/:title/
+destination: public
 exclude:
-- draft
-- publish
+- bin
 - CNAME
 - Guardfile
-- stylesheets/default.sass
+- default.sass
