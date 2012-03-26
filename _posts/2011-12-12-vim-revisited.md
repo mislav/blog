@@ -9,8 +9,8 @@ styles: |
   @media only screen and (min-width: 1000px) {
     body { max-width: 1300px }
     #post { width: 70% }
-    h2 { clear: left }
-    aside {
+    #post h2 { clear: left }
+    #post aside {
       width: 35%; float: right; margin-right: -43%;
       margin-top: -5em;
       font-size: .9em;
@@ -18,9 +18,9 @@ styles: |
     }
     #post aside { font-size: .8em }
     #post aside p { line-height: 1.4 }
-    aside kbd { padding: 1px 3px }
-    aside *:first-child { margin-top: 0 }
-    aside h3 { border: none; padding-bottom: 0; font-variant: small-caps; line-height: 1 }
+    #post aside kbd { padding: 1px 3px }
+    #post aside *:first-child { margin-top: 0 }
+    #post aside h3 { border: none; padding-bottom: 0; font-variant: small-caps; line-height: 1 }
   }
   #post img { display:block; max-width: 100%; -webkit-box-shadow: rgba(0,0,0,.4) 0 2px 8px; }
   td, th { vertical-align:top; text-align:left }
