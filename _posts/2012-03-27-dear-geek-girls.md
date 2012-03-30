@@ -1,8 +1,7 @@
 ---
 title: "Dear geek girls: Please come back"
 description: >
-  Whatever the definition of “geek” is, it doesn’t include gender. If we’re
-  really on a mission to expose the posers, why concentrate on just women?
+  Whatever the definition of “geek” is, it shouldn’t include gender.
 layout: post
 categories: feminism
 tags: rant
@@ -21,10 +20,7 @@ Leaders</q> indeed):
 There's a word that originally had derogatory meaning and culture [turned it into
 a positive term][reap]. _We should be glad_ that this is happening, considering so
 many words undergone the _opposite_ transformation, from positive/neutral to
-pejorative (e.g.  "<a
-href="http://feministing.com/2011/05/16/a-few-words-about-reclaiming-“slut”/"
-title="A few words about reclaiming “slut”">slut</a>", "nigger", and "gay"). But
-Tara isn't glad.
+pejorative (e.g. "nigger", "gay").
 
 > Pretentious females who have labeled themselves as a “geek girl” figured out
 > that **guys will pay a lot of attention to them** if they proclaim they are
