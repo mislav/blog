@@ -1,7 +1,7 @@
 require 'guard/guard'
 gem 'sass' if defined? Gem
 
-require 'jekyll'
+require 'jekyll/live_site'
 require 'pygments'
 # if I don't do this now, rendering posts with vim later fails!
 Pygments.highlight 'set nocompatible', :lexer => 'vim'
@@ -17,7 +17,7 @@ class ::Guard::Jekyll < ::Guard::Guard
 
   def init_site
     jekyll_options = ::Jekyll::configuration(@options)
-    @site = ::Jekyll::Site.new(jekyll_options)
+    @site = ::Jekyll::LiveSite.new(jekyll_options)
     @destination = jekyll_options['destination']
     @site.read
   end
@@ -48,6 +48,7 @@ class ::Guard::Jekyll < ::Guard::Guard
 
   def notify changed_files
     ::Guard.guards.each do |guard|
+      next if self.class === guard
       paths = ::Guard::Watcher.match_files(guard, changed_files)
       guard.run_on_change(paths) unless paths.empty?
     end
