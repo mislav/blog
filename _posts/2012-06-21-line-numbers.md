@@ -4,7 +4,7 @@ description: >
   There's no reason for line numbers to be prominently displayed,
   neither in code snippets or your text editor.
 layout: post
-categories: ruby
+categories: Rails ruby
 styles: |
   .figwrapper {
     display: inline-block;
@@ -65,11 +65,11 @@ Why would you need line numbers, anyway? They're only useful if you want to call
 attention to a particular line. You can do that with syntax highlighting,
 instead. With Jekyll and pygments, it's easy:
 
-{% raw %}
-    {% highlight js hl_lines=4 %}
+    { % highlight js hl_lines=4 % }
       ...
-    {% endhighlight %}
-{% endraw %}
+    { % endhighlight % }
+
+_Note: I had to "escape" Liquid tags above by padding them with spaces._
 
 Result:
 
