@@ -93,7 +93,14 @@ graphical vim setting offers extra features, but I'm not covering any
 of those here.
 
 <div><aside>
-<p><strong>Don’t use <a href="https://github.com/carlhuda/janus#readme" title="Janus: a Vim distribution">Janus</a></strong>. It’s a community maintained vim configuration project that in theory sounds nice, but once you start using it it’s not all rainbows. The current version of Janus installs harmful plugins such as Syntastic and adds tons of opinionated mappings and piles of hacks on top of one another. The “experimental” version of Janus is a rewrite that’s meant to be more configurable, but in fact it’s just more fragmented and harder to follow what’s going on. You should be in charge of your <code class="file">.vimrc</code> and always know what’s going on, but with Janus you’re not.</p>
+<p><strong>Don’t use <a href="https://github.com/carlhuda/janus#readme" title="Janus: a Vim distribution">Janus</a></strong>.
+It’s a community maintained vim configuration project that in theory sounds
+nice, but once you start using it it’s not all rainbows. The current version of
+Janus installs plugins that can mess with your workflow and adds tons of opinionated
+mappings and piles of hacks on top of one another. The “experimental” version of
+Janus is a rewrite that’s meant to be more configurable, but in fact it’s just
+more fragmented and harder to follow what’s going on. You should be in charge of
+your <code class="file">.vimrc</code>, and with Janus you’re not.</p>
 </aside></div>
 
 ### Guidelines for expanding your vim settings later on:
@@ -124,9 +131,9 @@ emulator. You should consider using a graphical Vim to reach the highest
 quality of typeface and color; a graphical environment can also offer
 extra options such as antialiasing and line spacing settings.
 
-## Find your killer features
+## Find what are killer features for you
 
-Right from the start, you'll need to discover some sweet power moves
+Right from the start, you'll need to discover some power moves
 that'll keep you returning to Vim rather than your old editor.
 
 Vim has two main modes you need to care about first: the *normal mode*
@@ -177,9 +184,8 @@ time:
     <td>change whole line
 </table>
 
-These shortcuts are a very compelling argument why Vim is more efficient
-at *editing* code than most editors, but they are just the tip of the
-iceberg of all the things possible with different motions.
+These shortcuts are a very compelling argument why Vim is more efficient at
+editing code than most editors.
 
 For more information, see <kbd>:help change.txt</kbd>.
 
@@ -200,7 +206,7 @@ need some sort of a mnemonic to help you while learning.
 
   <p>Do an <a href="http://www.google.com/search?q=vim+cheat+sheet&amp;source=lnms&amp;tbm=isch">image search for &ldquo;vim cheat sheet&rdquo;</a> and you&rsquo;ll quickly hate life. But not all of them are ugly – there is a smart <a href="http://naleid.com/blog/2010/10/04/vim-movement-shortcuts-wallpaper/" title="Vim movement shortcuts wallpaper by Ted Naleid">wallpaper originally designed by Ted Naleid</a> and <a href="https://github.com/LevelbossMike/vim_shortcut_wallpaper#readme" title="A Vim cheat sheet wallpaper">re-worked with smoother colors</a>:</p>
 
-  <p><a href="https://github.com/LevelbossMike/vim_shortcut_wallpaper/raw/master/vim-shortcuts_1280x800.png" title="1280x800 Vim cheat sheet wallpaper"><img src="https://a248.e.akamai.net/assets.github.com/img/57cc2998508eb2c6f0b46b265354e6dda3145757/687474703a2f2f696d673835302e696d616765736861636b2e75732f696d673835302f373533372f62696c6473636869726d666f746f323031313034303275672e706e67" alt="vim motion keys" /></a></p>
+  <p><a href="https://github.com/LevelbossMike/vim_shortcut_wallpaper/raw/master/vim-shortcuts_1280x800.png" title="1280x800 Vim cheat sheet wallpaper"><img src="http://img850.imageshack.us/img850/7537/bildschirmfoto20110402ug.png" alt="vim motion keys" /></a></p>
 
   <p>I don&rsquo;t actually use it as a wallpaper; while learning I&rsquo;ve kept it open in a separate window and switch to it whenever I needed to remind myself of what kind of motions are there.</p>
 </aside></div>
@@ -220,7 +226,7 @@ mouse. In general:
   there is a better way.
 
 Here's an overview of several useful methods for navigating your
-document, with 2nd column indicating the corresponding backwards
+document, with the 2nd column indicating the corresponding backwards
 movement:
 
 <table class="split reverse">
@@ -306,7 +312,7 @@ documentation:
 Mastering jumps is insanely powerful. Suppose you edited one line,
 exited insert mode and now you are navigating the document to find out
 something. Now you want to continue editing from the same spot. The
-<kbd>`.</kbd> motion brings the cursor back on the exact place where
+<kbd>`.</kbd> motion brings the cursor _back on the exact place_ where
 the last change was made.
 
 Another example: you are in the middle of a script and need to add some
@@ -315,8 +321,8 @@ code, but that needs adding an extra `require` statement (or `import`,
 with <kbd>gg</kbd>, add the `require` statement and jump back to before
 the previous jump with <kbd>``</kbd>.
 
-And if you did multiple jumps, you can backtrack with
-<kbd>&lt;C-o&gt;</kbd>.
+If you did multiple jumps, you can backtrack with <kbd>&lt;C-o&gt;</kbd>.
+Went too far back? <kbd>&lt;Tab&gt;</kbd> goes forward.
 
 ### Yanking: copy & paste
 
@@ -332,7 +338,7 @@ efficient with copy ("yank" in Vim terms) and paste.
     <td>yank until end of paragraph
   <tr>
     <th><kbd>dd</kbd>
-    <td>delete current line but copy it too (think "cut")
+    <td>delete current line and yank it too (think "cut")
   <tr>
     <th><kbd>d3d</kbd>
     <td>delete 3 lines starting from current one
@@ -371,7 +377,7 @@ start with `"`:
     <td>paste from register "*": the system clipboard
   <tr>
     <th><kbd>"_D</kbd>
-    <td>delete from cursor until the end of line, but don't copy
+    <td>delete from cursor until the end of line, but don't yank
 </table>
 
 The examples above show how you can explicitly opt-in to use the system
@@ -493,12 +499,14 @@ For more information, see <kbd>:help windows</kbd>.
 
 ## Further resources for learning
 
-* <kbd>:help</kbd> – it's more useful than it appears at first!
+* <kbd>:help</kbd> – may look daunting and unfriendly at first, but is actually
+  more useful and in-depth than most resources found on the Internet.
 * [Coming home to Vim][cominghome]
 * [VimCasts][]
 * [Destroy All Software][destroy] – there are some episodes on Vim
 * [VimGolf][] – time-consuming but rewarding game
-* [Walking Without Crutches][presentation] – presentation by Drew Neil
+* [Walking Without Crutches][presentation] – presentation slides by Drew Neil
+* [Practical Vim][book] – book by Drew Neil
 * [My vim configuration and plugins][vimfiles]
 
 Thanks Gary Bernhardt, Drew Neil for tips and inspiration, and Tim Pope
@@ -526,3 +534,5 @@ for all your work on plugins.
     "Inconsolata programming typeface"
   [ctrlp]: http://kien.github.com/ctrlp.vim/
     "Full path fuzzy file, buffer and MRU file finder for Vim"
+  [book]: http://pragprog.com/book/dnvim/practical-vim
+    "Practical Vim: Edit Text at the Speed of Thought"
