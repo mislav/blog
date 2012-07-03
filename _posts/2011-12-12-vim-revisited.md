@@ -39,6 +39,15 @@ styles: |
   table.reverse th:first-child,
   table.reverse th:first-child + th { text-align: center }
   table.reverse td { border:none }
+  dl { font-size: 1.2em }
+  dt { font-weight: bold }
+  dd { margin-left: 1em }
+  #post dd p { font-size: inherit }
+  dd > p:first-child { margin-top: .2em }
+  @media only screen and (min-width: 768px) {
+    dt { float: left; clear: left; width: 7em; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    dd { margin-left: 8em; }
+  }
 ---
 
 I've had an *off/on relationship* with Vim for the past many years.
@@ -496,6 +505,63 @@ nnoremap <c-l> <c-w>l
 {% endhighlight %}
 
 For more information, see <kbd>:help windows</kbd>.
+
+<h2 id=plugins>Addendum: Essential plugins</h2>
+
+During 6 months of using Vim after publishing this article, I now feel confident
+enough to share _which plugins I find essential_ for daily work. This is
+subjective, but you should know that I've tried using core Vim features long
+enough to actually experience the pain while coding without these.
+
+<dl>
+<dt>Command-T</dt>
+<dd><p>I still use <a href="https://wincent.com/products/command-t"
+title="Command-T plugin for Vim">Command-T</a> every minute of the day. Read
+more about it in the previous section.</p></dd>
+
+<dt>Ack</dt>
+<dd><p><a href="https://github.com/mileszs/ack.vim#readme" title="Ack.vim
+plugin"><kbd>:Ack</kbd></a> performs an <strong>ultra-fast project-wide
+search</strong> using <a href="http://betterthangrep.com/" title="better than
+grep"><code>ack</code></a> command-line tool. Can’t refactor without it; e.g. I
+don’t dare to rename a HTML classname without checking first whether it’s used
+in CSS or JS.</p></dd>
+
+<dt>Commentary</dt>
+<dd><p><a href="https://github.com/tpope/vim-commentary#readme"
+title="Commentary.vim plugin">Commentary</a> adds key bindings for
+<strong>commenting &amp; uncommenting code</strong>. At first I’ve used a
+combination of <kbd>&lt;C-v&gt;</kbd> (blockwise visual mode) and <kbd>I</kbd>
+(uppercase ‘i’) to insert a <code>#</code> character at the start of multiple
+lines. However, doing that a lot is cumbersome, and uncommenting is not so
+straightforward.</p>
+
+<p>With Commentary, select some lines. Press <kbd>\\</kbd>. You’re
+done.</p></dd>
+
+<dt>Tabular</dt>
+<dd><p>If the style guidelines for your project require <strong>aligning
+assignments or other syntax vertically</strong>, use <a
+href="https://github.com/godlygeek/tabular/blob/master/doc/Tabular.txt">Tabular</a>.
+Don’t ever <em>ever</em> keep aligning stuff vertically without a plugin–I’ve
+been there, and I feel bad about it. Simply select some lines, and
+<kbd>:Tabularize assignment</kbd>.</p></dd>
+
+<dt>Surround</dt>
+<dd><p>At some point I realized that a <strong>significant part of editing code
+involves manipulating pairs</strong> of matching quotes, parentheses, brackets,
+and tags. For that I started using the <a
+href="https://github.com/tpope/vim-surround/#readme">Surround</a> plugin, and
+I’m loving it. For instance, <kbd>ysiW]</kbd> (“you surround inner WORD,
+bracket”) surrounds the current “WORD” with square brackets.</p>
+
+<p>But the non-obvious, <em>killer feature</em> of Surround is the ability to
+generate or wrap existing content in HTML tags: e.g. <kbd>ysip&lt;C-t&gt;</kbd>
+(“you surround inner paragraph, Ctrl-tag”) prompts you for a tag name and nests
+the current paragraph in it. Need HTML attributes? No problem, just type them
+after the tag name. <a href="https://github.com/mislav/vimfiles#surround">Read
+more tips for Surround</a>.</p></dd>
+</dl>
 
 ## Further resources for learning
 
