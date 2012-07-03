@@ -407,21 +407,78 @@ You can inspect the current state of all registers with
 Real-world projects have more than one file to edit. Efficient switching
 between files is just as important as motion commands.
 
-Folks coming from TextMate, IDEs, or gedit will quickly find themselves
-craving for a directory tree side pane, and the community is going to
-unanimously recommend NERD tree. **Don't use the NERD tree plugin.** It
-is clumsy, will *hurt* your split windows workflow because of edge-case
-bugs and plugin incompatibilities, and *you never needed* a file browser
-pane in the first place, anyway. The only thing it can be useful for is
-familiarizing yourself with the directory/file structure of a new
-project, and you can easily do that with the `tree` command-line tool
-(easily installed via package manager of choice, such as Homebrew on OS
-X).
+### Core Vim features
 
-What you need is a plugin for fuzzy searching of file names in a
+In the same session, Vim remembers previously open files. You can list
+them with <kbd>:buffers</kbd> (shortcut: <kbd>:ls</kbd>). Without even
+using any plugins, you can jump to a buffer on this list by typing
+<kbd>:b</kbd> and a part of a buffer's name. For example, if you've
+previously opened `lib/api_wrapper.rb`, you can return to it with
+<kbd>:b api</kbd>. Hit <kbd>&lt;Tab&gt;</kbd> to cycle between multiple
+matches.
+
+To switch between the currently open buffer and the previous one, use
+<kbd>&lt;C-^&gt;</kbd>. This key combination is a bit hard to reach, so
+you can remap to, for instance, twice hitting `<leader>`:
+
+{% highlight vim %}
+nnoremap <leader><leader> <c-^>
+{% endhighlight %}
+
+Since my `<leader>` is set to comma, I just have to hit <kbd>,,</kbd> to
+alternate between files, for instance tests and implementation.
+
+Folks coming from TextMate, IDEs, or gedit will quickly find themselves craving
+for a directory tree side pane, and the community is going to unanimously
+recommend NERD tree. **Don't use the NERD tree.** It is clumsy, will *hurt* your
+split windows workflow because of edge-case bugs and plugin incompatibilities,
+and *you never needed* a file browser pane in the first place, anyway. If you
+need to view the directory structure of a project, use `tree` command-line tool
+(easily installed via package manager of choice, such as Homebrew on OS X) and
+pipe it to `less`. If, on the other thand, you want to _interactively explore_
+the file structure while in Vim, simply edit a directory and the built-in Netrw
+plugin will kick in; for instance, start in a the current directory <kbd>:e .</kbd>.
+
+### ctags
+
+A lot of the time you're switching to another file to jump to a specific method
+or class definition. Now imagine that you can do this with a keystroke _without
+knowing which file_ actually holds the method/class.
+
+Using tags requires a bit of forethought, but boy is it worth it! It's **the
+single most useful feature** for navigating source code that I've ever
+experienced.  It just requires that you generate the tags file up front, but
+don't worry: there are clever ways in which you can automatize this step.
+
+You need to install exuberant ctags first. On Mac OS X: `brew install ctags`.
+
+To generate the tags file for your Ruby project, for instance, do this on the
+command line:
+
+    ctags -R --languages=ruby --exclude=.git
+
+You can do this within Vim too: just start the command with <kbd>:!</kbd>. This
+will generate the <code class=file>tags</code> file, which is a search index of
+your code. For languages other than Ruby, see `ctags --list-languages`.
+
+Now you can jump to a method or class definition with a single keystroke, or by
+specifying its name with the following commands:
+
+* <kbd>&lt;C-]&gt;</kbd> / <kbd>:tag foo</kbd> — jump to tag under cursor/named
+* <kbd>g&lt;C-]&gt;</kbd> / <kbd>:tjump foo</kbd> — choose from a list of matching tags
+
+You'll get hooked on this quickly, but you'll grow tired of constantly having
+to regenerate the tags file after changes or checkouts. Tim Pope has [an
+automated solution using git hooks][ctags-git]. And if you often open code of
+installed ruby gems, [he got you covered as well][ctags-gem].
+
+### Fuzzy file searching
+
+What you *need* for larger projects is a plugin for fuzzy searching of file names in a
 project. I find the [Command-T][cmdt] plugin very capable and fast, but
-it requires ruby on the system and vim compiled with ruby support. If
-that's a deal breaker for you, some people swear by [ctrlp.vim][ctrlp].
+it requires ruby on the system and vim compiled with ruby support (MacVim is by
+default, so no worries there). If for some reason that's a deal breaker for you,
+some people swear by [ctrlp.vim][ctrlp].
 
 Here are my mappings for starting a file search with Command-T. I
 start a project-wide search with <kbd>,f</kbd> and search the directory
@@ -443,25 +500,6 @@ For this to be fast, ensure that you don't have any other mappings that
 start with `<leader>f`, otherwise Vim will always force a slight delay
 after keystrokes before resolving the mapping. (See all of the current
 mappings in effect with <kbd>:map</kbd>.)
-
-In the same session, Vim remembers previously open files. You can list
-them with <kbd>:buffers</kbd> (shortcut: <kbd>:ls</kbd>). Without even
-using any plugins, you can jump to a buffer on this list by typing
-<kbd>:b</kbd> and a part of a buffer's name. For example, if you've
-previously opened `lib/api_wrapper.rb`, you can return to it with
-<kbd>:b api</kbd>. Hit <kbd>&lt;Tab&gt;</kbd> to cycle between multiple
-matches.
-
-To switch between the currently open buffer and the previous one, use
-<kbd>&lt;C-^&gt;</kbd>. This key combination is a bit hard to reach, so
-you can remap to, for instance, twice hitting `<leader>`:
-
-{% highlight vim %}
-nnoremap <leader><leader> <c-^>
-{% endhighlight %}
-
-Since my `<leader>` is set to comma, I just have to hit `,,` to
-alternate between files, for instance tests and implementation.
 
 ### Split windows
 
@@ -602,3 +640,7 @@ for all your work on plugins.
     "Full path fuzzy file, buffer and MRU file finder for Vim"
   [book]: http://pragprog.com/book/dnvim/practical-vim
     "Practical Vim: Edit Text at the Speed of Thought"
+  [ctags-git]: http://tbaggery.com/2011/08/08/effortless-ctags-with-git.html
+    "Effortless Ctags with Git"
+  [ctags-gem]: https://github.com/tpope/gem-ctags#readme
+    "RubyGems Automatic Ctags Invoker"
