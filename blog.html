@@ -22,24 +22,24 @@ description: >
 </div>
 </header>
 
-<section class="posts">
+<section class="posts hfeed">
 {% for post in site.posts %}
   {% unless post.tags contains "dated" %}
-  <article{% if post.link %} class=link{% elsif post.tags contains "featured" %} class=featured{% endif %}>
+  <article class="hentry{% if post.link %} link{% elsif post.tags contains "featured" %} featured{% endif %}">
     <header>
       {% if post.link %}
-      <h2><a href="{{ post.link | escape }}">{{ post.title }}</a>&nbsp;→</h2>
+      <h2><a class=entry-title href="{{ post.link | escape }}">{{ post.title }}</a>&nbsp;→</h2>
       {% else %}
-      <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
+      <h2 class=entry-title><a rel=bookmark href="{{ post.url }}">{{ post.title }}</a></h2>
       {% endif %}
-      <time datetime="{{ post.date | date_to_xmlschema }}" pubdate>{{ post.date | date_to_string }}</time>
-      {% if post.link %}· <a href="{{ post.url }}" title=permalink>∞</a>{% endif %}
+      <time datetime="{{ post.date | date_to_xmlschema }}" class=published pubdate>{{ post.date | date_to_string }}</time>
+      {% if post.link %}· <a href="{{ post.url }}" rel=bookmark title=permalink>∞</a>{% endif %}
     </header>
 
     {% if post.link %}
       {{ post.content }}
     {% else %}
-      {% if page.description %}<p>{{ post.description }}</p>{% endif %}
+      {% if page.description %}<p class=entry-summary>{{ post.description }}</p>{% endif %}
     {% endif %}
   </article>
   {% endunless %}
