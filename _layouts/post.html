@@ -2,24 +2,24 @@
 layout: default
 ---
 
-<article>
+<article class=hentry>
 
 <header>
 {% if page.link %}
-<h1><a href="{{ page.link | escape }}">{{ page.title }}</a>&nbsp;→</h1>
+<h1><a class=entry-title href="{{ page.link | escape }}">{{ page.title }}</a>&nbsp;→</h1>
 {% else %}
-<h1>{{ page.title }}</h1>
+<h1 class=entry-title>{{ page.title }}</h1>
 {% endif %}
 
-<p class="subtext">
+<p class="byline author vcard instapaper_ignore entry-unrelated">
   {% unless page.link %}
-  By <a href="/">Mislav</a>
+  By <a href="/" rel=author class=fn lang=hr>Mislav Marohnić</a>
   {% endunless %}
-  on <time datetime="{{ page.date | date_to_xmlschema }}" pubdate>{{ page.date | date_to_string }}</time>
+  on <time class=published datetime="{{ page.date | date_to_xmlschema }}" pubdate>{{ page.date | date_to_string }}</time>
 </p>
 </header>
 
-<div id="post"{% if page.link %} class=link{% endif %}>
+<div id="post" class="entry-content{% if page.link %} link{% endif %}">
   {{ content }}
 </div>
 
