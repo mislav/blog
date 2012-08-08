@@ -32,16 +32,21 @@ layout: default
   </ul>
 </div>
 
-{% assign post = site.posts[0] %}
-
 <h2>Latest blog post:</h2>
 
-<ol class="posts">
-  <li>
-    <span class="date">{{ post.date | date_to_string }}</span>
-    ▸ <a href="{{ post.url }}">{{ post.title }}</a>
-    {% if post.description %}<p>{{ post.description }}</p>{% endif %}
-  </li>
-</ol>
+<section class="posts hfeed">
+{% for post in site.posts %}
+  {% unless post.link or rendered_one %}
+  <article class="hentry">
+    <header>
+      <h2 class=entry-title><a rel=bookmark href="{{ post.url }}">{{ post.title }}</a></h2>
+      <time datetime="{{ post.date | date_to_xmlschema }}" class=published pubdate>{{ post.date | date_to_string }}</time>
+    </header>
+    {% if page.description %}<p class=entry-summary>{{ post.description }}</p>{% endif %}
+  </article>
+  {% assign rendered_one = true %}
+  {% endunless %}
+{% endfor %}
 
-<nav><a class="home" href="/blog/">→ All blog posts</a></nav>
+  <nav><a class="home" href="/blog/">→ All blog posts</a></nav>
+</section>
