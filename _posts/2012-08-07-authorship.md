@@ -1,5 +1,6 @@
 ---
 title: "Your content's author"
+updated: 2013-01-27 21:20:38 +0100
 description: >
   Take control of authorship information on content that you create.
 layout: post
@@ -71,6 +72,10 @@ basically falls down to combining [hAtom][] and [hCard][] microformats.
 
 Notice the `class=published` addition to `<time>`. This is part of hAtom.
 
+Readability will also extract and display the article summary if it finds one
+marked up hNews ("entry-summary") or [Article microdata][article]
+("description").
+
 **Google** instructs to [link your content to your Google+ profile][author].
 This results in a nice side-effect that is well-formatted snippet in Google
 search results that includes your name and profile picture.
@@ -110,6 +115,7 @@ this byline as part of your article content.
   [readability]: http://www.readability.com/developers/guidelines
     "Readability article publishing guidelines"
 
-  [person]: http://www.schema.org/Person
+  [person]: http://schema.org/Person
+  [article]: http://schema.org/Article
   [hAtom]: http://microformats.org/wiki/hatom
   [hCard]: http://microformats.org/wiki/hcard
