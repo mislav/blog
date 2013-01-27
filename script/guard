@@ -1,8 +1,0 @@
-#!/bin/sh
-export RUBYLIB=/Users/mislav/.coral/jekyll-mislav/lib:"$RUBYLIB"
-
-if [ -z "$BUNDLE_GEMFILE" ]; then
-  export BUNDLE_GEMFILE=shutup
-fi
-
-guard --no-notify
