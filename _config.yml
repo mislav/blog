@@ -9,6 +9,7 @@ permalink:   /:year/:month/:title/
 destination: public
 exclude:
 - bin
+- script
 - CNAME
 - Guardfile
 - default.sass

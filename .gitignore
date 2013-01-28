@@ -2,3 +2,6 @@ _site
 _tmp
 .sass-cache
 public/
+.bundle
+bin
+tmp
