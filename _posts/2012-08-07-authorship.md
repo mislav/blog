@@ -1,6 +1,6 @@
 ---
 title: "Your content's author"
-updated: 2013-01-27 21:20:38 +0100
+updated: "2013-01-28T02:10:03+01:00"
 description: >
   Take control of authorship information on content that you create.
 layout: post
