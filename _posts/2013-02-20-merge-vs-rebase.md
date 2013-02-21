@@ -1,5 +1,5 @@
 ---
-title: "Merge vs. rebase"
+title: "Git merge vs. rebase"
 description: >
   How to settle on whether to merge or rebase at specific points in a
   team-shared git workflow.
@@ -7,6 +7,12 @@ layout: post
 categories: git
 styles: |
   ul { margin-left: 1.5em }
+  pre {
+    color: #D7DFDA; background-color: #222;
+    padding: 1em 1.2em 1em 10px; font-size: 90%;
+  }
+  pre code { padding: 0 }
+  pre em { color: #ACA41F; font-style: normal; }
 ---
 
 ## The short:
@@ -15,9 +21,10 @@ styles: |
 
 *   `git rebase -i @{u}` before `git push`
 
-*   <i>(on "feature")</i> `git merge master`
+*   <i>(on "feature")</i> `git merge master` to make feature compatible with
+    latest master
 
-*   <i>(on "master")</i> `git merge -no-ff feature`
+*   <i>(on "master")</i> `git merge -no-ff feature` to ship a feature
 
     However if "feature" contains only 1 commit, avoid the merge commit:  
     <i>(on "master")</i> `git cherry-pick feature`
@@ -39,21 +46,22 @@ Such merge commits can be numerous, especially between a team of people who push
 their changes often. **Those merges convey no useful information to others, and
 litter the project's history.**
 
-You should always pull with `git pull --rebase`. To avoid having to always
-specify that option for pulls from a remote, git can be instructed to configure
-new tracking branches with this behavior:
+You should always pull with `git pull --rebase`. Git can be configured to make
+it the default behavior:
 
-    git config --global branch.autosetuprebase always
+<pre>git config --global --bool <em>pull.rebase</em> true</pre>
 
 ### Interactively rebase local commits before pushing
 
 Run this every time before pushing a set of commits:
 
-    git rebase -i @{u}
+<pre>git rebase <em>-i @{u}</em></pre>
 
-The "u" stands for "upstream", and it resolves to the SHA that is the latest
-state of the branch on the remote. Putting it simply, **this command rewrites
-only the local commits which you're about the push.**
+The "u" stands for "upstream" (added in git v1.7.0), and it resolves to the
+latest commit on this branch on the remote. Putting it simply,
+**this command rewrites only the local commits which you're about the push.**
+<ins>Starting in git v1.7.6, `@{upstream}` is the default for when there is no
+argument.</ins>
 
 This gives you a chance to perform basic housekeeping before sharing your
 changes, such as _squashing related commits_ together and _rewording commit
@@ -61,14 +69,14 @@ messages_ if they're too long or not descriptive enough.
 
 Suppose you have a set of 4 commits (newest first):
 
-    [D] oops! fixed typo in feature A
-    [C] bugfix for change B
-    [B] another change
-    [A] yay new feature!
+<pre>[D] oops! <em>fixed typo</em> in feature A
+[C] <em>bugfix</em> for change B
+<em>[B]</em> another change
+<em>[A]</em> yay new feature!</pre>
 
 You definitely want to squash A+D and B+C together, while still keeping A and B
 separate. The philosophy behind this is: don't make bugs or typos a part of
-your project's history if you can help it.
+your project's history if you haven't shared them yet.
 
 ### Integrate changes from master into a feature branch with merge
 
@@ -88,7 +96,7 @@ shortcomings:
 
 After working on a feature/topic branch, merge it in master like so:
 
-    git merge --no-ff feature
+<pre>git merge <em>--no-ff</em> feature</pre>
 
 The `--no-ff` flag **ensures there will always be a merge commit**, even when
 technically not necessary. Merge commits are useful because they convey the
@@ -108,6 +116,6 @@ for a single commit because that merge information is less useful to the team:
 * *when* is already recorded in the commit itself as committer timestamp;
 * there's nothing to *group* together.
 
-So I merge a single commit like so in master:
+You can pull in a single commit to master like so:
 
-    git cherry-pick feature
+<pre>git <em>cherry-pick</em> feature</pre>
