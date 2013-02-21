@@ -16,3 +16,9 @@ obese.
 The key problem is demonstrated by frequent interviews of both children and
 their parents: they are mostly unaware of just how much sugar is contained in
 innocently packaged snacks that big brands market to kids.
+
+Unfortunately, education alone is [not a solution][] as long as poverty rate
+remains high and junk foods are cheaper than vegetables.
+
+
+[not a solution]: http://www.fatnutritionist.com/index.php/if-only-poor-people-understood-nutrition/
