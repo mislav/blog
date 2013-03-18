@@ -24,7 +24,7 @@ styles: |
 *   <i>(on "feature")</i> `git merge master` to make feature compatible with
     latest master
 
-*   <i>(on "master")</i> `git merge -no-ff feature` to ship a feature
+*   <i>(on "master")</i> `git merge --no-ff feature` to ship a feature
 
     However if "feature" contains only 1 commit, avoid the merge commit:  
     <i>(on "master")</i> `git cherry-pick feature`
