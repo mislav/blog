@@ -24,6 +24,7 @@ styles: |
   table.split th:last-child, table.split td:last-child { border:none }
   table tr:nth-child(2n) { background:#eef }
   table td strong { color: darkred }
+  ins { font-style: italic }
 ---
 
 Using many control keys during the day, such as <kbd>Ctrl-f</kbd> to page down
@@ -84,6 +85,11 @@ In the shell, these are indispensable:
 
 * <kbd>C-r</kbd> - Backward incremental search through history
 * <kbd>C-s</kbd> - Forward incremenatal search
+
+<ins>For bash, `C-s` doesn't work by default. Here's how to enable it:</ins>
+
+    # Allow <C-s> to pass through to shell and programs
+    stty -ixon -ixoff
 
 For process control:
 
