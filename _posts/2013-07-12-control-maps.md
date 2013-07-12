@@ -65,9 +65,9 @@ contexts and highlighted the features that matter to me the most:
 <tr><th><kbd>C-N</kbd>   </th><td>       </td><td> next history               </td><td>                   </td><td> move cursor down</td></tr>
 <tr><th><kbd>C-O</kbd>   </th><td>       </td><td> operate-and-get-next       </td><td>                   </td><td><strong> jump back</strong></td></tr>
 <tr><th><kbd>C-P</kbd>   </th><td>       </td><td> previous history           </td><td>                   </td><td> move cursor up</td></tr>
-<tr><th><kbd>C-Q</kbd>   </th><td>       </td><td> zsh: clear line; bash: ??  </td><td>                   </td><td></td></tr>
-<tr><th><kbd>C-R</kbd>   </th><td>       </td><td><strong> backward inc search</strong>        </td><td>                   </td><td> redo</td></tr>
-<tr><th><kbd>C-S</kbd>   </th><td>       </td><td><strong> forward inc search</strong>         </td><td>                   </td><td></td></tr>
+<tr><th><kbd>C-Q</kbd>   </th><td>       </td><td> zsh: clear line            </td><td>                   </td><td></td></tr>
+<tr><th><kbd>C-R</kbd>   </th><td>       </td><td><strong> backward inc. search</strong>        </td><td>                   </td><td> redo</td></tr>
+<tr><th><kbd>C-S</kbd>   </th><td>       </td><td><strong> forward inc. search*</strong>         </td><td>                   </td><td></td></tr>
 <tr><th><kbd>C-T</kbd>   </th><td>       </td><td> transpose chars            </td><td> SIGINFO           </td><td> undo tag jump</td></tr>
 <tr><th><kbd>C-U</kbd>   </th><td>       </td><td> clear line                 </td><td>                   </td><td> half page up</td></tr>
 <tr><th><kbd>C-V</kbd>   </th><td>       </td><td> insert next char literally </td><td>                   </td><td> visual block mode</td></tr>
@@ -86,7 +86,8 @@ In the shell, these are indispensable:
 * <kbd>C-r</kbd> - Backward incremental search through history
 * <kbd>C-s</kbd> - Forward incremental search
 
-<ins>For bash, `C-s` doesn't work by default. Here's how to enable it:</ins>
+<ins>\*For bash, `C-s` [doesn't work by default][unfreeze].
+Here's how to enable it:</ins>
 
     # Allow <C-s> to pass through to shell and programs
     stty -ixon -ixoff
@@ -111,4 +112,7 @@ To learn more about navigating tags and jumps in Vim, see
 
 
   [splits]: https://coderwall.com/p/rwmdvq
+    "Seamlessly navigate tmux and Vim splits"
   [revisited]: http://mislav.uniqpath.com/2011/12/vim-revisited/
+  [unfreeze]: http://unix.stackexchange.com/a/12146/28595
+    "How to unfreeze after accidentally pressing Ctrl-S in a terminal?"
