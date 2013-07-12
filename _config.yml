@@ -1,7 +1,5 @@
-auto:        false
 lsi:         false
-server:      false
-server_port: 4000
+port:        4000
 pygments:    true
 markdown:    rdiscount
 rdiscount:   { extensions: [smart] }
