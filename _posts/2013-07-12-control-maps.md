@@ -49,7 +49,7 @@ contexts and highlighted the features that matter to me the most:
 <thead>
 <tr><th>                 </th><th> term  </th><th> shell prompt               </th><th> process           </th><th> Vim normal</th></tr>
 </thead>
-<tr><th><kbd>C-A</kbd>   </th><td>       </td><td><strong> start of line</strong>              </td><td>                   </td><td></td></tr>
+<tr><th><kbd>C-A</kbd>   </th><td>       </td><td><strong> start of line</strong>              </td><td>                   </td><td><strong>increment number</strong></td></tr>
 <tr><th><kbd>C-B</kbd>   </th><td>       </td><td> move back a char           </td><td>                   </td><td><strong> page up</strong></td></tr>
 <tr><th><kbd>C-C</kbd>   </th><td>       </td><td>                            </td><td> SIGINT            </td><td></td></tr>
 <tr><th><kbd>C-D</kbd>   </th><td>       </td><td> delete char                </td><td> send EOF          </td><td> half page down</td></tr>
@@ -72,7 +72,7 @@ contexts and highlighted the features that matter to me the most:
 <tr><th><kbd>C-U</kbd>   </th><td>       </td><td> clear line                 </td><td>                   </td><td> half page up</td></tr>
 <tr><th><kbd>C-V</kbd>   </th><td>       </td><td> insert next char literally </td><td>                   </td><td> visual block mode</td></tr>
 <tr><th><kbd>C-W</kbd>   </th><td>       </td><td><strong> delete word</strong>                </td><td>                   </td><td> window prefix</td></tr>
-<tr><th><kbd>C-X</kbd>   </th><td>       </td><td> prefix, e.g. C-x,C-e       </td><td>                   </td><td></td></tr>
+<tr><th><kbd>C-X</kbd>   </th><td>       </td><td> prefix, e.g. C-x,C-e       </td><td>                   </td><td><strong>decrement number</strong></td></tr>
 <tr><th><kbd>C-Y</kbd>   </th><td>       </td><td> yank                       </td><td> (delayed suspend) </td><td> scroll down</td></tr>
 <tr><th><kbd>C-Z</kbd>   </th><td>       </td><td>                            </td><td><strong> SIGTSTP (suspend)</strong> </td><td></td></tr>
 <tr><th><kbd>C-\</kbd>   </th><td>       </td><td>                            </td><td> SIGQUIT           </td><td></td></tr>
@@ -101,6 +101,8 @@ For process control:
 In Vim:
 
 * <kbd>C-f/b</kbd> - Page down/up
+* <kbd>C-a/x</kbd> - Increment/decrement the number after cursor.
+  Can't do CSS without it!
 * <kbd>C-]</kbd> - Jump to tag under cursor
 * <kbd>C-o</kbd> - Backtrack after having jumped
 
