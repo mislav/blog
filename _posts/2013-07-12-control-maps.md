@@ -33,16 +33,16 @@ of my own][splits] to tmux, I've began wondering whether all the letters of the
 alphabet were accounted for. The answer is: yes, they are; plus even some extra
 characters.
 
-Most keybindings differ depending on the context, except ones in the "term"
+Most key bindings differ depending on the context, except ones in the "term"
 column that always keep the same function. The layers that I'm most interested
 in are:
 
-* **the shell** (bash/zsh with Emacs keybindings), where I edit commands and
+* **the shell** (bash/zsh with Emacs key bindings), where I edit commands and
   browse history;
 * **process control** while running a process attached to the terminal;
 * **Vim**, which I use exclusively in the terminal.
 
-I have compiled a comprehensive overview of all control keybindings in different
+I have compiled a comprehensive overview of all control key bindings in different
 contexts and highlighted the features that matter to me the most:
 
 <table class=split>
@@ -84,7 +84,7 @@ contexts and highlighted the features that matter to me the most:
 In the shell, these are indispensable:
 
 * <kbd>C-r</kbd> - Backward incremental search through history
-* <kbd>C-s</kbd> - Forward incremenatal search
+* <kbd>C-s</kbd> - Forward incremental search
 
 <ins>For bash, `C-s` doesn't work by default. Here's how to enable it:</ins>
 
