@@ -4,6 +4,37 @@ description: >
   Helping you debug the dreaded SSLError.
 layout: post
 categories: ruby
+styles: |
+  .attention {
+    padding: 1em 2em;
+    background: lightblue;
+    text-shadow: rgba(255,255,255,.8) 1px 1px 1px;
+    border-radius: 6px;
+  }
+  .attention li { margin-left: 2em }
+  .figwrapper {
+    max-width: 600px;
+    margin: 2em auto 3em;
+  }
+  figure {
+    margin: 0 auto; padding: 0;
+  }
+  figure img {
+    display: block;
+    max-width: 100%;
+    height: auto !important;
+    margin: 0 auto 1em;
+    box-shadow: 3px 3px 12px rgba(0,0,0,.3);
+  }
+  figcaption {
+    line-height: 1.2;
+    display: block;
+    padding: 0 .6em;
+    text-align: center;
+  }
+  @media only screen and (max-width : 480px) {
+    .figwrapper { max-width: 100%; margin-left: 0 }
+  }
 ---
 
 We've all been there. The dreaded error:
@@ -24,19 +55,21 @@ verification is based on a few simple concepts. Let me show you it.
 the error to help you debug what's going on.
 </i>
 
-Basically, the SSLError jumped up at you because one of the following is true:
+<div class=attention>
+<p>Basically, the SSLError jumped up at you because one of the following is true:</p>
 
-1. The remote server presented a **valid certificate**, but your system *lacks
-   root certificates* ("CA certs") without which you can't even verify whether
-   you've put on shoes this morning.
-
-2. The remote server presented a certificate that is *distributed within your
-   company/organization* and which you were supposed to trust, but you *haven't
-   configured the client* properly.
-
-3. You were subject to a **Man in the Middle attack** (somebody on the network
-   pretending to be that server) and now you're glad that the error was raised.
-   The attackers return home in shame.
+<ol>
+<li><p>The remote server presented a <strong>valid certificate</strong>, but your system <em>lacks
+root certificates</em> ("CA certs") without which you can't even verify whether
+you've put on shoes this morning.</p></li>
+<li><p>The remote server presented a certificate that is <em>distributed within your
+company/organization</em> and which you were supposed to trust, but you <em>haven't
+configured the client</em> properly.</p></li>
+<li><p>You were subject to a <strong>Man in the Middle attack</strong> (somebody on the network
+pretending to be that server) and now you're glad that the error was raised.
+The attackers return home in shame.</p></li>
+</ol>
+</div>
 
 To avoid the error, in desperation, many were guilty of this:
 
@@ -64,24 +97,31 @@ But first, let's explore how is SSL formed.
 
 They are the same protocols, except TLS is a newer specification of SSL. The
 protocol takes effect at a specific layer of TCP/IP where it wraps application
-data, but still takes advantage of the transport layer. It's like a cake where
+data, but still takes advantage of the transport layer. It's all like a cake where
 the tastiest layer is the most mysterious one. What is it from? Who knows??
 
 ### HTTPS
 
 Short for HTTP over SSL/TLS. Good ol' HTTP requests, headers, response bodies,
-all encrypted. HTTPS traffic can even go through HTTP proxy servers, but proxies
-can't eavesdrop on what's going on since the data is encrypted, so they just
-forward it further. “Fine,“ say proxies, pretending they don't care about your
-stupid messages anyway.
+all wrapped in a warm, encrypted embrace. HTTPS traffic can even go through HTTP
+proxy servers, but proxies can't eavesdrop on what's going on since the data is
+encrypted, so they just forward it further. “Fine,“ say proxies, pretending they
+don't care about your stupid messages anyway.
 
 ### OpenSSL
 
-Ubiquitous open source implementation of SSL/TLS. Installing it won't provide
-you with any root certificates, since it's not its job to tell you who to trust.
-It just handles the nasty.
+Ubiquitous open source implementation of SSL/TLS. There can be multiple versions
+installed on the system, especially on Mac OS X where the system default
+(v0.9.8) is outdated. Installing it won't provide you with root certificates,
+since it's not its job to tell you who to trust. It just handles the nasty.
 
-### Root certificates/CA bundle
+### X.509
+
+Crypto standard that specifies formats for public key certificates and
+certification path validation algorithm, among other things. You'll see it
+referenced in both openssl command-line tools and Ruby's API documentation.
+
+<h3 id=root>Root certificates/CA bundle</h3>
 
 Certificate Authority (CA) certificates is a bundle of certs identifying widely
 trusted authorities. They are called "root certs" because they're at the end of
@@ -99,9 +139,10 @@ systems, or manually by system administrators.
 ### Certificate formats: PEM/DER
 
 DER is a binary format, while PEM is simply the base64 encoding of the DER
-format with "BEGIN" and "END" lines added. Because of these delimiters, multiple
-certificates and keys can be stored together in a single file. This, combined by
-the fact it's in plain text, makes PEM the more popular encoding.
+format with `BEGIN/END` header and footer lines added. Because of these
+delimiters, multiple certificates and keys can be stored together in a single
+file. This, combined by the fact it's in plain text, makes PEM the more popular
+encoding.
 
 The conventions for filename extensions aren't strong:
 
@@ -109,7 +150,7 @@ The conventions for filename extensions aren't strong:
 * `*.crt` is usually PEM, but can be DER;
 * `*.cer` is usually DER, but can be PEM.
 
-### Certificate validation chain
+<h3 id=chain>Certificate validation chain</h3>
 
 We arrive at the source of our woes. Most certificates are **signed with private
 key** of some authority. Their certificates are in turn **also signed by some
@@ -124,9 +165,16 @@ signed by FutureCorp, which in turn is signed by Big Sugar Daddy. The Unerdwear
 Sugar Daddy is a part of our CA bundle, we can trust that Unerdwear are who they
 claim to be.
 
-![GitHub cert chain as seen in Safari](http://f.cl.ly/items/2h1X2L3b1E3Y3815242z/GitHub%20cert%20chain.png)
+<div class=figwrapper>
+  <figure>
+    <img alt="" src="http://f.cl.ly/items/2h1X2L3b1E3Y3815242z/GitHub%20cert%20chain.png">
+    <figcaption>
+      GitHub's certificate chain as seen in Safari
+    </figcaption>
+  </figure>
+</div>
 
-## Meanwhile, in the Ruby world…
+<h2 id=ruby>Meanwhile, in the Ruby world…</h2>
 
 Ruby compiles with C bindings for OpenSSL. The locations where CA certs are
 looked up depend on that OpenSSL's defaults. You can check that out with:
@@ -180,11 +228,11 @@ failed. Fixing it depends on the context.
 You've got a case of the missing CA bundle and you need to either:
 
 * Install the CA bundle from somewhere, e.g. via the "ca‑certificates" package
-  ("curl‑ca‑bundle" for Homebrew), and symlink it from
-  [SSL_CERT_FILE](#SSL_CERT_FILE) if necessary.
+  ("curl‑ca‑bundle" for Homebrew), and make the default
+  [SSL_CERT_FILE](#SSL_CERT_FILE) a symlink to the new bundle if necessary.
 
 * If there's already a CA bundle on disk that you want to use, point
-  `SSL_CERT_FILE` or `SSL_CERT_DIR` environment variables to it, or use the
+  `SSL_CERT_FILE` or `SSL_CERT_DIR` environment variables to it, or set the
   `ca_file=` or `ca_path=` properties in Net::HTTP.
 
 ### It was a custom certificate that we use internally in our organization that my program can't verify
@@ -208,13 +256,23 @@ cert = OpenSSL::X509::Certificate.new(File.read('mycert.pem'))
 http.cert_store.add_cert(cert)
 {% endhighlight %}
 
-## Tools to help you debug things and stuff
+### Call the SSL doctor
 
-Find them at [github.com/mislav/ssl-tools][5]
+[I wrote a doctor script][4] you can run from the Ruby environment where you're
+getting the SSLError to help you debug the source of the problem and your
+environment.
+
+## Resources
+
+* [github.com/mislav/ssl-tools][5]
+* [Ruby OpenSSL API documentation][6]
+* `man openssl x509 req c_rehash`
 
 
   [1]: http://www.buzzfeed.com/expresident/animals-who-are-extremely-disappointed-in-you
   [2]: http://unerdwear.com/
   [3]: http://opensource.apple.com/source/OpenSSL098/OpenSSL098-35.1/src/crypto/x509/x509_vfy_apple.c
-  [4]: https://github.com/mislav/ssl-tools/blob/ea97ca1592523d8cf7bce91d5015c4442bd37846/doctor.rb
+  [4]: https://github.com/mislav/ssl-tools/blob/8b3dec4/doctor.rb
   [5]: https://github.com/mislav/ssl-tools
+  [6]: http://ruby-doc.org/stdlib-2.0/libdoc/openssl/rdoc/OpenSSL.html
+  [7]: https://en.wikipedia.org/wiki/X.509
