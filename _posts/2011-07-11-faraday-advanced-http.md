@@ -41,7 +41,7 @@ require 'json'
 
 url = URI.parse('https://api.github.com/repos/technoweenie/faraday')
 
-response = Net::HTTP.start(url.host, use_ssl: true, verify_mode: OpenSSL::SSL::VERIFY_NONE) do |http|
+response = Net::HTTP.start(url.host, use_ssl: true) do |http|
   http.get url.request_uri, 'User-Agent' => 'MyLib v1.2'
 end
 
@@ -171,7 +171,7 @@ require 'logger'
 # we need a 3rd-party extension for some extra middleware:
 require 'faraday_middleware'
 
-conn = Faraday.new 'https://api.github.com/', ssl: {verify: false} do |c|
+conn = Faraday.new('https://api.github.com/') do |c|
   c.use FaradayMiddleware::ParseJson,       content_type: 'application/json'
   c.use Faraday::Response::Logger,          Logger.new('faraday.log')
   c.use FaradayMiddleware::FollowRedirects, limit: 3
