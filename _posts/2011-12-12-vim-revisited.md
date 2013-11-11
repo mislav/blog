@@ -149,7 +149,7 @@ Vim has two main modes you need to care about first: the *normal mode*
 (where you move, perform commands) and the *insert mode* (where you type
 in text). The insert mode is on the surface nothing special when
 compared to your old editor: you press <kbd>i</kbd>, you're in insert
-mode, now you type text as your normally would. Pressing
+mode, now you type text as you normally would. Pressing
 <kbd>&lt;Esc&gt;</kbd> exits back to normal mode.
 
 But it is *how* you enter insert mode that offers some advantage:
@@ -435,9 +435,9 @@ split windows workflow because of edge-case bugs and plugin incompatibilities,
 and *you never needed* a file browser pane in the first place, anyway. If you
 need to view the directory structure of a project, use `tree` command-line tool
 (easily installed via package manager of choice, such as Homebrew on OS X) and
-pipe it to `less`. If, on the other thand, you want to _interactively explore_
+pipe it to `less`. If, on the other hand, you want to _interactively explore_
 the file structure while in Vim, simply edit a directory and the built-in Netrw
-plugin will kick in; for instance, start in a the current directory <kbd>:e .</kbd>.
+plugin will kick in; for instance, start in the current directory <kbd>:e .</kbd>.
 
 ### ctags
 
@@ -511,7 +511,7 @@ splits; for instance tests and implementation.
 <table class="split">
   <thead><tr>
     <th>where
-    <th>horizonal
+    <th>horizontal
     <th>vertical
   <tbody>
   <tr>
