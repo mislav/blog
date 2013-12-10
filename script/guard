@@ -29,7 +29,7 @@ listen.change do |modified, added, removed|
 
   file = modified.first
   case file
-  when NilClass, 'Gemfile.lock'
+  when NilClass, 'Gemfile.lock', /^\./
     # do nothing
   when $0
     reexec = true
