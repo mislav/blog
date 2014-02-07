@@ -1,0 +1,177 @@
+---
+title: "Every line of code is always documented"
+description: >
+  It might not be expressed with code comments, but every line of code comes
+  with documentation. It's just not immediately visible
+layout: post
+---
+
+Every line of code comes with a hidden piece of documentation. It's just not
+immediately visible.
+
+Whoever wrote line 4 of the following code snippet decided to access the
+`clientLeft` property of a DOM node for some reason, but do nothing with the
+result. It's pretty mysterious. Can you tell why they did it, or is it safe to
+change or remove that call in the future?
+
+{% highlight js hl_lines=4 linenos %}
+// ...
+if (duration > 0) this.bind(endEvent, wrappedCallback)
+
+this.get(0).clientLeft
+
+this.css(cssValues)
+{% endhighlight %}
+
+If someone pasted you this code, like I did here, you probably won't be able to
+tell who wrote this line, what was their reasoning, and is it necessary to keep
+it. _However_, most of the time when working on a project you'll have access to
+its history via version control systems.
+
+**A project's history is its most valuable documentation.**
+
+The mystery ends when we view the commit message which introduced this line:
+
+{% highlight sh %}
+$ git show $(git blame example.js -L 4,4 | awk '{print $1}')
+{% endhighlight %}
+
+> **Fix animate() for elements just added to DOM**
+>
+> Activating CSS transitions for an element just added to the DOM won't work in
+> either Webkit or Mozilla. To work around this, we used to defer setting CSS
+> properties with setTimeout (see 272513b).
+>
+> This solved the problem for Webkit, but not for latest versions of Firefox.
+> Mozilla seems to need at least 15ms timeout, and even this value varies.
+>
+> A better solution for both engines is to trigger "layout". This is done here
+> by reading `clientLeft` from an element. There are other properties and
+> methods that trigger layout; see
+> [gent.ilcore.com/2011/03/how-not-to-trigger-layout-in-webkit](http://gent.ilcore.com/2011/03/how-not-to-trigger-layout-in-webkit.html)
+
+As it turns out, this line—more specifically, the _change_ which introduced this
+line—is **heavily documented** with information of why it's necessary, why did
+the previous approach (referred to by a commit SHA) not work, which browsers are
+affected, and a link for further reading.
+
+So does every other line in the project have documentation, going back to the
+first day when the project was created. The quality of this documentation,
+however, relies heavily on the diligence of the people involved while writing
+good commit messages.
+
+## Effective spelunking of project's history
+
+### git blame
+
+I've already demonstrated how to use `git blame` from the command line above.
+When you don't have access to the local git repository, you can also open the
+"Blame" view for [any file on GitHub](https://github.com/madrobby/zepto/blame/2ed0123eaddc023a8579df0a3a084a70a392d792/src/fx.js#L90).
+
+A very effective way of exploring a file's history is with Vim and [Fugitive][]:
+
+1. Use `:Gblame` in a buffer to open the blame view;
+2. Press <kbd>P</kbd> on a line of blame pane to re-blame at the parent of that
+   commit, if you need to go deeper;
+3. Press <kbd>o</kbd> to open a split showing the commit currently selected in
+   the blame pane.
+4. Use `:Gbrowse` in the commit split to open the commit in the GitHub web interface;
+5. Press <kbd>C-o</kbd> in the main buffer to close all other splits when you're
+   done exploring. Optionally, use `:Gedit` to reset the buffer to the most
+   recent version in case you did any spelunking with <kbd>P</kbd> earlier.
+
+<img width=827 height=445 style="max-width:100%" alt="git blame view in vim Fugitive"
+  src="http://f.cl.ly/items/070G0J0P3T0O3G2u2f0i/Screen%20Shot%202014-02-07%20at%203.38.20%20PM.png">
+
+### Find the pull request where a commit originated
+
+With git blame you might have obtained a commit sha that introduced a change,
+but commit messages don't always carry enough information or context to explain
+the rationale behind the change. However, if the team behind a project practices
+[GitHub Flow][], the context might be found in the pull request discussion:
+
+    $ hub log --merges --ancestry-path --oneline <SHA>..origin | tail
+    # ...
+    bc4712d Merge pull request #42 from sticky-sidebar
+    3f883f0 Merge branch 'master' into sticky-sidebar
+
+Here, a single commit SHA was enough to discover that it originated in pull
+request #42.
+
+### The git pickaxe
+
+Sometimes you'll be trying to find something that is missing: for instance, a
+past call to a function that is no longer invoked from anywhere. The best way to
+find which commits have introduced or removed a certain keyword is with the
+'pickaxe' argument to `git log`:
+
+    $ git log -S<string>
+
+This way you can dig up commits that have, for example, removed calls to a
+specific function, or added a certain CSS selector.
+
+## Being on the right side of history
+
+Keep in mind that everything that you're making today is going to enter the
+project's history and stay there forever. To be nicer to other people who work
+with you (even if it's a solo project, that includes yourself in 3 months),
+follow these ground rules when making commits:
+
+* Always write commit messages as if you are **explaining the change** to a
+  colleague sitting next to you who has no idea of what's going on. Per
+  [Thoughtbot's tips for better commit messages][tips]:
+
+  > Answer the following questions:
+  >
+  > * Why is this change necessary?
+  > * How does it address the issue?
+  > * What side effects does this change have?
+  > * Consider including a link [to the discussion.]
+
+* **Avoid unrelated changes in a single commit**. You might have spotted a typo
+  or did tiny code refactoring in the same file where you made some other changes,
+  but resist the temptation to record them together with the main change unless
+  they're directly related.
+
+* **Always be cleaning up your history before pushing**. If the commits haven't
+  been shared yet, it's safe to [rebase the heck out of them][rebase]. The
+  following could have become permanent history of the Faraday project, but I
+  squashed it down to only 2 commits and edited their messages to hide the fact
+  I had troubles setting this up in the first place:
+
+  <img width=470 style="max-width:100%" alt="messy git history before rebase"
+    src="http://f.cl.ly/items/2U0d0K2Q2C300Q1X3P1S/Image%202013-04-04%20at%201.38.33%20AM.png">
+
+* Corollary of avoiding unrelated changes: **stick to a line-based coding
+  style** that allows you to append, edit or remove values from lists without
+  changing adjacent lines. Some examples:
+
+        var one = "foo"
+          , two = "bar"
+          , three = "baz"   // Comma-first style allows us to add or remove a
+                            // new variable without touching other lines
+
+        # Ruby:
+        result = make_http_request(
+          :method => 'POST',
+          :url => api_url,
+          :body => '...',   // Ruby allows us to leave a trailing comma, making it
+                            // possible to add/remove params while not touching others
+        )
+
+  Why would you want to use such coding styles? Well, always think about the
+  person who's going to `git blame` this. In the JavaScript example, if you were
+  the one who added a committed the value `"baz"`, you don't want your name to
+  show up when somebody blames the line that added `"bar"`, since the two
+  variables might be unrelated to the change.
+
+
+  [fugitive]: https://github.com/tpope/vim-fugitive
+    "fugitive.vim: a Git wrapper so awesome, it should be illegal"
+  [git-churn]: https://github.com/garybernhardt/dotfiles/blob/f0c0ff92209e5aed4fa3ef6faf056eb9944a8f12/bin/git-churn
+  [github flow]: http://guides.github.com/overviews/flow/
+    "Lightweight, branch-based workflow that supports teams and projects where deployments are made regularly"
+  [tips]: http://robots.thoughtbot.com/5-useful-tips-for-a-better-commit-message
+    "5 Useful Tips For A Better Commit Message"
+  [rebase]: /2013/02/merge-vs-rebase/
+    "Git merge vs. rebase"
