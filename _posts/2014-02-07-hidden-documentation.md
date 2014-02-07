@@ -2,12 +2,11 @@
 title: "Every line of code is always documented"
 description: >
   It might not be expressed with code comments, but every line of code comes
-  with documentation. It's just not immediately visible
+  with documentation. It's just not immediately visible.
 layout: post
 ---
 
-Every line of code comes with a hidden piece of documentation. It's just not
-immediately visible.
+Every line of code comes with a hidden piece of documentation.
 
 Whoever wrote line 4 of the following code snippet decided to access the
 `clientLeft` property of a DOM node for some reason, but do nothing with the
@@ -32,7 +31,7 @@ its history via version control systems.
 
 The mystery ends when we view the commit message which introduced this line:
 
-{% highlight sh %}
+{% highlight bash %}
 $ git show $(git blame example.js -L 4,4 | awk '{print $1}')
 {% endhighlight %}
 
@@ -51,14 +50,14 @@ $ git show $(git blame example.js -L 4,4 | awk '{print $1}')
 > [gent.ilcore.com/2011/03/how-not-to-trigger-layout-in-webkit](http://gent.ilcore.com/2011/03/how-not-to-trigger-layout-in-webkit.html)
 
 As it turns out, this line—more specifically, the _change_ which introduced this
-line—is **heavily documented** with information of why it's necessary, why did
+line—is **heavily documented** with information about why it was necessary, why did
 the previous approach (referred to by a commit SHA) not work, which browsers are
 affected, and a link for further reading.
 
-So does every other line in the project have documentation, going back to the
+So does _every other line_ in the project have documentation, going back to the
 first day when the project was created. The quality of this documentation,
 however, relies heavily on the diligence of the people involved while writing
-good commit messages.
+commit messages.
 
 ## Effective spelunking of project's history
 
@@ -71,8 +70,8 @@ When you don't have access to the local git repository, you can also open the
 A very effective way of exploring a file's history is with Vim and [Fugitive][]:
 
 1. Use `:Gblame` in a buffer to open the blame view;
-2. Press <kbd>P</kbd> on a line of blame pane to re-blame at the parent of that
-   commit, if you need to go deeper;
+2. If you need to go deeper, press <kbd>P</kbd> on a line of blame pane to
+   re-blame at the parent of that commit;
 3. Press <kbd>o</kbd> to open a split showing the commit currently selected in
    the blame pane.
 4. Use `:Gbrowse` in the commit split to open the commit in the GitHub web interface;
@@ -90,10 +89,13 @@ but commit messages don't always carry enough information or context to explain
 the rationale behind the change. However, if the team behind a project practices
 [GitHub Flow][], the context might be found in the pull request discussion:
 
-    $ hub log --merges --ancestry-path --oneline <SHA>..origin | tail
-    # ...
-    bc4712d Merge pull request #42 from sticky-sidebar
-    3f883f0 Merge branch 'master' into sticky-sidebar
+
+{% highlight bash hl_lines=3 %}
+$ git log --merges --ancestry-path --oneline <SHA>..origin | tail
+# ...
+bc4712d Merge pull request #42 from sticky-sidebar
+3f883f0 Merge branch 'master' into sticky-sidebar
+{% endhighlight %}
 
 Here, a single commit SHA was enough to discover that it originated in pull
 request #42.
@@ -108,7 +110,7 @@ find which commits have introduced or removed a certain keyword is with the
     $ git log -S<string>
 
 This way you can dig up commits that have, for example, removed calls to a
-specific function, or added a certain CSS selector.
+specific function, or added a certain CSS classname.
 
 ## Being on the right side of history
 
@@ -135,9 +137,9 @@ follow these ground rules when making commits:
 
 * **Always be cleaning up your history before pushing**. If the commits haven't
   been shared yet, it's safe to [rebase the heck out of them][rebase]. The
-  following could have become permanent history of the Faraday project, but I
+  following could have been permanent history of the Faraday project, but I
   squashed it down to only 2 commits and edited their messages to hide the fact
-  I had troubles setting this up in the first place:
+  I had troubles setting the script up in the first place:
 
   <img width=470 style="max-width:100%" alt="messy git history before rebase"
     src="http://f.cl.ly/items/2U0d0K2Q2C300Q1X3P1S/Image%202013-04-04%20at%201.38.33%20AM.png">
