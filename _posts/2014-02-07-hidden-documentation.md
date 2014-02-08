@@ -92,17 +92,17 @@ When you don't have access to the local git repository, you can also open the
 A very effective way of exploring a file's history is with Vim and [Fugitive][]:
 
 1. Use `:Gblame` in a buffer to open the blame view;
-2. If you need to go deeper, press <kbd>P</kbd> on a line of blame pane to
+2. If you need to go deeper, press <kbd>Shift-P</kbd> on a line of blame pane to
    re-blame at the parent of that commit;
 3. Press <kbd>o</kbd> to open a split showing the commit currently selected in
    the blame pane.
 4. Use `:Gbrowse` in the commit split to open the commit in the GitHub web interface;
-5. Press <kbd>C-o</kbd> in the main buffer to close all other splits when you're
-   done exploring. Optionally, use `:Gedit` to reset the buffer to the most
-   recent version in case you did any spelunking with <kbd>P</kbd> earlier.
+5. Press <kbd>gq</kbd> to close the blame pane and return to the main buffer.
 
 <img width=827 height=445 style="max-width:100%" alt="git blame view in vim Fugitive"
   src="http://f.cl.ly/items/070G0J0P3T0O3G2u2f0i/Screen%20Shot%202014-02-07%20at%203.38.20%20PM.png">
+
+See `:help Gblame` for more information.
 
 ### Find the pull request where a commit originated
 
@@ -111,10 +111,9 @@ but commit messages don't always carry enough information or context to explain
 the rationale behind the change. However, if the team behind a project practices
 [GitHub Flow][], the context might be found in the pull request discussion:
 
-
 {% highlight bash hl_lines=3 %}
 $ git log --merges --ancestry-path --oneline <SHA>..origin | tail
-# ...
+...
 bc4712d Merge pull request #42 from sticky-sidebar
 3f883f0 Merge branch 'master' into sticky-sidebar
 {% endhighlight %}
