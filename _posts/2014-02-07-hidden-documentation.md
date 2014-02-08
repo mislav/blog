@@ -112,6 +112,33 @@ find which commits have introduced or removed a certain keyword is with the
 This way you can dig up commits that have, for example, removed calls to a
 specific function, or added a certain CSS classname.
 
+### git churn
+
+It's possible to get valuable insight from history of a project not only by
+viewing individual commits, but by **analyzing sets of changes as a whole**. For
+instance, [git-churn][] is a simple but valuable script that wraps
+`git log` to compile stats about which files change the most. For example, to
+see where the development of an app was focused on in the past 6 months:
+
+    $ git churn --since='6 months ago' app/ | tail
+
+Incidentally, such analysis also highlights potential problems with technical
+debt in a project. A specific file changing too often is generally a red flag,
+since it probably means that the code in that file either needed to be
+frequently fixed for bugs, or that the file holds too much responsibility in
+general and should be split into smaller units.
+
+Similar methods of history analysis can be employed to see which people were
+responsible recently for development of a certain part of the codebase. For
+instance, to see who contributed most often to the API part of an application:
+
+    $ git log --format='%an' --since='6 months ago' app/controllers/api/ | \
+        sort | uniq -c | sort -rn | head
+
+     109 Edmond Dantès
+      13 Jonathan Livingston
+       7 Ebanezer Scrooge
+
 ## Being on the right side of history
 
 Keep in mind that everything that you're making today is going to enter the
