@@ -4,6 +4,28 @@ description: >
   It might not be expressed with code comments, but every line of code comes
   with documentation. It's just not immediately visible.
 layout: post
+styles: |
+  pre.ansi {
+    color: #DEDFE1;
+    background-color: #010101;
+    padding: .5em;
+  }
+  pre.ansi .ansi-black { color: black; }
+  pre.ansi .ansi-black.ansi-bright { color: #818383; }
+  pre.ansi .ansi-red { color: #BA3521; }
+  pre.ansi .ansi-red.ansi-bright { color: #F9391F; }
+  pre.ansi .ansi-green { color: #25BC22; }
+  pre.ansi .ansi-green.ansi-bright { color: #31E722; }
+  pre.ansi .ansi-yellow { color: #ADAD27; }
+  pre.ansi .ansi-yellow.ansi-bright { color: #EAEC23; }
+  pre.ansi .ansi-blue { color: #3D2EE2; }
+  pre.ansi .ansi-blue.ansi-bright { color: #562FE2; }
+  pre.ansi .ansi-magenta { color: #AE38D4; }
+  pre.ansi .ansi-magenta.ansi-bright { color: #F935F7; }
+  pre.ansi .ansi-cyan { color: #2BB9C9; }
+  pre.ansi .ansi-cyan.ansi-bright { color: #14F0F0; }
+  pre.ansi .ansi-white { color: #DEDFE1; }
+  pre.ansi .ansi-white.ansi-bright { color: #E9EBEB; }
 ---
 
 Every line of code comes with a hidden piece of documentation.
@@ -185,19 +207,37 @@ follow these ground rules when making commits:
           :method => 'POST',
           :url => api_url,
           :body => '...',   // Ruby allows us to leave a trailing comma, making it
-                            // possible to add/remove params while not touching others
-        )
+        )                   // possible to add/remove params while not touching others
 
   Why would you want to use such coding styles? Well, always think about the
   person who's going to `git blame` this. In the JavaScript example, if you were
   the one who added a committed the value `"baz"`, you don't want your name to
   show up when somebody blames the line that added `"bar"`, since the two
-  variables might be unrelated to the change.
+  variables might be unrelated.
+
+## Bonus script
+
+Since you've read this far, I'll reward you with an extra script. I call it
+[git-overwritten][] and it shows blame information about original authors of
+lines changed or removed in a given branch:
+
+    $ git overwritten feature origin/master
+
+<pre class='ansi'>  28 2014-02-04 <span class='ansi-0 ansi-yellow'>1fb2633</span>  <span class='ansi-0 ansi-green'>Mislav Marohnić</span>: Add Makefile for building and testing
+   1 2014-01-13 <span class='ansi-0 ansi-yellow'>b2d896a</span>  <span class='ansi-0 ansi-green'>Jingwen Owen Ou</span>: Add -t to mktemp in script/make
+  17 2014-01-07 <span class='ansi-0 ansi-yellow'>385ccee</span>  <span class='ansi-0 ansi-green'>Jingwen Owen Ou</span>: Add script/make for homebrew build
+</pre>
+
+This is useful when opening pull requests per [GitHub Flow]; you'll want your
+pull request reviewed by colleagues but you might not be sure who to ping. With
+`git-overwritten` you'll get the names of people who wrote the lines you just
+changed, so you'll know who to @-mention when opening a pull request.
 
 
   [fugitive]: https://github.com/tpope/vim-fugitive
     "fugitive.vim: a Git wrapper so awesome, it should be illegal"
   [git-churn]: https://github.com/garybernhardt/dotfiles/blob/f0c0ff92209e5aed4fa3ef6faf056eb9944a8f12/bin/git-churn
+  [git-overwritten]: https://github.com/mislav/dotfiles/blob/a1268873d05af5cbefab078ba7009efbdfc73506/bin/git-overwritten
   [github flow]: http://guides.github.com/overviews/flow/
     "Lightweight, branch-based workflow that supports teams and projects where deployments are made regularly"
   [tips]: http://robots.thoughtbot.com/5-useful-tips-for-a-better-commit-message
