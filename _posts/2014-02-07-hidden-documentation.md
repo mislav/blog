@@ -236,7 +236,7 @@ changed, so you'll know who to @-mention when opening a pull request.
   [fugitive]: https://github.com/tpope/vim-fugitive
     "fugitive.vim: a Git wrapper so awesome, it should be illegal"
   [git-churn]: https://github.com/garybernhardt/dotfiles/blob/f0c0ff92209e5aed4fa3ef6faf056eb9944a8f12/bin/git-churn
-  [git-overwritten]: https://github.com/mislav/dotfiles/blob/a1268873d05af5cbefab078ba7009efbdfc73506/bin/git-overwritten
+  [git-overwritten]: https://github.com/mislav/dotfiles/blob/7ac8cbfcd56cfa6c39b5719ea183e87878ea6ed5/bin/git-overwritten
   [github flow]: http://guides.github.com/overviews/flow/
     "Lightweight, branch-based workflow that supports teams and projects where deployments are made regularly"
   [tips]: http://robots.thoughtbot.com/5-useful-tips-for-a-better-commit-message
