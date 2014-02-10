@@ -5,6 +5,15 @@ description: >
   with documentation. It's just not immediately visible.
 layout: post
 styles: |
+  #post ul, #post ol { margin-left: 1.5em }
+  div.highlight + blockquote {
+    margin: -2px 0 0 0;
+    padding: 1em;
+    border: 1px solid #ccc;
+    border-top-width: 0;
+  }
+  div.highlight + blockquote > p:first-child { margin-top: 0 }
+  div.highlight + blockquote > p:last-child { margin-bottom: 0 }
   pre.ansi {
     color: #DEDFE1;
     background-color: #010101;
@@ -124,7 +133,7 @@ See `:help Gblame` for more information.
 
 ### Find the pull request where a commit originated
 
-With git blame you might have obtained a commit sha that introduced a change,
+With git blame you might have obtained a commit SHA that introduced a change,
 but commit messages don't always carry enough information or context to explain
 the rationale behind the change. However, if the team behind a project practices
 [GitHub Flow][], the context might be found in the pull request discussion:
