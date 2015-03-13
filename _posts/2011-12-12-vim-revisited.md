@@ -215,7 +215,7 @@ need some sort of a mnemonic to help you while learning.
 
   <p>Do an <a href="http://www.google.com/search?q=vim+cheat+sheet&amp;source=lnms&amp;tbm=isch">image search for &ldquo;vim cheat sheet&rdquo;</a> and you&rsquo;ll quickly hate life. But not all of them are ugly – there is a smart <a href="http://naleid.com/blog/2010/10/04/vim-movement-shortcuts-wallpaper/" title="Vim movement shortcuts wallpaper by Ted Naleid">wallpaper originally designed by Ted Naleid</a> and <a href="https://github.com/LevelbossMike/vim_shortcut_wallpaper#readme" title="A Vim cheat sheet wallpaper">re-worked with smoother colors</a>:</p>
 
-  <p><a href="https://github.com/LevelbossMike/vim_shortcut_wallpaper/raw/master/vim-shortcuts_1280x800.png" title="1280x800 Vim cheat sheet wallpaper"><img src="http://img850.imageshack.us/img850/7537/bildschirmfoto20110402ug.png" alt="vim motion keys" /></a></p>
+  <p><a href="https://github.com/LevelbossMike/vim_shortcut_wallpaper/blob/cb910190e49b0721f6fdc961081e93275019af92/vim-shortcuts_1280x800.png" title="1280x800 Vim cheat sheet wallpaper"><img src="http://f.cl.ly/items/2h1k3z3r1I2Z2940232Q/wallpaper-preview.png" alt="vim motion keys" /></a></p>
 
   <p>I don&rsquo;t actually use it as a wallpaper; while learning I&rsquo;ve kept it open in a separate window and switch to it whenever I needed to remind myself of what kind of motions are there.</p>
 </aside></div>
