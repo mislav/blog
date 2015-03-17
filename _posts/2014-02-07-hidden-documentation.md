@@ -85,28 +85,10 @@ line—is **heavily documented** with information about why it was necessary, wh
 the previous approach (referred to by a commit SHA) not work, which browsers are
 affected, and a link for further reading.
 
-As it also turns out, [the author of that mysterious line was me][pr]. There are
-ways I could have written that code itself better: by **encapsulating the magic
-property access** in a function with an [intention-revealing name][] such as
-`triggerLayout()`, or at least by **adding a code comment** with a short
-explanation that this kicks off the animation. For whatever reason, I might have
-failed that day to make this particular code expressive. **Code happens, and
-it's not always perfect**.
-
-Even if this code _was_ more expressive or if it _had_ contained lines of code
-comments, a project's history will be able to provide even richer information:
-
-1. _Who_ added this code;
-2. _When_ did they add this code;
-3. Which was the _accompanying test_ (if any);
-4. The full commit message can be a whole novel (while code comments should be
-   kept succinct).
-
-Code quality still matters a lot. But when pondering how you could improve your
-coding even further, you should consider aiming for better commit messages. You
-should request this not just from yourself, but from your entire team and all
-the contributors. **The story of a software matters as much as its latest
-checkout**.
+So does _every other line_ in the project have documentation, going back to the
+first day when the project was created. The quality of this documentation,
+however, relies heavily on the diligence of the people involved while writing
+commit messages.
 
 ## Effective spelunking of project's history
 
@@ -260,8 +242,6 @@ pull request reviewed by colleagues but you might not be sure who to ping. With
 changed, so you'll know who to @-mention when opening a pull request.
 
 
-  [pr]: https://github.com/madrobby/zepto/pull/586
-  [intention-revealing name]: http://signalvnoise.com/posts/3531-intention-revealing-methods
   [fugitive]: https://github.com/tpope/vim-fugitive
     "fugitive.vim: a Git wrapper so awesome, it should be illegal"
   [git-churn]: https://github.com/garybernhardt/dotfiles/blob/f0c0ff92209e5aed4fa3ef6faf056eb9944a8f12/bin/git-churn
