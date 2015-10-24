@@ -35,11 +35,9 @@ To configure your device:
 
 3. On the device, open the Wi-Fi network details in Settings. Scroll down to "HTTP Proxy", switch to manual mode, enter the IP address of your main computer and "8888" for port number.
 
-![](http://img.skitch.com/20101207-bwaj9qrf57kyduxbxt6iu3r6ba.png)
+<img width=336 alt="" src="http://f.cl.ly/items/0U421C030A2T2V2R3m2j/thumb_IMG_3904_1024.jpg">
 
 Now use your device to initiate some traffic. The first time it hits the proxy, Charles will ask you is it OK that this device uses it as a proxy (for security reasons). Once you confirm that, you'll start collecting traffic. Use your device to read Twitter, open up Facebook, browse with Mobile Safari for a while. Then go back to Charles and see what you collected.
-
-![](http://img.skitch.com/20101207-efjgwdh1s336x8nmu9bdh98979.png)
 
 Some apps, like Twitter for iPhone, will communicate securely over HTTPS. Charles does not analyze this traffic by default, but you can enable it in "Proxy → Proxy Settings → SSL" by whitelisting some locations (such as "\*.twitter.com"), reading about [Charles SSL certificate][ssl] and [installing it in iOS][ssl-iphone].
 

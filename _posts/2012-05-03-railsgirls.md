@@ -11,8 +11,6 @@ categories: Rails ruby
 Prior to [Railsberry][] in Kraków, I participated in a Rails Girls workshop by
 helping coach 40+ girls that attended the [event in Applicake's offices][pics].
 
-<img width=500px alt="Me at Rails Girls" src="https://img.skitch.com/20120503-kik6t1s4snh9pgpp343wpuu7e7.jpg">
-
 It's been a fun and rewarding experience for me, and I look forward to where
 empowering more women with knowledge & skill takes us.
 

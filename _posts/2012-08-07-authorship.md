@@ -32,14 +32,7 @@ This makes it obvious to people, but what about machines? What is the proper
 markup for authorship information?
 
 My goal was to enable Instapaper, Readability and Google to pick up this
-information. In Instapaper, I wanted my readers to experience this:
-
-<div class=figwrapper><figure>
-  <a href="/2012/01/special-chars/"><img
-    src="https://img.skitch.com/20120807-p2bdg9g8ah76pt1acim4nxcrsp.png"></a>
-</figure></div>
-
-Here's how to achieve this.
+information. Here's how to achieve that.
 
 ## Markup formats
 

@@ -8,10 +8,6 @@ tags: iOS fonts
 
 <ins>**Update:** There's now a [comprehensive list of fonts available on iPhone and iPad][iosfonts].</ins>
 
-<div class="thumbnail">
-    <img src="http://img.skitch.com/20100402-c1ht58iesem31u1gskat1ac45f.preview.jpg" alt="Screenshot of a font browser on the iPad" style="float: left; margin: 0 1.5em 1.5em 0">
-</div>
-
 While thinking about how will a piece of documentation in HTML look on the iPhone and the iPad, I've realized my ignorance of which fonts are available on iPhone OS. They should be a subset of fonts on Mac OS X, but it's hard to play a guessing game of which ones exactly (besides Helvetica).
 
 [iPhone Font Browser][app] (opensource) by Adrian Kosmaczewski served really well to quickly compile it and run on my device (iPhone) and on the iPad simulator at the same time.

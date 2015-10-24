@@ -101,7 +101,7 @@ Douglas Crockford also says "four spaces", and yet most popular JavaScript libra
 
 You might notice that in this article I'm not telling you *should* be semicolon-free. I'm just laying out concrete evidence that you *can* be. The choice should always be yours.
 
-As for *coding styles*, they exist so code is more readable and easier to understand for a group of people in charge of working on it. Think deeply if semicolons actually improve the readability of your code. What improves it the most is whitespace—indentation, empty lines to separate blocks, spaces to pad out expressions—and good variable and function naming. Look at some [obfuscated code][ugly]; there are semicolons in there. Does it help readability? No, but what would really help is a lot of whitespace and original variable names.
+As for *coding styles*, they exist so code is more readable and easier to understand for a group of people in charge of working on it. Think deeply if semicolons actually improve the readability of your code. What improves it the most is whitespace—indentation, empty lines to separate blocks, spaces to pad out expressions, and good variable and function naming.
 
 
 ## <q>Semicolon insertion bites back in return statements</q>
@@ -170,7 +170,6 @@ Adopt this advice as a rule and you'll be fine.
 [haml]: http://haml-lang.com/
 [jslint]: http://www.jslint.com/ "The JavaScript Code Quality Tool"
 [module]: http://www.yuiblog.com/blog/2007/06/12/module-pattern/
-[ugly]: http://img.skitch.com/20100509-qf8t69ad7cpmudwdksbw5hu6te.png
 [compiler]: http://code.google.com/closure/compiler/
 [removed]: http://github.com/mislav/jquery/commit/4a2faf8987fc3fcb8aefc99def5b5ed2b4de190c "jQuery without semicolons"
 [inimino]: http://inimino.org/~inimino/blog/javascript_semicolons "JavaScript semicolon insertion: everything you need to know"

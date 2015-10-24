@@ -4,6 +4,8 @@ description: "Rescuing and distributing Mark Pilgrim's work after he is gone."
 layout: post
 categories: frontend
 tags: HTML ebook
+styles: |
+  #post img { max-width: 100% }
 ---
 
 [Mark Pilgrim is gone][410] and with him all of his sites and work.
@@ -16,7 +18,7 @@ Long ago, when Why the Lucky Stiff disappeared in a similar fashion, [I saved hi
 
 Today, I'm republishing Mark Pilgrim's [Dive into HTML5][dive]. I've also created a beautiful PDF eBook from it:
 
-[![Dive into HMTL5 PDF preview](https://img.skitch.com/20111006-n7ttj37bwtrd18djx361f4uhai.png)][pdf]
+[<img width=916 alt="PDF preview" src="http://f.cl.ly/items/2k3d073n3r0O1o2s411T/Dive-into-HTML5-preview.png">][pdf]
 
 The eBook has an embedded table of contents, working cross-references, well-placed page breaks and tons of others tiny tweaks and enhancements. It looks great on iPad. I hope you will enjoy it on your device, too.
 

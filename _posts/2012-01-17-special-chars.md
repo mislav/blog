@@ -271,7 +271,7 @@ The information presented below assumes the "U.S. Extended" keyboard
 selected in Input Sources. Most of these shortcuts will work with
 standard "U.S." input source but not all.
 
-![U.S. Extended chosen in Input Sources settings][settings]
+<img width=266 alt="U.S. Extended chosen in Input Sources settings" src="http://f.cl.ly/items/0p3e1R2a2K3j3M220M0x/us-extended.png">
 
 ## Punctuation
 
@@ -537,11 +537,7 @@ Most, if not all of the aforementioned characters are available on iOS
 keyboard, too. By pressing and holding a single key, a list of related
 characters pops out:
 
-![iOS keyboard special keys][ios]
+<img width=336 alt="iOS keyboard special keys" src="http://f.cl.ly/items/0b380V450u0h0z3I2Z2r/thumb_IMG_3905_1024.jpg">
 
 So even when writing tweets on the go, you have access to different
 dashes, curly quotes and more.
-
-
-  [settings]: http://img.skitch.com/20120117-ebx1cpf59aa5cifk8kbq1bds49.png
-  [ios]: http://img.skitch.com/20120117-1rujr5uemijtcu84a2ue8h5x2a.png
