@@ -7,7 +7,6 @@ permalink:   /:year/:month/:title/
 exclude:
 - bin
 - script
-- CNAME
 - Gemfile
 - Gemfile.lock
 - vendor
