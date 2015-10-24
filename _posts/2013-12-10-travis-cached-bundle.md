@@ -14,6 +14,9 @@ amount off total build time_, resulting in faster feedback from CI for the
 developer. This post explores a DIY method of providing such a cache to _open
 source projects as well_.
 
+<ins>**Update:** Since this post was published, Travis CI [enabled caching
+dependencies for open source projects][10] as well.</ins>
+
 This is not a new idea. Michał Czyż famously posted a tip how to [Speed up
 Travis-CI build preparation][2] on Coderwall. Two projects on GitHub,
 [bundle_cache][3] and [travis_bundle_cache][4], implement the pattern of caching
@@ -99,6 +102,7 @@ up to date whenever someone adds a new version of Ruby to the project.
 [7]: https://github.com/github/hub/blob/aadc8418d9e5dd27172d5d67c3da0bd2fdcf759a/script/s3-put
 [9]: https://github.com/github/hub/blob/aadc8418d9e5dd27172d5d67c3da0bd2fdcf759a/Gemfile.lock
 [8]: https://github.com/sstephenson/ruby-build/blob/458d3331675f9f35517cfb095489496eff785aa3/script/mirror
+[10]: http://docs.travis-ci.com/user/caching/
 
 <script>
 if (document.querySelectorAll) {
