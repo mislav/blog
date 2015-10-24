@@ -145,33 +145,26 @@ ins
 
 #description.vcard
   img
-    float: right
-    margin: -20px -2em 0 3em
-    border: 3px double #999
+    float: left
+    max-width: 200px
+    border-radius: 5px
+    margin: 0 1em 1em 0
     +screen(phone)
-      float: none
-      display: block
-      border-width: 1px
-      border-style: solid
-      margin: 0 0 1em 0
-    +screen(retina)
-      float: left
-      max-width: 120px
-      margin: .5em 1em .5em 0
+      max-width: 100px
+      margin-right: 0.5em
 
-#description p:first-child
-  font-size: 1.3em
-  margin: 1em 2em 1.4em 0
-  // text-align: center
-  color: #333
-  a
-    font-weight: normal
+  p:first-child
+    font-size: 1.3em
+    + p
+      +screen(phone)
+        clear: left
 
-#description + hr
-  width: 75%
-  height: 0
-  border-top: 1px solid silver
-  margin: 2em
+  ul
+    list-style: none
+
+  .emoji
+    font-size: 1.3em
+    vertical-align: sub
 
 header#blog
   +screen(phone)
