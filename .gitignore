@@ -3,5 +3,6 @@ _tmp
 .sass-cache
 public/
 .bundle
+vendor/bundle
 bin
 tmp
