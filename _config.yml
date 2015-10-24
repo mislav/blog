@@ -1,13 +1,13 @@
 lsi:         false
 port:        4000
-pygments:    true
+highlighter: pygments
 markdown:    rdiscount
 rdiscount:   { extensions: [smart] }
 permalink:   /:year/:month/:title/
-destination: public
 exclude:
 - bin
 - script
 - CNAME
-- Guardfile
-- default.sass
+- Gemfile
+- Gemfile.lock
+- vendor
