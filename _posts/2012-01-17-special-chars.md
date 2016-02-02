@@ -326,6 +326,12 @@ standard "U.S." input source but not all.
   <td></td>
 </tr>
 <tr>
+  <th>•</th>
+  <td>bullet</td>
+  <td><span><kbd>⌥</kbd>+<kbd>8</kbd></span></td>
+  <td>lists</td>
+</tr>
+<tr>
   <th>°</th>
   <td>degrees</td>
   <td><span><kbd>⌥⇧</kbd>+<kbd>8</kbd></span></td>
