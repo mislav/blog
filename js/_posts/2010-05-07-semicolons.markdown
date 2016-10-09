@@ -165,7 +165,7 @@ Adopt this advice as a rule and you'll be fine.
 [crockford]: http://javascript.crockford.com/code.html "Code Conventions for the JavaScript Programming Language"
 [so]: http://stackoverflow.com/questions/444080/do-you-recommend-using-semicolons-after-every-statement-in-javascript "Do you recommend using semicolons after every statement in JavaScript? on StackOverflow"
 [mozilla]: http://www.mozilla.org/js/language/js20-2000-07/rationale/syntax.html "Semicolon Insertion future compatibility with JavaScript 2.0"
-[insertion]: http://bclary.com/2004/11/07/#a-7.9 "Automatic Semicolon Insertion in ECMAScript Language Specification"
+[insertion]: http://www.ecma-international.org/ecma-262/7.0/index.html#sec-rules-of-automatic-semicolon-insertion "Automatic Semicolon Insertion in ECMAScript Language Specification"
 [html]: http://perfectionkills.com/experimenting-with-html-minifier/ "Experimenting with html minifier"
 [haml]: http://haml-lang.com/
 [jslint]: http://www.jslint.com/ "The JavaScript Code Quality Tool"
