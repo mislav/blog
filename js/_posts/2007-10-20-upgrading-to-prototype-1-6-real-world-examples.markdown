@@ -9,8 +9,6 @@ description: Noting down my progress as I upgrade Radiant CMS to Prototype 1.6.
 
 Recently I have undertaken upgrading [Radiant CMS][1] JavaScripts to Prototype 1.6. Radiant depends on a fair amount of scripting in its administrative interface which was previously done with Prototype 1.5.0 (now almost a year old). Simply replacing the old <i>prototype.js</i> with the new one doesn’t immediately work – some APIs changed (most notably `Hash`) and I also wanted to slim down old code using some fresh features. I will now show you some examples of what I’ve done, how I did it and why; you might find this writeup useful when doing the same in _your_ application.
 
-<img src="http://radiantcms.org/images/screenshot.jpg" alt="A screenshot of Radiant CMS interface" style="display:block; margin:1.5em auto" />
-
 [The complete patch is viewable on Pastie][2]. [I have submitted it][3] to the developers of Radiant. <ins cite="http://dev.radiantcms.org/radiant/changeset/563" date="2007-10-23T10:00:00+02:00"><strong>Update</strong>: these changes are effective in Radiant CMS as of <a href="http://dev.radiantcms.org/radiant/changeset/563">changeset 563</a>. Thanks, Sean!</ins>
 
 ## Finding and manipulating DOM nodes

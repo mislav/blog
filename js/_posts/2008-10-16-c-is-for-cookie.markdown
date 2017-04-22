@@ -54,9 +54,9 @@ Here’s the full code:
 And a great video to go along:
 
 <object height="349" width="425">
-  <param name="movie" value="http://www.youtube.com/v/BovQyphS8kA&amp;hl=en&amp;fs=1&amp;rel=0&amp;border=1"></param>
+  <param name="movie" value="//www.youtube.com/v/BovQyphS8kA&amp;hl=en&amp;fs=1&amp;rel=0&amp;border=1"></param>
   <param name="allowFullScreen" value="true"></param>
-  <embed allowfullscreen="true" type="application/x-shockwave-flash" src="http://www.youtube.com/v/BovQyphS8kA&amp;hl=en&amp;fs=1&amp;rel=0&amp;border=1" height="349" width="425"></embed>
+  <embed allowfullscreen="true" type="application/x-shockwave-flash" src="//www.youtube.com/v/BovQyphS8kA&amp;hl=en&amp;fs=1&amp;rel=0&amp;border=1" height="349" width="425"></embed>
 </object>
 
 ## Related reading
