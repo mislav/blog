@@ -127,7 +127,7 @@ A very effective way of exploring a file's history is with Vim and [Fugitive][]:
 5. Press <kbd>gq</kbd> to close the blame pane and return to the main buffer.
 
 <img width=827 height=445 style="max-width:100%" alt="git blame view in vim Fugitive"
-  src="http://f.cl.ly/items/070G0J0P3T0O3G2u2f0i/Screen%20Shot%202014-02-07%20at%203.38.20%20PM.png">
+  src="/images/Screen%20Shot%202014-02-07%20at%203.38.20%20PM.png">
 
 See `:help Gblame` for more information.
 
@@ -217,7 +217,7 @@ follow these ground rules when making commits:
   I had troubles setting the script up in the first place:
 
   <img width=470 style="max-width:100%" alt="messy git history before rebase"
-    src="http://f.cl.ly/items/2U0d0K2Q2C300Q1X3P1S/Image%202013-04-04%20at%201.38.33%20AM.png">
+    src="/images/Image%202013-04-04%20at%201.38.33%20AM.png">
 
 * Corollary of avoiding unrelated changes: **stick to a line-based coding
   style** that allows you to append, edit or remove values from lists without

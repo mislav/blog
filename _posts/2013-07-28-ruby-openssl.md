@@ -167,7 +167,7 @@ claim to be.
 
 <div class=figwrapper>
   <figure>
-    <img alt="" src="http://f.cl.ly/items/2h1X2L3b1E3Y3815242z/GitHub%20cert%20chain.png">
+    <img alt="" src="/images/GitHub%20cert%20chain.png">
     <figcaption>
       GitHub's certificate chain as seen in Safari
     </figcaption>

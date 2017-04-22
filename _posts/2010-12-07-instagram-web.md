@@ -11,7 +11,7 @@ tags: iOS API
 
 To develop [Twin][], a Ruby library that wraps your app in a Twitter API, I had to monitor my iPhone's HTTP traffic to figure out which resources does the Twitter app consume. While doing this, it occurred to me that I can figure out the unpublished Instagram API in the same go.
 
-<img src="http://distillery.s3.amazonaws.com/media/2010/12/01/ec73711d8f7049ac809208de99fdeeb9_6.jpg" width="306" height="306" style="float: right; margin: 0 0 1em 1.5em"> [Instagram][] is a free, neat little photo app that lets you apply vintage filters and share your mobile snaps to people who follow you. But, alas, the service has almost no web presence as it's not possible to link to or browse your or other's photo streams.
+[Instagram][] is a free, neat little photo app that lets you apply vintage filters and share your mobile snaps to people who follow you. But, alas, the service has almost no web presence as it's not possible to link to or browse your or other's photo streams.
 
 So, in a single day I've sniffed out the [Instagram API][docs], fully documented it, created a [Ruby client][client] and put it to good use in a [mini web app][app] [code] that acts as an unofficial [Instagram web interface][web]. In the next couple of days I sneaked in additional features such as pagination, Atom feeds and a [JSONP proxy][jsonp].
 
@@ -35,7 +35,7 @@ To configure your device:
 
 3. On the device, open the Wi-Fi network details in Settings. Scroll down to "HTTP Proxy", switch to manual mode, enter the IP address of your main computer and "8888" for port number.
 
-<img width=336 alt="" src="http://f.cl.ly/items/0U421C030A2T2V2R3m2j/thumb_IMG_3904_1024.jpg">
+<img width=336 alt="" src="/images/thumb_IMG_3904_1024.jpg">
 
 Now use your device to initiate some traffic. The first time it hits the proxy, Charles will ask you is it OK that this device uses it as a proxy (for security reasons). Once you confirm that, you'll start collecting traffic. Use your device to read Twitter, open up Facebook, browse with Mobile Safari for a while. Then go back to Charles and see what you collected.
 
