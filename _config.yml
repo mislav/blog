@@ -1,9 +1,6 @@
-lsi:         false
-port:        4000
-highlighter: pygments
-markdown:    rdiscount
-rdiscount:   { extensions: [smart] }
-permalink:   /:year/:month/:title/
+url: https://mislav.net
+port: 4000
+permalink: /:year/:month/:title/
 exclude:
 - bin
 - script
