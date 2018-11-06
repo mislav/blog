@@ -1,0 +1,5 @@
+#!/bin/bash
+set -euo pipefail
+
+bundle exec jekyll build
+exec rsync -r --delete _site app@mislav.net:blog/
