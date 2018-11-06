@@ -2,15 +2,15 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en-us">
   <author>
     <name>Mislav Marohnić</name>
-    <uri>http://mislav.uniqpath.com/</uri>
+    <uri>{{ site.url }}</uri>
     <email>mislav.marohnic@gmail.com</email>
   </author>
 
   <title type="text">{{ page.title | xml_escape }}</title>
   <subtitle>{{ page.subtitle | xml_escape }}</subtitle>
 
-  <link rel="self" href="http://mislav.uniqpath.com{{ page.permalink }}" />
-  <link rel="alternate" type="text/html" href="http://mislav.uniqpath.com{{ page.path }}" />
+  <link rel="self" href="{{ site.url }}{{ page.permalink }}" />
+  <link rel="alternate" type="text/html" href="{{ site.url }}{{ page.path }}" />
   <id>{{ page.id }}</id>
   {{ content }}
   
@@ -35,7 +35,7 @@
     {% if post.link %}
     <link rel="alternate" type="text/html" href="{{ post.link | xml_escape }}" />
     {% else %}
-    <link rel="alternate" type="text/html" href="http://mislav.uniqpath.com{{ post.url }}" />
+    <link rel="alternate" type="text/html" href="{{ site.url }}{{ post.url }}" />
     {% endif %}
     <id>http://mislav.caboo.se{{ post.id }}/</id>
     <content type="html">{{ post.content | xml_escape }}</content>

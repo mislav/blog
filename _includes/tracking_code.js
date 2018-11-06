@@ -1,4 +1,4 @@
-if (/^mislav\.(uniqpath\.com|net)/.test(location.hostname)) (function() {
+if (location.hostname === 'mislav.net') (function() {
   var t = document.createElement('script'); t.type = 'text/javascript'; t.async = true;
   t.id = 'gauges-tracker'; t.setAttribute('data-site-id', '4e1d9163f5a1f56fd4000003');
   t.src = '//secure.gaug.es/track.js';

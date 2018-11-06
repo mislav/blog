@@ -26,8 +26,8 @@ The eBook has an embedded table of contents, working cross-references, well-plac
 * See the sources for the HTML version in [the GitHub repository][repo]
 * Buy Mark Pilgrim's <a href="http://www.amazon.com/gp/product/B0043D2E0E/ref=as_li_qf_sp_asin_tl?ie=UTF8&tag=mislav-20&linkCode=as2&camp=217145&creative=399373&creativeASIN=B0043D2E0E">HTML5: Up and Running</a><img src="http://www.assoc-amazon.com/e/ir?t=mislav-20&l=as2&o=1&a=B0043D2E0E&camp=217145&creative=399373" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;"> from Amazon (Kindle/paperback edition of this book)
 
-[dive]: http://mislav.uniqpath.com/diveintohtml5/ "Dive into HTML5 by Mark Pilgrim"
+[dive]: https://mislav.github.io/diveintohtml5/ "Dive into HTML5 by Mark Pilgrim"
 [410]: http://meyerweb.com/eric/thoughts/2011/10/04/searching-for-mark-pilgrim/ "Searching for Mark Pilgrim"
 [pdf]: http://s3.amazonaws.com/mislav/Dive+into+HTML5.pdf
-[poignant]: https://twitter.com/#!/mislav/status/3418071764
+[poignant]: https://twitter.com/mislav/statuses/3418071764
 [repo]: https://github.com/mislav/diveintohtml5 "HTML source files for Dive into HTML5 book by Mark Pilgrim"
