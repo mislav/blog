@@ -108,11 +108,10 @@ In Vim:
 * <kbd>C-o</kbd> - Backtrack after having jumped
 
 To learn more about navigating tags and jumps in Vim, see
-[Vim: Revisited][revisited].
+[Vim: Revisited]({{ site.baseurl }}{% link _posts/2011-12-12-vim-revisited.md %}).
 
 
   [splits]: https://coderwall.com/p/rwmdvq
     "Seamlessly navigate tmux and Vim splits"
-  [revisited]: http://mislav.uniqpath.com/2011/12/vim-revisited/
   [unfreeze]: http://unix.stackexchange.com/a/12146/28595
     "How to unfreeze after accidentally pressing Ctrl-S in a terminal?"
