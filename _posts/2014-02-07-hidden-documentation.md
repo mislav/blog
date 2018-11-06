@@ -4,6 +4,7 @@ description: >
   It might not be expressed with code comments, but every line of code comes
   with documentation. It's just not immediately visible.
 layout: post
+tags: featured
 styles: |
   #post ul, #post ol { margin-left: 1.5em }
   div.highlight + blockquote {

@@ -3,7 +3,7 @@ title: Detecting device size & orientation in CSS
 description: Adjusting layout for iPad orientation changes in CSS using CSS3 media queries.
 layout: post
 categories: frontend mobile
-tags: CSS iOS touch featured
+tags: CSS iOS touch
 ---
 
 Gone are the days when we could safely assume that most our site visitors would have at least a 1024px-wide screen resolution. With smartphones and tablet computers on the rise, you visitors could also be browsing the web with screen widths ranging from 320px upwards. Does your site look good on a 768px-wide canvas? That's how people will see it using a portrait-oriented iPad.

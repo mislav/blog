@@ -6,7 +6,7 @@ description: >
   accompanying web site.
 layout: post
 categories: ruby
-tags: iOS API
+tags: iOS API featured
 ---
 
 To develop [Twin][], a Ruby library that wraps your app in a Twitter API, I had to monitor my iPhone's HTTP traffic to figure out which resources does the Twitter app consume. While doing this, it occurred to me that I can figure out the unpublished Instagram API in the same go.

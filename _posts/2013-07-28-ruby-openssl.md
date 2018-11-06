@@ -4,6 +4,7 @@ description: >
   Helping you debug the dreaded SSLError.
 layout: post
 categories: ruby
+tags: featured
 styles: |
   .attention {
     padding: 1em 2em;
