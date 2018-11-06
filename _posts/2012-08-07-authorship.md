@@ -5,14 +5,6 @@ description: >
   Take control of authorship information on content that you create.
 layout: post
 categories: HTML
-styles: |
-  figure img { display:block; border: 1px solid silver; padding: 1px; border-radius: 2px; max-width: 100% }
-  @media only screen and (max-width : 480px) {
-    figure { margin: 0; max-width: 100% }
-  }
-  @media only screen and (-webkit-min-device-pixel-ratio : 2) {
-    figure { max-width: 327px; -webkit-box-sizing: border-box }
-  }
 ---
 
 I'm [reading content on the Web](/instapaper/) daily. I find it important to
