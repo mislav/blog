@@ -55,7 +55,7 @@ verification is based on a few simple concepts. Let me show you it.
 the error to help you debug what's going on.
 </i>
 
-<div class=attention>
+<div class="attention">
 <p>Basically, the SSLError jumped up at you because one of the following is true:</p>
 
 <ol>
@@ -121,7 +121,7 @@ Crypto standard that specifies formats for public key certificates and
 certification path validation algorithm, among other things. You'll see it
 referenced in both openssl command-line tools and Ruby's API documentation.
 
-<h3 id=root>Root certificates/CA bundle</h3>
+<h3 id="root">Root certificates/CA bundle</h3>
 
 Certificate Authority (CA) certificates is a bundle of certs identifying widely
 trusted authorities. They are called "root certs" because they're at the end of
@@ -150,7 +150,7 @@ The conventions for filename extensions aren't strong:
 * `*.crt` is usually PEM, but can be DER;
 * `*.cer` is usually DER, but can be PEM.
 
-<h3 id=chain>Certificate validation chain</h3>
+<h3 id="chain">Certificate validation chain</h3>
 
 We arrive at the source of our woes. Most certificates are **signed with private
 key** of some authority. Their certificates are in turn **also signed by some
@@ -165,7 +165,7 @@ signed by FutureCorp, which in turn is signed by Big Sugar Daddy. The Unerdwear
 Sugar Daddy is a part of our CA bundle, we can trust that Unerdwear are who they
 claim to be.
 
-<div class=figwrapper>
+<div class="figwrapper">
   <figure>
     <img alt="" src="/images/GitHub%20cert%20chain.png">
     <figcaption>
@@ -174,7 +174,7 @@ claim to be.
   </figure>
 </div>
 
-<h2 id=ruby>Meanwhile, in the Ruby world…</h2>
+<h2 id="ruby">Meanwhile, in the Ruby world…</h2>
 
 Ruby compiles with C bindings for OpenSSL. The locations where CA certs are
 looked up depend on that OpenSSL's defaults. You can check that out with:
@@ -190,7 +190,7 @@ You can change these locations with `SSL_CERT_FILE` and `SSL_CERT_DIR`
 environment variables. An HTTP client library such as Net::HTTP will usually
 provide you with additional means of configuring these values.
 
-<h3 id=SSL_CERT_FILE>SSL_CERT_FILE</h3>
+<h3 id="SSL_CERT_FILE">SSL_CERT_FILE</h3>
 
 A bundle of multiple PEM certificates in a single file, usually containing the
 CA bundle. If both this file and SSL_CERT_DIR are missing or empty, it's likely
@@ -201,7 +201,7 @@ On OS X, both locations are empty but system OpenSSL still manages to verify the
 certificates. Is it magic?? No, it's [Apple patching OpenSSL][3] to look up
 certificates in Keychain, where the system CA bundle is stored.
 
-<h3 id=SSL_CERT_DIR>SSL_CERT_DIR</h3>
+<h3 id="SSL_CERT_DIR">SSL_CERT_DIR</h3>
 
 A directory to store individual certificates in, one certificate per file. But
 it's not as simple as that. OpenSSL expects to find each certificate in a file

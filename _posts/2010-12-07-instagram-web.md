@@ -35,7 +35,7 @@ To configure your device:
 
 3. On the device, open the Wi-Fi network details in Settings. Scroll down to "HTTP Proxy", switch to manual mode, enter the IP address of your main computer and "8888" for port number.
 
-<img width=336 alt="" src="/images/thumb_IMG_3904_1024.jpg">
+<img width="336" alt="" src="/images/thumb_IMG_3904_1024.jpg">
 
 Now use your device to initiate some traffic. The first time it hits the proxy, Charles will ask you is it OK that this device uses it as a proxy (for security reasons). Once you confirm that, you'll start collecting traffic. Use your device to read Twitter, open up Facebook, browse with Mobile Safari for a while. Then go back to Charles and see what you collected.
 

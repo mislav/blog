@@ -45,7 +45,7 @@ in are:
 I have compiled a comprehensive overview of all control key bindings in different
 contexts and highlighted the features that matter to me the most:
 
-<table class=split>
+<table class="split">
 <thead>
 <tr><th>                 </th><th> term  </th><th> shell prompt               </th><th> process           </th><th> Vim normal</th></tr>
 </thead>

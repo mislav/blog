@@ -45,12 +45,12 @@ Programming blogs have code, and that's great. But please don't configure your
 blogging platform to auto-include line numbers with your code, because it looks
 like crap when unstyled:
 
-<div class=figwrapper><figure>
+<div class="figwrapper"><figure>
 <img src="http://img.skitch.com/20120621-cssssshprkdibqmwc5g8fr5wxm.png" width="455" height="606" alt="Instapaper">
 <figcaption>Instapaper</figcaption>
 </figure></div>
 
-<div class=figwrapper><figure>
+<div class="figwrapper"><figure>
 <img src="http://img.skitch.com/20120621-1ysxc3r29cqfj1ihkc2q9jc8ca.png" width="455" height="606" alt="Reeder iOS">
 <figcaption>Reeder for iOS</figcaption>
 </figure></div>

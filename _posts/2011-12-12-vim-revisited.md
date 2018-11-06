@@ -290,10 +290,10 @@ movement:
     <th><kbd>&lt;C-b&gt;</kbd>
     <td>move down one page-->
   <tr>
-    <th colspan=2><kbd>gg</kbd>
+    <th colspan="2"><kbd>gg</kbd>
     <td>jump to first line of document
   <tr>
-    <th colspan=2><kbd>G</kbd>
+    <th colspan="2"><kbd>G</kbd>
     <td>jump to end of document
 </table>
 
@@ -458,7 +458,7 @@ command line:
     ctags -R --languages=ruby --exclude=.git
 
 You can do this within Vim too: just start the command with <kbd>:!</kbd>. This
-will generate the <code class=file>tags</code> file, which is a search index of
+will generate the <code class="file">tags</code> file, which is a search index of
 your code. For languages other than Ruby, see `ctags --list-languages`.
 
 Now you can jump to a method or class definition with a single keystroke, or by
@@ -544,7 +544,7 @@ nnoremap <c-l> <c-w>l
 
 For more information, see <kbd>:help windows</kbd>.
 
-<h2 id=plugins>Addendum: Essential plugins</h2>
+<h2 id="plugins">Addendum: Essential plugins</h2>
 
 During 6 months of using Vim after publishing this article, I now feel confident
 enough to share _which plugins I find essential_ for daily work. This is

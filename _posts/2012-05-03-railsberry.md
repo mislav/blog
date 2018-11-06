@@ -75,7 +75,7 @@ instead.
 
 Therefore, I present you few moments from the Railsberry conference—in pictures.
 
-<div class=figwrapper><figure>
+<div class="figwrapper"><figure>
 <a href="http://www.flickr.com/photos/39342275@N02/7117833983/" title="by Railsberry, on Flickr"><img
 src="//farm8.staticflickr.com/7063/7117833983_dabacf1202.jpg" width="500"
 height="333" alt="Balloons floating above grass"></a>
@@ -89,21 +89,21 @@ height="500" alt="Rich table of food"></a>
 <figcaption>Magnificent catering for lunch</figcaption>
 </figure></div>
 
-<div class=figwrapper><figure>
+<div class="figwrapper"><figure>
 <a href="http://www.flickr.com/photos/39342275@N02/7095596841/" title="by Railsberry, on Flickr"><img
 src="//farm8.staticflickr.com/7243/7095596841_318b572e6a.jpg" width="500"
 height="333" alt="Vuvuzela"></a>
 <figcaption>Vuvuzelas would stop lighning talks that were too long</figcaption>
 </figure></div>
 
-<div class=figwrapper><figure>
+<div class="figwrapper"><figure>
 <a href="http://www.flickr.com/photos/39342275@N02/7096070311/" title="The Balloon Gig by Railsberry, on Flickr"><img
 src="//farm8.staticflickr.com/7082/7096070311_8517fb1f70.jpg" width="500"
 height="333" alt="The Balloon Gig"></a>
 <figcaption>Mayhem after a game of Balloon Hero</figcaption>
 </figure></div>
 
-<div class=figwrapper><figure>
+<div class="figwrapper"><figure>
 <a href="http://www.flickr.com/photos/39342275@N02/7096070741/" title="Happy
 Friday Giant Railsberry Hug with Aaron Patterson by Railsberry, on Flickr"><img
 src="//farm8.staticflickr.com/7038/7096070741_3002b5fd57.jpg" width="500"
@@ -111,7 +111,7 @@ height="333" alt="Happy Friday Giant Railsberry Hug with Aaron Patterson"></a>
 <figcaption>Tenderlove's Friday hug—with backup</figcaption>
 </figure></div>
 
-<div class=figwrapper><figure>
+<div class="figwrapper"><figure>
 <a href="http://www.flickr.com/photos/39342275@N02/7096070433/" title="José Valim &amp;
 Josh Kalderimis by Railsberry, on Flickr"><img
 src="//farm8.staticflickr.com/7091/7096070433_afc7cb5f43.jpg" width="500"
@@ -119,7 +119,7 @@ height="333" alt="José Valim &amp; Josh Kalderimis"></a>
 <figcaption>José Valim &amp; Josh Kalderimis</figcaption>
 </figure></div>
 
-<div class=figwrapper><figure>
+<div class="figwrapper"><figure>
 <a href="http://www.flickr.com/photos/39342275@N02/6956065246/" title="by Railsberry, on Flickr"><img
 src="//farm9.staticflickr.com/8027/6956065246_ee1f83297a.jpg" width="500"
 height="333" alt="Unicorn at afterparty"></a>
