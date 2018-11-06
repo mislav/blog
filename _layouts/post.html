@@ -35,13 +35,14 @@ layout: default
   <h2>Also on this site</h2>
   
   <ol class="posts">
+    {% assign numrelated = 0 %}
     {% for related in site.posts %}
-      {% if related.url != page.url and related.link == null and (void == null or void != '2') %}
+      {% if numrelated < 5 and related.link == null and related.url != page.url %}
+        {% assign numrelated = numrelated | plus:1 %}
       <li>
         <span class="date">{{ related.date | date_to_string }}</span>
         ▸ <a href="{{ related.url }}">{{ related.title }}</a>
       </li>
-      {% capture void %}{% increment related_shown %}{% endcapture %}
       {% endif %}
     {% endfor %}
   </ol>
