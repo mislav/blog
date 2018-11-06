@@ -47,7 +47,6 @@ layout: default
 
 <section class="posts hfeed">
 {% for post in site.posts %}
-  {% unless post.link or rendered_one %}
   <article class="hentry">
     <header>
       <h2 class=entry-title><a rel=bookmark href="{{ post.url }}">{{ post.title }}</a></h2>
@@ -55,8 +54,7 @@ layout: default
     </header>
     {% if page.description %}<p class=entry-summary>{{ post.description }}</p>{% endif %}
   </article>
-  {% assign rendered_one = true %}
-  {% endunless %}
+  {% break %}
 {% endfor %}
 
   <nav><a class="home" href="/blog/">→ All blog posts</a></nav>

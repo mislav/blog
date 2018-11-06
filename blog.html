@@ -3,15 +3,14 @@ permalink: /blog/
 layout: default
 title: Mislav's blog
 description: >
-  Writings and linkings of Mislav Marohnić about Web,
-  technology and other topics.
+  Mislav's tech writings.
 ---
 
 <header id=blog>
 <h1>{{ page.title }}</h1>
 
 <p class=byline>
-  Writings and linkings by
+  Tech writings by
   <a href="/"><strong>Mislav Marohnić</strong></a>
 </p>
 
@@ -24,22 +23,13 @@ description: >
 <section class="posts hfeed">
 {% for post in site.posts %}
   {% unless post.tags contains "dated" %}
-  <article class="hentry{% if post.link %} link{% elsif post.tags contains "featured" %} featured{% endif %}">
+  <article class="hentry{% if post.tags contains "featured" %} featured{% endif %}">
     <header>
-      {% if post.link %}
-      <h2><a class=entry-title href="{{ post.link | escape }}">{{ post.title }}</a>&nbsp;→</h2>
-      {% else %}
       <h2 class=entry-title><a rel=bookmark href="{{ post.url }}">{{ post.title }}</a></h2>
-      {% endif %}
       <time datetime="{{ post.date | date_to_xmlschema }}" class=published pubdate>{{ post.date | date_to_string }}</time>
-      {% if post.link %}· <a href="{{ post.url }}" rel=bookmark title=permalink>∞</a>{% endif %}
     </header>
 
-    {% if post.link %}
-      {{ post.content }}
-    {% else %}
-      {% if page.description %}<p class=entry-summary>{{ post.description }}</p>{% endif %}
-    {% endif %}
+    {% if page.description %}<p class=entry-summary>{{ post.description }}</p>{% endif %}
   </article>
   {% endunless %}
 {% endfor %}

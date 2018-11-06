@@ -5,16 +5,10 @@ layout: default
 <article class=hentry>
 
 <header>
-{% if page.link %}
-<h1><a class=entry-title href="{{ page.link | escape }}">{{ page.title }}</a>&nbsp;→</h1>
-{% else %}
 <h1 class=entry-title>{{ page.title }}</h1>
-{% endif %}
 
 <p class="byline author vcard instapaper_ignore entry-unrelated">
-  {% unless page.link %}
   By <a href="/" rel=author class=fn lang=hr>Mislav Marohnić</a>
-  {% endunless %}
   {% if page.updated %}
   on <time class=published datetime="{{ page.date | date_to_xmlschema }}" pubdate>{{ page.date | date_to_string }}</time>
   <time class=updated datetime="{{ page.updated }}"></time>
@@ -24,20 +18,19 @@ layout: default
 </p>
 </header>
 
-<div id="post" class="entry-content{% if page.link %} link{% endif %}">
+<div id="post" class="entry-content">
   {{ content }}
 </div>
 
 </article>
 
 <aside id="related">
-  {% unless page.link %}
   <h2>Also on this site</h2>
   
   <ol class="posts">
     {% assign numrelated = 0 %}
     {% for related in site.posts %}
-      {% if numrelated < 5 and related.link == null and related.url != page.url %}
+      {% if numrelated < 5 and related.url != page.url %}
         {% assign numrelated = numrelated | plus:1 %}
       <li>
         <span class="date">{{ related.date | date_to_string }}</span>
@@ -46,7 +39,6 @@ layout: default
       {% endif %}
     {% endfor %}
   </ol>
-  {% endunless %}
   
   <p>
   You should <a href="http://twitter.com/mislav" rel="me">follow me on Twitter: @mislav</a>.

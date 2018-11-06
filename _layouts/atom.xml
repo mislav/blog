@@ -32,11 +32,7 @@
       <updated>{{ post.date | date_to_xmlschema }}</updated>
     {% endif %}
     <title>{{ post.title | replace:'&nbsp;',' ' | xml_escape }}</title>
-    {% if post.link %}
-    <link rel="alternate" type="text/html" href="{{ post.link | xml_escape }}" />
-    {% else %}
     <link rel="alternate" type="text/html" href="{{ site.url }}{{ post.url }}" />
-    {% endif %}
     <id>http://mislav.caboo.se{{ post.id }}/</id>
     <content type="html">{{ post.content | xml_escape }}</content>
   </entry>
