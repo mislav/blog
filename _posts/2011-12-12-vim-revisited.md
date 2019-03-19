@@ -156,23 +156,29 @@ But it is *how* you enter insert mode that offers some advantage:
 
 <table>
   <tr>
-    <th><kbd>i</kbd>
-    <td>insert before character under cursor
+    <th><kbd>i</kbd></th>
+    <td>insert before character under cursor</td>
+  </tr>
   <tr>
-    <th><kbd>a</kbd>
-    <td>insert after cursor
+    <th><kbd>a</kbd></th>
+    <td>insert after cursor</td>
+  </tr>
   <tr>
-    <th><kbd>I</kbd>
-    <td>insert at beginning of current line
+    <th><kbd>I</kbd></th>
+    <td>insert at beginning of current line</td>
+  </tr>
   <tr>
-    <th><kbd>A</kbd>
-    <td>insert at end of the line
+    <th><kbd>A</kbd></th>
+    <td>insert at end of the line</td>
+  </tr>
   <tr>
-    <th><kbd>o</kbd>
-    <td>starts insert mode in a new line below current one
+    <th><kbd>o</kbd></th>
+    <td>starts insert mode in a new line below current one</td>
+  </tr>
   <tr>
-    <th><kbd>O</kbd>
-    <td>insert in a new line above current one
+    <th><kbd>O</kbd></th>
+    <td>insert in a new line above current one</td>
+  </tr>
 </table>
 
 You can also enter insert mode by replacing existing text at the same
@@ -180,17 +186,21 @@ time:
 
 <table>
   <tr>
-    <th><kbd>ciw</kbd>
-    <td>("change inner word") change word under cursor
+    <th><kbd>ciw</kbd></th>
+    <td>("change inner word") change word under cursor</td>
+  </tr>
   <tr>
-    <th><kbd>ci"</kbd>
-    <td>change double-quoted string (but keep the quotes)
+    <th><kbd>ci"</kbd></th>
+    <td>change double-quoted string (but keep the quotes)</td>
+  </tr>
   <tr>
-    <th><kbd>ci(</kbd>
-    <td>change text between matching parentheses, also works with brackets
+    <th><kbd>ci(</kbd></th>
+    <td>change text between matching parentheses, also works with brackets</td>
+  </tr>
   <tr>
-    <th><kbd>cc</kbd>
-    <td>change whole line
+    <th><kbd>cc</kbd></th>
+    <td>change whole line</td>
+  </tr>
 </table>
 
 These shortcuts are a very compelling argument why Vim is more efficient at
@@ -241,60 +251,75 @@ movement:
 <table class="split reverse">
   <thead>
     <tr>
-      <th title="forward">→
-      <th title="backward">←
-      <th>description
+      <th title="forward">→</th>
+      <th title="backward">←</th>
+      <th>description</th>
+    </tr>
+  </thead>
   <tbody>
   <tr>
-    <th><kbd>/</kbd>
-    <th><kbd>?</kbd>
-    <td>search for a pattern of text, jump to it by hitting Enter (<kbd>&lt;CR&gt;</kbd>)
+    <th><kbd>/</kbd></th>
+    <th><kbd>?</kbd></th>
+    <td>search for a pattern of text, jump to it by hitting Enter (<kbd>&lt;CR&gt;</kbd>)</td>
+  </tr>
   <tr>
-    <th><kbd>*</kbd>
-    <th><kbd>#</kbd>
-    <td>search for the word under cursor
+    <th><kbd>*</kbd></th>
+    <th><kbd>#</kbd></th>
+    <td>search for the word under cursor</td>
+  </tr>
   <tr>
-    <th><kbd>n</kbd>
-    <th><kbd>N</kbd>
-    <td>jump to the next match for the previous search
+    <th><kbd>n</kbd></th>
+    <th><kbd>N</kbd></th>
+    <td>jump to the next match for the previous search</td>
+  </tr>
   <tr>
-    <th><kbd>$</kbd>
-    <th><kbd>^</kbd>
-    <td>position cursor at end of current line
+    <th><kbd>$</kbd></th>
+    <th><kbd>^</kbd></th>
+    <td>position cursor at end of current line</td>
+  </tr>
   <tr>
-    <th><kbd>f</kbd>
-    <th><kbd>F</kbd>
-    <td>position cursor on the character in the same line that matches the next keystroke
+    <th><kbd>f</kbd></th>
+    <th><kbd>F</kbd></th>
+    <td>position cursor on the character in the same line that matches the next keystroke</td>
+  </tr>
   <tr>
-    <th><kbd>t</kbd>
-    <th><kbd>T</kbd>
-    <td>position cursor <em>before</em> the next character that matches the keystroke
+    <th><kbd>t</kbd></th>
+    <th><kbd>T</kbd></th>
+    <td>position cursor <em>before</em> the next character that matches the keystroke</td>
+  </tr>
   <tr>
-    <th><kbd>;</kbd>
-    <th><kbd>,</kbd>
-    <td>repeat the last <kbd>f</kbd>, <kbd>F</kbd>, <kbd>t</kbd>, or <kbd>T</kbd>
+    <th><kbd>;</kbd></th>
+    <th><kbd>,</kbd></th>
+    <td>repeat the last <kbd>f</kbd>, <kbd>F</kbd>, <kbd>t</kbd>, or <kbd>T</kbd></td>
+  </tr>
   <tr>
-    <th><kbd>w</kbd>
-    <th><kbd>b</kbd>
-    <td>move to start of next word
+    <th><kbd>w</kbd></th>
+    <th><kbd>b</kbd></th>
+    <td>move to start of next word</td>
+  </tr>
   <tr>
-    <th><kbd>W</kbd>
-    <th><kbd>B</kbd>
-    <td>move to start of next "WORD" (sequence of non-blank characters)
+    <th><kbd>W</kbd></th>
+    <th><kbd>B</kbd></th>
+    <td>move to start of next "WORD" (sequence of non-blank characters)</td>
+  </tr>
   <tr>
-    <th><kbd>}</kbd>
-    <th><kbd>{</kbd>
-    <td>move down one paragraph (block of text separated by blank lines)
+    <th><kbd>}</kbd></th>
+    <th><kbd>{</kbd></th>
+    <td>move down one paragraph (block of text separated by blank lines)</td>
+  </tr>
   <!--<tr>
     <th><kbd>&lt;C-f&gt;</kbd>
     <th><kbd>&lt;C-b&gt;</kbd>
     <td>move down one page-->
   <tr>
-    <th colspan="2"><kbd>gg</kbd>
-    <td>jump to first line of document
+    <th colspan="2"><kbd>gg</kbd></th>
+    <td>jump to first line of document</td>
+  </tr>
   <tr>
-    <th colspan="2"><kbd>G</kbd>
-    <td>jump to end of document
+    <th colspan="2"><kbd>G</kbd></th>
+    <td>jump to end of document</td>
+  </tr>
+  </tbody>
 </table>
 
 To me, the killer ones on this list are "word", "WORD" and paragraph
@@ -340,23 +365,30 @@ efficient with copy ("yank" in Vim terms) and paste.
 
 <table>
   <tr>
-    <th><kbd>Y</kbd>
-    <td>yank current line; prepend with number to yank that many lines
+    <th><kbd>Y</kbd></th>
+    <td>yank current line; prepend with number to yank that many lines</td>
+  </tr>
   <tr>
-    <th><kbd>y}</kbd>
-    <td>yank until end of paragraph
+    <th><kbd>y}</kbd></th>
+    <td>yank until end of paragraph</td>
+  </tr>
   <tr>
-    <th><kbd>dd</kbd>
-    <td>delete current line and yank it too (think "cut")
+    <th><kbd>dd</kbd></th>
+    <td>delete current line and yank it too (think "cut")</td>
+  </tr>
   <tr>
-    <th><kbd>d3d</kbd>
-    <td>delete 3 lines starting from current one
+    <th><kbd>d3d</kbd></th>
+    <td>delete 3 lines starting from current one</td>
+  </tr>
   <tr>
-    <th><kbd>p</kbd>
-    <td>paste yanked text at cursor; prepend number to paste that many times
+    <th><kbd>p</kbd></th>
+    <td>paste yanked text at cursor; prepend number to paste that many
+    times</td>
+  </tr>
   <tr>
-    <th><kbd>P</kbd>
-    <td>paste before cursor
+    <th><kbd>P</kbd></th>
+    <td>paste before cursor</td>
+  </tr>
 </table>
 
 What isn't obvious at first, but you're gonna notice soon, is that Vim
@@ -373,20 +405,25 @@ start with `"`:
 
 <table>
   <tr>
-    <th><kbd>"aY</kbd>
-    <td>yank current line into register "a"
+    <th><kbd>"aY</kbd></th>
+    <td>yank current line into register "a"</td>
+  </tr>
   <tr>
-    <th><kbd>"ap</kbd>
-    <td>paste from register "a"
+    <th><kbd>"ap</kbd></th>
+    <td>paste from register "a"</td>
+  </tr>
   <tr>
-    <th><kbd>"*Y</kbd>
-    <td>yank line into special register "*" which is the system clipboard
+    <th><kbd>"*Y</kbd></th>
+    <td>yank line into special register "*" which is the system clipboard</td>
+  </tr>
   <tr>
-    <th><kbd>"*p</kbd>
-    <td>paste from register "*": the system clipboard
+    <th><kbd>"*p</kbd></th>
+    <td>paste from register "*": the system clipboard</td>
+  </tr>
   <tr>
-    <th><kbd>"_D</kbd>
-    <td>delete from cursor until the end of line, but don't yank
+    <th><kbd>"_D</kbd></th>
+    <td>delete from cursor until the end of line, but don't yank</td>
+  </tr>
 </table>
 
 The examples above show how you can explicitly opt-in to use the system
@@ -510,22 +547,27 @@ splits; for instance tests and implementation.
 
 <table class="split">
   <thead><tr>
-    <th>where
-    <th>horizontal
-    <th>vertical
+    <th>where</th>
+    <th>horizontal</th>
+    <th>vertical</th>
+  </tr></thead>
   <tbody>
   <tr>
-    <th>normal mode
-    <td><kbd>:split</kbd>
-    <td><kbd>:vsplit</kbd>
+    <th>normal mode</th>
+    <td><kbd>:split</kbd></td>
+    <td><kbd>:vsplit</kbd></td>
+  </tr>
   <tr>
-    <th>:CommandT
-    <td><kbd>&lt;C-s&gt;</kbd>
-    <td><kbd>&lt;C-v&gt;</kbd>
+    <th>:CommandT</th>
+    <td><kbd>&lt;C-s&gt;</kbd></td>
+    <td><kbd>&lt;C-v&gt;</kbd></td>
+  </tr>
   <tr>
-    <th>:Ack
-    <td><i>n/a</i>
-    <td><kbd>v</kbd>
+    <th>:Ack</th>
+    <td><i>n/a</i></td>
+    <td><kbd>v</kbd></td>
+  </tr>
+  </tbody>
 </table>
 
 To switch cursor between these windows, use <kbd>&lt;C-w&gt;</kbd> (as
