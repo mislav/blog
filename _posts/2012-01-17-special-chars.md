@@ -510,11 +510,11 @@ last name): Croatian.
   <th>keystroke</th>
 </tr></thead>
 <tbody>
-<tr><th lang=hr>ć</th> <td><span><kbd>⌥</kbd>+<kbd>e</kbd> <kbd>c</kbd></span></td></tr>
-<tr><th lang=hr>č</th> <td><span><kbd>⌥</kbd>+<kbd>v</kbd> <kbd>c</kbd></span></td></tr>
-<tr><th lang=hr>š</th> <td><span><kbd>⌥</kbd>+<kbd>v</kbd> <kbd>s</kbd></span></td></tr>
-<tr><th lang=hr>ž</th> <td><span><kbd>⌥</kbd>+<kbd>v</kbd> <kbd>z</kbd></span></td></tr>
-<tr><th lang=hr>đ</th> <td><span><kbd>⌥</kbd>+<kbd>L</kbd> <kbd>d</kbd></span></td></tr>
+<tr><th lang="hr">ć</th> <td><span><kbd>⌥</kbd>+<kbd>e</kbd> <kbd>c</kbd></span></td></tr>
+<tr><th lang="hr">č</th> <td><span><kbd>⌥</kbd>+<kbd>v</kbd> <kbd>c</kbd></span></td></tr>
+<tr><th lang="hr">š</th> <td><span><kbd>⌥</kbd>+<kbd>v</kbd> <kbd>s</kbd></span></td></tr>
+<tr><th lang="hr">ž</th> <td><span><kbd>⌥</kbd>+<kbd>v</kbd> <kbd>z</kbd></span></td></tr>
+<tr><th lang="hr">đ</th> <td><span><kbd>⌥</kbd>+<kbd>L</kbd> <kbd>d</kbd></span></td></tr>
 </tbody>
 </table>
 
