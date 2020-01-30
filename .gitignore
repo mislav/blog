@@ -2,6 +2,7 @@ _site
 _tmp
 .sass-cache
 public/
+Gemfile.lock
 .bundle
 vendor/bundle
 bin
