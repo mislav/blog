@@ -1,61 +1,31 @@
 ---
-title: About Mislav
+title: Mislav's website
 description: >
-  Hi, you've reached Mislav Marohnić.
-  Please leave your message after the tone.
-  *BEEP*
+  The original Mislav of the Internet. All others are imitators.
 layout: default
+styles: |
+  .vcard img {
+    max-width: 400px;
+    float: left;
+    margin: 0 1.5em 1em 0;
+  }
+  .vcard ul {
+    list-style-type: none;
+  }
 ---
-
-<h1>About me</h1>
 
 <div id="description" class="vcard">
   <p>
-    <img src="/images/mislav.jpg" alt="Photo of Mislav" class="photo">
-    My name is <span class="fn" lang="hr">Mislav Marohnić</span>.
-    I type on the keyboards and sometimes it makes stuff happen to computers.
-    Then I put it online. 👌
+    <img src="/images/mislav.jpg" width="600" alt="Photo of Mislav" class="photo">
+    My name is <strong class="fn" lang="hr">Mislav Marohnić</strong>
   </p>
   <p>
-    I write <a href="/blog/">resources for software developers</a>
-    and do open source for fun and profit.
+    I write about <a href="/blog/">software development</a>
+    and <a rel="me" href="https://github.com/mislav" title="Mislav on GitHub">make open source</a> for fun and profit.
   </p>
   <p>
-    You can grab a hold of me via:
+    Follow my
+    <a rel="me" href="https://twitter.com/mislav" title="Mislav on Twitter">hot takes</a> and
+    <a rel="me" href="https://instagram.com/mislav" title="Mislav on Instagram">pretty pictures</a>
   </p>
-  <ul>
-    <li>
-      <span class="emoji">📧</span>
-      <a class="email" href="mailto:mislav.marohnic@gmail.com">mislav.marohnic@gmail.com</a>
-    </li>
-    <li>
-      <span class="emoji">👨‍💻</span>
-      <a rel="me" href="https://github.com/mislav" title="Mislav on GitHub">GitHub</a>
-    </li>
-    <li>
-      <span class="emoji">🐤</span>
-      <a rel="me" href="https://twitter.com/mislav" title="Mislav on Twitter">Twitter</a>
-    </li>
-    <li>
-      <span class="emoji">📷</span>
-      <a rel="me" href="https://instagram.com/mislav" title="Mislav on Instagram">Instagram</a>
-    </li>
-  </ul>
 </div>
-
-<h2>Latest blog post</h2>
-
-<section class="posts hfeed">
-{% for post in site.posts %}
-  <article class="hentry">
-    <header>
-      <h2 class=entry-title><a rel=bookmark href="{{ post.url }}">{{ post.title }}</a></h2>
-      <time datetime="{{ post.date | date_to_xmlschema }}" class=published pubdate>{{ post.date | date_to_string }}</time>
-    </header>
-    {% if page.description %}<p class=entry-summary>{{ post.description }}</p>{% endif %}
-  </article>
-  {% break %}
-{% endfor %}
-
-  <nav><a class="home" href="/blog/">→ All blog posts</a></nav>
-</section>

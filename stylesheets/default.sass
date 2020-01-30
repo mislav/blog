@@ -2,9 +2,8 @@
 ---
 
 $body_color: #444
-$body_type: "Minion Pro", "Palatino", "Hoefler Text", "Times New Roman", serif
+$body_type: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif
 $table_type: "Gill Sans", "Lucida Grande", Helvetica, Arial, sans-serif
-$heading_type: "Museo Sans", Arial, Helvetica, sans-serif
 //$heading_color: #a21e3f
 $heading_color: #069
 $heading_border: #D8D177
@@ -26,7 +25,7 @@ $hover_color: $link_color - 40
   @else if $type == ipad-landscape
     @media only screen and (device-width: 768px) and (orientation: landscape)
   @else if $type == large
-    @media only screen and (min-width : 769px)
+    @media only screen and (min-width : 1024px)
       @content
   @else if $type == retina
     @media only screen and (-webkit-min-device-pixel-ratio: 2)
@@ -47,17 +46,21 @@ body
     margin: .4em .6em
   +screen(large)
     max-width: 55em
+    margin-left: auto
+    margin-right: auto
   position: relative
   color: $body_color
   background: #fefefe
 
 strong, b
-  font-weight: bold
+  font-weight: 500
 
 #post
   p
     font-size: 1.2em
     line-height: 1.6
+  ul, ol
+    margin-left: 1.5em
   li
     font-size: 1.2em
     line-height: 1.6
@@ -74,7 +77,6 @@ a
   &:link, &:visited
     color: $link_color
     text-decoration: underline
-    font-weight: 500
 
   .posts &:visited
     text-decoration: none
@@ -97,7 +99,7 @@ a
 h1
   margin-bottom: 0.6em
   + .byline
-    margin-top: -1.2em
+    margin-top: -.6em
     margin-bottom: 2em
     color: #666
     font-style: italic
@@ -113,7 +115,8 @@ h1, h2, h1 a:link, h2 a:link
   font-weight: normal
 
 h1, h2
-  font: 300 2.4em $heading_type
+  font-weight: 600
+  font-size: 2.4em
   border-left: 30px solid $heading_border
   margin-left: -60px
   padding-left: 30px
@@ -138,29 +141,6 @@ ins
   text-decoration: none
   border-bottom: 1px dotted #c0c0c0
   border-color: #adb585
-
-#description.vcard
-  img
-    float: left
-    max-width: 200px
-    border-radius: 5px
-    margin: 0 1em 1em 0
-    +screen(phone)
-      max-width: 100px
-      margin-right: 0.5em
-
-  p:first-child
-    font-size: 1.3em
-    + p
-      +screen(phone)
-        clear: left
-
-  ul
-    list-style: none
-
-  .emoji
-    font-size: 1.3em
-    vertical-align: sub
 
 header#blog
   +screen(phone)
@@ -329,8 +309,6 @@ blockquote
   font-style: italic
   i, em
     font-style: normal
-  ul, ol
-    margin-left: 1.5em
 
 .highlight
   -webkit-border-radius: 4px
