@@ -69,10 +69,9 @@ as `/path/to/app/current/bin/unicorn`.
 ## Further reading
 
 * [Understanding binstubs][] - full article on rbenv wiki
-* [Unix shell initialization][] - useful facts about shell config files and
-  `$PATH`
+* [Unix shell initialization][] - useful facts about shell config files and the `PATH`
 
 
-  [Understanding binstubs]: https://github.com/sstephenson/rbenv/wiki/Understanding-binstubs
-  [Unix shell initialization]: https://github.com/sstephenson/rbenv/wiki/Unix-shell-initialization
-  [rbenv wiki]: https://github.com/sstephenson/rbenv/wiki
+[Understanding binstubs]: https://github.com/sstephenson/rbenv/wiki/Understanding-binstubs
+[Unix shell initialization]: https://github.com/sstephenson/rbenv/wiki/Unix-shell-initialization
+[rbenv wiki]: https://github.com/sstephenson/rbenv/wiki

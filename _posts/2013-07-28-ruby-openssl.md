@@ -270,10 +270,10 @@ environment.
 * `man openssl x509 req c_rehash`
 
 
-  [1]: http://www.buzzfeed.com/expresident/animals-who-are-extremely-disappointed-in-you
-  [2]: http://unerdwear.com/
-  [3]: http://opensource.apple.com/source/OpenSSL098/OpenSSL098-35.1/src/crypto/x509/x509_vfy_apple.c
-  [4]: https://github.com/mislav/ssl-tools/blob/8b3dec4/doctor.rb
-  [5]: https://github.com/mislav/ssl-tools
-  [6]: http://ruby-doc.org/stdlib-2.0/libdoc/openssl/rdoc/OpenSSL.html
-  [7]: https://en.wikipedia.org/wiki/X.509
+[1]: http://www.buzzfeed.com/expresident/animals-who-are-extremely-disappointed-in-you
+[2]: http://unerdwear.com/
+[3]: http://opensource.apple.com/source/OpenSSL098/OpenSSL098-35.1/src/crypto/x509/x509_vfy_apple.c
+[4]: https://github.com/mislav/ssl-tools/blob/8b3dec4/doctor.rb
+[5]: https://github.com/mislav/ssl-tools
+[6]: http://ruby-doc.org/stdlib-2.0/libdoc/openssl/rdoc/OpenSSL.html
+[7]: https://en.wikipedia.org/wiki/X.509
