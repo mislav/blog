@@ -6,8 +6,8 @@ categories: vim
 tags: featured
 styles: |
   p code.file { background: none; padding: 0; color: #666 }
-  @media only screen and (min-width: 1000px) {
-    body { max-width: 1300px }
+  @media only screen and (min-width: 1280px) {
+    body { max-width: 1100px }
     #post { width: 70% }
     #post h2 { clear: left }
     #post aside {
