@@ -22,7 +22,7 @@ styles: |
     #post aside *:first-child { margin-top: 0 }
     #post aside h3 { border: none; padding-bottom: 0; font-variant: small-caps; line-height: 1 }
   }
-  #post img { display:block; max-width: 100%; -webkit-box-shadow: rgba(0,0,0,.4) 0 2px 8px; }
+  #post img { -webkit-box-shadow: rgba(0,0,0,.4) 0 2px 8px; }
   td, th { vertical-align:top; text-align:left }
   th { padding:.1em .3em .1em 0 }
   th kbd, td kbd { font-size:.8em; font-weight:normal }

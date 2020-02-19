@@ -22,8 +22,6 @@ styles: |
   }
   figure img {
     display: block;
-    max-width: 100%;
-    height: auto !important;
     margin: 0 auto 1em;
     box-shadow: 3px 3px 12px rgba(0,0,0,.3);
   }

@@ -39,11 +39,11 @@ body, p, ul, ol, li, dt, dd, dl, h1, h2, h3, h4, h5, h6, pre, code, table, td, t
   font-size: 100%
 
 body
-  font: 300 100% / 1.6em $body_type
+  font: 300 100% / 1.5em $body_type
   margin: 3em 3em 3em 60px
   +screen(phone)
-    font-size: 75%
-    margin: .4em .6em
+    font-size: 80%
+    margin: .6em 1em
   +screen(large)
     max-width: 55em
     margin-left: auto
@@ -56,19 +56,10 @@ strong, b
   font-weight: 500
 
 #post
-  p
-    font-size: 1.2em
-    line-height: 1.6
   ul, ol
     margin-left: 1.5em
-  li
-    font-size: 1.2em
-    line-height: 1.6
-    li
-      font-size: 1em
-      line-height: 1.6
-    p
-      font-size: 1em
+    +screen(phone)
+      margin-left: 1.2em
 
 table
   font: 300 100% / 1.6em $table_type
@@ -117,6 +108,7 @@ h1, h2, h1 a:link, h2 a:link
 h1, h2
   font-weight: 600
   font-size: 2.4em
+  line-height: 1.2em
   border-left: 30px solid $heading_border
   margin-left: -60px
   padding-left: 30px
@@ -136,6 +128,10 @@ h3
 
 p, ul, ol
   margin: 0.8em 0
+
+img
+  max-width: 100%
+  height: auto
 
 ins
   text-decoration: none
@@ -206,7 +202,6 @@ dl
 
 ol.posts
   list-style: none
-  line-height: 1.6
   li
     color: #aaa
     padding-bottom: .4em
@@ -239,8 +234,6 @@ ol.posts li .date, section.posts time, #instapaper time
     div.thumbnail
       float: left
       width: 100%
-    li
-      margin-left: 1.5em
 
 .feeds .feed
   padding-left: 20px
@@ -328,6 +321,15 @@ blockquote
 
 figure.highlight
   margin: 0
+
+.vcard
+  +screen(large)
+    img
+      max-width: 400px
+      float: left
+      margin: 0 1.5em 1em 0
+  ul
+    list-style-type: none
 
 @media only screen and (max-width : 480px)
   .highlight pre

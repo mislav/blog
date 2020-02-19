@@ -5,7 +5,6 @@ layout: post
 categories: Apple
 tags: iOS featured
 styles: |
-  #post img { max-width: 100% }
   kbd {
     border: 1px solid;
     border-bottom-width: 2px;

@@ -6,7 +6,6 @@ description: >
 layout: post
 tags: featured
 styles: |
-  #post ul, #post ol { margin-left: 1.5em }
   div.highlight + blockquote {
     margin: -2px 0 0 0;
     padding: 1em;
@@ -127,7 +126,7 @@ A very effective way of exploring a file's history is with Vim and [Fugitive][]:
 4. Use `:Gbrowse` in the commit split to open the commit in the GitHub web interface;
 5. Press <kbd>gq</kbd> to close the blame pane and return to the main buffer.
 
-<img width="827" height="445" style="max-width:100%" alt="git blame view in vim Fugitive"
+<img width="827" height="445" alt="git blame view in vim Fugitive"
   src="/images/Screen%20Shot%202014-02-07%20at%203.38.20%20PM.png">
 
 See `:help Gblame` for more information.
@@ -217,7 +216,7 @@ follow these ground rules when making commits:
   squashed it down to only 2 commits and edited their messages to hide the fact
   I had troubles setting the script up in the first place:
 
-  <img width="470" style="max-width:100%" alt="messy git history before rebase"
+  <img width="470" alt="messy git history before rebase"
     src="/images/Image%202013-04-04%20at%201.38.33%20AM.png">
 
 * Corollary of avoiding unrelated changes: **stick to a line-based coding

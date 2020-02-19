@@ -18,7 +18,7 @@ styles: |
 
 I have been maintaining [hub](https://hub.github.com/), the command-line git extension, for 10 years. After 2,100 issues and pull requests closed, 18k+ stars on GitHub, and countless hours invested in it, I thought it might be fitting to reflect on its unlikely past, share a bit about my process working on it, and address the future of GitHub on the command line.
 
-<img src="/images/hub-contributors.png" style="width:100%;max-width:737px">
+<img width="737" src="/images/hub-contributors.png">
 
 In 2010, the [entire implementation of hub 1.0][one-oh] sat in a single Ruby file of less than 500 lines of code.
 

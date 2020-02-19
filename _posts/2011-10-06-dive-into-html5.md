@@ -4,8 +4,6 @@ description: "Rescuing and distributing Mark Pilgrim's work after he is gone."
 layout: post
 categories: frontend
 tags: HTML ebook
-styles: |
-  #post img { max-width: 100% }
 ---
 
 [Mark Pilgrim is gone][410] and with him all of his sites and work.
