@@ -12,7 +12,6 @@ styles: |
     text-shadow: rgba(255,255,255,.8) 1px 1px 1px;
     border-radius: 6px;
   }
-  .attention li { margin-left: 2em }
   .figwrapper {
     max-width: 600px;
     margin: 2em auto 3em;
