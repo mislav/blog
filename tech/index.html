@@ -15,13 +15,13 @@ description: >
 </p>
 
 <div id="links_me">
-  @<a href="http://twitter.com/mislav" rel="me">mislav</a>
-  · <a href="http://github.com/mislav" rel="me">github.com/mislav</a>
+  @<a href="https://twitter.com/mislav" rel="me">mislav</a>
+  · <a href="https://github.com/mislav" rel="me">github.com/mislav</a>
 </div>
 </header>
 
 <section class="posts hfeed">
-{% for post in site.posts %}
+{% for post in site.categories["tech"] %}
   {% unless post.tags contains "dated" %}
   <article class="hentry{% if post.tags contains "featured" %} featured{% endif %}">
     <header>

@@ -33,7 +33,7 @@ styles: |
 
 <i>
   If you enjoy this post, check out my
-  [git tips you didn't know about]({% post_url 2010-07-23-git-tips %})!
+  [git tips you didn't know about]({% post_url tech/2010-07-23-git-tips %})!
 </i>
 
 ### Avoid merge commits that result from `git pull`

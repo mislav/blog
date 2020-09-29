@@ -108,7 +108,7 @@ In Vim:
 * <kbd>C-o</kbd> - Backtrack after having jumped
 
 To learn more about navigating tags and jumps in Vim, see
-[Vim: Revisited]({{ site.baseurl }}{% link _posts/2011-12-12-vim-revisited.md %}).
+[Vim: Revisited]({{ site.baseurl }}{% post_url tech/2011-12-12-vim-revisited %}).
 
 
   [splits]: https://coderwall.com/p/rwmdvq

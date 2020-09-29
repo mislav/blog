@@ -4,8 +4,10 @@ title: "Mislav's blog"
 subtitle: >
   Mislav's writings and linkings about web development,
   programming and other topics.
+permalink: /feeds/dev.xml
 path: /blog/
-id: http://mislav.caboo.se/
+id: http://mislav.caboo.se
+category: tech
 ---
 <category term="ruby" label="Ruby" />
 <category term="rails" label="Ruby on Rails" />

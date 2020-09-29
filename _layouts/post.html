@@ -29,7 +29,8 @@ layout: default
   
   <ol class="posts">
     {% assign numrelated = 0 %}
-    {% for related in site.posts %}
+    {% assign category = page.categories[0] %}
+    {% for related in site.categories[category] %}
       {% if numrelated < 5 and related.url != page.url %}
         {% assign numrelated = numrelated | plus:1 %}
       <li>
