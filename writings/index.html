@@ -1,0 +1,38 @@
+---
+layout: default
+title: Mislav's writings
+description: >
+  Mislav's thoughts on squishy subjects such as human emotions.
+---
+
+<header id=blog>
+  <h1>{{ page.title }}</h1>
+
+  <p class=byline>
+    Writings by
+    <a href="/"><strong>Mislav Marohnić</strong></a>
+  </p>
+
+  <div id="links_me">
+    Twitter @<a href="https://twitter.com/mislav" rel="me">mislav</a>
+    ·
+    Instagram @<a href="https://instagram.com/mislav" rel="me">mislav</a>
+  </div>
+</header>
+
+<section class="posts hfeed">
+{% for post in site.categories["writings"] %}
+  <article class="hentry">
+    <header>
+      <h2><a rel=bookmark href="{{ post.url }}">{{ post.title }}</a></h2>
+      <time datetime="{{ post.date | date_to_xmlschema }}" class=published pubdate>{{ post.date | date_to_string }}</time>
+    </header>
+
+    {% if post.description %}
+      <p class=entry-summary>{{ post.description | escape }}</p>
+    {% else %}
+      {{ post.excerpt }}
+    {% endif %}
+  </article>
+{% endfor %}
+</section>

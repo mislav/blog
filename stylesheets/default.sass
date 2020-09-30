@@ -79,9 +79,6 @@ a
     font-weight: normal
     text-transform: uppercase
     font-size: 90%
-    &:first-child
-      position: relative
-      top: -1em
     &:hover
       text-decoration: underline
   img
@@ -167,30 +164,7 @@ section.posts
     header + *
       margin-top: 0
     h2
-      margin-top: 0
       margin-bottom: 0
-      font-size: 1em
-      border-left: none
-      margin-left: 0
-      padding-left: 0
-      display: inline-block
-    time:before
-      content: "·"
-      margin: 0 .5em
-    &.featured
-      padding: .6em 1.2em
-      +screen(phone)
-        padding: 4px 8px
-        border: 1px solid desaturate(lighten($heading_color, 55%), 50%)
-      background: desaturate(lighten($heading_color, 65%), 50%)
-      -webkit-border-radius: 6px
-      -moz-border-radius: 6px
-      +screen(large)
-        -webkit-box-shadow: desaturate(lighten($heading_color, 55%), 50%) 0 0 10px inset
-      > *:last-child
-        margin-bottom: 0
-      h2 a
-        font-size: 1.2em
 
 dl
   &.posts
@@ -473,10 +447,6 @@ figure.highlight
     color: white
   h1 a[href], h2 a[href]
     color: white
-
-  section.posts article.featured
-    padding: .6em 1.2em
-    background: black
 
   pre
     background: #111

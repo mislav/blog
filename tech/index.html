@@ -23,9 +23,12 @@ description: >
 <section class="posts hfeed">
 {% for post in site.categories["tech"] %}
   {% unless post.tags contains "dated" %}
-  <article class="hentry{% if post.tags contains "featured" %} featured{% endif %}">
+  <article class="hentry">
     <header>
-      <h2 class=entry-title><a rel=bookmark href="{{ post.url }}">{{ post.title }}</a></h2>
+      <h2 class=entry-title>
+        <a rel=bookmark href="{{ post.url }}">{{ post.title }}</a>
+        {% if post.tags contains "featured" %}<span aria-label="featured">🌟</span>{% endif %}
+      </h2>
       <time datetime="{{ post.date | date_to_xmlschema }}" class=published pubdate>{{ post.date | date_to_string }}</time>
     </header>
 

@@ -41,9 +41,13 @@ layout: default
     {% endfor %}
   </ol>
   
-  <p>
-  You should <a href="http://twitter.com/mislav" rel="me">follow me on Twitter: @mislav</a>.
-  </p>
-  
-  <nav><a class="home" href="/blog/">← all posts</a></nav>
+  <nav>
+    {% if category == "writings" %}
+    <a class="home" href="/writings/">← all posts</a>
+    {% else %}
+    <a class="home" href="/blog/">← all posts</a>
+    {% endif %}
+    &middot;
+    <a href="https://twitter.com/mislav" rel="me">follow me on Twitter</a>
+  </nav>
 </aside>
