@@ -3,7 +3,6 @@ permalink: /rails/will_paginate-love/
 title: will_paginate love
 layout: post
 description: Getting emotional with the new, 2.2.0 release of the will_paginate library
-categories: Rails
 tags: dated
 styles: |
     div.tweet { margin: 1.5em 0 1em 0; }

@@ -1,10 +1,9 @@
 ---
 title: Semicolons in JavaScript are optional
-layout: post
-categories: js frontend
-tags: featured
 description: >
-  Relax. Your JavaScript doesn't need semicolons.
+  Save yourself some keystrokes.
+layout: post
+tags: featured
 ---
 
 JavaScript is a scripting language where semicolons as statement terminators are *optional*, as in:
