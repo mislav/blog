@@ -8,12 +8,13 @@ layout: default
 <h1 class=entry-title>{{ page.title }}</h1>
 
 <p class="byline author vcard instapaper_ignore entry-unrelated">
-  By <a href="/" rel=author class=fn lang=hr>Mislav Marohnić</a>
+  by <a href="/" rel=author class=fn lang=hr>Mislav Marohnić</a>
+  &middot;
   {% if page.updated %}
-  on <time class=published datetime="{{ page.date | date_to_xmlschema }}" pubdate>{{ page.date | date_to_string }}</time>
+  <time datetime="{{ page.date | date_to_xmlschema }}" pubdate>{{ page.date | date_to_string }}</time>
   <time class=updated datetime="{{ page.updated }}"></time>
   {% else %}
-  on <time class=updated datetime="{{ page.date | date_to_xmlschema }}" pubdate>{{ page.date | date_to_string }}</time>
+  <time datetime="{{ page.date | date_to_xmlschema }}" pubdate>{{ page.date | date_to_string }}</time>
   {% endif %}
 </p>
 </header>

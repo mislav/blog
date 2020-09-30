@@ -36,10 +36,9 @@ $hover_color: $link_color - 40
 body, p, ul, ol, li, dt, dd, dl, h1, h2, h3, h4, h5, h6, pre, code, table, td, th
   margin: 0
   padding: 0
-  font-size: 100%
 
 body
-  font: 300 100% / 1.5em $body_type
+  font: 300 18px / 1.7em $body_type
   margin: 3em 3em 3em 60px
   +screen(phone)
     font-size: 90%
@@ -86,15 +85,6 @@ a
 
 h1
   margin-bottom: 0.6em
-  + .byline
-    margin-top: -.6em
-    margin-bottom: 2em
-    color: #666
-    font-style: italic
-    time
-      font-weight: bold
-    + h2
-      margin-top: 0
   color: #a21e3f
   font-weight: normal
 
@@ -140,7 +130,6 @@ header#blog
     margin-top: 1em
     text-align: center
 #links_me
-  margin: -2em 0 2em 0
   color: #6d7d21
 
 p.post-info, dl.posts .post-info
@@ -187,12 +176,16 @@ ol.posts
       margin: .4em 0
       color: $body_color
 
-ol.posts li .date, section.posts time, #instapaper time
+ol.posts li .date, section.posts time, .byline
   font-family: $date_type
   color: #777
+ol.posts li .date, section.posts time
   font-size: 90%
   display: inline-block
   min-width: 6.7em
+
+h1 + .byline
+  margin-top: -1.5em
 
 +screen(phone)
   h1, h2
@@ -295,6 +288,11 @@ blockquote
 
 figure.highlight
   margin: 0
+
+.cw
+  font-style: italic
+  &::before
+    content: "⚠️ "
 
 .vcard
   +screen(large)
