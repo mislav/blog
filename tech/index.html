@@ -7,7 +7,7 @@ description: >
 ---
 
 <header id=blog>
-<h1>{{ page.title }}</h1>
+<h1>{{ page.title | escape }}</h1>
 
 <p>
   Tech writings by
@@ -26,13 +26,13 @@ description: >
   <article class="hentry">
     <header>
       <h2 class=entry-title>
-        <a rel=bookmark href="{{ post.url }}">{{ post.title }}</a>
+        <a rel=bookmark href="{{ post.url }}">{{ post.title | escape }}</a>
         {% if post.tags contains "featured" %}<span aria-label="featured">🌟</span>{% endif %}
       </h2>
       <time datetime="{{ post.date | date_to_xmlschema }}" class=published pubdate>{{ post.date | date_to_string }}</time>
     </header>
 
-    {% if page.description %}<p class=entry-summary>{{ post.description }}</p>{% endif %}
+    {% if page.description %}<p class=entry-summary>{{ post.description | escape }}</p>{% endif %}
   </article>
   {% endunless %}
 {% endfor %}

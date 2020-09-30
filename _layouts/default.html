@@ -6,7 +6,7 @@
     <link rel="stylesheet" type="text/css" href="/stylesheets/default.css?{{ site.time | date: "%s" }}">
 
     <meta charset="UTF-8">
-    <title>{{ page.title | replace:'&nbsp;',' ' | escape }}</title>
+    <title>{{ page.title | escape }}</title>
     {% if page.description %}
     <meta name="description" content="{{ page.description | strip | escape }}">
     {% elsif post %}

@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
   <head>
-    <title>{{ page.title | replace:'&nbsp;',' ' | escape }}</title>
+    <title>{{ page.title | escape }}</title>
     {% if page.description %}
     <meta name="description" content="{{ page.description | escape }}">
     {% endif %}

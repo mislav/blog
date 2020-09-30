@@ -5,14 +5,14 @@ permalink: /404.html
 <!doctype html>
 <html>
   <head>
-    <title>{{ page.title }}</title>
+    <title>{{ page.title | escape }}</title>
     <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
     <link rel="icon" href="/favicon.ico">
     <link rel="stylesheet" type="text/css" href="/stylesheets/default.css">
   </head>
   
   <body>
-    <h1><i>{{ page.title }}</i></h1>
+    <h1><i>{{ page.title | escape }}</i></h1>
     <p>I'm sorry, that page is not here.</p>
 
     <div id="related">

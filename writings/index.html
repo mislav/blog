@@ -6,7 +6,7 @@ description: >
 ---
 
 <header id=blog>
-  <h1>{{ page.title }}</h1>
+  <h1>{{ page.title | escape }}</h1>
 
   <p>
     Writings by
@@ -24,7 +24,7 @@ description: >
 {% for post in site.categories["writings"] %}
   <article class="hentry">
     <header>
-      <h2><a rel=bookmark href="{{ post.url }}">{{ post.title }}</a></h2>
+      <h2><a rel=bookmark href="{{ post.url }}">{{ post.title | escape }}</a></h2>
       <time datetime="{{ post.date | date_to_xmlschema }}" class=published pubdate>{{ post.date | date_to_string }}</time>
     </header>
 

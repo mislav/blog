@@ -5,7 +5,7 @@ layout: default
 <article class=hentry>
 
 <header>
-<h1 class=entry-title>{{ page.title }}</h1>
+<h1 class=entry-title>{{ page.title | escape }}</h1>
 
 <p class="byline author vcard instapaper_ignore entry-unrelated">
   by <a href="/" rel=author class=fn lang=hr>Mislav Marohnić</a>
@@ -36,7 +36,7 @@ layout: default
         {% assign numrelated = numrelated | plus:1 %}
       <li>
         <span class="date">{{ related.date | date_to_string }}</span>
-        ▸ <a href="{{ related.url }}">{{ related.title }}</a>
+        ▸ <a href="{{ related.url }}">{{ related.title | escape }}</a>
       </li>
       {% endif %}
     {% endfor %}

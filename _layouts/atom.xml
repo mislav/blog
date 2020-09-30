@@ -31,7 +31,7 @@
     {% else %}
       <updated>{{ post.date | date_to_xmlschema }}</updated>
     {% endif %}
-    <title>{{ post.title | replace:'&nbsp;',' ' | xml_escape }}</title>
+    <title>{{ post.title | xml_escape }}</title>
     <link rel="alternate" type="text/html" href="{{ site.url }}{{ post.url }}" />
     <id>{{ page.id }}{{ post.id }}/</id>
     <content type="html">{{ post.content | xml_escape }}</content>
