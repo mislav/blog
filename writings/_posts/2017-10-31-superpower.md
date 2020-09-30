@@ -6,9 +6,9 @@ facebook_url: https://www.facebook.com/mislav/posts/10156276849981554
 
 How magical is it that we're often a better human to other people around us than we are to ourselves?
 
-When I find myself in a lost or weakened state, I catch myself thinking things like “you miserable cur. You brought this on yourself.” And I retreat to somewhere where others can't see me, where I lick my own wounds and stay until things have blown over. With this, I'm convinced that I'm somehow doing others a favor.
+When I find myself in a lost or weakened state, I catch myself thinking things like: “you miserable cur. You brought this on yourself.” And I retreat to somewhere where others can't see me, where I lick my own wounds and stay until things have blown over. With this, I'm convinced that I'm somehow doing others a favor.
 
-But when I see friends struggling the same way, I think “you beautiful creature. You are so strong.” All I want to do is to encourage them, to help them find a way out of their dark place. And somehow, I don't think any less of them. Then I realize, I shouldn't think any less of myself either.
+But when I see friends struggling the same way, I think: “you beautiful creature. You are so strong.” All I want to do is to encourage them, to help them find a way out of their dark place. And somehow, I don't think any less of them. Then I realize, I shouldn't think any less of myself either.
 
 Thus by the mere fact of simply existing in an authentic way, my friends are teaching me to extend compassion to myself.
 

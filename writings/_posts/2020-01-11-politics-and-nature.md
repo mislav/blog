@@ -1,5 +1,5 @@
 ---
-title: 
+title: On Politics and Nature
 layout: post
 facebook_url: 
 ---

@@ -1,14 +1,10 @@
 ---
-title: 
+title: The antidote to QAnon
+description: >
+  In the age of social media and extreme economic and political pressures, a person's “research” can end up in wild places.
 layout: post
 facebook_url: 
 ---
-
-Hi friends, there is something that's been weighing heavy on my mind lately. I would like to explain why I've been defensive online around topics like COVID-19, anti-vaccination, 5G, YouTube, people in the wellness industry prophesizing “the great awakening” coming, and other keywords that might not seem at all connected.
-
-And if you're thinking that I'm losing mind mind—well, these days I feel like I am. But before I descend into madness, hear me out. I think that what I'm about to say is not just important to me, but should be important to all of us who value friendship and community.
-
-This is also going to be one of my last posts on the platform.
 
 A lot of us have been involved in, or at least witnessed, online debates in which one of the parties says “do your research”. Earlier in my life, when I heard “research” I always thought it meant something specific, such as rigorous pursuit of knowledge that benefits humanity. However, in the age of social media and extreme economic and political pressures, a person's “research” can end up in very wild places.
 
@@ -44,14 +40,15 @@ The rise of hyper-individuality in Western culture has eroded our ability to tru
 
 I think of it completely different: that trust is a gift that we give from our hearts. Trust is also a skill that we need to cultivate, and when we don't exercise it, it atrophies like a muscle.
 
-I don't think that I could explain trust any better than Ze Frank once did in his video:
+I don't think that I could explain trust any better than [Ze Frank][1]:
 
-“Trust is your relationship with the unknown, what you can’t control, and you can’t control everything. It’s not all or none; it’s a slow and steady practice of learning about the capacity of the world. It’s worth it to keep trying, and it’s not easy.
-
-I almost imagine trust as these invisible hands that we stretch out into the world looking for someone to hold on to as we walk into the unknown future.”
+> Trust is your relationship with the unknown, what you can’t control, and you can’t control everything. It’s not all or none; it’s a slow and steady practice of learning about the capacity of the world. It’s worth it to keep trying, and it’s not easy.
+>
+> I almost imagine trust as these invisible hands that we stretch out into the world looking for someone to hold on to as we walk into the unknown future.
 
 If you want to do something for yourself and for your loved ones, think about your relationship with the unknown. Not every mystery is some clue from the Universe to be deciphered and projected meaning unto.
 
 How well do you handle things that you cannot control?
 
-Thank you for reading, and please, take care of each other. 💖
+
+[1]: https://www.youtube.com/watch?v=cWypWe9UAhQ

@@ -1,5 +1,7 @@
 ---
-title: 
+title: Living in fear
+description: >
+  We tend to ridicule people living in fear mostly to mask our own.
 layout: post
 facebook_url: 
 ---
@@ -8,13 +10,13 @@ facebook_url:
 
 Some people think that I live fearlessly. A decade ago, I would have proudly agreed with them. But today, I know that they only think so because I seldom let anyone see my fear. “Fearless” is more of a disguise than a state of mind.
 
-It's hard to quantify an emotion, but I would say that at the phase in my life that I had the most contempt for people “living in fear”, I was the most scared, as evident by having constructed my life around avoiding facing any of my demons. After all, all judgement has to come from somewhere, and usually it comes from a place of fear.
+It's hard to quantify an emotion, but I would say that at the phase in my life that I had the most contempt for people “living in fear," I was the most scared, as evident by having constructed my life around avoiding facing any of my demons. After all, all judgement has to come from somewhere, and usually it comes from a place of fear.
 
 Beware of those who are trying to shame you for “living in fear,” because what those people are doing is punishing you for reminding them of their own feelings that they are trying to escape.
 
 How can we be fearless right now? There is a pandemic unfolding in front of our eyes that we clearly do not understand, and yet it seems to understand us well since it's propagating so efficiently and claiming our health in the process.
 
-How can we be fearless right now, seeing the rise of fascist leadership across several continents even after we've spent almost a whole century recovering from the the previous wave of fascist movements?
+How can we be fearless right now, seeing the rise of fascist leadership across several continents even after we've spent almost a whole century recovering from the previous wave of fascist movements?
 
 How can we be fearless when we look at how are the most marginalized groups of our society treated and how the government responds when those groups ask to not be imprisoned or killed anymore?
 
@@ -30,4 +32,4 @@ Of course I don't want just these emotions to dominate my entire existence. I pr
 
 Yes, I live with fear sometimes and that's not shameful to admit, just as any vulnerability is never shameful to admit. If my fear, or our collective fear, leads me to precaution that saves even one life, then it was worth a thousand times more than some narrow-minded cult of positivity.
 
-The world needs “higer-vibration”, compassionate people right now to step up, show up as a support system for the rest of us who aren't spiritually “there“ yet. But to take this moment in times of crisis to shame us for our own feelings or for taking steps to protect others— that's not being “conscious” nor compassionate. That does not make you any more awoken than the rest. That's just nasty.
+The world needs “higher-vibration”, compassionate people right now to step up, show up as a support system for the rest of us who aren't spiritually “there“ yet. But to take this moment in times of crisis to shame us for our own feelings or for taking steps to protect others— that's not being “conscious” nor compassionate. That does not make you any more awoken than the rest. That's just nasty.
