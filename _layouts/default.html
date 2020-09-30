@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html>
   <head profile="http://gmpg.org/xfn/11">
-    <link href="/feeds/dev.xml" rel="alternate" title="Mislav's blog" type="application/atom+xml">
+    <link href="/writings/index.xml" rel="alternate" title="Mislav's writings" type="application/atom+xml">
+    <link href="/feeds/dev.xml" rel="alternate" title="Mislav's tech blog" type="application/atom+xml">
     <link rel="stylesheet" type="text/css" href="/stylesheets/default.css?{{ site.time | date: "%s" }}">
 
     <meta charset="UTF-8">
     <title>{{ page.title | replace:'&nbsp;',' ' | escape }}</title>
-    {% if page.description %}
+    {% if page.excerpt %}
+    <meta name="description" content="{{ page.excerpt | strip_html | escape }}">
+    {% elsif page.description %}
     <meta name="description" content="{{ page.description | escape }}">
     {% endif %}
     <meta name=author lang=hr content="Mislav Marohnić">
