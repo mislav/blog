@@ -4,6 +4,7 @@ permalink: /:year/:month/:title/
 exclude:
 - bin
 - script
+- Brewfile
 - Gemfile
 - Gemfile.lock
 - vendor
