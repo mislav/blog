@@ -1,19 +1,19 @@
 ---
-title: The antidote to QAnon
+title: The antidote for madness
 description: >
   In the age of social media and extreme economic and political pressures, a person's “research” can end up in wild places.
 layout: post
-facebook_url: 
+facebook_url: https://www.facebook.com/mislav/posts/10159464843176554
 og_image: /images/storm.jpg
 ---
 
-A lot of us have been involved in, or at least witnessed, online debates in which one of the parties says “do your research”. Earlier in my life, when I heard “research” I always thought it meant something specific, such as rigorous pursuit of knowledge that benefits humanity. However, in the age of social media and extreme economic and political pressures, a person's “research” can end up in very wild places.
+I suspect that a lot of us have been involved in, or at least witnessed, online debates in which one of the parties says “do your research”. Earlier in my life, when I heard “research” I always thought it meant something specific, such as rigorous pursuit of knowledge that benefits humanity. However, in the age of social media and extreme economic and political pressures, a person's “research” can end up in very wild places.
 
 When people in my community first started doing their research and concluded that COVID-19 is not such a big deal and that mandatory masks are just a way for governments to assert dominance over us, I didn't put the pieces together yet. But then, similar people came out in their vocal opposition to a potential vaccine. Around the same time, others are warning about 5G towers coming online that are going to harm us all. Lastly, I've been hearing the conscious community predict the “awakening” event, the upcoming Great Shift for which we'll have to shed our fear-based patterns that we developed for surviving in the world of “3D” consciousness.
 
 I'm certainly feeling some shift now, but it's more of a rising sense of horror as I realize that I honestly cannot tell anymore how come so many people these days sound like they are QAnon.
 
-If you haven't heard about “QAnon”, and you are from anywhere else but the USA, that's perfectly fine—I will explain who they are in a minute. I had compartmentalized it, mistakenly thinking that such a monstrosity—born out of a country that's truly unwell right now—could not possibly cross geographies such as oceans. But thanks to the wonders of the Internet, which knows no borders, it sounds like QAnon ideas are at our doorstep and, after some panicked texts from a dear friend of mine, I decided that it's worth a shot to publicly address this.
+If you haven't heard about [QAnon][2], and you are from anywhere else but the USA, that's perfectly fine—I will explain who they are in a minute. I had compartmentalized it, mistakenly thinking that such a monstrosity—born out of a country that's truly unwell right now—could not possibly cross geographies such as oceans. But thanks to the wonders of the Internet, which knows no borders, it sounds like QAnon ideas are at our doorstep and, after some panicked texts from a dear friend of mine, I decided that it's worth a shot to publicly address this.
 
 QAnon is an ideological movement that despises people living in fear and urges its followers to “wake up” from a reality where they're being lied to by powerful forces. QAnon believes that the danger of COVID-19 was exaggerated by the media, or even links 5G towers to having had lowered our immune systems, giving rise to COVID-19 in our bodies. QAnon are vocal anti-maskers, to the point of calling masks “muzzles” and people wearing them “sheep”, and argue that the potential vaccine is Bill Gates' plot to experiment with implanting microchips in our bodies. On top of it all, QAnon are predicting that a mass “awakening” will trigger a great “event” that will soon change everything.
 
@@ -25,15 +25,13 @@ QAnon isn't a single entity, or some kind of club that keeps track of its member
 
 And I totally get it. I feel powerless against greater forces all the time. It's just that QAnon and I disagree about what these powerful forces are. For me, the evils that have ravaged this world are late capitalism, toxic masculinity, settler colonialism, and other leftist buzzwords. At their core, QAnon believe that the forces we are battling against are a secret cabal of Satan-worshipping, child-trafficking Democrats, and that president Trump is our God-appointed savior.
 
-We're not exactly in agreement.
-
-So how do we rescue our loved ones whose late-night “research” on YouTube leads them into a spiral of conspiratorial leaps deeper and deeper into QAnon territory? I'm not sure. One thing that really impresses me about the way they operate and communicate is how well they've immunized themselves from both facts and feelings. If we present them with facts that debunk any of the myths they firmly believe in, they will produce alternative facts from a different source they trust better. They can neither be swayed emotionally, since it's their emotions that led them to question the truth in the first place.
+So how do we rescue our loved ones whose late-night “research” on YouTube leads them into a spiral of conspiratorial leaps deeper and deeper into QAnon territory? I'm not sure. One thing that really impresses me about the way they operate and communicate is how well they've immunized themselves from both facts and feelings. If we present them with facts that debunk any of the myths they firmly believe in, they will produce alternative facts from a different source they trust better. We can neither appeal to their emotions since it's their heightened emotional state that led them to follow the white rabbit in the first place.
 
 Does all this mean that I think that anyone who is concerned about things like 5G or vaccines is necessarily also firmly in QAnon land? Not at all. But I don't think these people realize how close they are, nor how them being vocal about individual conspiracy theories or connecting the dots in very wild ways can recruit others who might get drawn even deeper than they were.
 
 Now that I'm typing all this, I'm starting to be concerned for my own mental health, because I find myself wildly connecting the dots where other people don't see a connection. Perhaps I am the one who sees a vast conspiracy of evil actors when nobody else does, and in doing so, I have become a conspiracy theorist of my own, writing mad diatribes on my social media. 
 
-In trying to recalibrate my moral compass, I have realized that I cannot be entrenched in the position of being “good” who's opposing “evil” in this world, because that's also exactly the mechanism by which literal fascists get radicalized these days. In times like this, I finally see how God was right for not wanting us to eat from the Tree of Knowledge. By frantically trying to tell good from evil, we have all split into camps of warriors of Light fighting the Dark side; it's just that both believe that the other side are the baddies, and everyone loses.
+In trying to recalibrate my moral compass, I have realized that I cannot be entrenched in the position of being “good” who's opposing “evil” in this world, because that's also exactly the mechanism by which literal fascists get radicalized these days. In times like this, I finally see how God was right for not wanting us to eat from the Tree of Knowledge. By trying to tell good from evil, we have all split into camps of warriors of Light fighting the Dark side; it's just that both believe that the other side are the baddies, and everyone loses in the end.
 
 What is the antidote for this madness? I'm starting to think that it's trust.
 
@@ -53,3 +51,4 @@ How well do you handle things that you cannot control?
 
 
 [1]: https://www.youtube.com/watch?v=cWypWe9UAhQ
+[2]: https://en.wikipedia.org/wiki/QAnon
