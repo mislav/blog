@@ -1,18 +1,15 @@
 ---
 ---
 
-$body_color: #222
 $body_type: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif
+$heading_type: "Avenir Next", Arial, Helvetica, sans-serif 
 $table_type: "Gill Sans", "Lucida Grande", Helvetica, Arial, sans-serif
-//$heading_color: #a21e3f
-$heading_color: #069
-$heading_border: #D8D177
 $date_type: "American Typewriter", "Courier New", monospace
 $code_type: Monaco, "DejaVu Sans Mono", Courier, monospace
+$body_color: #222
+$heading_color: #069
 $code_block_background: #F0F3F3
-$inline_code_background: $code_block_background - 15
 $link_color: #857f33
-$hover_color: $link_color - 40
 
 // https://github.com/jcroft/jeffcroft-css-framework-v2/blob/054fdbd/framework/css/contrib/_media_queries.sass
 =screen($type)
@@ -44,7 +41,7 @@ body
     font-size: 90%
     margin: .6em 1em
   +screen(large)
-    max-width: 55em
+    max-width: 50em
     margin-left: auto
     margin-right: auto
   position: relative
@@ -71,8 +68,6 @@ a
   .posts &:visited
     text-decoration: none
 
-  &:hover
-    color: $hover_color
   &.home
     text-decoration: none
     font-weight: normal
@@ -83,25 +78,20 @@ a
   img
     border: none
 
+h1, h2, h3, h4, h5, h6
+  font-family: $heading_type
+  font-weight: 600
+
 h1
   margin-bottom: 0.6em
-  color: #a21e3f
-  font-weight: normal
 
 h1, h2, h1 a:link, h2 a:link
   color: $heading_color
-  font-weight: normal
 
 h1, h2
-  font-weight: 600
   font-size: 2.4em
   line-height: 1.2em
-  border-left: 30px solid $heading_border
-  margin-left: -60px
-  padding-left: 30px
-  //text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3)
   clear: both
-  text-rendering: optimizeLegibility
 
 h2
   margin-top: 1.2em
@@ -111,7 +101,6 @@ h2
 h3
   font-size: 1.3em
   margin-top: 1.5em
-  border-bottom: 1px dotted silver
 
 p, ul, ol
   margin: 0.8em 0
@@ -129,18 +118,6 @@ header#blog
   +screen(phone)
     margin-top: 1em
     text-align: center
-#links_me
-  color: #6d7d21
-
-p.post-info, dl.posts .post-info
-  margin-top: -1.2em
-  color: #666
-  font-style: italic
-  font-size: 90%
-
-p.post-info .date
-  color: #6d7d21
-  font-weight: bold
 
 section.posts
   article
@@ -154,14 +131,6 @@ section.posts
       margin-top: 0
     h2
       margin-bottom: 0
-
-dl
-  &.posts
-    .post-info .date
-      color: #6d7d21
-      font-weight: bold
-    dd
-      margin: 0 0 .4em 1em
 
 ol.posts
   list-style: none
@@ -188,10 +157,6 @@ h1 + .byline
   margin-top: -1.5em
 
 +screen(phone)
-  h1, h2
-    border-left: none
-    margin-left: 0
-    padding-left: 0
   ol.posts li .date
     min-width: 0
     display: block
@@ -202,30 +167,11 @@ h1 + .byline
       float: left
       width: 100%
 
-.feeds .feed
-  padding-left: 20px
-  background: transparent url(/images/feed-icon-small.png) no-repeat left 50%
-
-div.breadcrumbs
-  padding-bottom: .1em
-  padding-left: 40px
-  margin-left: -40px
-  font-size: 90%
-  color: #444
-  background: #ddd
-  margin-top: -1em
-
-#foo
-  border-top: 1px solid gray
-  padding: 0.5em 0
-  margin-top: 1em
-
 pre, code, kbd
   font-family: $code_type
 
 pre
   background: $code_block_background
-  // color: #e2e2e2
   font-size: .9em
   line-height: 1.5em
   code
@@ -243,7 +189,7 @@ li > code, li > a > code, li > kbd
   font-size: .8em
 
 p code, li > code
-  background: $inline_code_background
+  background: $code_block_background
   color: #333
   padding: .2em .2em .15em .2em
   white-space: nowrap
