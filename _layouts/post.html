@@ -29,16 +29,16 @@ layout: default
   <h2>Also on this site</h2>
   
   <ol class="posts">
-    {% assign numrelated = 0 %}
-    {% assign category = page.categories[0] %}
-    {% for related in site.categories[category] %}
-      {% if numrelated < 5 and related.url != page.url %}
-        {% assign numrelated = numrelated | plus:1 %}
+    {%- assign numrelated = 0 -%}
+    {%- assign category = page.categories[0] -%}
+    {%- for related in site.categories[category] -%}
+      {% if numrelated < 5 and related.url != page.url -%}
+        {%- assign numrelated = numrelated | plus:1 -%}
       <li>
         <span class="date">{{ related.date | date_to_string }}</span>
         ▸ <a href="{{ related.url }}">{{ related.title | escape }}</a>
       </li>
-      {% endif %}
+      {%- endif -%}
     {% endfor %}
   </ol>
   

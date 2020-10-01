@@ -28,11 +28,11 @@ description: >
       <time datetime="{{ post.date | date_to_xmlschema }}" class=published pubdate>{{ post.date | date_to_string }}</time>
     </header>
 
-    {% if post.description %}
+    {%- if post.description %}
       <p class=entry-summary>{{ post.description | escape }}</p>
-    {% else %}
+    {%- else -%}
       {{ post.excerpt }}
-    {% endif %}
+    {%- endif %}
   </article>
 {% endfor %}
 </section>
