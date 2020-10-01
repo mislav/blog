@@ -4,6 +4,7 @@ description: >
   In the age of social media and extreme economic and political pressures, a person's “research” can end up in wild places.
 layout: post
 facebook_url: 
+og_image: /images/storm.jpg
 ---
 
 A lot of us have been involved in, or at least witnessed, online debates in which one of the parties says “do your research”. Earlier in my life, when I heard “research” I always thought it meant something specific, such as rigorous pursuit of knowledge that benefits humanity. However, in the age of social media and extreme economic and political pressures, a person's “research” can end up in very wild places.
