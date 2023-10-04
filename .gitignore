@@ -3,7 +3,6 @@ _site
 _tmp
 .sass-cache
 public/
-Gemfile.lock
 Brewfile.lock.json
 .bundle
 vendor/bundle
