@@ -95,7 +95,7 @@ Luckily, I *am* given a chance to make an entirely different set of decisions: f
 
 **What does this mean for the future of hub?** Since I personally don't find it valuable to spend my time maintaining *two* separate command-line clients for GitHub, I will gradually reduce my involvement with hub to a point where it either goes into complete feature-freeze mode or finds new maintainership. It's still too early for me to tell how exactly any of this is going to play out, but rest assured that hub is going to continue to exist and receive bug fixes until further notice. I still use hub every day and I have no intention of disappointing any people who do the same.
 
-If you have any further questions or ideas about GitHub features that you would you like to see on the command line, please [reach out to me](https://twitter.com/mislav). Thank you for reading! 🙇‍♂️
+If you have any further questions or ideas about GitHub features that you would you like to see on the command line, please [reach out to me](https://bsky.app/profile/mislav.net). Thank you for reading! 🙇‍♂️
 
 
 [one-oh]: https://github.com/github/hub/blob/v1.0.0/lib/hub/commands.rb

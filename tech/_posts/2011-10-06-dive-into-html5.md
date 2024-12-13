@@ -27,5 +27,5 @@ The eBook has an embedded table of contents, working cross-references, well-plac
 [dive]: https://mislav.github.io/diveintohtml5/ "Dive into HTML5 by Mark Pilgrim"
 [410]: http://meyerweb.com/eric/thoughts/2011/10/04/searching-for-mark-pilgrim/ "Searching for Mark Pilgrim"
 [pdf]: http://s3.amazonaws.com/mislav/Dive+into+HTML5.pdf
-[poignant]: https://twitter.com/mislav/statuses/3418071764
+[poignant]: https://poignant.guide/
 [repo]: https://github.com/mislav/diveintohtml5 "HTML source files for Dive into HTML5 book by Mark Pilgrim"

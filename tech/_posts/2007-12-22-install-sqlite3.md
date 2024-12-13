@@ -27,4 +27,4 @@ On Mac OS Leopard or later, you don’t have to! It comes pre-installed. You can
 
 [1]: http://www.sqlite.org/
 [3]: http://www.sqlite.org/download.html
-[homebrew]: http://mxcl.github.com/homebrew/
+[homebrew]: https://brew.sh/
